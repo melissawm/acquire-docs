@@ -212,7 +212,7 @@ class DeviceManager:
             kind (DeviceKind): The type of device to select.
             
         Returns:
-            Optional[DeviceIdentifier]: The selected device identifier, or None if no device of the specified kind is available.
+            Optional[DeviceIdentifier]: The identifier of the first available device of `kind`, or `None` if no such device is available.
         """
     
     @overload
