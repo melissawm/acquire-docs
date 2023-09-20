@@ -1,6 +1,6 @@
 # API Reference
 
-Information on the classes in Acquire-python along with the attributes and methods associated with them.
+Information on the classes in `acquire-imaging` along with the attributes and methods associated with them.
 
 ## Class `AvailableData`
 
