@@ -206,7 +206,7 @@ class DeviceManager:
     
     @overload
     def select(self, kind: DeviceKind) -> Optional[DeviceIdentifier]:
-        """Selects a specified device.
+        """Selects the first available device of `kind`.
         
         Args:
             kind (DeviceKind): The type of device to select.
