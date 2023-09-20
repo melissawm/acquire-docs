@@ -66,7 +66,7 @@ class CameraProperties:
 
 - `exposure_time_us`: How long in microseconds your camera should collect light from the sample. However, for simulated cameras, this is just a waiting period before generating the next frame.
 
-- `line_interval_us`: The time to scan one line in microseconds in a rolling shutter camera camera.
+- `line_interval_us`: The time to scan one line in microseconds in a rolling shutter camera.
 
 - `binning`: How many adjacent pixels in each direction to combine by averaging. If binning is set to 1, no pixels will be combined.
 
