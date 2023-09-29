@@ -17,9 +17,12 @@ class AvailableData:
     def __iter__(self) -> Iterator[VideoFrame]:
         """Returns an iterator over the video frames in the available data."""
 ```
-- Call `get_frame_count()` to query the number of frames in an `AvailableData` object. 
 
 - The `frames` method provides an iterator over these frames.
+
+- Call `get_frame_count()` to query the number of frames in an `AvailableData` object.
+
+- The `__iter__` method enables `AvailableData` objects to be iterated. 
 
 ## Class `Camera`
 The `Camera` class is used to describe cameras or other video sources.
@@ -68,19 +71,19 @@ class CameraProperties:
 
 - `line_interval_us`: The time to scan one line in microseconds in a rolling shutter camera.
 
-- `binning`: How many adjacent pixels in each direction to combine by averaging. If binning is set to 1, no pixels will be combined.
+- `binning`: How many adjacent pixels in each direction to combine by averaging. For example, if `binning` is set to 2, a 2x2 sqaure of pixels will be combined by averaging. If `binning` is set to 1, no pixels will be combined.
 
-- `pixel_type`: An instance of the `SampleType` class which specifies the numerical data type.
+- `pixel_type`: An instance of the `SampleType` class which specifies the numerical data type, for example u16, a 16-bit unsigned integer type.
 
 - `readout_direction`: An instance of the `Direction` class which specifies whether the data is readout forwards or backwards.
 
-- `offset`: A tuple of two integers representing the dark counts of the camera.
+- `offset`: A tuple of two integers representing the (x, y) offset in pixels of the image region of interest on the camera.
 
-- `shape`: A tuple of two integers representing the shape of the camera detector in pixels.
+- `shape`: A tuple of two integers representing the size in pixels of the image region of interest on the camera.
 
-- `input_triggers`: An instance of the `InputTriggers` class.
+- `input_triggers`: An instance of the `InputTriggers` class, which describes the trigger signals for starting acquisition, camera exposure, and acquiring a frame.
 
-- `output_triggers`: An instance of the `OutputTriggers` class.
+- `output_triggers`: An instance of the `OutputTriggers` class, which describes the trigger signals for the camera exposure, acquiring a frame, as well as any wait times for sending the trigger signal.
 
 - The `dict` method create a dictionary of a `CameraProperties` object's attributes.
 
@@ -185,15 +188,15 @@ class DeviceKind:
         """Checks if two DeviceKind objects are not equal."""
 ```
 
-- `Camera`: Class variable of `DeviceKind` that defines the cameras supported by the system. 
+- `Camera`: Enum-type class variable of `DeviceKind` that defines the cameras supported by the system. 
 
-- `NONE`: Class variable of `DeviceKind` that is set to None if no device of the specified kind is available.
+- `NONE`: Enum-type class variable of `DeviceKind` that is set to None if no device of the specified kind is available.
 
-- `Signals`: Class variable of `DeviceKind` that defines the signals supported by the system.
+- `Signals`: Enum-type class variable of `DeviceKind` that defines the signals supported by the system.
 
-- `StageAxis`: Class variable of `DeviceKind` that defines the stage axes supported by the system.
+- `StageAxis`: Enum-type class variable of `DeviceKind` that defines the stage axes supported by the system.
 
-- `Storage`: Class variable of `DeviceKind` that defines the storage supported by the system.
+- `Storage`: Enum-type class variable of `DeviceKind` that defines the storage supported by the system.
 
 ## Class `DeviceManager` 
 
@@ -228,7 +231,7 @@ class DeviceManager:
         """
     
     def select_one_of(self, kind: DeviceKind, names: List[str]) -> Optional[DeviceIdentifier]:
-        """Selects one of the devices of the specified kind from the given list of names.
+        """Selects the first device in the list of devices that is of one of the specified kinds.
         
         Args:
             kind (DeviceKind): The type of device to select.
@@ -472,9 +475,6 @@ class Runtime:
 - Call `stop()` to end data acquisition once the max number of frames specified in `config.video[0].max_frame_count` is collected.
 
 - Call `abort()` to  `Runtime` instance.
-
-Note: If you set the maximum frame count to 0, `runtime.stop()` will hang forever. In order to terminate acquisition in this case, you need to call `runtime.abort()` instead, which will stop acquisition immediately. You can also use `runtime.abort()` if you set the maximum frame count to some nonzero value but you want to terminate acquisition before you reach that maximum frame count.
-
 
 ## Class `SampleRateHz`
 
