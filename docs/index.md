@@ -1,17 +1,18 @@
-# Welcome to MkDocs
+# Acquire imaging documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+acquire-python is a python package that provides a multi-camera video streaming
+library focusing on performant microscopy.
 
-## Commands
+```{note}
+This is an early stage project. If you find it interesting please reach out!
+```
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Support for:
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+* Up to two independent video streams
+* Camera support:
+    * Hamamatsu Orca Fusion BT (C15440-20UP) (windows only)
+    * Vieworks VC-151MX-M6H00
+* Streaming file format support:
+    * Tiff
+    * Zarr v2
