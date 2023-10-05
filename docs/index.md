@@ -1,4 +1,4 @@
-# Acquire imaging documentation
+# Acquire project
 
 acquire-python is a python package that provides a multi-camera video streaming
 library focusing on performant microscopy.

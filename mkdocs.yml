@@ -2,3 +2,16 @@ site_name: Acquire imaging documentation
 
 theme:
   name: material
+  features:
+    - navigation.tabs
+  custom_dir: overrides
+
+extra_css:
+  - stylesheets/custom.css
+
+nav:
+  - Home: index.md
+  - Get Started: get_started.md
+  - API Reference: api_reference.md
+  - Tutorials: tutorials.md
+  - For contributors: for_contributors.md
