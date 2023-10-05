@@ -1,9 +1,11 @@
 site_name: Acquire imaging documentation
+repo_url: https://github.com/acquire-project
 
 theme:
   name: material
   features:
     - navigation.tabs
+    - navigation.footer
   custom_dir: overrides
 
 extra_css:
@@ -15,3 +17,8 @@ nav:
   - API Reference: api_reference.md
   - Tutorials: tutorials.md
   - For contributors: for_contributors.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://acquire-project.zulipchat.com
