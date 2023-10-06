@@ -29,7 +29,7 @@ $ . ./venv/bin/activate # or on Windows: .\venv\Scripts\Activate.bat or .\venv\S
 (venv) $ python -m pip install acquire-imaging
 ```
 
-Once you have Acquire installed, simply as call `import acquire` in your script, notebook, or module to start utilizing the package.
+Once you have Acquire installed, simply call `import acquire` in your script, notebook, or module to start utilizing the package.
 
 ```python
 import acquire
