@@ -143,7 +143,7 @@ class DeviceIdentifier:
         """Checks if two DeviceIdentifier objects are not equal."""
 ```
 
-- `id`: A tuple containing two integers that serve as the device ID.
+- `id`: A tuple (driver_id, device_id) containing two U8 integers that serve to identify each driver and device uniquely for a given run.
 
 - `kind`: An instance of the `DeviceKind` class that represents the type or kind of the device.
 
@@ -281,13 +281,13 @@ class DeviceState:
         """Checks if two DeviceState objects are not equal."""
 ```
 
-- `Closed`: Class variable of `DeviceState` that species when a device is not ready for configuration. 
+- `Closed`: Enum-type class variable of `DeviceState` that species when a device is not ready for configuration. 
 
-- `AwaitingConfiguration`: Class variable of `DeviceState` that species when a device is ready for configuration.
+- `AwaitingConfiguration`: Enum-type class variable of `DeviceState` that species when a device is ready for configuration.
 
-- `Armed`: Class variable of `DeviceState` that species when a device ready to stream data.
+- `Armed`: Enum-type class variable of `DeviceState` that species when a device ready to stream data.
 
-- `Running`: Class variable of `DeviceState` that species when a device is streaming data.
+- `Running`: Enum-type class variable of `DeviceState` that species when a device is streaming data.
 
 ## Class `Direction`
 
@@ -320,9 +320,9 @@ class Direction:
         """Checks if two Direction objects are not equal."""
 ```
 
-- `Backward`: Class variable of `Direction` that species when data is streamed backward. 
+- `Backward`: Enum-type class variable of `Direction` that species when data is streamed backward. 
 
-- `Forward`: Class variable of `Direction` that species when data is streamed forward.
+- `Forward`: Enum-type class variable of `Direction` that species when data is streamed forward.
 
 ## Class `InputTriggers`
 
@@ -535,21 +535,21 @@ class SampleType:
         """Checks if two SampleType objects are not equal."""
 ```
 
-- `F32`: Class variable of `SampleType` that specifies values of 32-bit floating point type.
+- `F32`: Enum-type class variable of `SampleType` that specifies values of 32-bit floating point type.
 
-- `I16`: Class variable of `SampleType` that specifies values of 16-bit signed integer type.
+- `I16`: Enum-type class variable of `SampleType` that specifies values of 16-bit signed integer type.
 
-- `I8`: Class variable of `SampleType` that specifies values of 8-bit signed integer type.
+- `I8`: Enum-type class variable of `SampleType` that specifies values of 8-bit signed integer type.
 
-- `U16`: Class variable of `SampleType` that specifies values of 16-bit unsigned integer type.
+- `U16`: Enum-type class variable of `SampleType` that specifies values of 16-bit unsigned integer type.
 
-- `U8`: Class variable of `SampleType` that specifies values of 8-bit unsigned integer type.
+- `U8`: Enum-type class variable of `SampleType` that specifies values of 8-bit unsigned integer type.
 
-- `U10`: Class variable of `SampleType` that specifies values of 10-bit unsigned integer type.
+- `U10`: Enum-type class variable of `SampleType` that specifies values of 10-bit unsigned integer type.
 
-- `U12`: Class variable of `SampleType` that specifies values of 12-bit unsigned integer type.
+- `U12`: Enum-type class variable of `SampleType` that specifies values of 12-bit unsigned integer type.
 
-- `U14`: Class variable of `SampleType` that specifies values of 14-bit unsigned integer type.
+- `U14`: Enum-type class variable of `SampleType` that specifies values of 14-bit unsigned integer type.
 
 ## Class `SignalIOKind`
 
@@ -582,9 +582,9 @@ class SignalIOKind:
         """Checks if two SignalIOKind objects are not equal."""
 ```
 
-- `Input`: Class variable of `SignalIOKind` that specifies signal coming in to the device.
+- `Input`: Enum-type class variable of `SignalIOKind` that specifies signal coming in to the device.
 
-- `Output`: Class variable of `SignalIOKind` that specifies signal sent out of the device.
+- `Output`: Enum-type class variable of `SignalIOKind` that specifies signal sent out of the device.
 
 ## Class `SignalType`
 
@@ -617,9 +617,9 @@ class SignalType:
         """Checks if two SignalType objects are not equal."""
 ```
 
-- `Analog`: Class variable of `SignalType` that specifies a signal is analog.
+- `Analog`: Enum-type class variable of `SignalType` that specifies a signal is analog.
 
-- `Input`: Class variable of `SignalType` that specifies signal coming in to the device.
+- `Input`: Enum-type class variable of `SignalType` that specifies signal coming in to the device.
 
 ## Class `Storage`
 
@@ -753,11 +753,11 @@ class TriggerEdge:
         """Checks if two TriggerEdge objects are not equal."""
 ```
 
-- `Falling`: Class variable of `TriggerEdge` that defines the falling edge of the trigger. 
+- `Falling`: Enum-type class variable of `TriggerEdge` that defines the falling edge of the trigger. 
 
-- `NotApplicable`: Class variable of `TriggerEdge` that defines if a trigger does not have a rising or falling edge.
+- `NotApplicable`: Enum-type class variable of `TriggerEdge` that defines if a trigger does not have a rising or falling edge.
 
-- `Rising`: Class variable of `TriggerEdge` that defines the rising edge of the trigger.
+- `Rising`: Enum-type class variable of `TriggerEdge` that defines the rising edge of the trigger.
 
 ## Class `VideoFrame` 
 
