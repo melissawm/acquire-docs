@@ -175,7 +175,7 @@ config.video[1].storage.settings.bytes_per_chunk = 64 * 2**20  # 64 MiB chunk si
 Finally, let's specify how many frames to generate for each camera before stopping our simulated acquisition.
 We also need to register our configuration with the runtime.
 
-If you want to let the runtime just keep acquiring forever, you can set `max_frame_count` to 0.
+If you want to let the runtime just keep acquiring effectively forever, you can set `max_frame_count` to `2**64 - 1`.
 
 ```python
 config.video[0].max_frame_count = 100
