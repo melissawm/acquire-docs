@@ -169,7 +169,7 @@ config.video[1].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Zarr
 config.video[1].storage.settings.filename = "output2.zarr"
 
 # where applicable, how large should a chunk file get before opening the next chunk file
-config.video[1].storage.settings.bytes_per_chunk = 64 * 2**20  # 64 MiB chunk sizes
+config.video[1].storage.settings.chunking.max_bytes_per_chunk = 64 * 2**20  # 64 MiB chunk sizes
 ```
 
 Finally, let's specify how many frames to generate for each camera before stopping our simulated acquisition.
