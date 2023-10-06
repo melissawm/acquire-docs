@@ -85,7 +85,7 @@ for device in dm.devices():
     print(device)
 ```
 The **runtime** is the main entry point in Acquire.
-Through the runtime, you configure your devices, start acquisition, check acquisition status, and terminate acquisition.
+Through the runtime, you configure your devices, start acquisition, check acquisition status, inspect data as it streams from your cameras, and terminate acquisition.
 
 Let's configure our devices now.
 To do this, we'll get a copy of the current runtime configuration.
