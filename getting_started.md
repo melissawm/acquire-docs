@@ -158,7 +158,7 @@ config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Zarr
 config.video[0].storage.settings.filename = "output1.zarr"
 
 # where applicable, how large should a chunk file get before opening the next chunk file
-config.video[0].storage.settings.bytes_per_chunk = 32 * 2**20  # 32 MiB chunk sizes
+config.video[0].storage.settings.chunking.max_bytes_per_chunk = 32 * 2**20  # 32 MiB chunk sizes
 ```
 
 
