@@ -99,17 +99,7 @@ Streams are configured independently, so when you get a copy of the runtime conf
 config = runtime.get_configuration()
 ```
 
-you configure the first video stream by setting properties on `config.video[0]` and the second video stream with `config.video[1]`.
-
-For this demonstration we'll just use the first video stream.
-
-
-```python
-config = runtime.get_configuration()
-```
-
-First we'll configure each camera, or source device.
-We'll be using simulated cameras, one generating a radial sine pattern and one generating a random pattern.
+Configure the first video stream by setting properties on `config.video[0]` and the second video stream with `config.video[1]`. We'll be using simulated cameras, one generating a radial sine pattern and one generating a random pattern.
 
 
 ```python
@@ -178,8 +168,8 @@ We also need to register our configuration with the runtime.
 If you want to let the runtime just keep acquiring effectively forever, you can set `max_frame_count` to `2**64 - 1`.
 
 ```python
-config.video[0].max_frame_count = 100
-config.video[1].max_frame_count = 150
+config.video[0].max_frame_count = 100 # collect 100 frames
+config.video[1].max_frame_count = 150 # collect 150 frames
 
 config = runtime.set_configuration(config)
 ```
