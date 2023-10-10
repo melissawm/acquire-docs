@@ -137,7 +137,7 @@ config.video[1].camera.settings.shape = (1280, 720)
 ```
 
 Now we'll configure each output, or sink device.
-For both simulaed cameras, we'll be writing to Zarr, a format which supports chunked arrays.
+For both simulated cameras, we'll be writing to Zarr, a format which supports chunked arrays.
 
 
 ```python
