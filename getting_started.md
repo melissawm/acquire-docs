@@ -205,7 +205,7 @@ runtime.get_state()
 ```
 
 Finally, once we're done acquiring, we call `runtime.stop()`.
-This method will wait until you've reached the maximum number of frames specified in `config.video[0].max_frame_count`.
+This method will wait until you've reached the number of frames specified in `config.video[0].max_frame_count` or `config.video[1].max_frame_count`, whichever is larger.
 
 ```python
 runtime.stop()
