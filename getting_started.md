@@ -176,7 +176,7 @@ config = runtime.set_configuration(config)
 ---
 **NOTE**
 
-If you are using a Jupyter notebook for this tutorial, clear output from previous runs with:
+If you run this tutorial multiple times, you can clear output from previous runs with:
 
 ```python
 import os
