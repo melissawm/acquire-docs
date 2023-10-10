@@ -102,7 +102,7 @@ config = runtime.get_configuration()
 Video streams are configured independently. Configure the first video stream by setting properties on `config.video[0]` and the second video stream with `config.video[1]`. We'll be using simulated cameras, one generating a radial sine pattern and one generating a random pattern.
 
 ```python
-config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simulated: radial sine")
+config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simulated: radial sin")
 
 # how many adjacent pixels in each direction to combine by averaging; here, 1 means not to combine
 config.video[0].camera.settings.binning = 1
