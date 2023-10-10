@@ -105,6 +105,7 @@ python -m build
 
 This package depends on a submodule ([acquire-video-runtime](https://github.com/acquire-project/acquire-video-runtime))
 and binaries from the following Acquire drivers:
+
 - [acquire-driver-common](https://github.com/acquire-project/acquire-driver-common)
 - [acquire-driver-hdcam](https://github.com/acquire-project/acquire-driver-hdcam)
 - [acquire-driver-egrabber](https://github.com/acquire-project/acquire-driver-egrabber)
