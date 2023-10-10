@@ -93,24 +93,23 @@ We can update the configuration with identifiers from the the runtime's **device
 
 Acquire supports up to two video streams.
 These streams consist of a **source** (i.e., a camera), optionally a **filter**, and a **sink** (an output, like a Zarr dataset or a Tiff file).
-Streams are configured independently, so when you get a copy of the runtime configuration, e.g.,
+Before configuring the streams, grab the current configuration of the `Runtime` object with:
 
 ```python
 config = runtime.get_configuration()
 ```
 
-Configure the first video stream by setting properties on `config.video[0]` and the second video stream with `config.video[1]`. We'll be using simulated cameras, one generating a radial sine pattern and one generating a random pattern.
-
+Video streams are configured independently. Configure the first video stream by setting properties on `config.video[0]` and the second video stream with `config.video[1]`. We'll be using simulated cameras, one generating a radial sine pattern and one generating a random pattern.
 
 ```python
-config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simulated: radial sin")
+config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simulated: radial sine")
 
 # how many adjacent pixels in each direction to combine by averaging; here, 1 means not to combine
 config.video[0].camera.settings.binning = 1
 
 # how long (in microseconds) your camera should collect light from the sample; for simulated cameras,
 # this is just a waiting period before generating the next frame
-config.video[0].camera.settings.exposure_time_us = 5e4  # 30 ms
+config.video[0].camera.settings.exposure_time_us = 5e4  # 50 ms
 
 # the data type representing each pixel; here we choose unsigned 8-bit integer
 config.video[0].camera.settings.pixel_type = acquire.SampleType.U8
