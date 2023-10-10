@@ -71,7 +71,7 @@ class CameraProperties:
 
 - `line_interval_us`: The time to scan one line in microseconds in a rolling shutter camera.
 
-- `binning`: How many adjacent pixels in each direction to combine by averaging. For example, if `binning` is set to 2, a 2x2 sqaure of pixels will be combined by averaging. If `binning` is set to 1, no pixels will be combined.
+- `binning`: How many adjacent pixels in each direction to combine by averaging. For example, if `binning` is set to 2, a 2x2 square of pixels will be combined by averaging. If `binning` is set to 1, no pixels will be combined.
 
 - `pixel_type`: An instance of the `SampleType` class which specifies the numerical data type, for example u16, a 16-bit unsigned integer type.
 
