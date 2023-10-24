@@ -17,8 +17,3 @@ nav:
   - API Reference: api_reference.md
   - Tutorials: tutorials.md
   - For contributors: for_contributors.md
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://acquire-project.zulipchat.com
