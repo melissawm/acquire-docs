@@ -188,6 +188,7 @@ if config.video[0].storage.settings.filename in os.listdir("."):
 if config.video[1].storage.settings.filename in os.listdir("."):
     shutil.rmtree(config.video[1].storage.settings.filename)
 ```
+
 ---
 ## Acquire Data
 

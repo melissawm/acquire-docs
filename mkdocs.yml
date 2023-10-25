@@ -6,6 +6,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.footer
+    - content.code.copy
   custom_dir: overrides
 
 extra_css:
@@ -22,3 +23,12 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://acquire-project.zulipchat.com
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences

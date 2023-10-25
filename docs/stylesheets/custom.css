@@ -39,3 +39,7 @@
     background-color: black;
     color: white;
 }
+
+.md-typeset pre>code:hover {
+    scrollbar-color: var(--md-accent-fg-color) #0000;
+}
