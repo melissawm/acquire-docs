@@ -39,3 +39,7 @@
     background-color: black;
     color: white;
 }
+
+.md-footer__title:hover {
+    color: var(--md-accent-fg-color);
+}
