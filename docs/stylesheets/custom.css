@@ -1,3 +1,7 @@
+html {
+    --md-primary-fg-color: black !important;
+}
+
 .md-header {
     background-color: black;
 }
@@ -38,4 +42,25 @@
 .md-footer-meta {
     background-color: black;
     color: white;
+}
+
+.md-nav--primary .md-nav__title .md-logo {
+display: none;
+}
+
+.md-nav--primary .md-nav__title {
+    height: 3rem;
+    padding-top: 0.3rem;
+    padding-left: 2rem;
+}
+
+.md-nav--primary .md-nav__title .md-nav__icon::after {
+    margin-top: 0.3rem;
+}
+
+
+@media screen and (max-width: 800px) {
+    .md-nav__source {
+        display: none;
+    }
 }
