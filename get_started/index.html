@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6a10b989.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
       
       
 
@@ -405,6 +405,21 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#import-os-import-shutil-if-configvideo0storagesettingsfilename-in-oslistdir-shutilrmtreeconfigvideo0storagesettingsfilename-if-configvideo1storagesettingsfilename-in-oslistdir-shutilrmtreeconfigvideo1storagesettingsfilename" class="md-nav__link">
+    import os
+import shutil
+
+if config.video[0].storage.settings.filename in os.listdir(&quot;.&quot;):
+    shutil.rmtree(config.video[0].storage.settings.filename)
+
+if config.video[1].storage.settings.filename in os.listdir(&quot;.&quot;):
+    shutil.rmtree(config.video[1].storage.settings.filename)
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#acquire-data" class="md-nav__link">
     Acquire Data
   </a>
@@ -545,6 +560,21 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#import-os-import-shutil-if-configvideo0storagesettingsfilename-in-oslistdir-shutilrmtreeconfigvideo0storagesettingsfilename-if-configvideo1storagesettingsfilename-in-oslistdir-shutilrmtreeconfigvideo1storagesettingsfilename" class="md-nav__link">
+    import os
+import shutil
+
+if config.video[0].storage.settings.filename in os.listdir(&quot;.&quot;):
+    shutil.rmtree(config.video[0].storage.settings.filename)
+
+if config.video[1].storage.settings.filename in os.listdir(&quot;.&quot;):
+    shutil.rmtree(config.video[1].storage.settings.filename)
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#acquire-data" class="md-nav__link">
     Acquire Data
   </a>
@@ -588,22 +618,22 @@
 <p>This tutorial covers Acquire installation and shows an example of using Acquire with its provided simulated cameras to demonstrate the acquisition process. </p>
 <h2 id="installation">Installation</h2>
 <p>To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:</p>
-<pre><code>python -m pip install acquire-imaging
-</code></pre>
+<div class="highlight"><pre><span></span><code>python -m pip install acquire-imaging
+</code></pre></div>
 <p>You will probably want to have a fresh conda environment or virtualenv.
 For example, with conda:</p>
-<pre><code>conda create -n acquire python=3.10 # follow the prompts and proceed with the defaults
+<div class="highlight"><pre><span></span><code>conda create -n acquire python=3.10 # follow the prompts and proceed with the defaults
 conda activate acquire
 python -m pip install acquire-imaging
-</code></pre>
+</code></pre></div>
 <p>or with virtualenv:</p>
-<pre><code class="language-shell">$ python -m venv venv
-$ . ./venv/bin/activate # or on Windows: .\venv\Scripts\Activate.bat or .\venv\Scripts\Activate.ps1
-(venv) $ python -m pip install acquire-imaging
-</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+$<span class="w"> </span>.<span class="w"> </span>./venv/bin/activate<span class="w"> </span><span class="c1"># or on Windows: .\venv\Scripts\Activate.bat or .\venv\Scripts\Activate.ps1</span>
+<span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>acquire-imaging
+</code></pre></div>
 <p>Once you have Acquire installed, simply call <code>import acquire</code> in your script, notebook, or module to start utilizing the package.</p>
-<pre><code class="language-python">import acquire
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">acquire</span>
+</code></pre></div>
 <h2 id="supported-cameras-and-file-formats">Supported Cameras and File Formats</h2>
 <p>Acquire supports the following cameras (currently only on Windows):</p>
 <ul>
@@ -619,28 +649,28 @@ $ . ./venv/bin/activate # or on Windows: .\venv\Scripts\Activate.bat or .\venv\S
 </ul>
 <p>For testing and demonstration purposes, Acquire provides a few simulated cameras, as well as raw and trash output devices.
 To see all the devices that Acquire supports, you can run the following script:</p>
-<pre><code class="language-python">import acquire
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">acquire</span>
 
-for device in acquire.Runtime().device_manager().devices():
-    print(device)
-</code></pre>
+<span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">devices</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="tutorial-prerequisites">Tutorial Prerequisites</h2>
 <p>We will be writing to and reading from the <a href="https://zarr.readthedocs.io/en/stable/">Zarr format</a>, using the <a href="https://www.dask.org/">Dask library</a> to load and inspect the data, and visualizing the data using <a href="https://napari.org/stable/">napari</a>.</p>
 <p>You can install these prerequisites with:</p>
-<pre><code>python -m pip install dask &quot;napari[all]&quot; zarr
-</code></pre>
+<div class="highlight"><pre><span></span><code>python -m pip install dask &quot;napari[all]&quot; zarr
+</code></pre></div>
 <h2 id="setup-for-acquisition">Setup for Acquisition</h2>
 <p>We will use one of Acquire's simulated cameras to generate data for us and use Zarr for our output file format.</p>
 <p>Let's set up our runtime and device manager, then list the currently supported devices.</p>
-<pre><code class="language-python">import acquire
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">acquire</span>
 
-runtime = acquire.Runtime()
-dm = runtime.device_manager()
+<span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+<span class="n">dm</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span>
 
-for device in dm.devices():
-    print(device)
-</code></pre>
-<p>The <strong>runtime</strong> is the main entry point in Acquire.
+<span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">dm</span><span class="o">.</span><span class="n">devices</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</code></pre></div>
+The <strong>runtime</strong> is the main entry point in Acquire.
 Through the runtime, you configure your devices, start acquisition, check acquisition status, inspect data as it streams from your cameras, and terminate acquisition.</p>
 <p>Let's configure our devices now.
 To do this, we'll get a copy of the current runtime configuration.
@@ -648,105 +678,104 @@ We can update the configuration with identifiers from the the runtime's <strong>
 <p>Acquire supports up to two video streams.
 These streams consist of a <strong>source</strong> (i.e., a camera), optionally a <strong>filter</strong>, and a <strong>sink</strong> (an output, like a Zarr dataset or a Tiff file).
 Before configuring the streams, grab the current configuration of the <code>Runtime</code> object with:</p>
-<pre><code class="language-python">config = runtime.get_configuration()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
+</code></pre></div>
 <p>Video streams are configured independently. Configure the first video stream by setting properties on <code>config.video[0]</code> and the second video stream with <code>config.video[1]</code>. We'll be using simulated cameras, one generating a radial sine pattern and one generating a random pattern.</p>
-<pre><code class="language-python">config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, &quot;simulated: radial sin&quot;)
+<div class="highlight"><pre><span></span><code><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;simulated: radial sin&quot;</span><span class="p">)</span>
 
-# how many adjacent pixels in each direction to combine by averaging; here, 1 means not to combine
-config.video[0].camera.settings.binning = 1
+<span class="c1"># how many adjacent pixels in each direction to combine by averaging; here, 1 means not to combine</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">binning</span> <span class="o">=</span> <span class="mi">1</span>
 
-# how long (in microseconds) your camera should collect light from the sample; for simulated cameras,
-# this is just a waiting period before generating the next frame
-config.video[0].camera.settings.exposure_time_us = 5e4  # 50 ms
+<span class="c1"># how long (in microseconds) your camera should collect light from the sample; for simulated cameras,</span>
+<span class="c1"># this is just a waiting period before generating the next frame</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">exposure_time_us</span> <span class="o">=</span> <span class="mf">5e4</span>  <span class="c1"># 50 ms</span>
 
-# the data type representing each pixel; here we choose unsigned 8-bit integer
-config.video[0].camera.settings.pixel_type = acquire.SampleType.U8
+<span class="c1"># the data type representing each pixel; here we choose unsigned 8-bit integer</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">pixel_type</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">SampleType</span><span class="o">.</span><span class="n">U8</span>
 
-# the shape, in pixels, of the image; width first, then height
-config.video[0].camera.settings.shape = (1024, 768)
-</code></pre>
-<pre><code class="language-python">config.video[1].camera.identifier = dm.select(acquire.DeviceKind.Camera, &quot;simulated: uniform random&quot;)
+<span class="c1"># the shape, in pixels, of the image; width first, then height</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;simulated: uniform random&quot;</span><span class="p">)</span>
 
-# how many adjacent pixels in each direction to combine by averaging; here, 1 means not to combine
-config.video[1].camera.settings.binning = 1
+<span class="c1"># how many adjacent pixels in each direction to combine by averaging; here, 1 means not to combine</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">binning</span> <span class="o">=</span> <span class="mi">1</span>
 
-# how long (in microseconds) your camera should collect light from the sample; for simulated cameras,
-# this is just a waiting period before generating the next frame
-config.video[1].camera.settings.exposure_time_us = 1e4  # 10 ms
+<span class="c1"># how long (in microseconds) your camera should collect light from the sample; for simulated cameras,</span>
+<span class="c1"># this is just a waiting period before generating the next frame</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">exposure_time_us</span> <span class="o">=</span> <span class="mf">1e4</span>  <span class="c1"># 10 ms</span>
 
-# the data type representing each pixel; here we choose unsigned 8-bit integer
-config.video[1].camera.settings.pixel_type = acquire.SampleType.U8
+<span class="c1"># the data type representing each pixel; here we choose unsigned 8-bit integer</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">pixel_type</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">SampleType</span><span class="o">.</span><span class="n">U8</span>
 
-# the shape, in pixels, of the image; width first, then height
-config.video[1].camera.settings.shape = (1280, 720)
-</code></pre>
+<span class="c1"># the shape, in pixels, of the image; width first, then height</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">)</span>
+</code></pre></div>
 <p>Now we'll configure each output, or sink device.
 For both simulated cameras, we'll be writing to Zarr, a format which supports chunked arrays.</p>
-<pre><code class="language-python">config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, &quot;Zarr&quot;)
+<div class="highlight"><pre><span></span><code><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;Zarr&quot;</span><span class="p">)</span>
 
-# what file or directory to write the data to
-config.video[0].storage.settings.filename = &quot;output1.zarr&quot;
+<span class="c1"># what file or directory to write the data to</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;output1.zarr&quot;</span>
 
-# where applicable, how large should a chunk file get before opening the next chunk file
-config.video[0].storage.settings.chunking.max_bytes_per_chunk = 32 * 2**20  # 32 MiB chunk sizes
-</code></pre>
-<pre><code class="language-python">config.video[1].storage.identifier = dm.select(acquire.DeviceKind.Storage, &quot;Zarr&quot;)
+<span class="c1"># where applicable, how large should a chunk file get before opening the next chunk file</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">chunking</span><span class="o">.</span><span class="n">max_bytes_per_chunk</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mi">20</span>  <span class="c1"># 32 MiB chunk sizes</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;Zarr&quot;</span><span class="p">)</span>
 
-# what file or directory to write the data to
-config.video[1].storage.settings.filename = &quot;output2.zarr&quot;
+<span class="c1"># what file or directory to write the data to</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;output2.zarr&quot;</span>
 
-# where applicable, how large should a chunk file get before opening the next chunk file
-config.video[1].storage.settings.chunking.max_bytes_per_chunk = 64 * 2**20  # 64 MiB chunk sizes
-</code></pre>
+<span class="c1"># where applicable, how large should a chunk file get before opening the next chunk file</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">chunking</span><span class="o">.</span><span class="n">max_bytes_per_chunk</span> <span class="o">=</span> <span class="mi">64</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mi">20</span>  <span class="c1"># 64 MiB chunk sizes</span>
+</code></pre></div>
 <p>Finally, let's specify how many frames to generate for each camera before stopping our simulated acquisition.
 We also need to register our configuration with the runtime.</p>
 <p>If you want to let the runtime just keep acquiring effectively forever, you can set <code>max_frame_count</code> to <code>2**64 - 1</code>.</p>
-<pre><code class="language-python">config.video[0].max_frame_count = 100 # collect 100 frames
-config.video[1].max_frame_count = 150 # collect 150 frames
+<div class="highlight"><pre><span></span><code><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># collect 100 frames</span>
+<span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">150</span> <span class="c1"># collect 150 frames</span>
 
-config = runtime.set_configuration(config)
-</code></pre>
+<span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <p><strong>NOTE</strong></p>
 <p>If you run this tutorial multiple times, you can clear output from previous runs with:</p>
-<pre><code class="language-python">import os
-import shutil
+<h2 id="import-os-import-shutil-if-configvideo0storagesettingsfilename-in-oslistdir-shutilrmtreeconfigvideo0storagesettingsfilename-if-configvideo1storagesettingsfilename-in-oslistdir-shutilrmtreeconfigvideo1storagesettingsfilename"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
 
-if config.video[0].storage.settings.filename in os.listdir(&quot;.&quot;):
-    shutil.rmtree(config.video[0].storage.settings.filename)
+<span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
 
-if config.video[1].storage.settings.filename in os.listdir(&quot;.&quot;):
-    shutil.rmtree(config.video[1].storage.settings.filename)
-</code></pre>
-<hr />
+<span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+</code></pre></div></h2>
 <h2 id="acquire-data">Acquire Data</h2>
 <p>To start aquiring data:</p>
-<pre><code class="language-python">runtime.start()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre></div>
 <p>Acquisition happens in a separate thread, so at any point we can check on the status by calling <code>runtime.get_state()</code>.</p>
-<pre><code class="language-python">runtime.get_state()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">runtime</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span>
+</code></pre></div>
 <p>Finally, once we're done acquiring, we call <code>runtime.stop()</code>.
 This method will wait until you've reached the number of frames specified in <code>config.video[0].max_frame_count</code> or <code>config.video[1].max_frame_count</code>, whichever is larger.</p>
-<pre><code class="language-python">runtime.stop()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</code></pre></div>
 <h2 id="visualizing-the-data-with-napari">Visualizing the Data with napari</h2>
 <p>Let's take a look at what we've written.
 We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we'll use napari to view it.</p>
-<pre><code class="language-python">import dask.array as da
-import napari
-</code></pre>
-<pre><code class="language-python">data1 = da.from_zarr(config.video[0].storage.settings.filename, component=&quot;0&quot;)
-data1
-</code></pre>
-<pre><code class="language-python">data2 = da.from_zarr(config.video[1].storage.settings.filename, component=&quot;0&quot;)
-data2
-</code></pre>
-<pre><code class="language-python">viewer1 = napari.view_image(data1)
-</code></pre>
-<pre><code class="language-python">viewer2 = napari.view_image(data2)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+<span class="kn">import</span> <span class="nn">napari</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">data1</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">from_zarr</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+<span class="n">data1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">data2</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">from_zarr</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+<span class="n">data2</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">viewer1</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">view_image</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">viewer2</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">view_image</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="conclusion">Conclusion</h2>
 <p>For more examples of using Acquire, check out our <a href="">tutorials page</a>. #ADD LINK</p>
 

@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6a10b989.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
       
       
 
@@ -479,64 +479,64 @@
 <p>This tutorial shows an example of setting up triggered acquisition of a finite number of frames with one of Acquire's supported devices and saving the data to a Zarr file.</p>
 <h2 id="initialize-acquisition">Initialize Acquisition</h2>
 <p>To start, we'll import <code>Acquire</code> and create an acquisition <code>Runtime</code> object, which initializes the driver adaptors needed for the supported cameras.</p>
-<pre><code class="language-python">import acquire
-runtime = acquire.Runtime()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">acquire</span>
+<span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+</code></pre></div>
 <h2 id="configure-camera">Configure Camera</h2>
 <p>All camera settings can be captured by an instance of the <code>Properties</code> class, which will be associated with a given camera acquisition. The settings can be stored in a dictionary (e.g: <code>Properties.dict()</code>). These settings can be saved to a JSON file to be subsequently loaded, (e.g. <code>Properties(**json.load('acquire.json'))</code> ), using the <a href="https://docs.python.org/3/library/json.html#">json library</a>.</p>
-<pre><code class="language-python">props = runtime.get_configuration()
+<div class="highlight"><pre><span></span><code><span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
 
-import json
-with open(&quot;/path/to/acquire.json&quot;, &quot;w&quot;) as f:
-    json.dump(props.dict(), f)
-</code></pre>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/acquire.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">props</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div>
 <p>The current configuration settings can be checked and assigned to an instance of the <code>Properties</code> class with:</p>
-<pre><code class="language-python">props = runtime.get_configuration() 
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span> 
+</code></pre></div>
 <p>Since <code>Acquire</code> supports 2 video streams, each camera, or source, must be configured separately. In this example, we will only use 1 source for the acquisition, so we will only need to configure <code>props.video[0]</code>. To set the first video stream to <a href="https://www.hamamatsu.com/eu/en/product/cameras/cmos-cameras/C15440-20UP.html">Hamamatsu Orca Fusion BT (C15440-20UP)</a>, you can use the following with a regular expression to grab the Hamamatsu camera:</p>
-<pre><code class="language-python">props.video[0].camera.identifier = runtime.device_manager().select(acquire.DeviceKind.Camera, 'Hamamatsu C15440.*')
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s1">&#39;Hamamatsu C15440.*&#39;</span><span class="p">)</span>
+</code></pre></div>
 <p>Next we'll choose the settings for the Hamamatsu camera. The <code>CameraProperties</code> class describes the available settings, which include exposure time (in microseconds), binning, pixel data type (e.g. u16), and how many frames to acquire.</p>
 <p>Every property can be set using the following, but in this example, we will only change a few of the available settings.</p>
-<pre><code class="language-python">props.video[0].camera.settings.binning = 1 # no pixels will be combined
-props.video[0].camera.settings.shape = (1700, 512) # shape of the image to be acquired in pixels
-props.video[0].camera.settings.offset = (302, 896) # centers the image region of interest on the camera sensor
-props.video[0].camera.settings.pixel_type = acquire.SampleType.U16 # sets the pixel data type to a 16-bit unsigned integer
-props.video[0].max_frame_count = 10 # finite acquisition of 10 frames. Use 0 for infinite acquisition.
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">binning</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># no pixels will be combined</span>
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1700</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span> <span class="c1"># shape of the image to be acquired in pixels</span>
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="mi">302</span><span class="p">,</span> <span class="mi">896</span><span class="p">)</span> <span class="c1"># centers the image region of interest on the camera sensor</span>
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">pixel_type</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">SampleType</span><span class="o">.</span><span class="n">U16</span> <span class="c1"># sets the pixel data type to a 16-bit unsigned integer</span>
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># finite acquisition of 10 frames. Use 0 for infinite acquisition.</span>
+</code></pre></div>
 <p>Triggers can also be set in the <code>CameraProperties</code> object. The parameters can be stored in a dictionary (e.g: <code>Trigger.dict()</code>). You can construct a <code>Trigger</code> from a JSON file (e.g. <code>acquire.Trigger(**json.loads(open('trigger.json')))</code> ), using the <a href="https://docs.python.org/3/library/json.html#">json library</a>. </p>
-<pre><code class="language-python">trig = acquire.Trigger()
+<div class="highlight"><pre><span></span><code><span class="n">trig</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Trigger</span><span class="p">()</span>
 
-import json
-with open(&quot;/path/to/trigger.json&quot;, &quot;w&quot;) as f:
-    json.dump(trig.dict(), f)
-</code></pre>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/trigger.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">trig</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div>
 <p>In this example, we'll only utilize output triggers. By default, the camera's internal triggering is used, but you may explicitly disable external input triggers using:</p>
-<pre><code class="language-python">props.video[0].camera.settings.input_triggers = acquire.InputTriggers() # default: disabled
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">input_triggers</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">InputTriggers</span><span class="p">()</span> <span class="c1"># default: disabled</span>
+</code></pre></div>
 <p>Output triggers can be set to begin exposure, start a new frame, or wait before acquiring. We can enable an exposure trigger to start on the rising edge with:</p>
-<pre><code class="language-python">props.video[0].camera.settings.output_triggers.exposure = acquire.Trigger(
-    enable=True, line=1, edge=&quot;Rising&quot;
-)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">output_triggers</span><span class="o">.</span><span class="n">exposure</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Trigger</span><span class="p">(</span>
+    <span class="n">enable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s2">&quot;Rising&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
 <h2 id="select-storage">Select Storage</h2>
 <p><code>Storage</code> objects have identifiers which specify the file type (e.g. Zarr or tiff) and settings described by an instance of the <code>StorageProperties</code> class. We can set the file type to Zarr and set the file name to "out" with:</p>
-<pre><code class="language-python">props.video[0].storage.identifier = runtime.device_manager().select(acquire.DeviceKind.Storage,'zarr') 
-props.video[0].storage.settings.filename=&quot;out.zarr&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span><span class="s1">&#39;zarr&#39;</span><span class="p">)</span> 
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;out.zarr&quot;</span>
+</code></pre></div>
 <h2 id="save-configuration">Save configuration</h2>
 <p>None of these settings will be updated in the <code>Properties</code> object until you call the <code>set_configuration</code> method. This method reads what the current configuration settings are on the device.</p>
 <p>We'll set the configuration with:</p>
-<pre><code class="language-python">props = runtime.set_configuration(props)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+</code></pre></div>
 <p>You can optionally print out these settings using the <a href="https://rich.readthedocs.io/en/stable/introduction.html">Rich</a> python library to save for your records with:</p>
-<pre><code class="language-python">from rich.pretty import pprint
-pprint(props.dict())
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rich.pretty</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">props</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
+</code></pre></div>
 <h2 id="acquire-data">Acquire data</h2>
 <p>To begin acquisition:</p>
-<pre><code class="language-python">runtime.start()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre></div>
 <p>You can stop acquisition with <code>runtime.stop()</code> to stop after the specified number of frames is collected or <code>runtime.abort()</code> to immediately stop acquisition.</p>
 
 

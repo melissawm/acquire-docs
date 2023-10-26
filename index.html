@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.6a10b989.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.35e1ed30.min.css">
       
       
 
@@ -554,8 +554,10 @@
 <h1 id="acquire-project">Acquire project</h1>
 <p>acquire-python is a python package that provides a multi-camera video streaming
 library focusing on performant microscopy.</p>
-<pre><code>This is an early stage project. If you find it interesting please reach out!
-</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an early stage project. If you find it interesting please reach out!</p>
+</div>
 <p>Support for:</p>
 <ul>
 <li>Up to two independent video streams</li>
@@ -571,34 +573,34 @@ library focusing on performant microscopy.</p>
 </li>
 </ul>
 <h2 id="installation">Installation</h2>
-<pre><code class="language-bash">python -m pip install acquire-imaging
-</code></pre>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>acquire-imaging
+</code></pre></div>
 <h2 id="usage">Usage</h2>
 <p>See the tests for more examples.</p>
 <p>The provided <a href="https://github.com/napari/napari">napari</a> plugin is a good example of how to stream for visualization.</p>
 <h3 id="list-devices">List devices</h3>
-<pre><code class="language-python">import acquire
-print(acquire.Runtime().device_manager().devices())
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">acquire</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">devices</span><span class="p">())</span>
+</code></pre></div>
 <h3 id="finite-triggered-acquisition">Finite triggered acquisition</h3>
-<pre><code class="language-python">import acquire
-runtime = acquire.Runtime()
-dm = runtime.device_manager()
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">acquire</span>
+<span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+<span class="n">dm</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span>
 
-props = runtime.get_configuration()
-# select the first Hamamatsu camera
-props.video[0].camera.identifier = dm.select(DeviceKind.Camera, &quot;hamamatsu.*&quot;)
-# stream to zarr
-props.video[0].storage.identifier = dm.select(DeviceKind.Storage, &quot;zarr&quot;)
-props.video[0].storage.settings.filename = &quot;out.zarr&quot;
-props.video[0].camera.settings.shape = (2304, 2304)
-props.video[0].camera.settings.pixel_type = SampleType.U16
-props.video[0].max_frame_count = 100
-props = runtime.set_configuration(props)
+<span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
+<span class="c1"># select the first Hamamatsu camera</span>
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;hamamatsu.*&quot;</span><span class="p">)</span>
+<span class="c1"># stream to zarr</span>
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;zarr&quot;</span><span class="p">)</span>
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;out.zarr&quot;</span>
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2304</span><span class="p">,</span> <span class="mi">2304</span><span class="p">)</span>
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">pixel_type</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">U16</span>
+<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
 
-runtime.start()
-runtime.stop()  # wait for acquisition to complete
-</code></pre>
+<span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>  <span class="c1"># wait for acquisition to complete</span>
+</code></pre></div>
 <h1 id="development">Development</h1>
 <p>We welcome contributors. The following will help you get started building the
 code.</p>
@@ -617,21 +619,21 @@ code.</p>
   install llvm</code> or, on osx, via <a href="https://brew.sh/">brew</a> <code>brew install llvm</code>)</li>
 </ul>
 <p>It's strongly recommended you create a python environment for development</p>
-<pre><code class="language-bash">conda create --name acquire python=3.11
-conda activate acquire
-</code></pre>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>acquire<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>acquire
+</code></pre></div>
 <h2 id="build">Build</h2>
-<pre><code class="language-bash">conda activate acquire
-git submodule update --init --recursive
-pip install maturin
-maturin build -i python
-</code></pre>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>acquire
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+pip<span class="w"> </span>install<span class="w"> </span>maturin
+maturin<span class="w"> </span>build<span class="w"> </span>-i<span class="w"> </span>python
+</code></pre></div>
 <p><strong>Important</strong> When updating the 'acquire-video-runtime' (the c api), you need to manually trigger
 a rebuild by touching <code>wrapper.h</code>.</p>
-<pre><code class="language-bash">git submodule update # updates acquire-video-runtime
-touch wrapper.h # will trigger a rebuild
-python -m build
-</code></pre>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span><span class="c1"># updates acquire-video-runtime</span>
+touch<span class="w"> </span>wrapper.h<span class="w"> </span><span class="c1"># will trigger a rebuild</span>
+python<span class="w"> </span>-m<span class="w"> </span>build
+</code></pre></div>
 <p>This package depends on a submodule (<a href="https://github.com/acquire-project/acquire-video-runtime">acquire-video-runtime</a>)
 and binaries from the following Acquire drivers:</p>
 <ul>
@@ -643,24 +645,24 @@ and binaries from the following Acquire drivers:</p>
 </ul>
 <p>The build script will automatically try to fetch the binaries from GitHub releases.
 In order to configure which release of each driver to use, you can set the value in <code>drivers.json</code>:</p>
-<pre><code class="language-json">{
-  &quot;acquire-driver-common&quot;: &quot;0.1.0&quot;,
-  &quot;acquire-driver-hdcam&quot;: &quot;0.1.0&quot;,
-  &quot;acquire-driver-egrabber&quot;: &quot;0.1.0&quot;,
-  &quot;acquire-driver-zarr&quot;: &quot;0.1.0&quot;,
-  &quot;acquire-driver-spinnaker&quot;: &quot;0.1.0&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;acquire-driver-common&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;acquire-driver-hdcam&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;acquire-driver-egrabber&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;acquire-driver-zarr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;acquire-driver-spinnaker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>These values can be set to a specific version, or to <code>nightly</code> for nightly builds.</p>
 <h2 id="develop">Develop</h2>
-<pre><code class="language-bash">pip install -e &quot;.[testing]&quot;
-pytest -s --tb=short --log-cli-level=0
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[testing]&quot;</span>
+pytest<span class="w"> </span>-s<span class="w"> </span>--tb<span class="o">=</span>short<span class="w"> </span>--log-cli-level<span class="o">=</span><span class="m">0</span>
+</code></pre></div>
 <p>This project uses <a href="https://pre-commit.com/"><code>pre-commit</code></a> to run required
 checks as git hooks.</p>
-<pre><code class="language-bash">pip install pre-commit
-pre-commit install
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+pre-commit<span class="w"> </span>install
+</code></pre></div>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="maturin-cant-find-a-python-interpreter">Maturin can't find a python interpreter</h3>
 <p><code>Maturin</code> is a command line tool associated with

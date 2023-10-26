@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6a10b989.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
       
       
 
@@ -881,16 +881,16 @@
 <p>Information on the classes in <code>acquire-imaging</code> along with the attributes and methods associated with them.</p>
 <h2 id="class-availabledata">Class <code>AvailableData</code></h2>
 <p>The <code>AvailableData</code> class represents the collection of frames that have been captured since the last call to runtime.get_available_data(). <code>AvailableData</code> objects should be set to have a short lifetime, since these objects reserve space on the video queue and will eventually block camera acquisition to ensure no data is overwritten before it can be processed.</p>
-<pre><code class="language-python">class AvailableData:
-    def frames(self) -&gt; Iterator[VideoFrame]:
-        &quot;&quot;&quot;Returns an iterator over the video frames in the available data.&quot;&quot;&quot;
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">AvailableData</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">frames</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">VideoFrame</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an iterator over the video frames in the available data.&quot;&quot;&quot;</span>
 
-    def get_frame_count(self) -&gt; int:
-        &quot;&quot;&quot;Returns the total number of video frames in the available data.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="nf">get_frame_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the total number of video frames in the available data.&quot;&quot;&quot;</span>
 
-    def __iter__(self) -&gt; Iterator[VideoFrame]:
-        &quot;&quot;&quot;Returns an iterator over the video frames in the available data.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">VideoFrame</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an iterator over the video frames in the available data.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p>The <code>frames</code> method provides an iterator over these frames.</p>
@@ -904,16 +904,16 @@
 </ul>
 <h2 id="class-camera">Class <code>Camera</code></h2>
 <p>The <code>Camera</code> class is used to describe cameras or other video sources.</p>
-<pre><code class="language-python">class Camera:
-    identifier: Optional[DeviceIdentifier]
-    settings: CameraProperties
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Camera</span><span class="p">:</span>
+    <span class="n">identifier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+    <span class="n">settings</span><span class="p">:</span> <span class="n">CameraProperties</span>
 
-    def __init__(self, *args: None, **kwargs: Any) -&gt; None: ...
-    &quot;&quot;&quot;Initializes a Camera object with optional arguments.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a Camera object with optional arguments.&quot;&quot;&quot;</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the Camera attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the Camera attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>identifier</code>: An optional attribute which contains an instance of the <code>DeviceIdentifier</code> class that describes the camera, or video source, if that device is natively supported. Otherwise, it is of type <code>None</code>.</p>
@@ -927,23 +927,23 @@
 </ul>
 <h2 id="class-cameraproperties">Class <code>CameraProperties</code></h2>
 <p>The <code>CameraProperties</code> class is used to set the desired camera properties for acquisition.</p>
-<pre><code class="language-python">class CameraProperties:
-    exposure_time_us: float
-    line_interval_us: float
-    binning: float
-    pixel_type: SampleType
-    readout_direction: Direction
-    offset: Tuple[int, int]
-    shape: Tuple[int, int]
-    input_triggers: InputTriggers
-    output_triggers: OutputTriggers
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CameraProperties</span><span class="p">:</span>
+    <span class="n">exposure_time_us</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">line_interval_us</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">binning</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">pixel_type</span><span class="p">:</span> <span class="n">SampleType</span>
+    <span class="n">readout_direction</span><span class="p">:</span> <span class="n">Direction</span>
+    <span class="n">offset</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+    <span class="n">input_triggers</span><span class="p">:</span> <span class="n">InputTriggers</span>
+    <span class="n">output_triggers</span><span class="p">:</span> <span class="n">OutputTriggers</span>
 
-    def __init__(self, *args: None, **kwargs: Any) -&gt; None: ...
-    &quot;&quot;&quot;Initializes a CameraProperties object with optional arguments.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a CameraProperties object with optional arguments.&quot;&quot;&quot;</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the CameraProperties attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the CameraProperties attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>exposure_time_us</code>: How long in microseconds your camera should collect light from the sample. However, for simulated cameras, this is just a waiting period before generating the next frame.</p>
@@ -978,13 +978,13 @@
 </ul>
 <h2 id="class-chunkingproperties">Class <code>ChunkingProperties</code></h2>
 <p>The <code>ChunkingProperties</code> class represents properties related to data chunking for storage in a Zarr container.</p>
-<pre><code class="language-python">class ChunkingProperties:
-    max_bytes_per_chunk: int
-    tile: TileShape
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ChunkingProperties</span><span class="p">:</span>
+    <span class="n">max_bytes_per_chunk</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">tile</span><span class="p">:</span> <span class="n">TileShape</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the ChunkingProperties attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the ChunkingProperties attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>max_bytes_per_chunk</code>: The maximum number of bytes per data chunk.</p>
@@ -998,39 +998,39 @@
 </ul>
 <h2 id="class-deviceidentifier">Class <code>DeviceIdentifier</code></h2>
 <p>The <code>DeviceIdentifier</code> class represents an identifier for a device, such as a camera or video source.</p>
-<pre><code class="language-python">class DeviceIdentifier:
-    id: Tuple[int, int]
-    kind: DeviceKind
-    name: str
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DeviceIdentifier</span><span class="p">:</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+    <span class="n">kind</span><span class="p">:</span> <span class="n">DeviceKind</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
 
-    def __init__(self, *args: None, **kwargs: Any) -&gt; None: ...
-    &quot;&quot;&quot;Initializes a DeviceIdentifier object with optional arguments.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a DeviceIdentifier object with optional arguments.&quot;&quot;&quot;</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the DeviceIdentifier attributes.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the DeviceIdentifier attributes.&quot;&quot;&quot;</span>
 
-    @staticmethod
-    def none() -&gt; DeviceIdentifier: ...
-    &quot;&quot;&quot;Returns a &quot;None&quot; type DeviceIdentifier. Useful when a DeviceIdentifier is not needed.&quot;&quot;&quot;
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">none</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">DeviceIdentifier</span><span class="p">:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a &quot;None&quot; type DeviceIdentifier. Useful when a DeviceIdentifier is not needed.&quot;&quot;&quot;</span>
 
-    def __eq__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two DeviceIdentifier objects are equal.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two DeviceIdentifier objects are equal.&quot;&quot;&quot;</span>
 
-    def __ge__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceIdentifier is greater than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is greater than or equal to another.&quot;&quot;&quot;</span>
 
-    def __gt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceIdentifier is greater than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is greater than another.&quot;&quot;&quot;</span>
 
-    def __le__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceIdentifier is less than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is less than or equal to another.&quot;&quot;&quot;</span>
 
-    def __lt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceIdentifier is less than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is less than another.&quot;&quot;&quot;</span>
 
-    def __ne__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two DeviceIdentifier objects are not equal.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two DeviceIdentifier objects are not equal.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>id</code>: A tuple (driver_id, device_id) containing two U8 integers that serve to identify each driver and device uniquely for a given run.</p>
@@ -1047,37 +1047,37 @@
 </ul>
 <h2 id="class-devicekind">Class <code>DeviceKind</code></h2>
 <p>The <code>DeviceKind</code> class represents properties for supported devices, such as a camera or video source, in a given system.</p>
-<pre><code class="language-python">class DeviceKind:
-    Camera: ClassVar[DeviceKind] = DeviceKind.Camera
-    NONE: ClassVar[DeviceKind] = DeviceKind.NONE
-    Signals: ClassVar[DeviceKind] = DeviceKind.Signals
-    StageAxis: ClassVar[DeviceKind] = DeviceKind.StageAxis
-    Storage: ClassVar[DeviceKind] = DeviceKind.Storage
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DeviceKind</span><span class="p">:</span>
+    <span class="n">Camera</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span>
+    <span class="n">NONE</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceKind</span><span class="o">.</span><span class="n">NONE</span>
+    <span class="n">Signals</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceKind</span><span class="o">.</span><span class="n">Signals</span>
+    <span class="n">StageAxis</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceKind</span><span class="o">.</span><span class="n">StageAxis</span>
+    <span class="n">Storage</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span>
 
-    def __init__(self, *args: None, **kwargs: Any) -&gt; None:
-        &quot;&quot;&quot;Initializes the DeviceKind class.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initializes the DeviceKind class.&quot;&quot;&quot;</span>
 
-    def __eq__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two DeviceKind objects are equal.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two DeviceKind objects are equal.&quot;&quot;&quot;</span>
 
-    def __ge__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceKind is greater than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceKind is greater than or equal to another.&quot;&quot;&quot;</span>
 
-    def __gt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceKind is greater than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceKind is greater than another.&quot;&quot;&quot;</span>
 
-    def __int__(self) -&gt; int:
-        &quot;&quot;&quot;Converts the DeviceKind to an integer.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converts the DeviceKind to an integer.&quot;&quot;&quot;</span>
 
-    def __le__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceKind is less than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceKind is less than or equal to another.&quot;&quot;&quot;</span>
 
-    def __lt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceKind is less than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceKind is less than another.&quot;&quot;&quot;</span>
 
-    def __ne__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two DeviceKind objects are not equal.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two DeviceKind objects are not equal.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>Camera</code>: Enum-type class variable of <code>DeviceKind</code> that defines the cameras supported by the system. </p>
@@ -1097,44 +1097,44 @@
 </ul>
 <h2 id="class-devicemanager">Class <code>DeviceManager</code></h2>
 <p>The <code>DeviceManager</code> class manages selection of available devices in the system.</p>
-<pre><code class="language-python">class DeviceManager:
-    def devices(self) -&gt; List[DeviceIdentifier]:
-        &quot;&quot;&quot;Returns a list of all available device identifiers.&quot;&quot;&quot;
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DeviceManager</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">devices</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a list of all available device identifiers.&quot;&quot;&quot;</span>
 
-    @overload
-    def select(self, kind: DeviceKind) -&gt; Optional[DeviceIdentifier]:
-        &quot;&quot;&quot;Selects the first available device of `kind`.
+    <span class="nd">@overload</span>
+    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="n">DeviceKind</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Selects the first available device of `kind`.</span>
 
-        Args:
-            kind (DeviceKind): The type of device to select.
+<span class="sd">        Args:</span>
+<span class="sd">            kind (DeviceKind): The type of device to select.</span>
 
-        Returns:
-            Optional[DeviceIdentifier]: The identifier of the first available device of `kind`, or `None` if no such device is available.
-        &quot;&quot;&quot;
+<span class="sd">        Returns:</span>
+<span class="sd">            Optional[DeviceIdentifier]: The identifier of the first available device of `kind`, or `None` if no such device is available.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
 
-    @overload
-    def select(self, kind: DeviceKind, name: Optional[str]) -&gt; Optional[DeviceIdentifier]:
-        &quot;&quot;&quot;Selects a specified device.
+    <span class="nd">@overload</span>
+    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="n">DeviceKind</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Selects a specified device.</span>
 
-        Args:
-            kind (DeviceKind): The type of device to select.
-            name (Optional[str]): The name of the device to select.
+<span class="sd">        Args:</span>
+<span class="sd">            kind (DeviceKind): The type of device to select.</span>
+<span class="sd">            name (Optional[str]): The name of the device to select.</span>
 
-        Returns:
-            Optional[DeviceIdentifier]: The selected device identifier, or None if the specified device is not available.
-        &quot;&quot;&quot;
+<span class="sd">        Returns:</span>
+<span class="sd">            Optional[DeviceIdentifier]: The selected device identifier, or None if the specified device is not available.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
 
-    def select_one_of(self, kind: DeviceKind, names: List[str]) -&gt; Optional[DeviceIdentifier]:
-        &quot;&quot;&quot;Selects the first device in the list of devices that is of one of the specified kinds.
+    <span class="k">def</span> <span class="nf">select_one_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="n">DeviceKind</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Selects the first device in the list of devices that is of one of the specified kinds.</span>
 
-        Args:
-            kind (DeviceKind): The type of device to select.
-            names (List[str]): A list of device names to choose from.
+<span class="sd">        Args:</span>
+<span class="sd">            kind (DeviceKind): The type of device to select.</span>
+<span class="sd">            names (List[str]): A list of device names to choose from.</span>
 
-        Returns:
-            Optional[DeviceIdentifier]: The selected device identifier, or None if none of the specified devices are available.
-        &quot;&quot;&quot;
-</code></pre>
+<span class="sd">        Returns:</span>
+<span class="sd">            Optional[DeviceIdentifier]: The selected device identifier, or None if none of the specified devices are available.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p>Call <code>devices</code> to list all available devices. </p>
@@ -1148,33 +1148,33 @@
 </ul>
 <h2 id="class-devicestate">Class <code>DeviceState</code></h2>
 <p>The <code>DeviceState</code> class represents the acquisition status of a device.</p>
-<pre><code class="language-python">class DeviceState:
-    Closed: ClassVar[DeviceState] = DeviceState.Closed
-    AwaitingConfiguration: ClassVar[DeviceState] = DeviceState.AwaitingConfiguration
-    Armed: ClassVar[DeviceState] = DeviceState.Armed
-    Running: ClassVar[DeviceState] = DeviceState.Running
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DeviceState</span><span class="p">:</span>
+    <span class="n">Closed</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceState</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceState</span><span class="o">.</span><span class="n">Closed</span>
+    <span class="n">AwaitingConfiguration</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceState</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceState</span><span class="o">.</span><span class="n">AwaitingConfiguration</span>
+    <span class="n">Armed</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceState</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceState</span><span class="o">.</span><span class="n">Armed</span>
+    <span class="n">Running</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceState</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceState</span><span class="o">.</span><span class="n">Running</span>
 
-    def __eq__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two DeviceState objects are equal.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two DeviceState objects are equal.&quot;&quot;&quot;</span>
 
-    def __ge__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceState is greater than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceState is greater than or equal to another.&quot;&quot;&quot;</span>
 
-    def __gt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceState is greater than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceState is greater than another.&quot;&quot;&quot;</span>
 
-    def __int__(self) -&gt; int:
-        &quot;&quot;&quot;Converts the DeviceState to an integer.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converts the DeviceState to an integer.&quot;&quot;&quot;</span>
 
-    def __le__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceState is less than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceState is less than or equal to another.&quot;&quot;&quot;</span>
 
-    def __lt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this DeviceState is less than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceState is less than another.&quot;&quot;&quot;</span>
 
-    def __ne__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two DeviceState objects are not equal.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two DeviceState objects are not equal.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>Closed</code>: Enum-type class variable of <code>DeviceState</code> that species when a device is not ready for configuration. </p>
@@ -1191,31 +1191,31 @@
 </ul>
 <h2 id="class-direction">Class <code>Direction</code></h2>
 <p>The <code>Direction</code> class represents the direction that data is read for streaming.</p>
-<pre><code class="language-python">class Direction:
-    Backward: ClassVar[Direction] = Direction.Backward
-    Forward: ClassVar[Direction] = Direction.Forward
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Direction</span><span class="p">:</span>
+    <span class="n">Backward</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Direction</span><span class="p">]</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="n">Backward</span>
+    <span class="n">Forward</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Direction</span><span class="p">]</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="n">Forward</span>
 
-    def __eq__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two Direction objects are equal.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two Direction objects are equal.&quot;&quot;&quot;</span>
 
-    def __ge__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this Direction is greater than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this Direction is greater than or equal to another.&quot;&quot;&quot;</span>
 
-    def __gt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this Direction is greater than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this Direction is greater than another.&quot;&quot;&quot;</span>
 
-    def __int__(self) -&gt; int:
-        &quot;&quot;&quot;Converts the Direction to an integer.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converts the Direction to an integer.&quot;&quot;&quot;</span>
 
-    def __le__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this Direction is less than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this Direction is less than or equal to another.&quot;&quot;&quot;</span>
 
-    def __lt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this Direction is less than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this Direction is less than another.&quot;&quot;&quot;</span>
 
-    def __ne__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two Direction objects are not equal.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two Direction objects are not equal.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>Backward</code>: Enum-type class variable of <code>Direction</code> that species when data is streamed backward. </p>
@@ -1226,14 +1226,14 @@
 </ul>
 <h2 id="class-inputtriggers">Class <code>InputTriggers</code></h2>
 <p>The <code>InputTriggers</code> class represents input triggers for a device.</p>
-<pre><code class="language-python">class InputTriggers:
-    acquisition_start: Trigger
-    exposure: Trigger
-    frame_start: Trigger
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">InputTriggers</span><span class="p">:</span>
+    <span class="n">acquisition_start</span><span class="p">:</span> <span class="n">Trigger</span>
+    <span class="n">exposure</span><span class="p">:</span> <span class="n">Trigger</span>
+    <span class="n">frame_start</span><span class="p">:</span> <span class="n">Trigger</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the InputTriggers attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the InputTriggers attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>acquisition_start</code>: An instance of the <code>Trigger</code> class representing the trigger for starting acquisition.</p>
@@ -1250,14 +1250,14 @@
 </ul>
 <h2 id="class-outputtriggers">Class <code>OutputTriggers</code></h2>
 <p>The <code>OutputTriggers</code> class represents output triggers for a device.</p>
-<pre><code class="language-python">class OutputTriggers:
-    exposure: Trigger
-    frame_start: Trigger
-    trigger_wait: Trigger
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">OutputTriggers</span><span class="p">:</span>
+    <span class="n">exposure</span><span class="p">:</span> <span class="n">Trigger</span>
+    <span class="n">frame_start</span><span class="p">:</span> <span class="n">Trigger</span>
+    <span class="n">trigger_wait</span><span class="p">:</span> <span class="n">Trigger</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the OutputTriggers attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the OutputTriggers attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>exposure</code>: An instance of the <code>Trigger</code> class representing the trigger for exposure.</p>
@@ -1274,17 +1274,17 @@
 </ul>
 <h2 id="class-pid">Class <code>PID</code></h2>
 <p>The <code>PID</code> class represents proportional-integral-derivative (PID) values.</p>
-<pre><code class="language-python">class PID:
-    derivative: float
-    integral: float
-    proportional: float
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">PID</span><span class="p">:</span>
+    <span class="n">derivative</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">integral</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">proportional</span><span class="p">:</span> <span class="nb">float</span>
 
-    def __init__(self, *args: None, **kwargs: Any) -&gt; None: ...
-    &quot;&quot;&quot;Initializes a PID object with optional arguments.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a PID object with optional arguments.&quot;&quot;&quot;</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the PID attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the PID attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>derivative</code>: The derivative value for the PID.</p>
@@ -1301,15 +1301,15 @@
 </ul>
 <h2 id="class-properties">Class <code>Properties</code></h2>
 <p>The <code>Properties</code> class represents properties related to video streams.</p>
-<pre><code class="language-python">class Properties:
-    video: Tuple[VideoStream, VideoStream]
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Properties</span><span class="p">:</span>
+    <span class="n">video</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">VideoStream</span><span class="p">,</span> <span class="n">VideoStream</span><span class="p">]</span>
 
-    def __init__(self, *args: None, **kwargs: Any) -&gt; None: ..
-    &quot;&quot;&quot;Initializes a Properties object with optional arguments.&quot;&quot;&quot;.
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">..</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a Properties object with optional arguments.&quot;&quot;&quot;</span><span class="o">.</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the Properties attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the Properties attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>video</code>: A tuple containing two <code>VideoStream</code> instances which contain information on the camera was used for acquisition and how the data is stored.</p>
@@ -1320,48 +1320,48 @@
 </ul>
 <h2 id="class-runtime">Class <code>Runtime</code></h2>
 <p>The <code>Runtime</code> class coordinates the devices with the storage disc including selecting the devices, setting their properties, and starting and stopping acqusition.</p>
-<pre><code class="language-python">class Runtime:
-    def __init__(self, *args: None, **kwargs: Any) -&gt; None:
-        &quot;&quot;&quot;Initializes the Runtime object with optional arguments.&quot;&quot;&quot;
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Runtime</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initializes the Runtime object with optional arguments.&quot;&quot;&quot;</span>
 
-    def device_manager(self) -&gt; DeviceManager:
-        &quot;&quot;&quot;Returns the DeviceManager instance associated with this Runtime.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="nf">device_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DeviceManager</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the DeviceManager instance associated with this Runtime.&quot;&quot;&quot;</span>
 
-    def get_available_data(self, stream_id: int) -&gt; AvailableData:
-        &quot;&quot;&quot;Returns the AvailableData instance for the given stream ID.
+    <span class="k">def</span> <span class="nf">get_available_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AvailableData</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the AvailableData instance for the given stream ID.</span>
 
-        Args:
-            stream_id (int): The ID of the stream for which available data is requested.
+<span class="sd">        Args:</span>
+<span class="sd">            stream_id (int): The ID of the stream for which available data is requested.</span>
 
-        Returns:
-            AvailableData: The AvailableData instance for the given stream ID.
-        &quot;&quot;&quot;
+<span class="sd">        Returns:</span>
+<span class="sd">            AvailableData: The AvailableData instance for the given stream ID.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
 
-    def get_configuration(self) -&gt; Properties:
-        &quot;&quot;&quot;Returns the current configuration properties of the runtime.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="nf">get_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Properties</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the current configuration properties of the runtime.&quot;&quot;&quot;</span>
 
-    def get_state(self) -&gt; DeviceState:
-        &quot;&quot;&quot;Returns the current state of the device.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DeviceState</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the current state of the device.&quot;&quot;&quot;</span>
 
-    def set_configuration(self, properties: Properties) -&gt; Properties:
-        &quot;&quot;&quot;Applies the provided configuration properties to the runtime.
+    <span class="k">def</span> <span class="nf">set_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">:</span> <span class="n">Properties</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Properties</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Applies the provided configuration properties to the runtime.</span>
 
-        Args:
-            properties (Properties): The properties to be set.
+<span class="sd">        Args:</span>
+<span class="sd">            properties (Properties): The properties to be set.</span>
 
-        Returns:
-            Properties: The updated configuration properties.
-        &quot;&quot;&quot;
+<span class="sd">        Returns:</span>
+<span class="sd">            Properties: The updated configuration properties.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
 
-    def start(self) -&gt; None:
-        &quot;&quot;&quot;Starts the runtime, allowing it to collect data.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Starts the runtime, allowing it to collect data.&quot;&quot;&quot;</span>
 
-    def stop(self) -&gt; None:
-        &quot;&quot;&quot;Stops the runtime, ending data collection after the max number of frames is collected.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Stops the runtime, ending data collection after the max number of frames is collected.&quot;&quot;&quot;</span>
 
-    def abort(self) -&gt; None:
-        &quot;&quot;&quot;Aborts the runtime, terminating it immediately.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">abort</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Aborts the runtime, terminating it immediately.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p>Call <code>device_manager()</code> to return the <code>DeviceManager</code> object associated with this <code>Runtime</code> instance. </p>
@@ -1390,16 +1390,16 @@
 </ul>
 <h2 id="class-sampleratehz">Class <code>SampleRateHz</code></h2>
 <p>The <code>SampleRateHz</code> class represents the sampling rate in hertz.</p>
-<pre><code class="language-python">class SampleRateHz:
-    numerator: int
-    denominator: int
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SampleRateHz</span><span class="p">:</span>
+    <span class="n">numerator</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">denominator</span><span class="p">:</span> <span class="nb">int</span>
 
-    def __init__(self, *args: None, **kwargs: Any) -&gt; None: ...
-    &quot;&quot;&quot;Initializes a SampleRateHz object with optional arguments.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a SampleRateHz object with optional arguments.&quot;&quot;&quot;</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the SampleRateHz attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the SampleRateHz attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>numerator</code>: The numerator part of the sampling rate fraction.</p>
@@ -1413,37 +1413,37 @@
 </ul>
 <h2 id="class-sampletype">Class <code>SampleType</code></h2>
 <p>The <code>SampleType</code> class defines the type of the values in the streamed data.</p>
-<pre><code class="language-python">class SampleType:
-    F32: ClassVar[SampleType] = SampleType.F32
-    I16: ClassVar[SampleType] = SampleType.I16
-    I8: ClassVar[SampleType] = SampleType.I8
-    U16: ClassVar[SampleType] = SampleType.U16
-    U8: ClassVar[SampleType] = SampleType.U8
-    U10: ClassVar[SampleType] = SampleType.U10
-    U12: ClassVar[SampleType] = SampleType.U12
-    U14: ClassVar[SampleType] = SampleType.U14
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SampleType</span><span class="p">:</span>
+    <span class="n">F32</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SampleType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">F32</span>
+    <span class="n">I16</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SampleType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">I16</span>
+    <span class="n">I8</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SampleType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">I8</span>
+    <span class="n">U16</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SampleType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">U16</span>
+    <span class="n">U8</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SampleType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">U8</span>
+    <span class="n">U10</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SampleType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">U10</span>
+    <span class="n">U12</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SampleType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">U12</span>
+    <span class="n">U14</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SampleType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">U14</span>
 
-    def __eq__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two SampleType objects are equal.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two SampleType objects are equal.&quot;&quot;&quot;</span>
 
-    def __ge__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SampleType is greater than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SampleType is greater than or equal to another.&quot;&quot;&quot;</span>
 
-    def __gt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SampleType is greater than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SampleType is greater than another.&quot;&quot;&quot;</span>
 
-    def __int__(self) -&gt; int:
-        &quot;&quot;&quot;Converts the SampleType to an integer.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converts the SampleType to an integer.&quot;&quot;&quot;</span>
 
-    def __le__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SampleType is less than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SampleType is less than or equal to another.&quot;&quot;&quot;</span>
 
-    def __lt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SampleType is less than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SampleType is less than another.&quot;&quot;&quot;</span>
 
-    def __ne__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two SampleType objects are not equal.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two SampleType objects are not equal.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>F32</code>: Enum-type class variable of <code>SampleType</code> that specifies values of 32-bit floating point type.</p>
@@ -1472,31 +1472,31 @@
 </ul>
 <h2 id="class-signaliokind">Class <code>SignalIOKind</code></h2>
 <p>The <code>SignalIOKind</code> class defines the type of input and output signals.</p>
-<pre><code class="language-python">class SignalIOKind:
-    Input: ClassVar[SignalIOKind] = SignalIOKind.Input
-    Output: ClassVar[SignalIOKind] = SignalIOKind.Output
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SignalIOKind</span><span class="p">:</span>
+    <span class="n">Input</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SignalIOKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">SignalIOKind</span><span class="o">.</span><span class="n">Input</span>
+    <span class="n">Output</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SignalIOKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">SignalIOKind</span><span class="o">.</span><span class="n">Output</span>
 
-    def __eq__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two SignalIOKind objects are equal.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two SignalIOKind objects are equal.&quot;&quot;&quot;</span>
 
-    def __ge__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SignalIOKind is greater than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SignalIOKind is greater than or equal to another.&quot;&quot;&quot;</span>
 
-    def __gt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SignalIOKind is greater than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SignalIOKind is greater than another.&quot;&quot;&quot;</span>
 
-    def __int__(self) -&gt; int:
-        &quot;&quot;&quot;Converts the SignalIOKind to an integer.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converts the SignalIOKind to an integer.&quot;&quot;&quot;</span>
 
-    def __le__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SignalIOKind is less than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SignalIOKind is less than or equal to another.&quot;&quot;&quot;</span>
 
-    def __lt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SignalIOKind is less than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SignalIOKind is less than another.&quot;&quot;&quot;</span>
 
-    def __ne__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two SignalIOKind objects are not equal.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two SignalIOKind objects are not equal.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>Input</code>: Enum-type class variable of <code>SignalIOKind</code> that specifies signal coming in to the device.</p>
@@ -1507,31 +1507,31 @@
 </ul>
 <h2 id="class-signaltype">Class <code>SignalType</code></h2>
 <p>The <code>SignalType</code> class specifies whether a signal is analog or digital.</p>
-<pre><code class="language-python">class SignalType:
-    Analog: ClassVar[SignalType] = SignalType.Analog
-    Digital: ClassVar[SignalType] = SignalType.Digital
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SignalType</span><span class="p">:</span>
+    <span class="n">Analog</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SignalType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SignalType</span><span class="o">.</span><span class="n">Analog</span>
+    <span class="n">Digital</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SignalType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SignalType</span><span class="o">.</span><span class="n">Digital</span>
 
-    def __eq__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two SignalType objects are equal.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two SignalType objects are equal.&quot;&quot;&quot;</span>
 
-    def __ge__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SignalType is greater than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SignalType is greater than or equal to another.&quot;&quot;&quot;</span>
 
-    def __gt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SignalType is greater than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SignalType is greater than another.&quot;&quot;&quot;</span>
 
-    def __int__(self) -&gt; int:
-        &quot;&quot;&quot;Converts the SignalType to an integer.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converts the SignalType to an integer.&quot;&quot;&quot;</span>
 
-   def __le__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SignalType is less than or equal to another.&quot;&quot;&quot;
+   <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SignalType is less than or equal to another.&quot;&quot;&quot;</span>
 
-    def __lt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this SignalType is less than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this SignalType is less than another.&quot;&quot;&quot;</span>
 
-    def __ne__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two SignalType objects are not equal.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two SignalType objects are not equal.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>Analog</code>: Enum-type class variable of <code>SignalType</code> that specifies a signal is analog.</p>
@@ -1542,13 +1542,13 @@
 </ul>
 <h2 id="class-storage">Class <code>Storage</code></h2>
 <p>The <code>Storage</code> class represents storage settings for the acquired data.</p>
-<pre><code class="language-python">class Storage:
-    identifier: Optional[DeviceIdentifier]
-    settings: StorageProperties
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Storage</span><span class="p">:</span>
+    <span class="n">identifier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+    <span class="n">settings</span><span class="p">:</span> <span class="n">StorageProperties</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the Storage attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the Storage attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>identifier</code>: An optional attribute which contains an instance of the <code>DeviceIdentifier</code> class that describes the storage device if that device is natively supported. Otherwise, it is of type <code>None</code>.</p>
@@ -1562,17 +1562,17 @@
 </ul>
 <h2 id="class-storageproperties">Class <code>StorageProperties</code></h2>
 <p>The <code>StorageProperties</code> class represents properties for data storage.</p>
-<pre><code class="language-python">class StorageProperties:
-    external_metadata_json: Optional[str]
-    filename: Optional[str]
-    first_frame_id: int
-    pixel_scale_um: Tuple[float, float]
-    chunking: ChunkingProperties
-    enable_multiscale: bool
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">StorageProperties</span><span class="p">:</span>
+    <span class="n">external_metadata_json</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">filename</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">first_frame_id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">pixel_scale_um</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
+    <span class="n">chunking</span><span class="p">:</span> <span class="n">ChunkingProperties</span>
+    <span class="n">enable_multiscale</span><span class="p">:</span> <span class="nb">bool</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the StorageProperties attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the StorageProperties attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>external_metadata_json</code>: An optional attribute representing external metadata in JSON format.</p>
@@ -1598,14 +1598,14 @@
 </ul>
 <h2 id="class-tileshape">Class <code>TileShape</code></h2>
 <p>The <code>TileShape</code> class represents the tile shape, or voxel size, for tile scanning acquisition.</p>
-<pre><code class="language-python">class TileShape:
-    width: int
-    height: int
-    planes: int
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TileShape</span><span class="p">:</span>
+    <span class="n">width</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">height</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">planes</span><span class="p">:</span> <span class="nb">int</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the TileShape attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the TileShape attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>width</code>: The width of the tile.</p>
@@ -1622,18 +1622,18 @@
 </ul>
 <h2 id="class-trigger">Class <code>Trigger</code></h2>
 <p>The <code>Trigger</code> class represents a trigger signal.</p>
-<pre><code class="language-python">class Trigger:
-    edge: TriggerEdge
-    enable: bool
-    line: int
-    kind: SignalIOKind
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Trigger</span><span class="p">:</span>
+    <span class="n">edge</span><span class="p">:</span> <span class="n">TriggerEdge</span>
+    <span class="n">enable</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">line</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">kind</span><span class="p">:</span> <span class="n">SignalIOKind</span>
 
-    def __init__(self, *args: None, **kwargs: Any) -&gt; None: ...
-    &quot;&quot;&quot;Initializes a Trigger object with optional arguments.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a Trigger object with optional arguments.&quot;&quot;&quot;</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the Trigger attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the Trigger attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>edge</code>: An instance of the <code>TriggerEdge</code> class specifying if the trigger is on the rising or falling edge trigger signal.</p>
@@ -1653,32 +1653,32 @@
 </ul>
 <h2 id="class-triggeredge">Class <code>TriggerEdge</code></h2>
 <p>The <code>TriggerEdge</code> class represents what edge of the trigger function initiates the trigger.</p>
-<pre><code class="language-python">class TriggerEdge:
-    Falling: ClassVar[TriggerEdge] = TriggerEdge.Falling
-    NotApplicable: ClassVar[TriggerEdge] = TriggerEdge.NotApplicable
-    Rising: ClassVar[TriggerEdge] = TriggerEdge.Rising
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TriggerEdge</span><span class="p">:</span>
+    <span class="n">Falling</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">TriggerEdge</span><span class="p">]</span> <span class="o">=</span> <span class="n">TriggerEdge</span><span class="o">.</span><span class="n">Falling</span>
+    <span class="n">NotApplicable</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">TriggerEdge</span><span class="p">]</span> <span class="o">=</span> <span class="n">TriggerEdge</span><span class="o">.</span><span class="n">NotApplicable</span>
+    <span class="n">Rising</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">TriggerEdge</span><span class="p">]</span> <span class="o">=</span> <span class="n">TriggerEdge</span><span class="o">.</span><span class="n">Rising</span>
 
-    def __eq__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two TriggerEdge objects are equal.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two TriggerEdge objects are equal.&quot;&quot;&quot;</span>
 
-    def __ge__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this TriggerEdge is greater than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this TriggerEdge is greater than or equal to another.&quot;&quot;&quot;</span>
 
-    def __gt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this TriggerEdge is greater than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this TriggerEdge is greater than another.&quot;&quot;&quot;</span>
 
-    def __int__(self) -&gt; int:
-        &quot;&quot;&quot;Converts the TriggerEdge to an integer.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converts the TriggerEdge to an integer.&quot;&quot;&quot;</span>
 
-    def __le__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this TriggerEdge is less than or equal to another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this TriggerEdge is less than or equal to another.&quot;&quot;&quot;</span>
 
-    def __lt__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if this TriggerEdge is less than another.&quot;&quot;&quot;
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this TriggerEdge is less than another.&quot;&quot;&quot;</span>
 
-    def __ne__(self, other: object) -&gt; bool:
-        &quot;&quot;&quot;Checks if two TriggerEdge objects are not equal.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two TriggerEdge objects are not equal.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>Falling</code>: Enum-type class variable of <code>TriggerEdge</code> that defines the falling edge of the trigger. </p>
@@ -1692,13 +1692,13 @@
 </ul>
 <h2 id="class-videoframe">Class <code>VideoFrame</code></h2>
 <p>The <code>VideoFrame</code> class represents data from acquisition of a frame.</p>
-<pre><code class="language-python">class VideoFrame:
-    def data(self) -&gt; NDArray[Any]:
-        &quot;&quot;&quot;Returns the data of the video frame as an NDArray.&quot;&quot;&quot;
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">VideoFrame</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the data of the video frame as an NDArray.&quot;&quot;&quot;</span>
 
-    def metadata(self) -&gt; VideoFrameMetadata:
-        &quot;&quot;&quot;Returns the metadata associated with the video frame.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VideoFrameMetadata</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the metadata associated with the video frame.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p>Call <code>data()</code> to create an NDArray of the <code>VideoFrame</code> data. </p>
@@ -1709,13 +1709,13 @@
 </ul>
 <h2 id="class-videoframemetadata">Class <code>VideoFrameMetadata</code></h2>
 <p>The <code>VideoFrameMetadata</code> class represents metadata related to a video frame.</p>
-<pre><code class="language-python">class VideoFrameMetadata:
-    frame_id: int
-    timestamps: VideoFrameTimestamps
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">VideoFrameMetadata</span><span class="p">:</span>
+    <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">timestamps</span><span class="p">:</span> <span class="n">VideoFrameTimestamps</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the VideoFrameMetadata attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the VideoFrameMetadata attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>frame_id</code>: An integer representing the ID of the video frame.</p>
@@ -1729,13 +1729,13 @@
 </ul>
 <h2 id="class-videoframetimestamps">Class <code>VideoFrameTimestamps</code></h2>
 <p>The <code>VideoFrameTimestamps</code> class represents timestamps related to a video frame.</p>
-<pre><code class="language-python">class VideoFrameTimestamps:
-    hardware: int
-    acq_thread: int
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">VideoFrameTimestamps</span><span class="p">:</span>
+    <span class="n">hardware</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">acq_thread</span><span class="p">:</span> <span class="nb">int</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the VideoFrameTimestamps attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the VideoFrameTimestamps attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>hardware</code>: An integer representing hardware timestamps.</p>
@@ -1749,15 +1749,15 @@
 </ul>
 <h2 id="class-videostream">Class <code>VideoStream</code></h2>
 <p>The <code>VideoStream</code> class represents a video stream.</p>
-<pre><code class="language-python">class VideoStream:
-    camera: Camera
-    storage: Storage
-    max_frame_count: int
-    frame_average_count: int
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">VideoStream</span><span class="p">:</span>
+    <span class="n">camera</span><span class="p">:</span> <span class="n">Camera</span>
+    <span class="n">storage</span><span class="p">:</span> <span class="n">Storage</span>
+    <span class="n">max_frame_count</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">frame_average_count</span><span class="p">:</span> <span class="nb">int</span>
 
-    def dict(self) -&gt; Dict[str, Any]: ...
-    &quot;&quot;&quot;Returns a dictionary of the VideoStream attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the VideoStream attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>camera</code>: An instance of the <code>Camera</code> class representing the camera used in the video stream.</p>
@@ -1777,21 +1777,21 @@
 </ul>
 <h2 id="class-voltagerange">Class <code>VoltageRange</code></h2>
 <p>The <code>VoltageRange</code> class represents a range of voltage values.</p>
-<pre><code class="language-python">class VoltageRange:
-    mn: float
-    mx: float
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">VoltageRange</span><span class="p">:</span>
+    <span class="n">mn</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">mx</span><span class="p">:</span> <span class="nb">float</span>
 
-    @overload
-    def __init__(self) -&gt; None: ...
-    &quot;&quot;&quot;Initializes a VoltageRange object&quot;&quot;&quot;
+    <span class="nd">@overload</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a VoltageRange object&quot;&quot;&quot;</span>
 
-    @overload
-    def __init__(self, mn: float, mx: float) -&gt; None: ...
-    &quot;&quot;&quot;Initializes a VoltageObject object with mn and mx provided.&quot;&quot;&quot;
+    <span class="nd">@overload</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mn</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">mx</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a VoltageObject object with mn and mx provided.&quot;&quot;&quot;</span>
 
-    def dict(self) -&gt; Dict[str, float]: ...
-    &quot;&quot;&quot;Returns a dictionary of the VoltageRange attributes.&quot;&quot;&quot;
-</code></pre>
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of the VoltageRange attributes.&quot;&quot;&quot;</span>
+</code></pre></div>
 <ul>
 <li>
 <p><code>mn</code>: A float representing the minimum voltage value.</p>
