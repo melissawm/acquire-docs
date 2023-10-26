@@ -22,3 +22,8 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://acquire-project.zulipchat.com
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
