@@ -683,34 +683,34 @@ library focusing on performant microscopy.</p>
 </li>
 </ul>
 <h2 id="installation">Installation</h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>acquire-imaging
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>acquire-imaging
+</span></code></pre></div>
 <h2 id="usage">Usage</h2>
 <p>See the tests for more examples.</p>
 <p>The provided <a href="https://github.com/napari/napari">napari</a> plugin is a good example of how to stream for visualization.</p>
 <h3 id="list-devices">List devices</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">acquire</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">devices</span><span class="p">())</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">devices</span><span class="p">())</span>
+</span></code></pre></div>
 <h3 id="finite-triggered-acquisition">Finite triggered acquisition</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">acquire</span>
-<span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
-<span class="n">dm</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span>
-
-<span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
-<span class="c1"># select the first Hamamatsu camera</span>
-<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;hamamatsu.*&quot;</span><span class="p">)</span>
-<span class="c1"># stream to zarr</span>
-<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;zarr&quot;</span><span class="p">)</span>
-<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;out.zarr&quot;</span>
-<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2304</span><span class="p">,</span> <span class="mi">2304</span><span class="p">)</span>
-<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">pixel_type</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">U16</span>
-<span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
-
-<span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>  <span class="c1"># wait for acquisition to complete</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">dm</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># select the first Hamamatsu camera</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;hamamatsu.*&quot;</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># stream to zarr</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;zarr&quot;</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;out.zarr&quot;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2304</span><span class="p">,</span> <span class="mi">2304</span><span class="p">)</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">pixel_type</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">U16</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">100</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>  <span class="c1"># wait for acquisition to complete</span>
+</span></code></pre></div>
 <h1 id="development">Development</h1>
 <p>We welcome contributors. The following will help you get started building the
 code.</p>
@@ -729,21 +729,21 @@ code.</p>
   install llvm</code> or, on osx, via <a href="https://brew.sh/">brew</a> <code>brew install llvm</code>)</li>
 </ul>
 <p>It's strongly recommended you create a python environment for development</p>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>acquire<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
-conda<span class="w"> </span>activate<span class="w"> </span>acquire
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>acquire<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>acquire
+</span></code></pre></div>
 <h2 id="build">Build</h2>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>acquire
-git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
-pip<span class="w"> </span>install<span class="w"> </span>maturin
-maturin<span class="w"> </span>build<span class="w"> </span>-i<span class="w"> </span>python
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>acquire
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>pip<span class="w"> </span>install<span class="w"> </span>maturin
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>maturin<span class="w"> </span>build<span class="w"> </span>-i<span class="w"> </span>python
+</span></code></pre></div>
 <p><strong>Important</strong> When updating the 'acquire-video-runtime' (the c api), you need to manually trigger
 a rebuild by touching <code>wrapper.h</code>.</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span><span class="c1"># updates acquire-video-runtime</span>
-touch<span class="w"> </span>wrapper.h<span class="w"> </span><span class="c1"># will trigger a rebuild</span>
-python<span class="w"> </span>-m<span class="w"> </span>build
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span><span class="c1"># updates acquire-video-runtime</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>touch<span class="w"> </span>wrapper.h<span class="w"> </span><span class="c1"># will trigger a rebuild</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>python<span class="w"> </span>-m<span class="w"> </span>build
+</span></code></pre></div>
 <p>This package depends on a submodule (<a href="https://github.com/acquire-project/acquire-video-runtime">acquire-video-runtime</a>)
 and binaries from the following Acquire drivers:</p>
 <ul>
@@ -755,24 +755,24 @@ and binaries from the following Acquire drivers:</p>
 </ul>
 <p>The build script will automatically try to fetch the binaries from GitHub releases.
 In order to configure which release of each driver to use, you can set the value in <code>drivers.json</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;acquire-driver-common&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;acquire-driver-hdcam&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;acquire-driver-egrabber&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;acquire-driver-zarr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;acquire-driver-spinnaker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;acquire-driver-common&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;acquire-driver-hdcam&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;acquire-driver-egrabber&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">&quot;acquire-driver-zarr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">&quot;acquire-driver-spinnaker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>These values can be set to a specific version, or to <code>nightly</code> for nightly builds.</p>
 <h2 id="develop">Develop</h2>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[testing]&quot;</span>
-pytest<span class="w"> </span>-s<span class="w"> </span>--tb<span class="o">=</span>short<span class="w"> </span>--log-cli-level<span class="o">=</span><span class="m">0</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[testing]&quot;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>pytest<span class="w"> </span>-s<span class="w"> </span>--tb<span class="o">=</span>short<span class="w"> </span>--log-cli-level<span class="o">=</span><span class="m">0</span>
+</span></code></pre></div>
 <p>This project uses <a href="https://pre-commit.com/"><code>pre-commit</code></a> to run required
 checks as git hooks.</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
-pre-commit<span class="w"> </span>install
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>pre-commit<span class="w"> </span>install
+</span></code></pre></div>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="maturin-cant-find-a-python-interpreter">Maturin can't find a python interpreter</h3>
 <p><code>Maturin</code> is a command line tool associated with
@@ -915,7 +915,7 @@ will end up invoking maturin.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "content.code.copy"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.81fa17fe.min.js"></script>
