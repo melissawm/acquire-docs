@@ -5,6 +5,7 @@ theme:
   name: material
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.footer
     - content.code.copy
   custom_dir: overrides
@@ -16,7 +17,9 @@ nav:
   - Home: index.md
   - Get Started: get_started.md
   - API Reference: api_reference.md
-  - Tutorials: tutorials.md
+  - Tutorials:
+    - tutorials/tutorials.md
+    - tutorials/trigger.md
   - For contributors: for_contributors.md
 
 extra:
@@ -32,3 +35,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+

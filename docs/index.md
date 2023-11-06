@@ -3,9 +3,9 @@
 acquire-python is a python package that provides a multi-camera video streaming
 library focusing on performant microscopy.
 
-```{note}
-This is an early stage project. If you find it interesting please reach out!
-```
+!!! note
+
+    This is an early stage project. If you find it interesting please reach out!
 
 Support for:
 
