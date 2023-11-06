@@ -115,4 +115,6 @@ html .md-footer-meta.md-typeset a {
         align-self: flex-start;
         padding: 0.3rem 0 0.3rem 0;
     }
+.md-footer__title:hover {
+    color: var(--md-accent-fg-color);
 }
