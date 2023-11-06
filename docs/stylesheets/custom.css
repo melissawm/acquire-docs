@@ -44,6 +44,11 @@ html {
     color: white;
 }
 
+
+.md-typeset pre>code:hover {
+    scrollbar-color: var(--md-accent-fg-color) #0000;
+}
+
 .md-nav--primary .md-nav__title .md-logo {
 display: none;
 }
@@ -143,4 +148,5 @@ html .md-footer-meta.md-typeset a {
 .md-footer__title:hover {
     color: var(--md-accent-fg-color);
 }
+
 
