@@ -50,7 +50,7 @@ Now that the configuration is set to utilize the `ZarrBlosc1ZstdByteShuffle` sto
 runtime.start()
 runtime.stop()
 ```
-To inspect the data, we'll open the `out.zarr` file and print some of the data properties.
+We'll use the [Zarr Python package](https://zarr.readthedocs.io/en/stable/) to read the data in `out.zarr` file. 
 ```python
 # We'll utilize the Zarr python package to read the data
 import zarr
@@ -58,7 +58,9 @@ import zarr
 # load from Zarr
 compressed = zarr.open(config.video[0].storage.settings.filename)
 ```
-INSERT explanation of zarr group hierarchy
+INSERT explanation of zarr group hierarchy. 
+
+We'll print some of the data properties to illustrate how the data was compressed.
 
 ```python
 # 
@@ -75,4 +77,4 @@ zstd
 1
 1
 ```
-
+As expected, the file was compressed using the `zstd` codec.
