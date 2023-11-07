@@ -22,11 +22,6 @@ nav:
     - tutorials/trigger.md
   - For contributors: for_contributors.md
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://acquire-project.zulipchat.com
-
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
