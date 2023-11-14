@@ -20,6 +20,9 @@ nav:
   - Tutorials:
     - tutorials/tutorials.md
     - tutorials/trigger.md
+    - tutorials/select.md
+    - tutorials/props_json.md
+    - tutorials/trig_json.md
   - For contributors: for_contributors.md
 
 markdown_extensions:
