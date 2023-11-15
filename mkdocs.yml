@@ -20,11 +20,13 @@ nav:
   - Tutorials:
     - tutorials/tutorials.md
     - tutorials/trigger.md
+    - tutorials/framedata.md
     - tutorials/select.md
     - tutorials/props_json.md
     - tutorials/trig_json.md
     - tutorials/chunked.md
     - tutorials/multiscale.md
+    - tutorials/drivers.md
   - For contributors: for_contributors.md
 
 markdown_extensions:
@@ -39,4 +41,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 
-
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://acquire-project.zulipchat.com
