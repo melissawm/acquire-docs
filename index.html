@@ -1,3 +1,25 @@
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -18,7 +40,7 @@
     
     
       
-        <title>Acquire imaging documentation</title>
+        <title>Acquire Docs - Acquire Docs</title>
       
     
     
@@ -65,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#acquire-project" class="md-skip">
+        <a href="#tiles" class="md-skip">
           Skip to content
         </a>
       
@@ -108,8 +130,8 @@
     <nav class="md-header__inner md-grid" aria-label="Header">
 
         <!-- Link to home -->
-        <a href="." title="Acquire imaging documentation"
-            class="md-header__button md-logo" aria-label="Acquire imaging documentation" data-md-component="logo">
+        <a href="." title="Acquire Docs"
+            class="md-header__button md-logo" aria-label="Acquire Docs" data-md-component="logo">
             
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -127,13 +149,13 @@
             <div class="md-header__ellipsis">
                 <div class="md-header__topic">
                     <span class="md-ellipsis">
-                        Acquire imaging documentation
+                        Acquire Docs
                     </span>
                 </div>
                 <div class="md-header__topic" data-md-component="header-topic">
                     <span class="md-ellipsis">
                         
-                        Home
+                        Acquire Docs
                         
                     </span>
                 </div>
@@ -306,12 +328,56 @@
     <div class="md-container" data-md-component="container">
       
       
+
         
       
+
+<!-- Additional styles for landing page -->
+<style>
+    /* Application header should be static for the landing page */
+    .md-header {
+        position: initial;
+    }
+
+    /* Hide table of contents */
+    @media screen and (min-width: 60em) {
+        .md-sidebar--secondary {
+            display: none;
+        }
+    }
+
+    /* Hide navigation */
+    @media screen and (min-width: 76.25em) {
+        .md-sidebar--primary {
+            display: none;
+        }
+    }
+</style>
+
+<!-- Hero for landing page -->
+<section class="mdx-container">
+    <div class="md-grid md-typeset">
+        <div class="mdx-hero">
+            <!-- Hero content -->
+            <div class="mdx-hero__content">
+                <h1>Acquire</h1>
+                <p>A python package providing a multi-camera video streaming library focusing on
+                performant microscopy.</p>
+                <a href="get_started/" title="Get Started"
+                    class="md-button md-button--primary">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -324,13 +390,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Acquire imaging documentation" class="md-nav__button md-logo" aria-label="Acquire imaging documentation" data-md-component="logo">
+    <a href="." title="Acquire Docs" class="md-nav__button md-logo" aria-label="Acquire Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    Acquire imaging documentation
+    Acquire Docs
   </label>
   
     <div class="md-nav__source">
@@ -358,8 +424,6 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-      
-        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -389,14 +453,26 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tiles" class="md-nav__link">
+    Tiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-acquire" class="md-nav__link">
+    About Acquire
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
@@ -406,29 +482,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#list-devices" class="md-nav__link">
-    List devices
+  <a href="#supported-cameras-and-file-formats" class="md-nav__link">
+    Supported Cameras and File Formats
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#finite-triggered-acquisition" class="md-nav__link">
-    Finite triggered acquisition
+      
+        <li class="md-nav__item">
+  <a href="#citing-acquire" class="md-nav__link">
+    Citing Acquire
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#acquire-license" class="md-nav__link">
+    Acquire License
+  </a>
   
 </li>
       
@@ -651,7 +721,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -659,8 +731,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -670,6 +740,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#tiles" class="md-nav__link">
+    Tiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-acquire" class="md-nav__link">
+    About Acquire
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     Installation
   </a>
@@ -677,29 +761,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#list-devices" class="md-nav__link">
-    List devices
+  <a href="#supported-cameras-and-file-formats" class="md-nav__link">
+    Supported Cameras and File Formats
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#finite-triggered-acquisition" class="md-nav__link">
-    Finite triggered acquisition
+      
+        <li class="md-nav__item">
+  <a href="#citing-acquire" class="md-nav__link">
+    Citing Acquire
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#acquire-license" class="md-nav__link">
+    Acquire License
+  </a>
   
 </li>
       
@@ -715,149 +793,75 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+    
                   
 
   
   
 
 
-<h1 id="acquire-project">Acquire project</h1>
-<p>acquire-python is a python package that provides a multi-camera video streaming
-library focusing on performant microscopy.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is an early stage project. If you find it interesting please reach out!</p>
-</div>
-<p>Support for:</p>
+  <h1>Home</h1>
+
+<h2 id="tiles">Tiles</h2>
 <ul>
-<li>Up to two independent video streams</li>
-<li>Camera support:<ul>
-<li>Hamamatsu Orca Fusion BT (C15440-20UP) (windows only)</li>
-<li>Vieworks VC-151MX-M6H00</li>
-</ul>
+<li>
+<p>Getting Started: Install Acquire and use simulated cameras</p>
 </li>
-<li>Streaming file format support:<ul>
-<li>Tiff</li>
-<li>Zarr v2</li>
-</ul>
+<li>
+<p>API Reference: Information on classes and methods</p>
+</li>
+<li>
+<p>Tutorials: Guides on using Acquire for specific tasks</p>
+</li>
+<li>
+<p>For contributors: Learn how to contribute code or documentation to Acquire</p>
 </li>
 </ul>
+<h2 id="about-acquire">About Acquire</h2>
+<p><a href="https://github.com/acquire-project/acquire-python">Acquire</a> (<code>acquire-imaging</code> on <a href="https://pypi.org/project/acquire-imaging/">PyPI</a>) provides high-speed, multi-camera, video streaming and image acquisition with a <a href="api_reference/">programming interface</a> for streaming video data directly to <a href="https://napari.org/stable/">napari</a>, Python and cloud-friendly file formats.</p>
 <h2 id="installation">Installation</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>acquire-imaging
+<p>To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python -m pip install acquire-imaging
 </span></code></pre></div>
-<h2 id="usage">Usage</h2>
-<p>See the tests for more examples.</p>
-<p>The provided <a href="https://github.com/napari/napari">napari</a> plugin is a good example of how to stream for visualization.</p>
-<h3 id="list-devices">List devices</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">devices</span><span class="p">())</span>
-</span></code></pre></div>
-<h3 id="finite-triggered-acquisition">Finite triggered acquisition</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">dm</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># select the first Hamamatsu camera</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;hamamatsu.*&quot;</span><span class="p">)</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># stream to zarr</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;zarr&quot;</span><span class="p">)</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;out.zarr&quot;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2304</span><span class="p">,</span> <span class="mi">2304</span><span class="p">)</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">pixel_type</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">U16</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">100</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>  <span class="c1"># wait for acquisition to complete</span>
-</span></code></pre></div>
-<h1 id="development">Development</h1>
-<p>We welcome contributors. The following will help you get started building the
-code.</p>
-<h2 id="environment">Environment</h2>
-<p>Requires</p>
+<h2 id="supported-cameras-and-file-formats">Supported Cameras and File Formats</h2>
+<p>Acquire supports the following cameras (currently only on Windows):</p>
 <ul>
-<li>CMake 3.23+ (<a href="https://cmake.org/download/">download page</a> or via
-  <a href="https://community.chocolatey.org/packages/cmake">chocolatey</a>)</li>
-<li>A C++20 compiler (Microsoft Visual Studio Community <a href="https://visualstudio.microsoft.com/downloads/">download
-  page</a>, or clang)</li>
-<li>Rust (via rustup, see <a href="https://www.rust-lang.org/tools/install">install
-  page</a>)</li>
-<li>conda (optional; via
-  <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>)</li>
-<li>libclang &gt;= v5.0 (on windows via <a href="https://chocolatey.org/">choco</a> <code>choco
-  install llvm</code> or, on osx, via <a href="https://brew.sh/">brew</a> <code>brew install llvm</code>)</li>
+<li><a href="https://www.hamamatsu.com/eu/en/product/cameras/cmos-cameras/C15440-20UP.html">Hamamatsu Orca Fusion BT (C15440-20UP)</a></li>
+<li><a href="https://www.visionsystech.com/products/cameras/vieworks-vc-151mx-sony-imx411-sensor-ultra-high-resolution-cmos-camera-151-mp">Vieworks VC-151MX-M6H00</a></li>
+<li><a href="https://www.flir.com/products/blackfly-usb3/?model=BFLY-U3-23S6M-C&amp;vertical=machine+vision&amp;segment=iis">FLIR Blackfly USB3 (BFLY-U3-23S6M-C)</a></li>
+<li><a href="https://www.flir.com/products/oryx-10gige/?model=ORX-10GS-51S5M-C&amp;vertical=machine+vision&amp;segment=iis">FLIR Oryx 10GigE (ORX-10GS-51S5M-C)</a></li>
 </ul>
-<p>It's strongly recommended you create a python environment for development</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>acquire<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>acquire
-</span></code></pre></div>
-<h2 id="build">Build</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>acquire
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>pip<span class="w"> </span>install<span class="w"> </span>maturin
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>maturin<span class="w"> </span>build<span class="w"> </span>-i<span class="w"> </span>python
-</span></code></pre></div>
-<p><strong>Important</strong> When updating the 'acquire-video-runtime' (the c api), you need to manually trigger
-a rebuild by touching <code>wrapper.h</code>.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span><span class="c1"># updates acquire-video-runtime</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>touch<span class="w"> </span>wrapper.h<span class="w"> </span><span class="c1"># will trigger a rebuild</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>python<span class="w"> </span>-m<span class="w"> </span>build
-</span></code></pre></div>
-<p>This package depends on a submodule (<a href="https://github.com/acquire-project/acquire-video-runtime">acquire-video-runtime</a>)
-and binaries from the following Acquire drivers:</p>
+<p>Acquire also supports the following output file formats:</p>
 <ul>
-<li><a href="https://github.com/acquire-project/acquire-driver-common">acquire-driver-common</a></li>
-<li><a href="https://github.com/acquire-project/acquire-driver-hdcam">acquire-driver-hdcam</a></li>
-<li><a href="https://github.com/acquire-project/acquire-driver-egrabber">acquire-driver-egrabber</a></li>
-<li><a href="https://github.com/acquire-project/acquire-driver-zarr">acquire-driver-zarr</a></li>
-<li><a href="https://github.com/acquire-project/acquire-driver-spinnaker">acquire-driver-spinnaker</a></li>
+<li><a href="https://en.wikipedia.org/wiki/TIFF">Tiff</a></li>
+<li><a href="https://zarr.dev/">Zarr</a></li>
 </ul>
-<p>The build script will automatically try to fetch the binaries from GitHub releases.
-In order to configure which release of each driver to use, you can set the value in <code>drivers.json</code>:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;acquire-driver-common&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;acquire-driver-hdcam&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;acquire-driver-egrabber&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">&quot;acquire-driver-zarr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">&quot;acquire-driver-spinnaker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>These values can be set to a specific version, or to <code>nightly</code> for nightly builds.</p>
-<h2 id="develop">Develop</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[testing]&quot;</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>pytest<span class="w"> </span>-s<span class="w"> </span>--tb<span class="o">=</span>short<span class="w"> </span>--log-cli-level<span class="o">=</span><span class="m">0</span>
-</span></code></pre></div>
-<p>This project uses <a href="https://pre-commit.com/"><code>pre-commit</code></a> to run required
-checks as git hooks.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>pre-commit<span class="w"> </span>install
-</span></code></pre></div>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="maturin-cant-find-a-python-interpreter">Maturin can't find a python interpreter</h3>
-<p><code>Maturin</code> is a command line tool associated with
-<a href="https://pyo3.rs/v0.16.4/"><code>pyo3</code></a>. It helps automate the build and packaging
-process. It's invoked by <code>setuptools</code> during a build.</p>
-<ol>
-<li>Double-check you've activated the right conda environment.</li>
-<li>Try <code>maturin build -i python</code></li>
-</ol>
-<p>This seems to happen on windows in anaconda environments when multiple python
-interpreters are available on the path.</p>
-<p>It seems to happen less frequently when invoked via pip - <code>pip install -e .</code>
-will end up invoking maturin.</p>
-<h3 id="working-with-an-editable-install-how-do-i-update-the-build">Working with an editable install, how do I update the build?</h3>
-<p>It depends on what you changed:</p>
-<ul>
-<li><strong>acquire-video-runtime</strong> (c/c++ code): <code>touch wrapper.h; maturin develop</code></li>
-<li><strong>rust code</strong>: <code>maturin develop</code></li>
-</ul>
+<p>For testing and demonstration purposes, Acquire provides a few simulated cameras, as well as raw and trash output devices.</p>
+<h2 id="citing-acquire">Citing Acquire</h2>
+<p>Provide the <a href="https://github.com/acquire-project/acquire-python/blob/main/CITATION.cff">CITATION.cff file</a></p>
+<h2 id="acquire-license">Acquire License</h2>
+<p><code>Acquire</code> is provided under an <a href="https://github.com/acquire-project/acquire-python/blob/main/LICENSE">Apache 2.0 license</a>. You can learn more about the Apache license in the <a href="https://www.apache.org/licenses/LICENSE-2.0">documentation here</a>.</p>
 
 
+
+  
 
 
 
                 
+    <style>
+        .md-typeset h1 {
+            display: none;
+        }
+        .mdx-hero__content h1 {
+            display:contents;
+        }
+        .md-content {
+            max-width: 49rem;
+            padding-left: 12rem;
+        }
+    </style>
+
               </article>
             </div>
           
@@ -866,7 +870,7 @@ will end up invoking maturin.</p>
         
       </main>
       
-        <!--
+<!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -892,6 +896,8 @@ will end up invoking maturin.</p>
 <footer class="md-footer">
 
     <!-- Link to previous and/or next page -->
+    
+    
     
     
     
@@ -968,7 +974,7 @@ will end up invoking maturin.</p>
         </div>
     </div>
 </footer>
-      
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
