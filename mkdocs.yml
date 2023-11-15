@@ -23,6 +23,8 @@ nav:
     - tutorials/select.md
     - tutorials/props_json.md
     - tutorials/trig_json.md
+    - tutorials/chunked.md
+    - tutorials/multiscale.md
   - For contributors: for_contributors.md
 
 markdown_extensions:
