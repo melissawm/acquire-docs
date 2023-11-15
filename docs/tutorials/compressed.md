@@ -43,7 +43,7 @@ config = runtime.set_configuration(config)
 ```
 ## Inspect Acquired Data
 
-Now that the configuration is set to utilize the `ZarrBlosc1ZstdByteShuffle` storage device, we can acquire data, which will be compressed before it is stored to `out.zarr`.
+Now that the configuration is set to utilize the `ZarrBlosc1ZstdByteShuffle` storage device, we can acquire data, which will be compressed before it is stored to `out.zarr`. Since we did not specify the size of chunks, the data will be saved as a single chunk that is the size of the image data. You may specify chunk sizes using the `TileShape` class. For example, using `acquire.StorageProperties.chunking.tile.width` to set the width of the chunks.
 
 ```python
 # acquire data
@@ -58,12 +58,11 @@ import zarr
 # load from Zarr
 compressed = zarr.open(config.video[0].storage.settings.filename)
 ```
-INSERT explanation of zarr group hierarchy. 
 
-We'll print some of the data properties to illustrate how the data was compressed.
+We'll print some of the data properties to illustrate how the data was compressed. Since the data was stored as a single chunk, `out.zarr` will only have one top level group `"0"`.
 
 ```python
-# 
+# All of the data is stored in the "0" directory since the data was stored as a single chunk.
 data = compressed["0"]
 
 print(data.compressor.cname)
@@ -77,4 +76,4 @@ zstd
 1
 1
 ```
-As expected, the file was compressed using the `zstd` codec.
+As expected, the data was compressed using the `zstd` codec.
