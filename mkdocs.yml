@@ -25,6 +25,7 @@ nav:
     - tutorials/props_json.md
     - tutorials/trig_json.md
     - tutorials/drivers.md
+    - tutorials/storage.md
   - For contributors: for_contributors.md
 
 markdown_extensions:
