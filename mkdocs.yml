@@ -22,6 +22,7 @@ nav:
     - tutorials/trigger.md
     - tutorials/framedata.md
     - tutorials/select.md
+    - tutorials/setup.md
     - tutorials/props_json.md
     - tutorials/trig_json.md
     - tutorials/chunked.md
