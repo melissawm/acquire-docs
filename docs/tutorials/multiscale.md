@@ -72,7 +72,7 @@ runtime.start()
 runtime.stop()
 ```
 
-You can inspect the Zarr file directory to check that the data saved as expected. This zarr file should have 3 subdirectories, one for each resolution. Alternatively, you can inspect the data programmatically with:
+You can inspect the Zarr file directory to check that the data saved as expected. This zarr file should have multiple subdirectories, one for each resolution in the multiscale data. Alternatively, you can inspect the data programmatically with:
 
 ```python
 # Utilize the zarr python library to read the data
