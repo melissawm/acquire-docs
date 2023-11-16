@@ -59,7 +59,8 @@ import zarr
 compressed = zarr.open(config.video[0].storage.settings.filename)
 ```
 
-We'll print some of the data properties to illustrate how the data was compressed. Since the data was stored as a single chunk, `out.zarr` will only have one top level group `"0"`.
+We'll print some of the data properties to illustrate how the data was compressed. Since we have not enabled [multiscale](link to tutorial?) output, `out.zarr` will only have one top level array`"0"`.
+
 
 ```python
 # All of the data is stored in the "0" directory since the data was stored as a single chunk.
