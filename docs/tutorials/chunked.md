@@ -23,7 +23,7 @@ config = runtime.get_configuration()
 config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simulated: radial sin") 
 
 # Set the storage to Zarr to have the option to save multiscale data
-config.video[0].storage.identifier = dm.select(DeviceKind.Storage, "Zarr")
+config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Zarr")
 
 # Set the time for collecting data for a each frame
 config.video[0].camera.settings.exposure_time_us = 1e4  # 10 ms
@@ -35,7 +35,7 @@ config.video[0].camera.settings.shape = (1920, 1080)
 config.video[0].camera.settings.pixel_type = acquire.SampleType.U8
 
 # Set the max frame count
-config.video[0].max_frame_count = 100 # collect 100 frames
+config.video[0].max_frame_count = 10 # collect 10 frames
 
 # Set the output file to out.zarr
 config.video[0].storage.settings.filename = "out.zarr"
@@ -59,6 +59,7 @@ runtime.set_configuration(config)
 ```
 
 ## Collect and Inspect the Data
+
 ```python
 # collect data
 runtime.start()
@@ -68,33 +69,22 @@ runtime.stop()
 You can inspect the Zarr file directory to check that the data saved as expected. Alternatively, you can inspect the data programmatically with:
 
 ```python
-import json
-import logging
-import time
-from time import sleep
-from typing import Any, Dict, List, Optional
-
-import acquire
-import dask.array as da
-import numcodecs.blosc as blosc
-import pytest
-import tifffile
+# Utilize the zarr library to open the data
 import zarr
-from acquire.acquire import DeviceKind, DeviceState, Runtime, Trigger
-from ome_zarr.io import parse_url
-from ome_zarr.reader import Reader
-from skimage.transform
 
+# create a zarr Group object
 group = zarr.open(config.video[0].storage.settings.filename)
-data = group["0"]
 
-assert data.chunks == (64, 1, 1080 // 2, 1920 // 2)
+# check how many directories are in the zarr container
+print(len(group))
 
-assert data.shape == (
-    number_of_frames,
-    1,
-    config.video[0].camera.settings.shape[1],
-    config.video[0].camera.settings.shape[0],
-)
-assert data.nchunks == expected_number_of_chunks
+# inspect the characteristics of the data
+group["0"]
 ```
+
+The output will be:
+```
+1
+<zarr.core.Array '/0' (16, 1, 1080, 1920) uint8>
+```
+As expected, we have only 1 top level directory since this data is not multiscale. Within the `"0"` directory, we have 16 elements, # namely the original data as well as 4 chunks, since we set the chunk size to be half of the image dimensions.
