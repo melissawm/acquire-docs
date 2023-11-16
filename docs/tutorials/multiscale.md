@@ -5,7 +5,7 @@ This tutorial will provide an example of writing multiscale data to a Zarr file.
 Zarr has additional capabilities relative to Acquire's basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. To enable _chunking_ and _multiscale storage_, set those attributes in instances of the `ChunkingProperties` and `StorageProperties` classes, respectively. You can learn more about the Zarr capabilities in `Acquire` [here](https://github.com/acquire-project/acquire-driver-zarr).
 
 ## Configure `Runtime`
-To start, we'll create a `Runtime` object and configure the streaming process, selecting `Zarr` as the storage device to enable multiscale data.
+To start, we'll create a `Runtime` object and begin to configure the streaming process, selecting `Zarr` as the storage device so that writing multiscale data is possible.
 
 ```python
 import acquire
@@ -44,7 +44,7 @@ config.video[0].storage.settings.pixel_scale_um = (1, 1) # 1 micron by 1 micron
 config.video[0].storage.settings.filename = "out.zarr"
 ```
 
-Below we'll configure the multiscale specific settings.
+To complete configuration, we'll configure the multiscale specific settings.
 
 ```python
 # Chunk size may need to be optimized for each acquisition. 
@@ -72,35 +72,24 @@ runtime.start()
 runtime.stop()
 ```
 
-You can inspect the Zarr file directory to check that the data saved as expected. Alternatively, you can inspect the data programmatically with:
+You can inspect the Zarr file directory to check that the data saved as expected. This zarr file should have 3 subdirectories, one for each resolution. Alternatively, you can inspect the data programmatically with:
 
 ```python
-import json
-import logging
-import time
-from time import sleep
-from typing import Any, Dict, List, Optional
-
-import acquire
-import dask.array as da
-import numcodecs.blosc as blosc
-import pytest
-import tifffile
+# Utilize the zarr python library to read the data
 import zarr
-from acquire.acquire import DeviceKind, DeviceState, Runtime, Trigger
-from ome_zarr.io import parse_url
-from ome_zarr.reader import Reader
-from skimage.transform
 
-reader = Reader(parse_url("out.zarr"))
-zgroup = list(reader())[0]
-
-# loads each layer as a dask array from the Zarr dataset
-data = [
-    da.from_zarr("out.zarr", component=str(i))
-    for i in range(len(zgroup.data))
-]
-assert len(data) == 3
-
-image = data[0][0, 0, :, :].compute()  # convert dask array to numpy array
+# Open the data to create a zarr Group
+group = zarr.open("out.zarr")
 ```
+With multiscale mode enabled, an image pyramid will be formed by rescaling the data by a factor of 2 progressively until the rescaled image is smaller than the specified zarr chunk size in both dimensions. In this example, the original image dimensions are (1920, 1080), and we chunked the data using tiles 1/3 of the size of the image, namely (640, 360). To illustrate this point, we'll inspect the sizes of the various levels in the multiscale data and compare it to our specified chunk size.
+
+```python
+group["0"], group["1"], group["2"]
+```
+The output will be:
+```
+(<zarr.core.Array '/0' (10, 1, 1080, 1920) uint8>,
+ <zarr.core.Array '/1' (5, 1, 540, 960) uint8>,
+ <zarr.core.Array '/2' (2, 1, 270, 480) uint8>)
+```
+Here, the `"0"` directory contains the full image of (1080, 1920) in size as well as 9 chunks. The `"1"` dirctory contains the first rescaled image of size (540, 960) as well as 4 chunks. The `"2"` directory contains a further rescaled image of size (270, 480), which is now smaller in both dimensions than the chunk size of (640, 360), so this directory contains just 2 copies of the rescaled image.
