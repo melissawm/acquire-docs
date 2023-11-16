@@ -27,6 +27,7 @@ nav:
     - tutorials/chunked.md
     - tutorials/multiscale.md
     - tutorials/drivers.md
+    - tutorials/storage.md
   - For contributors: for_contributors.md
 
 markdown_extensions:
