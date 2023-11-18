@@ -40,7 +40,5 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://acquire-project.zulipchat.com
+plugins:
+  - include-markdown

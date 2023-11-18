@@ -43,14 +43,9 @@ with open("sample_trig.json", "w") as outfile:
 ## Example JSON file
 The resulting sample_trig.json file is below:
 
-```json
-{
-    "edge": "Falling",
-    "enable": false,
-    "kind": "Input",
-    "line": 0
-}
-```
+~~~json
+{% include "./sample_trig.json" %}
+~~~
 
 ## Load Properties from a JSON file
 You can load the trigger attributes in the JSON file to a `Trigger` object as shown below:
