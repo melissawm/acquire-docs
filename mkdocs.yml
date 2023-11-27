@@ -20,7 +20,7 @@ nav:
   - Tutorials:
     - tutorials/tutorials.md
     - tutorials/trigger.md
-    - tutorials/camera.md
+    - tutorials/configure.md
     - tutorials/framedata.md
     - tutorials/start_stop.md
     - tutorials/livestream.md
