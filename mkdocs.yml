@@ -21,6 +21,8 @@ nav:
     - tutorials/tutorials.md
     - tutorials/trigger.md
     - tutorials/framedata.md
+    - tutorials/start_stop.md
+    - tutorials/livestream.md
     - tutorials/select.md
     - tutorials/props_json.md
     - tutorials/trig_json.md
