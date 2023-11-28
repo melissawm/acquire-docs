@@ -51,9 +51,6 @@ config.video[0].storage.settings.chunking.max_bytes_per_chunk = 32 * 2**20 # 32 
 config.video[0].storage.settings.chunking.tile.width = 1920 // 2
 config.video[0].storage.settings.chunking.tile.height = 1080 // 2
 
-# planes refers to the 3rd dimension of the chunks, so use 1 if each chunk is 2D
-config.video[0].storage.settings.chunking.tile.planes = 1
-
 # Update the configuration with the chosen parameters
 runtime.set_configuration(config)
 ```
