@@ -25,7 +25,6 @@ nav:
     - tutorials/setup.md
     - tutorials/props_json.md
     - tutorials/trig_json.md
-    - tutorials/chunked.md
     - tutorials/multiscale.md
     - tutorials/drivers.md
     - tutorials/storage.md
