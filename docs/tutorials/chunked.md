@@ -22,7 +22,7 @@ config = runtime.get_configuration()
 # Select the radial sine simulated camera as the video source
 config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simulated: radial sin") 
 
-# Set the storage to Zarr to have the option to save multiscale data
+# Set the storage to Zarr to take advantage of chunking
 config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Zarr")
 
 # Set the time for collecting data for a each frame
