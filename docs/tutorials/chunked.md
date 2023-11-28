@@ -73,7 +73,7 @@ import zarr
 group = zarr.open(config.video[0].storage.settings.filename)
 
 # check how many directories are in the zarr container
-print(len(group))
+assert len(group) == 1
 
 # inspect the characteristics of the data
 group["0"]
