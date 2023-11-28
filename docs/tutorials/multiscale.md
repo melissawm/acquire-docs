@@ -26,7 +26,7 @@ config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simula
 config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Zarr")
 
 # Set the time for collecting data for a each frame
-config.video[0].camera.settings.exposure_time_us = 1e4  # 10 ms
+config.video[0].camera.settings.exposure_time_us = 5e4  # 50 ms
 
 # size of image region of interest on the camera (x, y)
 config.video[0].camera.settings.shape = (1920, 1080)
