@@ -92,4 +92,6 @@ The output will be:
  <zarr.core.Array '/1' (5, 1, 540, 960) uint8>,
  <zarr.core.Array '/2' (2, 1, 270, 480) uint8>)
 ```
-Here, the `"0"` directory contains the full image of (1080, 1920) in size as well as 9 chunks. The `"1"` dirctory contains the first rescaled image of size (540, 960) as well as 4 chunks. The `"2"` directory contains a further rescaled image of size (270, 480), which is now smaller in both dimensions than the chunk size of (640, 360), so this directory contains just 2 copies of the rescaled image.
+Here, the `"0"` directory contains the full-resolution array of frames of size 1920 x 1080, with a single channel, saving all 10 frames.
+The `"1"` directory contains the first rescaled array of frames of size 960 x 540, averaging every two frames, taking the frame count from 10 to 5.
+The `"2"` directory contains a further rescaled array of frames of size 480 x 270, averaging every four frames, taking the frame count from 10 to 2. Notice that both the frame width and frame height are now smaller than the chunk width and chunk height of 640 and 360, respectively, so this should be the last array in the group.
