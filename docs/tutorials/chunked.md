@@ -52,7 +52,7 @@ config.video[0].storage.settings.chunking.tile.width = 1920 // 2
 config.video[0].storage.settings.chunking.tile.height = 1080 // 2
 
 # Update the configuration with the chosen parameters
-runtime.set_configuration(config)
+config = runtime.set_configuration(config)
 ```
 
 ## Collect and Inspect the Data
