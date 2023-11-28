@@ -22,9 +22,9 @@ config = runtime.set_configuration(config)
 
 ## Start, Stop, and Restart Acquisition
 
-During Acquisition, the `AvailableData` object is the streaming interface. Upon shutdown, all of the objects created in the class are deleted to free up resources. To illustrate this, we'll print the type of `Available` data during acquisition and following shutdown.
+During Acquisition, the `AvailableData` object is the streaming interface. Upon shutdown, all of the objects created in the class are deleted to free up resources. To illustrate this, we'll print the type of `AvailableData` during acquisition and again following shutdown.
 
-There may not be data available, in which case our variable `available_data` would be `None`. To avoid errors associated with this circumstance, we'll only grab data if `available_data` is not `None`.
+If acquisition has ended, data available, in which case our variable `available_data` would be `None`.
 
 Explain how you must stop between starts. Stops are required between starts. Otherwise, an exception is raised.
 
