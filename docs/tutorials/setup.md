@@ -48,3 +48,9 @@ config.video[0].storage.identifier = runtime.device_manager().select(acquire.Dev
 # Set the output file to out.zarr
 config.video[0].storage.settings.filename = "out.zarr"
 ```
+
+In either case, we can update the configuration settings using:
+
+```python
+config = runtime.set_configuration(config)
+```
