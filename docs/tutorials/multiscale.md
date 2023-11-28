@@ -55,9 +55,6 @@ config.video[0].storage.settings.chunking.max_bytes_per_chunk = 16 * 2**20 # 16 
 config.video[0].storage.settings.chunking.tile.width = (config.video[0].camera.settings.shape[0] // 3)
 config.video[0].storage.settings.chunking.tile.height = (config.video[0].camera.settings.shape[1] // 3)
 
-# planes refers to the 3rd dimension of the chunks, so use 1 if each chunk is 2D
-config.video[0].storage.settings.chunking.tile.planes = 1
-
 # turn on multiscale mode
 config.video[0].storage.settings.enable_multiscale = True
 
