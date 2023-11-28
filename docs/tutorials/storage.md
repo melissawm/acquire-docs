@@ -60,4 +60,4 @@ config.video[0].storage.identifier = manager.select( acquire.DeviceKind.Storage,
 config.video[0].storage.settings.filename = "out.tif" 
 ```
 
-Before proceeding, complete the `Camera` setup and call `runtime.set_configuration(config)` to save those new configuration settings.
+Before proceeding, complete the `Camera` setup and call `set_configuration` to save those new configuration settings.
