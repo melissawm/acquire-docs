@@ -21,7 +21,7 @@ config = runtime.get_configuration()
 
 ## Utilize `DeviceManager`
 
-`DeviceManager` contains a `devices` method which creates a list of `DeviceIdentifier` objects each representing a discovered camera or storage device. Each `DeviceIdentifier` has an attribute `kind` that is a `DeviceKind` object, which has attributes specifying whether the device is a camera or storage device, as well as `Signals` and `StageAxes` attributes. 
+`DeviceManager` contains a `devices` method which creates a list of `DeviceIdentifier` objects each representing a discovered camera or storage device. Each `DeviceIdentifier` has an attribute `kind` that is a `DeviceKind` object, which has attributes specifying whether the device is a camera or storage device, as well as `Signals` and `StageAxes` attributes. The `Signals` and `StageAxes` attributes would apply to device kinds such as stages, which are not yet supported by `Acquire`.
 
 `DeviceManager` has 2 methods for selecting devices for the camera and storage. For more information on these methods, check out the [Device Selection tutorial](https://acquire-project.github.io/acquire-docs/tutorials/select/). We'll use the `select` method in this example to choose a specific device.
 
@@ -35,7 +35,7 @@ config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Tiff
 
 ## `Properties` Class Explanation
 
-Using `Runtime`'s `get_configuration` method we created `config`, an instance of the `Properties` class. `Properties` contains only one attribute `video` which is a tuple of `VideoStream` abjects since `Acquire` currently supports 2 camera streaming. To configure the first video stream, we'll index this tuple to select the first `VideoStream` object `config.video[0]`.
+Using `Runtime`'s `get_configuration` method we created `config`, an instance of the `Properties` class. `Properties` contains only one attribute `video` which is a tuple of `VideoStream` objects since `Acquire` currently supports 2 camera streaming. To configure the first video stream, we'll index this tuple to select the first `VideoStream` object `config.video[0]`.
 
 `VideoStream` objects have 2 attributes `camera` and `storage` which are instances of the `Camera` and `Storage` classes, respectively, and will be used to set the attributes of the selected camera device `simulated: radial sin` and storage device `Tiff`. The other attributes of `VideoStream` are integers that specify the maximum number of frames to collect and how many frames to average, if any, before storing the data. The `frame_average_count` has a default value of `0`, which disables this feature.
 
@@ -60,7 +60,7 @@ config.video[0].camera.settings.pixel_type = acquire.SampleType.U32
 ## Configure `Storage`
 `Storage` objects have 2 attributes, `settings`, a `StorageProperties` object, and an optional attribute `identifier`, which is an instance of the `DeviceIdentifier` class described above. 
 
-`StorageProperties` has 2 attributes `external_metadata_json` and `filename` which are strings of the filename or filetree of the output metadata in JSON format and image data in whatever format corresponds to the selected storage device, respectively. `first_frame_id` is an integer ID that corresponds to the first frame of the current acquisition. `pixel_scale_um` is the pixel size in microns. `enable_multiscale` is a boolean used to specify if the data should be saved as an image pyramid. See the [multiscale tutorial](https://acquire-project.github.io/acquire-docs/tutorials/multiscale/) for more information. The `chunking` attribute is an instance of the `ChunkingProperties` class, used for Zarr storage. See the [chunking tutorial](https://acquire-project.github.io/acquire-docs/tutorials/multiscale/) for more information.
+`StorageProperties` has 2 attributes `external_metadata_json` and `filename` which are strings of the filename or filetree of the output metadata in JSON format and image data in whatever format corresponds to the selected storage device, respectively. `first_frame_id` is an integer ID that corresponds to the first frame of the current acquisition and is typically 0. `pixel_scale_um` is the pixel size in microns. `enable_multiscale` is a boolean used to specify if the data should be saved as an image pyramid. See the [multiscale tutorial](https://acquire-project.github.io/acquire-docs/tutorials/multiscale/) for more information. The `chunking` attribute is an instance of the `ChunkingProperties` class, used for Zarr storage. See the [chunking tutorial](https://acquire-project.github.io/acquire-docs/tutorials/multiscale/) for more information.
 
 We'll specify the name of the output image file below.
 
@@ -70,7 +70,7 @@ config.video[0].storage.settings.filename = "out.tiff"
 ```
 
 # Update Configuration Settings
-None of the configuration settings are updated in `Runtime` until the `set_configuration` method is used. We'll be creating a new `Properties` object with the `set_configuration` method. For simplicity, we'll use `config` for the name of that object as well, but note that `new_config = runtime.set_configuration(config)` also works here. 
+None of the configuration settings are updated in `Runtime` until the `set_configuration` method is called. We'll be creating a new `Properties` object with the `set_configuration` method. For simplicity, we'll reuse `config` for the name of that object as well, but note that `new_config = runtime.set_configuration(config)` also works here. 
 
 ```python
 # Update the configuration with the chosen parameters 
