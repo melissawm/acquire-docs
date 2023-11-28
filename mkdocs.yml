@@ -24,6 +24,7 @@ nav:
     - tutorials/select.md
     - tutorials/props_json.md
     - tutorials/trig_json.md
+    - tutorials/chunked.md
     - tutorials/drivers.md
     - tutorials/storage.md
   - For contributors: for_contributors.md
