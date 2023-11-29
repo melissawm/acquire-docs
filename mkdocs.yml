@@ -20,14 +20,19 @@ nav:
   - Tutorials:
     - tutorials/tutorials.md
     - tutorials/trigger.md
+    - tutorials/configure.md
     - tutorials/framedata.md
+    - tutorials/start_stop.md
+    - tutorials/livestream.md
     - tutorials/select.md
     - tutorials/props_json.md
     - tutorials/trig_json.md
     - tutorials/chunked.md
     - tutorials/drivers.md
     - tutorials/storage.md
-  - For contributors: for_contributors.md
+  - For contributors: 
+    - contribution/for_contributors.md
+    - contribution/docs_contribution_quickstart.md
 
 markdown_extensions:
   - pymdownx.highlight:
