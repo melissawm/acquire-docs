@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../drivers/">
+        <link rel="prev" href="../framedata/">
       
       
-        <link rel="next" href="../../contribution/docs_contribution_quickstart/">
+        <link rel="next" href="../livestream/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Storage Device Selection - Acquire Docs</title>
+        <title>Multiple Acquisitions - Acquire Docs</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#storage-device-selection" class="md-skip">
+        <a href="#multiple-acquisitions" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +135,7 @@
                 <div class="md-header__topic" data-md-component="header-topic">
                     <span class="md-ellipsis">
                         
-                        Storage Device Selection
+                        Multiple Acquisitions
                         
                     </span>
                 </div>
@@ -501,10 +501,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../start_stop/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Multiple Acquisitions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -513,6 +533,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure-streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Streaming
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-stop-and-restart-acquisition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start, Stop, and Restart Acquisition
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -648,30 +706,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Storage Device Selection
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -680,44 +718,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description-of-storage-devices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description of Storage Devices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-the-storage-device-and-specify-where-to-store-the-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Select the Storage Device and Specify where to Store the Data
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -846,18 +846,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description-of-storage-devices" class="md-nav__link">
+  <a href="#configure-streaming" class="md-nav__link">
     <span class="md-ellipsis">
-      Description of Storage Devices
+      Configure Streaming
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#select-the-storage-device-and-specify-where-to-store-the-data" class="md-nav__link">
+  <a href="#start-stop-and-restart-acquisition" class="md-nav__link">
     <span class="md-ellipsis">
-      Select the Storage Device and Specify where to Store the Data
+      Start, Stop, and Restart Acquisition
     </span>
   </a>
   
@@ -881,55 +881,77 @@
   
 
 
-<h1 id="storage-device-selection">Storage Device Selection</h1>
-<p>This tutorial illustrates the storage device options in <code>Acquire</code>.</p>
-<h2 id="description-of-storage-devices">Description of Storage Devices</h2>
-<p>To start, we'll create a <code>Runtime</code> object and print the storage device options.</p>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">acquire</span> 
+<h1 id="multiple-acquisitions">Multiple Acquisitions</h1>
+<p>This tutorial will provide an example of starting, stopping, and restarting acquisition, or streaming from a video source. </p>
+<h2 id="configure-streaming">Configure Streaming</h2>
+<p>To start, we'll create a <code>Runtime</code> object and configure the streaming process. To do this, we'll utilize the setup method. More information on that method is detailed in <a href="https://acquire-project.github.io/acquire-docs/tutorials/setup">this tutorial</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Instantiate a Runtime object</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Initialize a Runtime object</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Instantiate a DeviceManager object for the Runtime</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">manager</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Grarb Set Video Source and Storage Device</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">config</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">runtime</span><span class="p">,</span> <span class="s2">&quot;simulated: radial sin&quot;</span><span class="p">,</span> <span class="s2">&quot;Tiff&quot;</span><span class="p">)</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Print devices in DeviceManager of kind Storage</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">manager</span><span class="o">.</span><span class="n">devices</span><span class="p">():</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">if</span> <span class="n">device</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">:</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">==</span> <span class="s2">&quot;out.tif&quot;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">192</span><span class="p">,</span> <span class="mi">108</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">exposure_time_us</span> <span class="o">=</span> <span class="mf">10e4</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># Update the configuration with the chosen parameters </span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> 
 </span></code></pre></div>
-The output of that script will be:</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Storage Devices printed
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&lt;DeviceIdentifier Storage &quot;raw&quot;&gt;
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&lt;DeviceIdentifier Storage &quot;tiff&quot;&gt;
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&lt;DeviceIdentifier Storage &quot;trash&quot;&gt;
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>&lt;DeviceIdentifier Storage &quot;tiff-json&quot;&gt;
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>&lt;DeviceIdentifier Storage &quot;Zarr&quot;&gt;
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>&lt;DeviceIdentifier Storage &quot;ZarrBlosc1ZstdByteShuffle&quot;&gt;
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>&lt;DeviceIdentifier Storage &quot;ZarrBlosc1Lz4ByteShuffle&quot;&gt;
+<h2 id="start-stop-and-restart-acquisition">Start, Stop, and Restart Acquisition</h2>
+<p>During Acquisition, the <code>AvailableData</code> object is the streaming interface. Upon shutdown, <code>Runtime</code> deletes all of the objects created during acquisition to free up resources, and you must stop acquisition by calling <code>runtime.stop()</code> between acquisitions. Otherwise, an exception will be raised.</p>
+<p>To understand how acquisition works, we'll start, stop, and repeat acquisition and print the <code>DeviceState</code>, which can be <code>Armed</code>, <code>AwaitingConfiguration</code>, <code>Closed</code>, or <code>Running</code>, and the <code>AvailableData</code> object throughout the process.</p>
+<p>If acquisition has ended, all of the objects are deleted, including <code>AvailableData</code> objects, so those will be <code>None</code> when not acquiring data. In addition, if enough time hasn't elapsed since acquisition started, <code>AvailableData</code> will also be <code>None</code>. We'll utilize the <code>time</code> python package to introduce time delays to account for these facts. </p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># package used to introduce time delays</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">time</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># start acquisition</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">get_state</span><span class="p">())</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">get_available_data</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># wait 0.5 seconds to allow time for data to be acquired</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">get_state</span><span class="p">())</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">get_available_data</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1"># stop acquisition</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">get_state</span><span class="p">())</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">get_available_data</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="c1"># start acquisition</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="c1"># time delay of 5 seconds - acquisition only runs for 1 second</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">get_state</span><span class="p">())</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">get_available_data</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="c1"># stop acquisition</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </span></code></pre></div>
-- <strong>raw</strong> - Streams to a raw binary file.
-- <strong>tiff</strong> - Streams to a <a href="http://bigtiff.org/">bigtiff</a> file. Metadata is stored in the <code>ImageDescription</code> tag for each frame as a <code>JSON</code> string.
-- <strong>trash</strong> - Writes nothing. Discards incoming data. Useful for live streaming applications.
-- <strong>tiff-json</strong> - Stores the video stream in a <a href="http://bigtiff.org/">bigtiff</a>, and stores metadata in a <code>JSON</code> file. Both are located in a folder identified by the <code>filename</code> property.
-- <strong>Zarr</strong> - Streams data to a <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a> file with associated metadata.
-- <strong>ZarrBlosc1ZstdByteShuffle</strong> - Streams compressed data (<em>zstd</em> codec) to a <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a> file with associated metadata. 
-- <strong>ZarrBlosc1Lz4ByteShuffle</strong> - Streams compressed data (<em>lz4</em> codec) to a <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a> file with associated metadata.</p>
-<p><code>Acquire</code> supports streaming data to <a href="http://bigtiff.org/">bigtiff</a> and <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a>. </p>
-<p>Zarr has additional capabilities relative to the basic storage devices, namely <em>chunking</em>, <em>compression</em>, and <em>multiscale storage</em>. You can learn more about the Zarr capabilities in <code>Acquire</code> <a href="https://github.com/acquire-project/acquire-driver-zarr">here</a>.</p>
-<h2 id="select-the-storage-device-and-specify-where-to-store-the-data">Select the Storage Device and Specify where to Store the Data</h2>
-<p>We'll use our instance of <code>Runtime</code> and specify that the data from one video source should be streamed to a file <code>out.tif</code> in the example below:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># get the current configuration</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Select the tiff storage device</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="n">select</span><span class="p">(</span> <span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;tiff&quot;</span><span class="p">)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Set the data filename to out.tif in your current directory (provide the whole filetree to save to a different directory)</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;out.tif&quot;</span> 
+<p>The output will be:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>DeviceState.Running
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>None
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>DeviceState.Running
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>&lt;builtins.AvailableData object at 0x00000218D685E5B0&gt;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>DeviceState.Armed
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>None
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>DeviceState.Armed
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>&lt;builtins.AvailableData object at 0x00000218D685E3D0&gt;
 </span></code></pre></div>
-<p>Before proceeding, complete the <code>Camera</code> setup and call <code>set_configuration</code> to save those new configuration settings.</p>
+1. The first time we print states is immediately after we started acqusition and enough time hasn't elapsed for data to be collected based on the exposure time, so the camera is running but there is no data yet.
+2. The next print happens after waiting 0.5 seconds, so acquisition is still runnning and now there is acquired data available.
+3. The subsequent print is following calling <code>runtime.stop()</code> which terminates acquisition after the specified max number of frames are collected, so the device is no longer running, although it is in the <code>Armed</code> state ready for acquisition, and there is no available data.
+4. The final print occurs after waiting 5 seconds after starting acquisition, which is longer than the 1 second time needed to collect all the frames, so the device is no longer collecting data. However, <code>runtime.stop()</code> hasn't been called, so the <code>AvailableData</code> object has not yet been deleted.</p>
 
 
 
@@ -978,8 +1000,8 @@ The output of that script will be:</p>
         <!-- Link to previous page -->
         
         
-        <a href="../drivers/" class="md-footer__link md-footer__link--prev"
-            aria-label="Previous: Test Camera Drivers">
+        <a href="../framedata/" class="md-footer__link md-footer__link--prev"
+            aria-label="Previous: Accessing Data from the Video Source">
             <div class="md-footer__button md-icon">
                 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -989,7 +1011,7 @@ The output of that script will be:</p>
                     Previous
                 </span>
                 <div class="md-ellipsis">
-                    Test Camera Drivers
+                    Accessing Data from the Video Source
                 </div>
             </div>
         </a>
@@ -998,14 +1020,14 @@ The output of that script will be:</p>
         <!-- Link to next page -->
         
         
-        <a href="../../contribution/docs_contribution_quickstart/" class="md-footer__link md-footer__link--next"
-            aria-label="Next: Quick Start Acquire Docs Contribution Guide">
+        <a href="../livestream/" class="md-footer__link md-footer__link--next"
+            aria-label="Next: Livestream to napari">
             <div class="md-footer__title">
                 <span class="md-footer__direction">
                     Next
                 </span>
                 <div class="md-ellipsis">
-                    Quick Start Acquire Docs Contribution Guide
+                    Livestream to napari
                 </div>
             </div>
             <div class="md-footer__button md-icon">
