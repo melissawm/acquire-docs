@@ -44,7 +44,10 @@ Acquire also supports the following output file formats:
 For testing and demonstration purposes, Acquire provides a few simulated cameras, as well as raw and trash output devices.
 
 ## Citing Acquire
-Provide the [CITATION.cff file](https://github.com/acquire-project/acquire-python/blob/main/CITATION.cff)
+
+~~~
+{% include "./CITATION.cff" %}
+~~~
 
 ## Acquire License
 `Acquire` is provided under an [Apache 2.0 license](https://github.com/acquire-project/acquire-python/blob/main/LICENSE). You can learn more about the Apache license in the [documentation here](https://www.apache.org/licenses/LICENSE-2.0).
