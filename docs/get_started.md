@@ -12,8 +12,8 @@ To install Acquire on Windows, macOS, or Ubuntu, simply run the following comman
 python -m pip install acquire-imaging
 ```
 
-You will probably want to have a fresh conda environment or virtualenv.
-For example, with conda:
+We recommend installing `Acquire` in a fresh conda environment or virtualenv.
+For example, to install `Acquire` in a conda environment named `acquire`:
 
 ```
 conda create -n acquire python=3.10 # follow the prompts and proceed with the defaults
@@ -71,9 +71,9 @@ python -m pip install dask "napari[all]" zarr
 
 ## Setup for Acquisition
 
-We will use one of Acquire's simulated cameras to generate data for us and use Zarr for our output file format.
+We will use one of Acquire's simulated cameras to generate data and use Zarr for our output file format, which is called "storage device" in `Acquire`.
 
-Let's set up our runtime and device manager, then list the currently supported devices.
+To begin, instantiate `Runtime` and `DeviceManager` and list the currently supported devices.
 
 ```python
 import acquire
@@ -89,7 +89,7 @@ Through the runtime, you configure your devices, start acquisition, check acquis
 
 Let's configure our devices now.
 To do this, we'll get a copy of the current runtime configuration.
-We can update the configuration with identifiers from the the runtime's **device manager**, but we won't actually instantiate these devices until we start acquiring.
+We can update the configuration with identifiers from the the runtime's **device manager**, but these devices won't instantiate until we start acquisition.
 
 Acquire supports up to two video streams.
 These streams consist of a **source** (i.e., a camera), optionally a **filter**, and a **sink** (an output, like a Zarr dataset or a Tiff file).
@@ -162,7 +162,7 @@ config.video[1].storage.settings.chunking.max_bytes_per_chunk = 64 * 2**20  # 64
 ```
 
 Finally, let's specify how many frames to generate for each camera before stopping our simulated acquisition.
-We also need to register our configuration with the runtime.
+We also need to register our configuration with the runtime using the `set_configuration` method.
 
 If you want to let the runtime just keep acquiring effectively forever, you can set `max_frame_count` to `2**64 - 1`.
 
@@ -196,7 +196,7 @@ To start aquiring data:
 runtime.start()
 ```
 
-Acquisition happens in a separate thread, so at any point we can check on the status by calling `runtime.get_state()`.
+Acquisition happens in a separate thread, so at any point we can check on the status by calling the  `get_state` method.
 
 
 ```python
@@ -204,7 +204,7 @@ runtime.get_state()
 ```
 
 Finally, once we're done acquiring, we call `runtime.stop()`.
-This method will wait until you've reached the number of frames specified in `config.video[0].max_frame_count` or `config.video[1].max_frame_count`, whichever is larger.
+This method will wait until you've reached the number of frames to collect specified in `config.video[0].max_frame_count` or `config.video[1].max_frame_count`, whichever is larger.
 
 ```python
 runtime.stop()
@@ -218,26 +218,17 @@ We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we
 ```python
 import dask.array as da
 import napari
-```
 
-```python
 data1 = da.from_zarr(config.video[0].storage.settings.filename, component="0")
 data1
-```
 
-```python
 data2 = da.from_zarr(config.video[1].storage.settings.filename, component="0")
-data2
-```
 
-```python
 viewer1 = napari.view_image(data1)
-```
 
-```python
 viewer2 = napari.view_image(data2)
 ```
 
 ## Conclusion
 
-For more examples of using Acquire, check out our [tutorials page](). #ADD LINK
+For more examples of using Acquire, check out our [tutorials page](https://acquire-project.github.io/acquire-docs/tutorials/tutorials/).
