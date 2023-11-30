@@ -39,7 +39,7 @@ class Camera:
     """Returns a dictionary of the Camera attributes."""
 ```
 
-- `identifier`: An optional attribute which contains an instance of the `DeviceIdentifier` class that describes the camera, or video source, if that device is natively supported. Otherwise, it is of type `None`.
+- `identifier`: An optional attribute which contains an instance of the `DeviceIdentifier` class. `DeviceIdentifier` has `id` and `kind` attributes assigned by `Acquire` if the device is natively supported. Otherwise, it is of type `None`.
 
 - `settings`: An instance of the `CameraProperties` class which contains the settings for the camera.
 
@@ -73,13 +73,13 @@ class CameraProperties:
 
 - `binning`: How many adjacent pixels in each direction to combine by averaging. For example, if `binning` is set to 2, a 2x2 square of pixels will be combined by averaging. If `binning` is set to 1, no pixels will be combined.
 
-- `pixel_type`: An instance of the `SampleType` class which specifies the numerical data type, for example u16, a 16-bit unsigned integer type.
+- `pixel_type`: An instance of the `SampleType` class which specifies the numerical data type, for example Uint16, a 16-bit unsigned integer type.
 
 - `readout_direction`: An instance of the `Direction` class which specifies whether the data is readout forwards or backwards.
 
 - `offset`: A tuple of two integers representing the (x, y) offset in pixels of the image region of interest on the camera.
 
-- `shape`: A tuple of two integers representing the size in pixels of the image region of interest on the camera.
+- `shape`: A tuple of two integers representing the (x, y)size in pixels of the image region of interest on the camera.
 
 - `input_triggers`: An instance of the `InputTriggers` class, which describes the trigger signals for starting acquisition, camera exposure, and acquiring a frame.
 
@@ -106,7 +106,7 @@ class ChunkingProperties:
 - The `dict` method creates a dictionary of a `ChunkingProperties` object's attributes.
 
 ## Class `DeviceIdentifier`
-The `DeviceIdentifier` class represents an identifier for a device, such as a camera or video source.
+The `DeviceIdentifier` class represents an identifier for a supported device, including its unique id and type, such as a camera or storage.
 
 ```python
 class DeviceIdentifier:
@@ -122,7 +122,8 @@ class DeviceIdentifier:
 
     @staticmethod
     def none() -> DeviceIdentifier: ...
-    """Returns a "None" type DeviceIdentifier. Useful when a DeviceIdentifier is not needed."""
+    """Returns a "None" type DeviceIdentifier.
+    Useful when a DeviceIdentifier is not needed."""
 
     def __eq__(self, other: object) -> bool:
         """Checks if two DeviceIdentifier objects are equal."""
@@ -143,7 +144,7 @@ class DeviceIdentifier:
         """Checks if two DeviceIdentifier objects are not equal."""
 ```
 
-- `id`: A tuple (driver_id, device_id) containing two U8 integers that serve to identify each driver and device uniquely for a given run.
+- `id`: A tuple (driver_id, device_id) containing two Uint8 integers that serve to identify each driver and device uniquely for a given run.
 
 - `kind`: An instance of the `DeviceKind` class that represents the type or kind of the device.
 
@@ -153,7 +154,7 @@ class DeviceIdentifier:
 
 ## Class `DeviceKind`
 
-The `DeviceKind` class represents properties for supported devices, such as a camera or video source, in a given system.
+The `DeviceKind` class represents the types of devices in a given system.
 
 ```python
 class DeviceKind:
@@ -188,19 +189,19 @@ class DeviceKind:
         """Checks if two DeviceKind objects are not equal."""
 ```
 
-- `Camera`: Enum-type class variable of `DeviceKind` that defines the cameras supported by the system. 
+- `Camera`: Enum-type class variable of `DeviceKind` that specifies a device is a camera. 
 
-- `NONE`: Enum-type class variable of `DeviceKind` that is set to None if no device of the specified kind is available.
+- `NONE`: Enum-type class variable of `DeviceKind` for if a device's kind is unavailable.
 
-- `Signals`: Enum-type class variable of `DeviceKind` that defines the signals supported by the system.
+- `Signals`: Enum-type class variable of `DeviceKind` that specifies a device is a signal.
 
-- `StageAxis`: Enum-type class variable of `DeviceKind` that defines the stage axes supported by the system.
+- `StageAxis`: Enum-type class variable of `DeviceKind` that specifies a device is a stage.
 
-- `Storage`: Enum-type class variable of `DeviceKind` that defines the storage supported by the system.
+- `Storage`: Enum-type class variable of `DeviceKind` that specifies a device is for storage.
 
 ## Class `DeviceManager` 
 
-The `DeviceManager` class manages selection of available devices in the system.
+The `DeviceManager` class manages selection of available devices in the system. Regular expressions are accepted for the name argument.
 
 ```python
 class DeviceManager:
@@ -208,23 +209,12 @@ class DeviceManager:
         """Returns a list of all available device identifiers."""
     
     @overload
-    def select(self, kind: DeviceKind) -> Optional[DeviceIdentifier]:
-        """Selects the first available device of `kind`.
-        
-        Args:
-            kind (DeviceKind): The type of device to select.
-            
-        Returns:
-            Optional[DeviceIdentifier]: The identifier of the first available device of `kind`, or `None` if no such device is available.
-        """
-    
-    @overload
     def select(self, kind: DeviceKind, name: Optional[str]) -> Optional[DeviceIdentifier]:
         """Selects a specified device.
         
         Args:
             kind (DeviceKind): The type of device to select.
-            name (Optional[str]): The name of the device to select.
+            name (Optional[str]): The name of the device to select. Regular expressions supported.
             
         Returns:
             Optional[DeviceIdentifier]: The selected device identifier, or None if the specified device is not available.
@@ -235,18 +225,18 @@ class DeviceManager:
         
         Args:
             kind (DeviceKind): The type of device to select.
-            names (List[str]): A list of device names to choose from.
+            names (List[str]): A list of device names to choose from. Regular expressions supported.
             
         Returns:
             Optional[DeviceIdentifier]: The selected device identifier, or None if none of the specified devices are available.
         """
 ```
 
-- Call `devices` to list all available devices. 
+- Call `devices` to list the `DeviceIdentifier` of each available device. 
 
-- Call `select` to choose a type of device for acquisition.
+- Call `select` to choose the first available device of a given type or to select a specific device by name.
 
-- Call `select_one_of` to choose a particular instance in a category of devices for acquisition.
+- Call `select_one_of` to choose one device from a list of acceptable devices of a given kind.
 
 ## Class `DeviceState`
 
@@ -326,7 +316,7 @@ class Direction:
 
 ## Class `InputTriggers`
 
-The `InputTriggers` class represents input triggers for a device.
+The `InputTriggers` class represents input triggers for a camera device.
 
 ```python
 class InputTriggers:
@@ -348,7 +338,7 @@ class InputTriggers:
 
 ## Class `OutputTriggers`
 
-The `OutputTriggers` class represents output triggers for a device.
+The `OutputTriggers` class represents output triggers for a camera device.
 
 ```python
 class OutputTriggers:
@@ -408,7 +398,7 @@ class Properties:
     """Returns a dictionary of the Properties attributes."""
 ```
 
-- `video`: A tuple containing two `VideoStream` instances which contain information on the camera was used for acquisition and how the data is stored.
+- `video`: A tuple containing two `VideoStream` instances since `Acquire` supports simultaneous streaming from 2 video sources. `VideoStream` objects have 2 attributes `camera` and `storage` to set the source and sink for the stream.
 
 - The `dict` method creates a dictionary of a `Properties` object's attributes.
 
@@ -431,7 +421,7 @@ class Runtime:
             stream_id (int): The ID of the stream for which available data is requested.
             
         Returns:
-            AvailableData: The AvailableData instance for the given stream ID.
+            AvailableData: The AvailableData instance for the given VideoStream ID.
         """
     
     def get_configuration(self) -> Properties:
@@ -462,7 +452,7 @@ class Runtime:
 
 - Call `device_manager()` to return the `DeviceManager` object associated with this `Runtime` instance. 
 
-- Call `get_available_data` with a specific `stream_id` to return the `AvailableData` associated with the `stream_id`.
+- Call `get_available_data` with a specific `stream_id`, 0 or 1, to return the `AvailableData` associated with the 1st or 2nd video source, respectively.
 
 - Call `get_configuration()` to return the `Properties` object associated with this `Runtime` instance.
 
@@ -472,9 +462,9 @@ class Runtime:
 
 - Call `start()` to begin data acquisition.
 
-- Call `stop()` to end data acquisition once the max number of frames specified in `config.video[0].max_frame_count` is collected.
+- Call `stop()` to end data acquisition once the max number of frames specified in `acquire.VideoStream.max_frame_count` is collected. All objects are deleted to free up disk space upon shutdown of `Runtime`.
 
-- Call `abort()` to  `Runtime` instance.
+- Call `abort()` to immediately end data acqusition. All objects are deleted to free up disk space upon shutdown of `Runtime`.
 
 ## Class `SampleRateHz`
 
@@ -553,7 +543,7 @@ class SampleType:
 
 ## Class `SignalIOKind`
 
-The `SignalIOKind` class defines the type of input and output signals.
+The `SignalIOKind` class defines the signal type, input or output, for a trigger.
 
 ```python
 class SignalIOKind:
@@ -623,7 +613,7 @@ class SignalType:
 
 ## Class `Storage`
 
-The `Storage` class represents storage settings for the acquired data.
+The `Storage` class represents storage devices and their settings.
 
 ```python
 class Storage:
@@ -657,23 +647,23 @@ class StorageProperties:
     """Returns a dictionary of the StorageProperties attributes."""
 ```
 
-- `external_metadata_json`: An optional attribute representing external metadata in JSON format.
+- `external_metadata_json`: An optional attribute of the metadata JSON filename as a string.
 
-- `filename`: An optional attribute representing the filename.
+- `filename`: An optional attribute representing the filename for storing the image data.
 
-- `first_frame_id`: An integer representing the ID of the first frame.
+- `first_frame_id`: An integer representing the ID of the first frame for a given acquisition.
 
-- `pixel_scale_um`: A tuple of two floats representing pixel size in micrometers.
+- `pixel_scale_um`: A tuple of two floats representing the pixel size of the camera in micrometers.
 
-- `chunking`: An instance of the `ChunkingProperties` class representing data chunking settings.
+- `chunking`: An instance of the `ChunkingProperties` class representing data chunking settings for Zarr storage.
 
-- `enable_multiscale`: A boolean indicating whether multiscale storage is desired.
+- `enable_multiscale`: A boolean indicating whether multiscale storage is enabled.
 
 - The `dict` method creates a dictionary of a `StorageProperties` object's attributes.
 
 ## Class `TileShape`
 
-The `TileShape` class represents the tile shape, or voxel size, for tile scanning acquisition.
+The `TileShape` class represents the shape of data chunks for storage in Zarr containers.
 
 ```python
 class TileShape:
@@ -685,11 +675,11 @@ class TileShape:
     """Returns a dictionary of the TileShape attributes."""
 ```
 
-- `width`: The width of the tile.
+- `width`: The width of the chunk.
 
-- `height`: The height of the tile.
+- `height`: The height of the chunk.
 
-- `planes`: The number of planes in the tile.
+- `planes`: The number of planes in the chunk.
 
 - The `dict` method creates a dictionary of a `TileShape` object's attributes.
 
@@ -715,7 +705,7 @@ class Trigger:
 
 - `enable`: A boolean indicating whether the trigger is enabled.
 
-- `line`: An integer representing the line of the trigger signal.
+- `line`: An integer representing the max value of the trigger signal.
 
 - `kind`: An instance of the `SignalIOKind` class specifying if the signal is input or output.
 
@@ -774,7 +764,7 @@ class VideoFrame:
 
 - Call `data()` to create an NDArray of the `VideoFrame` data. 
 
-- Call `metadata()` to query the metadata of `VideoFrame`. 
+- Call `metadata()` to create a `VideoFrameMetadata` object containing the metadata of `VideoFrame`. 
 
 ## Class `VideoFrameMetadata`
 
@@ -791,7 +781,7 @@ class VideoFrameMetadata:
 
 - `frame_id`: An integer representing the ID of the video frame.
 
-- `timestamps`: An instance of the `VideoFrameTimestamps` class specifying whether the video timestamps are based on the hardware clock or the acquisition clock.
+- `timestamps`: An instance of the `VideoFrameTimestamps` class specifying the video timestamps based on the hardware clock and the acquisition clock.
 
 - The `dict` method creates a dictionary of a `VideoFrameTimestamps` object's attributes.
 
@@ -829,13 +819,13 @@ class VideoStream:
     """Returns a dictionary of the VideoStream attributes."""
 ```
 
-- `camera`: An instance of the `Camera` class representing the camera used in the video stream.
+- `camera`: An instance of the `Camera` class representing the camera device for the video stream.
 
-- `storage`: An instance of the `Storage` class representing the storage settings for the video stream.
+- `storage`: An instance of the `Storage` class representing the storage device for the video stream.
 
-- `max_frame_count`: An integer representing the maximum number of frames in the video stream.
+- `max_frame_count`: An integer representing the maximum number of frames to acquire.
 
-- `frame_average_count`: An integer representing the number of frames to average in the video stream.
+- `frame_average_count`: An integer representing the number of frames to average, if any, before streaming. The default value is 0, which disables this feature. Setting this to 1 will also prevent averaging.
 
 - The `dict` method creates a dictionary of a `VideoStream` object's attributes.
 
