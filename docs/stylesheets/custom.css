@@ -2,6 +2,10 @@ html {
     --md-primary-fg-color: black !important;
 }
 
+.md-typeset a, a:hover {
+    color: var(--md-accent-fg-color);
+}
+
 .md-header {
     background-color: black;
 }
