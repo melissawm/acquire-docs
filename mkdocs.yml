@@ -47,6 +47,11 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.emoji:
+      options:
+        custom_icons:
+          - overrides/.icons
 
 plugins:
   - include-markdown
+  - search

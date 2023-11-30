@@ -71,7 +71,6 @@ display: none;
 }
 
 .md-footer-meta__inner {
-    display: flex;
     flex-direction: column;
 }
 
@@ -84,7 +83,6 @@ display: none;
 }
 
 .md-footer-meta__inner-social .links {
-    display: flex;
     padding-left: 14px;
 }
 
@@ -112,8 +110,18 @@ html .md-footer-meta.md-typeset a {
     padding-right: 0px;
 }
 
+.md-source__facts {
+    display: none;
+}
+
 .md-source:hover {
     opacity: 1;
+}
+
+/* Remove facts from footer links */
+.md-typeset ol:not([hidden]),
+.md-typeset ul:not([hidden]) {
+    display: none;
 }
 
 .vl {
@@ -179,4 +187,18 @@ html .md-footer-meta.md-typeset a {
     background-color: var(--md-accent-fg-color);
     border-color: var(--md-accent-fg-color);
     color: var(--md-accent-bg-color);
+}
+
+.md-typeset .emojione svg,
+.md-typeset .gemoji svg,
+.md-typeset .twemoji svg {
+    fill: currentcolor;
+    max-height: 100%;
+    width: auto;
+}
+
+.md-typeset .emojione,
+.md-typeset .gemoji,
+.md-typeset .twemoji {
+    height: 3em;
 }
