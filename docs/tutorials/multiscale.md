@@ -1,4 +1,4 @@
-# Writing Multiscale Zarr Files
+# Multiscale Data Acqusition
 
 This tutorial will provide an example of writing multiscale data to a Zarr file.
 
