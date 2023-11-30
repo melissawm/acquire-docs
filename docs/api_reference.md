@@ -201,7 +201,7 @@ class DeviceKind:
 
 ## Class `DeviceManager` 
 
-The `DeviceManager` class manages selection of available devices in the system.
+The `DeviceManager` class manages selection of available devices in the system. Regular expressions are accepted for the name argument.
 
 ```python
 class DeviceManager:
@@ -214,7 +214,7 @@ class DeviceManager:
         
         Args:
             kind (DeviceKind): The type of device to select.
-            name (Optional[str]): The name of the device to select.
+            name (Optional[str]): The name of the device to select. Regular expressions supported.
             
         Returns:
             Optional[DeviceIdentifier]: The selected device identifier, or None if the specified device is not available.
@@ -225,7 +225,7 @@ class DeviceManager:
         
         Args:
             kind (DeviceKind): The type of device to select.
-            names (List[str]): A list of device names to choose from.
+            names (List[str]): A list of device names to choose from. Regular expressions supported.
             
         Returns:
             Optional[DeviceIdentifier]: The selected device identifier, or None if none of the specified devices are available.
