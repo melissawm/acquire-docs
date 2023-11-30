@@ -1,4 +1,4 @@
-# Saving and Loading Properties from a JSON file
+# Properties from a JSON file
 
 This tutorial will provide an example of saving and subsequently loading a `Properties` object from a JSON file.
 
