@@ -40,14 +40,16 @@ config.video[0].max_frame_count = 10 # collect 10 frames
 # Set the output file to out.zarr
 config.video[0].storage.settings.filename = "out.zarr"
 ```
-Below we'll configure the chunking specific settings.
+Below we'll configure the chunking specific settings and update all settings with the `set_configuration` method.
 
 ```python
 # Chunk size may need to be optimized for each acquisition. 
-# See Zarr documentation for further guiddance: https://zarr.readthedocs.io/en/stable/tutorial.html#chunk-optimizations
+# See Zarr documentation for further guidance:
+# https://zarr.readthedocs.io/en/stable/tutorial.html#chunk-optimizations
 config.video[0].storage.settings.chunking.max_bytes_per_chunk = 32 * 2**20 # 32 MB
 
-# x, y dimensions of each chunk to 1/2 of the width and height of the image, generating 4 chunks
+# x, y dimensions of each chunk
+# 1/2 of the width and height of the image, generating 4 chunks
 config.video[0].storage.settings.chunking.tile.width = 1920 // 2
 config.video[0].storage.settings.chunking.tile.height = 1080 // 2
 
@@ -72,7 +74,7 @@ import zarr
 # create a zarr Group object
 group = zarr.open(config.video[0].storage.settings.filename)
 
-# check how many directories are in the zarr container
+# check for the expected # of directories in the zarr container
 assert len(group) == 1
 
 # inspect the characteristics of the data
@@ -83,4 +85,4 @@ The output will be:
 ```
 <zarr.core.Array '/0' (10, 1, 1080, 1920) uint8>
 ```
-As expected, we have only 1 top level directory, corresponding to the single array in the group (we would expect more than 1 array only if we were writing multiscale data). The overall array shape is (10, 1, 1080, 1920), corresponding to 10 frames, 1 channel, and a height and width of 1080 and 1920, respectively, per frame.
+As expected, we have only 1 top level directory, corresponding to the single array in the group. We would expect more than 1 array only if we were writing [multiscale data](https://acquire-project.github.io/acquire-docs/tutorials/multiscale/). The overall array shape is (10, 1, 1080, 1920), corresponding to 10 frames, 1 channel, and a height and width of 1080 and 1920, respectively, per frame.
