@@ -7,6 +7,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.footer
+    - navigation.indexes
     - content.code.copy
   custom_dir: overrides
 
@@ -18,7 +19,7 @@ nav:
   - Get Started: get_started.md
   - API Reference: api_reference.md
   - Tutorials:
-    - tutorials/tutorials.md
+    - tutorials/index.md
     - tutorials/trigger.md
     - tutorials/configure.md
     - tutorials/framedata.md
@@ -32,8 +33,9 @@ nav:
     - tutorials/chunked.md
     - tutorials/drivers.md
     - tutorials/storage.md
+    - tutorials/compressed.md
   - For contributors: 
-    - for_contributors/for_contributors.md
+    - for_contributors/index.md
     - for_contributors/docs_contribution_quickstart.md
 
 markdown_extensions:
