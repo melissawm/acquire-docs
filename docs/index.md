@@ -5,16 +5,30 @@ hide:
     - toc
 ---
 
-## Tiles
+## Guides
 
-- Getting Started: Install Acquire and use simulated cameras
-
-- API Reference: Information on classes and methods
-
-- Tutorials: Guides on using Acquire for specific tasks
-
-- For contributors: Learn how to contribute code or documentation to Acquire
-
+<div class="cards">
+    <div class="card">
+        <h4>Get Started</h4>
+        <p>Install Acquire and use simulated cameras</p>
+        <a href="get_started" class="button">Get Started</a>
+    </div>
+    <div class="card">
+        <h4>API Reference</h4>
+        <p>Information on classes and methods</p>
+        <a href="api_reference" class="button">API Reference</a>
+    </div>
+    <div class="card">
+        <h4>Tutorials</h4>
+        <p>Guides on using Acquire for specific tasks</p>
+        <a href="tutorials" class="button">Tutorials</a>
+    </div>
+    <div class="card">
+        <h4>For contributors</h4>
+        <p>Learn how to contribute code or documentation to Acquire</p>
+        <a href="for_contributors" class="button">For contributors</a>
+    </div>
+</div>
 
 ##  About Acquire
 
@@ -44,7 +58,10 @@ Acquire also supports the following output file formats:
 For testing and demonstration purposes, Acquire provides a few simulated cameras, as well as raw and trash output devices.
 
 ## Citing Acquire
-Provide the [CITATION.cff file](https://github.com/acquire-project/acquire-python/blob/main/CITATION.cff)
+
+~~~
+{% include "./CITATION.cff" %}
+~~~
 
 ## Acquire License
 `Acquire` is provided under an [Apache 2.0 license](https://github.com/acquire-project/acquire-python/blob/main/LICENSE). You can learn more about the Apache license in the [documentation here](https://www.apache.org/licenses/LICENSE-2.0).

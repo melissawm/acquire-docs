@@ -22,6 +22,10 @@
 
 {% extends "main.html" %}
 
+{% block header %}
+{% include "./partials/header.html" %}
+{% endblock %}
+
 <!-- Render hero under tabs -->
 {% block tabs %}
 {{ super() }}
@@ -86,5 +90,5 @@
 
 <!-- Application footer -->
 {% block footer %}
-{% include "partials/footer.html" %}
+{% include "./partials/footer.html" %}
 {% endblock %}

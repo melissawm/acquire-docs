@@ -50,7 +50,7 @@ with open("sample_props.json", "w") as outfile:
 The resulting sample_props.json file is below:
 
 ~~~json
-{% include "./sample_props.json" %}
+{% include "../examples/sample_props.json" %}
 ~~~
 
 ## Load Properties from a JSON file
