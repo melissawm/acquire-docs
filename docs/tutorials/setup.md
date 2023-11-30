@@ -7,9 +7,9 @@ This tutorial will provide an example of utilizing the [setup method](https://gi
 ```python
 def setup(
     runtime: Runtime,
-    camera: Union[str, List[str]] = "simulated: radial sin",
-    storage: Union[str, List[str]] = "Tiff",
-    output_filename: Optional[str] = "out.tif",
+    camera: Union[str, List[str]],
+    storage: Union[str, List[str]],
+    output_filename: Optional[str],
 ) -> Properties
 ```
 

@@ -1,4 +1,4 @@
-# Writing Multiscale Zarr Files
+# Multiscale Data Acqusition
 
 This tutorial will provide an example of writing multiscale data to a Zarr file.
 
@@ -28,30 +28,32 @@ config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Zarr
 # Set the time for collecting data for a each frame
 config.video[0].camera.settings.exposure_time_us = 5e4  # 50 ms
 
-# size of image region of interest on the camera (x, y)
+# Set the size of image region of interest on the camera (x, y)
 config.video[0].camera.settings.shape = (1920, 1080)
 
 # Set the max frame count
 config.video[0].max_frame_count = 5 # collect 5 frames
 
-# specify the pixel datatype as a uint8
+# Set the image data type as a Uint8
 config.video[0].camera.settings.pixel_type = acquire.SampleType.U8
 
-# set the scale of the pixels
+# Set the scale of the pixels
 config.video[0].storage.settings.pixel_scale_um = (1, 1) # 1 micron by 1 micron
 
 # Set the output file to out.zarr
 config.video[0].storage.settings.filename = "out.zarr"
 ```
 
-To complete configuration, we'll configure the multiscale specific settings.
+To complete configuration, we'll configure the multiscale specific settings and update all settings with the `set_configuration` method.
 
 ```python
 # Chunk size may need to be optimized for each acquisition. 
-# See Zarr documentation for further guiddance: https://zarr.readthedocs.io/en/stable/tutorial.html#chunk-optimizations
+# See Zarr documentation for further guidance:
+# https://zarr.readthedocs.io/en/stable/tutorial.html#chunk-optimizations
 config.video[0].storage.settings.chunking.max_bytes_per_chunk = 16 * 2**20 # 16 MB
 
-# x, y dimensions of each chunk to 1/3 of the width and height of the image, generating 9 chunks
+# x, y dimensions of each chunk
+# 1/3 of the width and height of the image, generating 9 chunks
 config.video[0].storage.settings.chunking.tile.width = (config.video[0].camera.settings.shape[0] // 3)
 config.video[0].storage.settings.chunking.tile.height = (config.video[0].camera.settings.shape[1] // 3)
 
