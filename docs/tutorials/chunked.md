@@ -85,4 +85,4 @@ The output will be:
 ```
 <zarr.core.Array '/0' (10, 1, 1080, 1920) uint8>
 ```
-As expected, we have only 1 top level directory, corresponding to the single array in the group. We would expect more than 1 array only if we were writing [multiscale data](https://acquire-project.github.io/acquire-docs/tutorials/multiscale/). The overall array shape is (10, 1, 1080, 1920), corresponding to 10 frames, 1 channel, and a height and width of 1080 and 1920, respectively, per frame.
+As expected, we have only 1 top level directory, corresponding to the single array in the group. We would expect more than 1 array only if we were writing [multiscale data](multiscale.md). The overall array shape is (10, 1, 1080, 1920), corresponding to 10 frames, 1 channel, and a height and width of 1080 and 1920, respectively, per frame.

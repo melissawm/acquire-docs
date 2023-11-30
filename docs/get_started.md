@@ -231,4 +231,4 @@ viewer2 = napari.view_image(data2)
 
 ## Conclusion
 
-For more examples of using Acquire, check out our [tutorials page](https://acquire-project.github.io/acquire-docs/tutorials/tutorials/).
+For more examples of using Acquire, check out our [tutorials page](tutorials/index.md).

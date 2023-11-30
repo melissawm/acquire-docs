@@ -23,7 +23,7 @@ config = runtime.get_configuration()
 
 `DeviceManager` contains a `devices` method which creates a list of `DeviceIdentifier` objects each representing a discovered camera or storage device. Each `DeviceIdentifier` has an attribute `kind` that is a `DeviceKind` object, which has attributes specifying whether the device is a camera or storage device, as well as `Signals` and `StageAxes` attributes. The `Signals` and `StageAxes` attributes would apply to device kinds such as stages, which are not yet supported by `Acquire`.
 
-`DeviceManager` has 2 methods for selecting devices for the camera and storage. For more information on these methods, check out the [Device Selection tutorial](https://acquire-project.github.io/acquire-docs/tutorials/select/). We'll use the `select` method in this example to choose a specific device for the camera and storage.
+`DeviceManager` has 2 methods for selecting devices for the camera and storage. For more information on these methods, check out the [Device Selection tutorial](select.md). We'll use the `select` method in this example to choose a specific device for the camera and storage.
 
 ```python
 # Select the radial sine simulated camera as the video source
@@ -65,7 +65,7 @@ config.video[0].camera.settings.pixel_type = acquire.SampleType.U32
 ## Configure `Storage`
 `Storage` objects have 2 attributes, `settings`, a `StorageProperties` object, and an optional attribute `identifier`, which is an instance of the `DeviceIdentifier` class described above. 
 
-`StorageProperties` has 2 attributes `external_metadata_json` and `filename` which are strings of the filename or filetree of the output metadata in JSON format and image data in whatever format corresponds to the selected storage device, respectively. `first_frame_id` is an integer ID that corresponds to the first frame of the current acquisition and is typically 0. `pixel_scale_um` is the camera pixel size in microns. `enable_multiscale` is a boolean used to specify if the data should be saved as an image pyramid. See the [multiscale tutorial](https://acquire-project.github.io/acquire-docs/tutorials/multiscale/) for more information. The `chunking` attribute is an instance of the `ChunkingProperties` class, used for Zarr storage. See the [chunking tutorial](https://acquire-project.github.io/acquire-docs/tutorials/multiscale/) for more information.
+`StorageProperties` has 2 attributes `external_metadata_json` and `filename` which are strings of the filename or filetree of the output metadata in JSON format and image data in whatever format corresponds to the selected storage device, respectively. `first_frame_id` is an integer ID that corresponds to the first frame of the current acquisition and is typically 0. `pixel_scale_um` is the camera pixel size in microns. `enable_multiscale` is a boolean used to specify if the data should be saved as an image pyramid. See the [multiscale tutorial](multiscale.md) for more information. The `chunking` attribute is an instance of the `ChunkingProperties` class, used for Zarr storage. See the [chunking tutorial](multiscale.md) for more information.
 
 We'll specify the name of the output image file below.
 
