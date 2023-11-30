@@ -20,7 +20,7 @@
     
     
       
-        <title>Saving and Loading Properties from a JSON file - Acquire Docs</title>
+        <title>Properties from a JSON file - Acquire Docs</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#saving-and-loading-properties-from-a-json-file" class="md-skip">
+        <a href="#properties-from-a-json-file" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
                 <div class="md-header__topic" data-md-component="header-topic">
                     <span class="md-ellipsis">
                         
-                        Saving and Loading Properties from a JSON file
+                        Properties from a JSON file
                         
                     </span>
                 </div>
@@ -570,7 +570,7 @@
         
   
   <span class="md-ellipsis">
-    Accessing Data from the Video Source
+    Accessing Data during Acquisition
   </span>
   
 
@@ -684,7 +684,7 @@
           
   
   <span class="md-ellipsis">
-    Saving and Loading Properties from a JSON file
+    Properties from a JSON file
   </span>
   
 
@@ -695,7 +695,7 @@
         
   
   <span class="md-ellipsis">
-    Saving and Loading Properties from a JSON file
+    Properties from a JSON file
   </span>
   
 
@@ -781,7 +781,7 @@
         
   
   <span class="md-ellipsis">
-    Saving and Loading Trigger Settings from a JSON file
+    Triggers from a JSON file
   </span>
   
 
@@ -802,7 +802,7 @@
         
   
   <span class="md-ellipsis">
-    Writing Multiscale Zarr Files
+    Multiscale Data Acqusition
   </span>
   
 
@@ -1078,7 +1078,7 @@
   
 
 
-<h1 id="saving-and-loading-properties-from-a-json-file">Saving and Loading Properties from a JSON file</h1>
+<h1 id="properties-from-a-json-file">Properties from a JSON file</h1>
 <p>This tutorial will provide an example of saving and subsequently loading a <code>Properties</code> object from a JSON file.</p>
 <h2 id="initialize-runtime">Initialize Runtime</h2>
 <p>To start, we'll import <code>Acquire</code> and create a <code>Runtime</code> object, which coordinates the streaming process.</p>
@@ -1088,28 +1088,28 @@
 <h2 id="configure-camera">Configure Camera</h2>
 <p>All camera settings are captured by an instance of the <code>Properties</code> class, which will be associated with a given camera acquisition. </p>
 <p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Instantiate a Properties object for the Runtime</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
 </span></code></pre></div>
-You can update any of the settings in this instance of <code>Properties</code>. To save any updated settings, use the <code>set_configuration</code> function.  For this tutorial, we'll simply specify a camera, and then save these new settings. Note that more settings must be provided before this <code>Properties</code> object could be used for an acquistion.</p>
+You can update any of the settings in this instance of <code>Properties</code>. To save any updated settings, use the <code>set_configuration</code> method.  For this tutorial, we'll simply specify a camera, and then save these new settings. Note that more settings must be provided before this <code>Properties</code> object could be used for an acquistion. Check out <a href="../configure/">this tutorial</a> for more information on configuring an acquisition.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># set the radial sine simulated camera as the first video stream</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">props</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;simulated: radial sin&quot;</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;simulated: radial sin&quot;</span><span class="p">)</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># save the updated settings</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="save-properties-to-a-json-file">Save Properties to a JSON file</h2>
 <p>We'll utilize the <a href="https://docs.python.org/3/library/json.html#">json library</a> to write our properties to a JSON file to save for subsequent acquisition.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">json</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># cast the properties to a dictionary</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">props</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">dict</span><span class="p">()</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">config</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">dict</span><span class="p">()</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># convert the dictionary to json with &quot;human-readable&quot; formatting</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">props</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># save the properties to file &quot;sample_props.json&quot; in the current directory</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;sample_props.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="example-json-file">Example JSON file</h2>
 <p>The resulting sample_props.json file is below:</p>
@@ -1323,10 +1323,10 @@ You can update any of the settings in this instance of <code>Properties</code>. 
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Instantiate a `Properties` object from the settings in sample_props.json</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">props</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Properties</span><span class="p">(</span><span class="o">**</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sample_props.json&#39;</span><span class="p">)))</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">config</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Properties</span><span class="p">(</span><span class="o">**</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sample_props.json&#39;</span><span class="p">)))</span>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># save the properties for this instance of Runtime</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">props</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 </span></code></pre></div>
 
 
@@ -1397,13 +1397,13 @@ You can update any of the settings in this instance of <code>Properties</code>. 
         
         
         <a href="../trig_json/" class="md-footer__link md-footer__link--next"
-            aria-label="Next: Saving and Loading Trigger Settings from a JSON file">
+            aria-label="Next: Triggers from a JSON file">
             <div class="md-footer__title">
                 <span class="md-footer__direction">
                     Next
                 </span>
                 <div class="md-ellipsis">
-                    Saving and Loading Trigger Settings from a JSON file
+                    Triggers from a JSON file
                 </div>
             </div>
             <div class="md-footer__button md-icon">

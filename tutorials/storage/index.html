@@ -570,7 +570,7 @@
         
   
   <span class="md-ellipsis">
-    Accessing Data from the Video Source
+    Accessing Data during Acquisition
   </span>
   
 
@@ -675,7 +675,7 @@
         
   
   <span class="md-ellipsis">
-    Saving and Loading Properties from a JSON file
+    Properties from a JSON file
   </span>
   
 
@@ -696,7 +696,7 @@
         
   
   <span class="md-ellipsis">
-    Saving and Loading Trigger Settings from a JSON file
+    Triggers from a JSON file
   </span>
   
 
@@ -717,7 +717,7 @@
         
   
   <span class="md-ellipsis">
-    Writing Multiscale Zarr Files
+    Multiscale Data Acqusition
   </span>
   
 
@@ -831,9 +831,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#select-the-storage-device-and-specify-where-to-store-the-data" class="md-nav__link">
+  <a href="#configure-the-storage-device" class="md-nav__link">
     <span class="md-ellipsis">
-      Select the Storage Device and Specify where to Store the Data
+      Configure the Storage Device
     </span>
   </a>
   
@@ -998,9 +998,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#select-the-storage-device-and-specify-where-to-store-the-data" class="md-nav__link">
+  <a href="#configure-the-storage-device" class="md-nav__link">
     <span class="md-ellipsis">
-      Select the Storage Device and Specify where to Store the Data
+      Configure the Storage Device
     </span>
   </a>
   
@@ -1025,7 +1025,7 @@
 
 
 <h1 id="storage-device-selection">Storage Device Selection</h1>
-<p>This tutorial illustrates the storage device options in <code>Acquire</code>.</p>
+<p>This tutorial describes the storage device options in <code>Acquire</code>.</p>
 <h2 id="description-of-storage-devices">Description of Storage Devices</h2>
 <p>To start, we'll create a <code>Runtime</code> object and print the storage device options.</p>
 <p><div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">acquire</span> 
@@ -1034,40 +1034,54 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Instantiate a DeviceManager object for the Runtime</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">manager</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">dm</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Print devices in DeviceManager of kind Storage</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">manager</span><span class="o">.</span><span class="n">devices</span><span class="p">():</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">dm</span><span class="o">.</span><span class="n">devices</span><span class="p">():</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">if</span> <span class="n">device</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">:</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 </span></code></pre></div>
 The output of that script will be:</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Storage Devices printed
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&lt;DeviceIdentifier Storage &quot;raw&quot;&gt;
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&lt;DeviceIdentifier Storage &quot;tiff&quot;&gt;
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&lt;DeviceIdentifier Storage &quot;trash&quot;&gt;
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>&lt;DeviceIdentifier Storage &quot;tiff-json&quot;&gt;
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>&lt;DeviceIdentifier Storage &quot;Zarr&quot;&gt;
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>&lt;DeviceIdentifier Storage &quot;ZarrBlosc1ZstdByteShuffle&quot;&gt;
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>&lt;DeviceIdentifier Storage &quot;ZarrBlosc1Lz4ByteShuffle&quot;&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;DeviceIdentifier Storage &quot;raw&quot;&gt;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;DeviceIdentifier Storage &quot;tiff&quot;&gt;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&lt;DeviceIdentifier Storage &quot;trash&quot;&gt;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&lt;DeviceIdentifier Storage &quot;tiff-json&quot;&gt;
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&lt;DeviceIdentifier Storage &quot;Zarr&quot;&gt;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>&lt;DeviceIdentifier Storage &quot;ZarrBlosc1ZstdByteShuffle&quot;&gt;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>&lt;DeviceIdentifier Storage &quot;ZarrBlosc1Lz4ByteShuffle&quot;&gt;
 </span></code></pre></div>
-- <strong>raw</strong> - Streams to a raw binary file.
-- <strong>tiff</strong> - Streams to a <a href="http://bigtiff.org/">bigtiff</a> file. Metadata is stored in the <code>ImageDescription</code> tag for each frame as a <code>JSON</code> string.
-- <strong>trash</strong> - Writes nothing. Discards incoming data. Useful for live streaming applications.
-- <strong>tiff-json</strong> - Stores the video stream in a <a href="http://bigtiff.org/">bigtiff</a>, and stores metadata in a <code>JSON</code> file. Both are located in a folder identified by the <code>filename</code> property.
-- <strong>Zarr</strong> - Streams data to a <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a> file with associated metadata.
-- <strong>ZarrBlosc1ZstdByteShuffle</strong> - Streams compressed data (<em>zstd</em> codec) to a <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a> file with associated metadata. 
-- <strong>ZarrBlosc1Lz4ByteShuffle</strong> - Streams compressed data (<em>lz4</em> codec) to a <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a> file with associated metadata.</p>
 <p><code>Acquire</code> supports streaming data to <a href="http://bigtiff.org/">bigtiff</a> and <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a>. </p>
 <p>Zarr has additional capabilities relative to the basic storage devices, namely <em>chunking</em>, <em>compression</em>, and <em>multiscale storage</em>. You can learn more about the Zarr capabilities in <code>Acquire</code> <a href="https://github.com/acquire-project/acquire-driver-zarr">here</a>.</p>
-<h2 id="select-the-storage-device-and-specify-where-to-store-the-data">Select the Storage Device and Specify where to Store the Data</h2>
-<p>We'll use our instance of <code>Runtime</code> and specify that the data from one video source should be streamed to a file <code>out.tif</code> in the example below:</p>
+<ul>
+<li>
+<p><strong>raw</strong> - Streams to a raw binary file.</p>
+</li>
+<li>
+<p><strong>tiff</strong> - Streams to a <a href="http://bigtiff.org/">bigtiff</a> file. Metadata is stored in the <code>ImageDescription</code> tag for each frame as a <code>JSON</code> string.</p>
+</li>
+<li>
+<p><strong>trash</strong> - Writes nothing. Discards incoming data. Useful for live streaming applications.</p>
+</li>
+<li>
+<p><strong>tiff-json</strong> - Stores the video stream in a <a href="http://bigtiff.org/">bigtiff</a>, and stores metadata in a <code>JSON</code> file. Both are located in a folder identified by the <code>filename</code> property.</p>
+</li>
+<li>
+<p><strong>Zarr</strong> - Streams data to a <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a> file with associated metadata.</p>
+</li>
+<li>
+<p><strong>ZarrBlosc1ZstdByteShuffle</strong> - Streams compressed data (<em>zstd</em> codec) to a <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a> file with associated metadata.</p>
+</li>
+<li>
+<p><strong>ZarrBlosc1Lz4ByteShuffle</strong> - Streams compressed data (<em>lz4</em> codec) to a <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr V2</a> file with associated metadata.</p>
+</li>
+</ul>
+<h2 id="configure-the-storage-device">Configure the Storage Device</h2>
+<p>In the example below, the the <code>tiff</code> storage device is selected, and the data from one video source will be streamed to a file <code>out.tif</code>.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># get the current configuration</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Select the tiff storage device</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="n">select</span><span class="p">(</span> <span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;tiff&quot;</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;tiff&quot;</span><span class="p">)</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Set the data filename to out.tif in your current directory (provide the whole filetree to save to a different directory)</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;out.tif&quot;</span> 

@@ -20,7 +20,7 @@
     
     
       
-        <title>Accessing Data from the Video Source - Acquire Docs</title>
+        <title>Accessing Data during Acquisition - Acquire Docs</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#accessing-data-from-the-video-source" class="md-skip">
+        <a href="#accessing-data-during-acquisition" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
                 <div class="md-header__topic" data-md-component="header-topic">
                     <span class="md-ellipsis">
                         
-                        Accessing Data from the Video Source
+                        Accessing Data during Acquisition
                         
                     </span>
                 </div>
@@ -579,7 +579,7 @@
           
   
   <span class="md-ellipsis">
-    Accessing Data from the Video Source
+    Accessing Data during Acquisition
   </span>
   
 
@@ -590,7 +590,7 @@
         
   
   <span class="md-ellipsis">
-    Accessing Data from the Video Source
+    Accessing Data during Acquisition
   </span>
   
 
@@ -733,7 +733,7 @@
         
   
   <span class="md-ellipsis">
-    Saving and Loading Properties from a JSON file
+    Properties from a JSON file
   </span>
   
 
@@ -754,7 +754,7 @@
         
   
   <span class="md-ellipsis">
-    Saving and Loading Trigger Settings from a JSON file
+    Triggers from a JSON file
   </span>
   
 
@@ -775,7 +775,7 @@
         
   
   <span class="md-ellipsis">
-    Writing Multiscale Zarr Files
+    Multiscale Data Acqusition
   </span>
   
 
@@ -1024,7 +1024,7 @@
   
 
 
-<h1 id="accessing-data-from-the-video-source">Accessing Data from the Video Source</h1>
+<h1 id="accessing-data-during-acquisition">Accessing Data during Acquisition</h1>
 <p>This tutorial will provide an example of accessing data from a video source during acquisition. </p>
 <h2 id="configure-runtime">Configure <code>Runtime</code></h2>
 <p>To start, we'll create a <code>Runtime</code> object and configure the streaming process.</p>
@@ -1057,34 +1057,37 @@
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> 
 </span></code></pre></div>
 <h2 id="working-with-availabledata-objects">Working with <code>AvailableData</code> objects</h2>
-<p>During Acquisition, the <code>AvailableData</code> object is the streaming interface, and this class has a <code>frames</code> method which iterates over the <code>VideoFrame</code> objects in <code>AvailableData</code>. Once we start acquisition, we'll utilize this iterator method to list the frames. </p>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># To increase the likelihood of `AvailableData` containing data, we&#39;ll utilize the time python package to introduce a delay before we create our `AvailableData` object</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span> <span class="nn">time</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># start acquisition</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># time delay of 0.5 seconds</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># grab the packet of data available on disk for video stream 0. This is an AvailableData object.</span>
+<p>During Acquisition, the <code>AvailableData</code> object is the streaming interface, and this class has a <code>frames</code> method which iterates over the <code>VideoFrame</code> objects in <code>AvailableData</code>. Once we start acquisition, we'll utilize this iterator method to list the frames. To increase the likelihood of <code>AvailableData</code> containing data, we'll utilize the time python package to introduce a delay before we create our <code>AvailableData</code> object</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># package for introducing time delays</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">time</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># start acquisition</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># time delay of 0.5 seconds</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># grab the packet of data available on disk for video stream 0.</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># This is an AvailableData object.</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">available_data</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_available_data</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
 </span></code></pre></div>
-Once <code>get_available_data()</code> is called the <code>AvailableData</code> object will be locked into memory, so the circular buffer that stores the available data will overflow if <code>AvailableData</code> isn’t released.</p>
 <p>There may not be data available, in which case our variable <code>available_data</code> would be <code>None</code>. To avoid errors associated with this circumstance, we'll only grab data if <code>available_data</code> is not <code>None</code>.</p>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># NoneType if there is no available data. We can only grab frames if data is available.</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span> <span class="n">available_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<p>Once <code>get_available_data()</code> is called the <code>AvailableData</code> object will be locked into memory, so the circular buffer that stores the available data will overflow if <code>AvailableData</code> isn’t released, so we'll delete the object with <code>del available_data</code> if there is no data available.</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># NoneType if there is no available data.</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># We can only grab frames if data is available.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">if</span> <span class="n">available_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="c1"># frames is an iterator over available_data, so we&#39;ll use this iterator to make a list of the frames</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">video_frames</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">available_data</span><span class="o">.</span><span class="n">frames</span><span class="p">())</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">else</span><span class="p">:</span>         
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="c1"># delete the available_data variable if there is no data in the packet to free up RAM</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="k">del</span> <span class="n">available_data</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="c1"># frames is an iterator over available_data</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="c1"># we&#39;ll use this iterator to make a list of the frames</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">video_frames</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">available_data</span><span class="o">.</span><span class="n">frames</span><span class="p">())</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">else</span><span class="p">:</span>         
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="c1"># delete the available_data variable</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="c1"># if there is no data in the packet to free up RAM</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="k">del</span> <span class="n">available_data</span>
 </span></code></pre></div>
-<code>video_frames</code> is a list with each element being an instance of the <code>VideoFrame</code> class. <code>VideoFrame</code> has a <code>data</code> method which provides the frame as an <code>NDArray</code>. The shape of this NDArray corresponds to the image dimensions used internally by Acquire. Since we have a single channel, both the first and the last dimensions will be 1. The interior dimensions will be height and width, respectively.</p>
+<code>video_frames</code> is a list with each element being an instance of the <code>VideoFrame</code> class. <code>VideoFrame</code> has a <code>data</code> method which provides the frame as an <code>NDArray</code>. The shape of this NDArray corresponds to the image dimensions used internally by Acquire with (planes, height, width, channels). Since we have a single channel, both the first and the last dimensions will be 1. The interior dimensions are height and width, respectively.</p>
 <p><div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># grab the first VideoStream object in frames and convert it to an NDArray</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">first_frame</span> <span class="o">=</span> <span class="n">video_frames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">()</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -1093,8 +1096,8 @@ Once <code>get_available_data()</code> is called the <code>AvailableData</code> 
 Output:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>(1, 768, 1024, 1) 
 </span></code></pre></div></p>
-<p>To grab the desired NDArray image data from <code>first_frame</code>, we'll slice the array as shown:
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<p>We can use the <code>numpy.squeeze</code> method to grab the desired NDArray image data from <code>first_frame</code> since the other dimensions are 1. This is equivalent to <code>image = first_frame[0][:, :, 0]</code>.</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">image</span> <span class="o">=</span> <span class="n">first_frame</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>

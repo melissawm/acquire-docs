@@ -570,7 +570,7 @@
         
   
   <span class="md-ellipsis">
-    Accessing Data from the Video Source
+    Accessing Data during Acquisition
   </span>
   
 
@@ -733,7 +733,7 @@
         
   
   <span class="md-ellipsis">
-    Saving and Loading Properties from a JSON file
+    Properties from a JSON file
   </span>
   
 
@@ -754,7 +754,7 @@
         
   
   <span class="md-ellipsis">
-    Saving and Loading Trigger Settings from a JSON file
+    Triggers from a JSON file
   </span>
   
 
@@ -775,7 +775,7 @@
         
   
   <span class="md-ellipsis">
-    Writing Multiscale Zarr Files
+    Multiscale Data Acqusition
   </span>
   
 
@@ -1029,9 +1029,9 @@
 <h2 id="setup-function-definition">Setup Function Definition</h2>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">runtime</span><span class="p">:</span> <span class="n">Runtime</span><span class="p">,</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">camera</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;simulated: radial sin&quot;</span><span class="p">,</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">storage</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;Tiff&quot;</span><span class="p">,</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">output_filename</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;out.tif&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">camera</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">storage</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">output_filename</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Properties</span>
 </span></code></pre></div>
 <p>The <code>setup</code> function can be used as a shorthand to simplify the <code>Runtime</code> configuration process. <code>setup</code> takes a <code>Runtime</code> object and strings of the camera and storage device names and returns a <code>Properties</code> object. You may also optionally specify the filename for writing the data. </p>
@@ -1135,13 +1135,13 @@ You can subsequently use <code>config</code> to specify additional settings and 
         
         
         <a href="../props_json/" class="md-footer__link md-footer__link--next"
-            aria-label="Next: Saving and Loading Properties from a JSON file">
+            aria-label="Next: Properties from a JSON file">
             <div class="md-footer__title">
                 <span class="md-footer__direction">
                     Next
                 </span>
                 <div class="md-ellipsis">
-                    Saving and Loading Properties from a JSON file
+                    Properties from a JSON file
                 </div>
             </div>
             <div class="md-footer__button md-icon">

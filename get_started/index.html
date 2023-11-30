@@ -671,7 +671,7 @@
         
   
   <span class="md-ellipsis">
-    Accessing Data from the Video Source
+    Accessing Data during Acquisition
   </span>
   
 
@@ -776,7 +776,7 @@
         
   
   <span class="md-ellipsis">
-    Saving and Loading Properties from a JSON file
+    Properties from a JSON file
   </span>
   
 
@@ -797,7 +797,7 @@
         
   
   <span class="md-ellipsis">
-    Saving and Loading Trigger Settings from a JSON file
+    Triggers from a JSON file
   </span>
   
 
@@ -818,7 +818,7 @@
         
   
   <span class="md-ellipsis">
-    Writing Multiscale Zarr Files
+    Multiscale Data Acqusition
   </span>
   
 
@@ -1119,8 +1119,8 @@
 <p>To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python -m pip install acquire-imaging
 </span></code></pre></div>
-<p>You will probably want to have a fresh conda environment or virtualenv.
-For example, with conda:</p>
+<p>We recommend installing <code>Acquire</code> in a fresh conda environment or virtualenv.
+For example, to install <code>Acquire</code> in a conda environment named <code>acquire</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda create -n acquire python=3.10 # follow the prompts and proceed with the defaults
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>conda activate acquire
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>python -m pip install acquire-imaging
@@ -1159,8 +1159,8 @@ To see all the devices that Acquire supports, you can run the following script:<
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python -m pip install dask &quot;napari[all]&quot; zarr
 </span></code></pre></div>
 <h2 id="setup-for-acquisition">Setup for Acquisition</h2>
-<p>We will use one of Acquire's simulated cameras to generate data for us and use Zarr for our output file format.</p>
-<p>Let's set up our runtime and device manager, then list the currently supported devices.</p>
+<p>We will use one of Acquire's simulated cameras to generate data and use Zarr for our output file format, which is called "storage device" in <code>Acquire</code>.</p>
+<p>To begin, instantiate <code>Runtime</code> and <code>DeviceManager</code> and list the currently supported devices.</p>
 <p><div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
@@ -1173,7 +1173,7 @@ The <strong>runtime</strong> is the main entry point in Acquire.
 Through the runtime, you configure your devices, start acquisition, check acquisition status, inspect data as it streams from your cameras, and terminate acquisition.</p>
 <p>Let's configure our devices now.
 To do this, we'll get a copy of the current runtime configuration.
-We can update the configuration with identifiers from the the runtime's <strong>device manager</strong>, but we won't actually instantiate these devices until we start acquiring.</p>
+We can update the configuration with identifiers from the the runtime's <strong>device manager</strong>, but these devices won't instantiate until we start acquisition.</p>
 <p>Acquire supports up to two video streams.
 These streams consist of a <strong>source</strong> (i.e., a camera), optionally a <strong>filter</strong>, and a <strong>sink</strong> (an output, like a Zarr dataset or a Tiff file).
 Before configuring the streams, grab the current configuration of the <code>Runtime</code> object with:</p>
@@ -1229,7 +1229,7 @@ For both simulated cameras, we'll be writing to Zarr, a format which supports ch
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">chunking</span><span class="o">.</span><span class="n">max_bytes_per_chunk</span> <span class="o">=</span> <span class="mi">64</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mi">20</span>  <span class="c1"># 64 MiB chunk sizes</span>
 </span></code></pre></div>
 <p>Finally, let's specify how many frames to generate for each camera before stopping our simulated acquisition.
-We also need to register our configuration with the runtime.</p>
+We also need to register our configuration with the runtime using the <code>set_configuration</code> method.</p>
 <p>If you want to let the runtime just keep acquiring effectively forever, you can set <code>max_frame_count</code> to <code>2**64 - 1</code>.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># collect 100 frames</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">150</span> <span class="c1"># collect 150 frames</span>
@@ -1253,11 +1253,11 @@ We also need to register our configuration with the runtime.</p>
 <p>To start aquiring data:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span></code></pre></div>
-<p>Acquisition happens in a separate thread, so at any point we can check on the status by calling <code>runtime.get_state()</code>.</p>
+<p>Acquisition happens in a separate thread, so at any point we can check on the status by calling the  <code>get_state</code> method.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">runtime</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span>
 </span></code></pre></div>
 <p>Finally, once we're done acquiring, we call <code>runtime.stop()</code>.
-This method will wait until you've reached the number of frames specified in <code>config.video[0].max_frame_count</code> or <code>config.video[1].max_frame_count</code>, whichever is larger.</p>
+This method will wait until you've reached the number of frames to collect specified in <code>config.video[0].max_frame_count</code> or <code>config.video[1].max_frame_count</code>, whichever is larger.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </span></code></pre></div>
 <h2 id="visualizing-the-data-with-napari">Visualizing the Data with napari</h2>
@@ -1265,19 +1265,18 @@ This method will wait until you've reached the number of frames specified in <co
 We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we'll use napari to view it.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kn">import</span> <span class="nn">napari</span>
-</span></code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">data1</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">from_zarr</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">data1</span>
-</span></code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">data2</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">from_zarr</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">data2</span>
-</span></code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">viewer1</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">view_image</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
-</span></code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">viewer2</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">view_image</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">data1</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">from_zarr</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">data1</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">data2</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">from_zarr</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="n">viewer1</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">view_image</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="n">viewer2</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">view_image</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="conclusion">Conclusion</h2>
-<p>For more examples of using Acquire, check out our <a href="">tutorials page</a>. #ADD LINK</p>
+<p>For more examples of using Acquire, check out our <a href="../tutorials/">tutorials page</a>.</p>
 
 
 
