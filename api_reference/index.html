@@ -1529,7 +1529,7 @@
 </span></code></pre></div>
 <ul>
 <li>
-<p><code>identifier</code>: An optional attribute which contains an instance of the <code>DeviceIdentifier</code> class that describes the camera, or video source, if that device is natively supported. Otherwise, it is of type <code>None</code>.</p>
+<p><code>identifier</code>: An optional attribute which contains an instance of the <code>DeviceIdentifier</code> class. <code>DeviceIdentifier</code> has <code>id</code> and <code>kind</code> attributes assigned by <code>Acquire</code> if the device is natively supported. Otherwise, it is of type <code>None</code>.</p>
 </li>
 <li>
 <p><code>settings</code>: An instance of the <code>CameraProperties</code> class which contains the settings for the camera.</p>
@@ -1568,7 +1568,7 @@
 <p><code>binning</code>: How many adjacent pixels in each direction to combine by averaging. For example, if <code>binning</code> is set to 2, a 2x2 square of pixels will be combined by averaging. If <code>binning</code> is set to 1, no pixels will be combined.</p>
 </li>
 <li>
-<p><code>pixel_type</code>: An instance of the <code>SampleType</code> class which specifies the numerical data type, for example u16, a 16-bit unsigned integer type.</p>
+<p><code>pixel_type</code>: An instance of the <code>SampleType</code> class which specifies the numerical data type, for example Uint16, a 16-bit unsigned integer type.</p>
 </li>
 <li>
 <p><code>readout_direction</code>: An instance of the <code>Direction</code> class which specifies whether the data is readout forwards or backwards.</p>
@@ -1577,7 +1577,7 @@
 <p><code>offset</code>: A tuple of two integers representing the (x, y) offset in pixels of the image region of interest on the camera.</p>
 </li>
 <li>
-<p><code>shape</code>: A tuple of two integers representing the size in pixels of the image region of interest on the camera.</p>
+<p><code>shape</code>: A tuple of two integers representing the (x, y)size in pixels of the image region of interest on the camera.</p>
 </li>
 <li>
 <p><code>input_triggers</code>: An instance of the <code>InputTriggers</code> class, which describes the trigger signals for starting acquisition, camera exposure, and acquiring a frame.</p>
@@ -1610,7 +1610,7 @@
 </li>
 </ul>
 <h2 id="class-deviceidentifier">Class <code>DeviceIdentifier</code></h2>
-<p>The <code>DeviceIdentifier</code> class represents an identifier for a device, such as a camera or video source.</p>
+<p>The <code>DeviceIdentifier</code> class represents an identifier for a supported device, including its unique id and type, such as a camera or storage.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span> <span class="nc">DeviceIdentifier</span><span class="p">:</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">id</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">kind</span><span class="p">:</span> <span class="n">DeviceKind</span>
@@ -1624,29 +1624,30 @@
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="nd">@staticmethod</span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="k">def</span> <span class="nf">none</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">DeviceIdentifier</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a &quot;None&quot; type DeviceIdentifier. Useful when a DeviceIdentifier is not needed.&quot;&quot;&quot;</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two DeviceIdentifier objects are equal.&quot;&quot;&quot;</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is greater than or equal to another.&quot;&quot;&quot;</span>
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is greater than another.&quot;&quot;&quot;</span>
-</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
-</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is less than or equal to another.&quot;&quot;&quot;</span>
-</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
-</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is less than another.&quot;&quot;&quot;</span>
-</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
-</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two DeviceIdentifier objects are not equal.&quot;&quot;&quot;</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a &quot;None&quot; type DeviceIdentifier.</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="sd">    Useful when a DeviceIdentifier is not needed.&quot;&quot;&quot;</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two DeviceIdentifier objects are equal.&quot;&quot;&quot;</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is greater than or equal to another.&quot;&quot;&quot;</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is greater than another.&quot;&quot;&quot;</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is less than or equal to another.&quot;&quot;&quot;</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if this DeviceIdentifier is less than another.&quot;&quot;&quot;</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if two DeviceIdentifier objects are not equal.&quot;&quot;&quot;</span>
 </span></code></pre></div>
 <ul>
 <li>
-<p><code>id</code>: A tuple (driver_id, device_id) containing two U8 integers that serve to identify each driver and device uniquely for a given run.</p>
+<p><code>id</code>: A tuple (driver_id, device_id) containing two Uint8 integers that serve to identify each driver and device uniquely for a given run.</p>
 </li>
 <li>
 <p><code>kind</code>: An instance of the <code>DeviceKind</code> class that represents the type or kind of the device.</p>
@@ -1659,7 +1660,7 @@
 </li>
 </ul>
 <h2 id="class-devicekind">Class <code>DeviceKind</code></h2>
-<p>The <code>DeviceKind</code> class represents properties for supported devices, such as a camera or video source, in a given system.</p>
+<p>The <code>DeviceKind</code> class represents the types of devices in a given system.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span> <span class="nc">DeviceKind</span><span class="p">:</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">Camera</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">NONE</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceKind</span><span class="o">.</span><span class="n">NONE</span>
@@ -1693,70 +1694,59 @@
 </span></code></pre></div>
 <ul>
 <li>
-<p><code>Camera</code>: Enum-type class variable of <code>DeviceKind</code> that defines the cameras supported by the system. </p>
+<p><code>Camera</code>: Enum-type class variable of <code>DeviceKind</code> that specifies a device is a camera. </p>
 </li>
 <li>
-<p><code>NONE</code>: Enum-type class variable of <code>DeviceKind</code> that is set to None if no device of the specified kind is available.</p>
+<p><code>NONE</code>: Enum-type class variable of <code>DeviceKind</code> for if a device's kind is unavailable.</p>
 </li>
 <li>
-<p><code>Signals</code>: Enum-type class variable of <code>DeviceKind</code> that defines the signals supported by the system.</p>
+<p><code>Signals</code>: Enum-type class variable of <code>DeviceKind</code> that specifies a device is a signal.</p>
 </li>
 <li>
-<p><code>StageAxis</code>: Enum-type class variable of <code>DeviceKind</code> that defines the stage axes supported by the system.</p>
+<p><code>StageAxis</code>: Enum-type class variable of <code>DeviceKind</code> that specifies a device is a stage.</p>
 </li>
 <li>
-<p><code>Storage</code>: Enum-type class variable of <code>DeviceKind</code> that defines the storage supported by the system.</p>
+<p><code>Storage</code>: Enum-type class variable of <code>DeviceKind</code> that specifies a device is for storage.</p>
 </li>
 </ul>
 <h2 id="class-devicemanager">Class <code>DeviceManager</code></h2>
-<p>The <code>DeviceManager</code> class manages selection of available devices in the system.</p>
+<p>The <code>DeviceManager</code> class manages selection of available devices in the system. Regular expressions are accepted for the name argument.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span> <span class="nc">DeviceManager</span><span class="p">:</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="k">def</span> <span class="nf">devices</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a list of all available device identifiers.&quot;&quot;&quot;</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="nd">@overload</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="n">DeviceKind</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Selects the first available device of `kind`.</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="n">DeviceKind</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Selects a specified device.</span>
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="sd">        Args:</span>
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="sd">            kind (DeviceKind): The type of device to select.</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="sd">        Returns:</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="sd">            Optional[DeviceIdentifier]: The identifier of the first available device of `kind`, or `None` if no such device is available.</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="nd">@overload</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="n">DeviceKind</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Selects a specified device.</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="sd">            name (Optional[str]): The name of the device to select. Regular expressions supported.</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="sd">        Returns:</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="sd">            Optional[DeviceIdentifier]: The selected device identifier, or None if the specified device is not available.</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="k">def</span> <span class="nf">select_one_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="n">DeviceKind</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Selects the first device in the list of devices that is of one of the specified kinds.</span>
 </span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
 </span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="sd">        Args:</span>
 </span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="sd">            kind (DeviceKind): The type of device to select.</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="sd">            name (Optional[str]): The name of the device to select.</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="sd">            names (List[str]): A list of device names to choose from. Regular expressions supported.</span>
 </span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
 </span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="sd">        Returns:</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="sd">            Optional[DeviceIdentifier]: The selected device identifier, or None if the specified device is not available.</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="sd">            Optional[DeviceIdentifier]: The selected device identifier, or None if none of the specified devices are available.</span>
 </span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
-</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>    <span class="k">def</span> <span class="nf">select_one_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="n">DeviceKind</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Selects the first device in the list of devices that is of one of the specified kinds.</span>
-</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
-</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="sd">        Args:</span>
-</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="sd">            kind (DeviceKind): The type of device to select.</span>
-</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="sd">            names (List[str]): A list of device names to choose from.</span>
-</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>
-</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="sd">        Returns:</span>
-</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="sd">            Optional[DeviceIdentifier]: The selected device identifier, or None if none of the specified devices are available.</span>
-</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="sd">        &quot;&quot;&quot;</span>
 </span></code></pre></div>
 <ul>
 <li>
-<p>Call <code>devices</code> to list all available devices. </p>
+<p>Call <code>devices</code> to list the <code>DeviceIdentifier</code> of each available device. </p>
 </li>
 <li>
-<p>Call <code>select</code> to choose a type of device for acquisition.</p>
+<p>Call <code>select</code> to choose the first available device of a given type or to select a specific device by name.</p>
 </li>
 <li>
-<p>Call <code>select_one_of</code> to choose a particular instance in a category of devices for acquisition.</p>
+<p>Call <code>select_one_of</code> to choose one device from a list of acceptable devices of a given kind.</p>
 </li>
 </ul>
 <h2 id="class-devicestate">Class <code>DeviceState</code></h2>
@@ -1838,7 +1828,7 @@
 </li>
 </ul>
 <h2 id="class-inputtriggers">Class <code>InputTriggers</code></h2>
-<p>The <code>InputTriggers</code> class represents input triggers for a device.</p>
+<p>The <code>InputTriggers</code> class represents input triggers for a camera device.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span> <span class="nc">InputTriggers</span><span class="p">:</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">acquisition_start</span><span class="p">:</span> <span class="n">Trigger</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">exposure</span><span class="p">:</span> <span class="n">Trigger</span>
@@ -1862,7 +1852,7 @@
 </li>
 </ul>
 <h2 id="class-outputtriggers">Class <code>OutputTriggers</code></h2>
-<p>The <code>OutputTriggers</code> class represents output triggers for a device.</p>
+<p>The <code>OutputTriggers</code> class represents output triggers for a camera device.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">class</span> <span class="nc">OutputTriggers</span><span class="p">:</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">exposure</span><span class="p">:</span> <span class="n">Trigger</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">frame_start</span><span class="p">:</span> <span class="n">Trigger</span>
@@ -1925,7 +1915,7 @@
 </span></code></pre></div>
 <ul>
 <li>
-<p><code>video</code>: A tuple containing two <code>VideoStream</code> instances which contain information on the camera was used for acquisition and how the data is stored.</p>
+<p><code>video</code>: A tuple containing two <code>VideoStream</code> instances since <code>Acquire</code> supports simultaneous streaming from 2 video sources. <code>VideoStream</code> objects have 2 attributes <code>camera</code> and <code>storage</code> to set the source and sink for the stream.</p>
 </li>
 <li>
 <p>The <code>dict</code> method creates a dictionary of a <code>Properties</code> object's attributes.</p>
@@ -1947,7 +1937,7 @@
 </span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="sd">            stream_id (int): The ID of the stream for which available data is requested.</span>
 </span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
 </span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="sd">        Returns:</span>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="sd">            AvailableData: The AvailableData instance for the given stream ID.</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="sd">            AvailableData: The AvailableData instance for the given VideoStream ID.</span>
 </span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>
 </span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>    <span class="k">def</span> <span class="nf">get_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Properties</span><span class="p">:</span>
@@ -1980,7 +1970,7 @@
 <p>Call <code>device_manager()</code> to return the <code>DeviceManager</code> object associated with this <code>Runtime</code> instance. </p>
 </li>
 <li>
-<p>Call <code>get_available_data</code> with a specific <code>stream_id</code> to return the <code>AvailableData</code> associated with the <code>stream_id</code>.</p>
+<p>Call <code>get_available_data</code> with a specific <code>stream_id</code>, 0 or 1, to return the <code>AvailableData</code> associated with the 1st or 2nd video source, respectively.</p>
 </li>
 <li>
 <p>Call <code>get_configuration()</code> to return the <code>Properties</code> object associated with this <code>Runtime</code> instance.</p>
@@ -1995,10 +1985,10 @@
 <p>Call <code>start()</code> to begin data acquisition.</p>
 </li>
 <li>
-<p>Call <code>stop()</code> to end data acquisition once the max number of frames specified in <code>config.video[0].max_frame_count</code> is collected.</p>
+<p>Call <code>stop()</code> to end data acquisition once the max number of frames specified in <code>acquire.VideoStream.max_frame_count</code> is collected. All objects are deleted to free up disk space upon shutdown of <code>Runtime</code>.</p>
 </li>
 <li>
-<p>Call <code>abort()</code> to  <code>Runtime</code> instance.</p>
+<p>Call <code>abort()</code> to immediately end data acqusition. All objects are deleted to free up disk space upon shutdown of <code>Runtime</code>.</p>
 </li>
 </ul>
 <h2 id="class-sampleratehz">Class <code>SampleRateHz</code></h2>
@@ -2084,7 +2074,7 @@
 </li>
 </ul>
 <h2 id="class-signaliokind">Class <code>SignalIOKind</code></h2>
-<p>The <code>SignalIOKind</code> class defines the type of input and output signals.</p>
+<p>The <code>SignalIOKind</code> class defines the signal type, input or output, for a trigger.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">class</span> <span class="nc">SignalIOKind</span><span class="p">:</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="n">Input</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SignalIOKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">SignalIOKind</span><span class="o">.</span><span class="n">Input</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="n">Output</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SignalIOKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">SignalIOKind</span><span class="o">.</span><span class="n">Output</span>
@@ -2154,7 +2144,7 @@
 </li>
 </ul>
 <h2 id="class-storage">Class <code>Storage</code></h2>
-<p>The <code>Storage</code> class represents storage settings for the acquired data.</p>
+<p>The <code>Storage</code> class represents storage devices and their settings.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">class</span> <span class="nc">Storage</span><span class="p">:</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="n">identifier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="n">settings</span><span class="p">:</span> <span class="n">StorageProperties</span>
@@ -2188,29 +2178,29 @@
 </span></code></pre></div>
 <ul>
 <li>
-<p><code>external_metadata_json</code>: An optional attribute representing external metadata in JSON format.</p>
+<p><code>external_metadata_json</code>: An optional attribute of the metadata JSON filename as a string.</p>
 </li>
 <li>
-<p><code>filename</code>: An optional attribute representing the filename.</p>
+<p><code>filename</code>: An optional attribute representing the filename for storing the image data.</p>
 </li>
 <li>
-<p><code>first_frame_id</code>: An integer representing the ID of the first frame.</p>
+<p><code>first_frame_id</code>: An integer representing the ID of the first frame for a given acquisition.</p>
 </li>
 <li>
-<p><code>pixel_scale_um</code>: A tuple of two floats representing pixel size in micrometers.</p>
+<p><code>pixel_scale_um</code>: A tuple of two floats representing the pixel size of the camera in micrometers.</p>
 </li>
 <li>
-<p><code>chunking</code>: An instance of the <code>ChunkingProperties</code> class representing data chunking settings.</p>
+<p><code>chunking</code>: An instance of the <code>ChunkingProperties</code> class representing data chunking settings for Zarr storage.</p>
 </li>
 <li>
-<p><code>enable_multiscale</code>: A boolean indicating whether multiscale storage is desired.</p>
+<p><code>enable_multiscale</code>: A boolean indicating whether multiscale storage is enabled.</p>
 </li>
 <li>
 <p>The <code>dict</code> method creates a dictionary of a <code>StorageProperties</code> object's attributes.</p>
 </li>
 </ul>
 <h2 id="class-tileshape">Class <code>TileShape</code></h2>
-<p>The <code>TileShape</code> class represents the tile shape, or voxel size, for tile scanning acquisition.</p>
+<p>The <code>TileShape</code> class represents the shape of data chunks for storage in Zarr containers.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">class</span> <span class="nc">TileShape</span><span class="p">:</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="n">width</span><span class="p">:</span> <span class="nb">int</span>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="n">height</span><span class="p">:</span> <span class="nb">int</span>
@@ -2221,13 +2211,13 @@
 </span></code></pre></div>
 <ul>
 <li>
-<p><code>width</code>: The width of the tile.</p>
+<p><code>width</code>: The width of the chunk.</p>
 </li>
 <li>
-<p><code>height</code>: The height of the tile.</p>
+<p><code>height</code>: The height of the chunk.</p>
 </li>
 <li>
-<p><code>planes</code>: The number of planes in the tile.</p>
+<p><code>planes</code>: The number of planes in the chunk.</p>
 </li>
 <li>
 <p>The <code>dict</code> method creates a dictionary of a <code>TileShape</code> object's attributes.</p>
@@ -2255,7 +2245,7 @@
 <p><code>enable</code>: A boolean indicating whether the trigger is enabled.</p>
 </li>
 <li>
-<p><code>line</code>: An integer representing the line of the trigger signal.</p>
+<p><code>line</code>: An integer representing the max value of the trigger signal.</p>
 </li>
 <li>
 <p><code>kind</code>: An instance of the <code>SignalIOKind</code> class specifying if the signal is input or output.</p>
@@ -2317,7 +2307,7 @@
 <p>Call <code>data()</code> to create an NDArray of the <code>VideoFrame</code> data. </p>
 </li>
 <li>
-<p>Call <code>metadata()</code> to query the metadata of <code>VideoFrame</code>. </p>
+<p>Call <code>metadata()</code> to create a <code>VideoFrameMetadata</code> object containing the metadata of <code>VideoFrame</code>. </p>
 </li>
 </ul>
 <h2 id="class-videoframemetadata">Class <code>VideoFrameMetadata</code></h2>
@@ -2334,7 +2324,7 @@
 <p><code>frame_id</code>: An integer representing the ID of the video frame.</p>
 </li>
 <li>
-<p><code>timestamps</code>: An instance of the <code>VideoFrameTimestamps</code> class specifying whether the video timestamps are based on the hardware clock or the acquisition clock.</p>
+<p><code>timestamps</code>: An instance of the <code>VideoFrameTimestamps</code> class specifying the video timestamps based on the hardware clock and the acquisition clock.</p>
 </li>
 <li>
 <p>The <code>dict</code> method creates a dictionary of a <code>VideoFrameTimestamps</code> object's attributes.</p>
@@ -2373,16 +2363,16 @@
 </span></code></pre></div>
 <ul>
 <li>
-<p><code>camera</code>: An instance of the <code>Camera</code> class representing the camera used in the video stream.</p>
+<p><code>camera</code>: An instance of the <code>Camera</code> class representing the camera device for the video stream.</p>
 </li>
 <li>
-<p><code>storage</code>: An instance of the <code>Storage</code> class representing the storage settings for the video stream.</p>
+<p><code>storage</code>: An instance of the <code>Storage</code> class representing the storage device for the video stream.</p>
 </li>
 <li>
-<p><code>max_frame_count</code>: An integer representing the maximum number of frames in the video stream.</p>
+<p><code>max_frame_count</code>: An integer representing the maximum number of frames to acquire.</p>
 </li>
 <li>
-<p><code>frame_average_count</code>: An integer representing the number of frames to average in the video stream.</p>
+<p><code>frame_average_count</code>: An integer representing the number of frames to average, if any, before streaming. The default value is 0, which disables this feature. Setting this to 1 will also prevent averaging.</p>
 </li>
 <li>
 <p>The <code>dict</code> method creates a dictionary of a <code>VideoStream</code> object's attributes.</p>
