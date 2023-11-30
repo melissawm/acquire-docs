@@ -1,6 +1,6 @@
 # Test Camera Drivers
 
-This tutorial will cover testing that your camera has been properly identified.
+This tutorial will cover testing that your cameras, or video sources, has been properly identified.
 
 Acquire supports the following cameras (currently only on Windows):
 
@@ -24,23 +24,21 @@ import acquire
 runtime = acquire.Runtime()
 
 # Instantiate a DeviceManager object for the Runtime
-manager = runtime.device_manager()
+dm = runtime.device_manager()
 ```
 
-`DeviceManager` objects have `device` methods which lists the identifiers for discovered devices. You can iterate over this list to determine which cameras were recognized.
+`DeviceManager` objects have `device` methods which lists the identifiers for discovered devices. You can iterate over this list to determine which cameras were discovered.
 
 ```python
-for device in manager.devices():
+for device in dm.devices():
     print(device)
 ```
-The output of this code is below. All identified cameras will be listed, and in the case of this tutorial, no cameras were connected to the machine, so only simulated cameras were found. Note that any storage devices will also print.
+The output of this code is below. All discovered devices, both cameras and storage devices, will be listed. In this tutorial, no cameras were connected to the machine, so only simulated cameras were found. Note that the storage devices also printed.
 
 ```
 <DeviceIdentifier Camera "simulated: uniform random">
 <DeviceIdentifier Camera "simulated: radial sin">
 <DeviceIdentifier Camera "simulated: empty">
-
-# storage devices will also print
 <DeviceIdentifier Storage "raw">
 <DeviceIdentifier Storage "tiff">
 <DeviceIdentifier Storage "trash">
