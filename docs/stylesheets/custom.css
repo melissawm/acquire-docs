@@ -110,17 +110,12 @@ html .md-footer-meta.md-typeset a {
     padding-right: 0px;
 }
 
-.md-source__facts {
-    display: none;
-}
-
 .md-source:hover {
     opacity: 1;
 }
 
 /* Remove facts from footer links */
-.md-typeset ol:not([hidden]),
-.md-typeset ul:not([hidden]) {
+li.md-source__fact {
     display: none;
 }
 
@@ -200,6 +195,8 @@ html .md-footer-meta.md-typeset a {
 .md-typeset .emojione,
 .md-typeset .gemoji,
 .md-typeset .twemoji {
+    vertical-align: middle;
+    display: inline-block;
     height: 3em;
 }
 
