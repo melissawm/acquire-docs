@@ -1,4 +1,4 @@
-# Accessing Data from the Video Source
+# Accessing Data during Acquisition
 
 This tutorial will provide an example of accessing data from a video source during acquisition. 
 
@@ -37,12 +37,11 @@ config = runtime.set_configuration(config)
 ```
 ## Working with `AvailableData` objects
 
-During Acquisition, the `AvailableData` object is the streaming interface, and this class has a `frames` method which iterates over the `VideoFrame` objects in `AvailableData`. Once we start acquisition, we'll utilize this iterator method to list the frames. 
+During Acquisition, the `AvailableData` object is the streaming interface, and this class has a `frames` method which iterates over the `VideoFrame` objects in `AvailableData`. Once we start acquisition, we'll utilize this iterator method to list the frames. To increase the likelihood of `AvailableData` containing data, we'll utilize the time python package to introduce a delay before we create our `AvailableData` object
 
 
 ```python
-# To increase the likelihood of `AvailableData` containing data, we'll utilize the time python package to introduce a delay before we create our `AvailableData` object
-
+# package for introducing time delays
 import time
 
 # start acquisition
@@ -51,29 +50,33 @@ runtime.start()
 # time delay of 0.5 seconds
 time.sleep(0.5)
 
-# grab the packet of data available on disk for video stream 0. This is an AvailableData object.
+# grab the packet of data available on disk for video stream 0.
+# This is an AvailableData object.
 available_data = runtime.get_available_data(0) 
 ```
-Once `get_available_data()` is called the `AvailableData` object will be locked into memory, so the circular buffer that stores the available data will overflow if `AvailableData` isn’t released.
-
 
 There may not be data available, in which case our variable `available_data` would be `None`. To avoid errors associated with this circumstance, we'll only grab data if `available_data` is not `None`.
 
+Once `get_available_data()` is called the `AvailableData` object will be locked into memory, so the circular buffer that stores the available data will overflow if `AvailableData` isn’t released, so we'll delete the object with `del available_data` if there is no data available.
+
 
 ```python
-# NoneType if there is no available data. We can only grab frames if data is available.
+# NoneType if there is no available data.
+# We can only grab frames if data is available.
 if available_data is not None:
 
        
-    # frames is an iterator over available_data, so we'll use this iterator to make a list of the frames
+    # frames is an iterator over available_data
+    # we'll use this iterator to make a list of the frames
     video_frames = list(available_data.frames())
 
 else:         
-    # delete the available_data variable if there is no data in the packet to free up RAM
+    # delete the available_data variable
+    # if there is no data in the packet to free up RAM
     del available_data
 
 ```
-`video_frames` is a list with each element being an instance of the `VideoFrame` class. `VideoFrame` has a `data` method which provides the frame as an `NDArray`. The shape of this NDArray corresponds to the image dimensions used internally by Acquire. Since we have a single channel, both the first and the last dimensions will be 1. The interior dimensions will be height and width, respectively.
+`video_frames` is a list with each element being an instance of the `VideoFrame` class. `VideoFrame` has a `data` method which provides the frame as an `NDArray`. The shape of this NDArray corresponds to the image dimensions used internally by Acquire with (planes, height, width, channels). Since we have a single channel, both the first and the last dimensions will be 1. The interior dimensions are height and width, respectively.
 
 
 ```python
@@ -87,9 +90,10 @@ Output:
 (1, 768, 1024, 1) 
 ```
 
-To grab the desired NDArray image data from `first_frame`, we'll slice the array as shown:
+We can use the `numpy.squeeze` method to grab the desired NDArray image data from `first_frame` since the other dimensions are 1. This is equivalent to `image = first_frame[0][:, :, 0]`.
+
 ```python
-image = image.squeeze()
+image = first_frame.squeeze()
 
 
 print(image.shape)
