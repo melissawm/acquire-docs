@@ -50,12 +50,15 @@ Acquire supports the following cameras (currently only on Windows):
 - [FLIR Blackfly USB3 (BFLY-U3-23S6M-C)](https://www.flir.com/products/blackfly-usb3/?model=BFLY-U3-23S6M-C&vertical=machine+vision&segment=iis)
 - [FLIR Oryx 10GigE (ORX-10GS-51S5M-C)](https://www.flir.com/products/oryx-10gige/?model=ORX-10GS-51S5M-C&vertical=machine+vision&segment=iis)
 
-Acquire also supports the following output file formats:
+For testing and demonstration purposes, Acquire also provides a few simulated video sources. For more information on supported cameras and video sources, check out [this tutorial](./tutorials/drivers.md).
+
+Acquire supports the following output file formats:
 
 - [Tiff](https://en.wikipedia.org/wiki/TIFF)
-- [Zarr](https://zarr.dev/)
+- [OME-Zarr](https://ngff.openmicroscopy.org/latest/) for [Zarr v2](https://zarr.readthedocs.io/en/stable/spec/v2.html)
+- [Zarr v3](https://zarr.readthedocs.io/en/stable/spec/v3.html)
 
-For testing and demonstration purposes, Acquire provides a few simulated cameras, as well as raw and trash output devices.
+Acquire also supports raw and trash storage devices. For more information on supported file formats and storage devices, check out [this tutorial](./tutorials/storage.md).
 
 ## Citing Acquire
 
