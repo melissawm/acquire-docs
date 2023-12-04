@@ -1,4 +1,4 @@
-# Quick Start Acquire **Docs** Contribution Guide
+# Acquire **Docs** Contribution Quickstart
 
 1. Make sure you have a fresh environment with the latest mkdocs and mkdocs-material installed. You can install them with `pip install -r requirements.txt` from the root of the repository.
 2. Your pages should be written as markdown files, using the basic markdown syntax or following the [mkdocs](https://www.mkdocs.org/user-guide/writing-your-docs/) or [material for mkdocs](https://squidfunk.github.io/mkdocs-material/reference/formatting/) syntax.
