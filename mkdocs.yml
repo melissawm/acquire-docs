@@ -8,7 +8,9 @@ theme:
     - navigation.tabs.sticky
     - navigation.footer
     - navigation.indexes
+    - navigation.tracking
     - content.code.copy
+    - toc.follow
   custom_dir: overrides
 
 extra_css:
@@ -53,6 +55,8 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons
+  - toc:
+      permalink: true
 
 plugins:
   - include-markdown
