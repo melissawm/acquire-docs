@@ -53,10 +53,6 @@ html {
     scrollbar-color: var(--md-accent-fg-color) #0000;
 }
 
-.md-nav--primary .md-nav__title .md-logo {
-display: none;
-}
-
 .md-nav--primary .md-nav__title {
     height: 3rem;
     padding-top: 0.3rem;
@@ -66,7 +62,6 @@ display: none;
 .md-nav--primary .md-nav__title .md-nav__icon::after {
     margin-top: 0.3rem;
 }
-
 
 @media screen and (max-width: 800px) {
     .md-nav__source {
@@ -247,4 +242,8 @@ li.md-source__fact {
     font: var(--fa-font-solid);
     content: "\f054";
     padding-left: 0.5rem;
+}
+
+.md-header__ellipsis a:hover {
+    color: white;
 }
