@@ -1001,11 +1001,11 @@
   
 
 
-<h1 id="writing-to-compressed-zarr-files">Writing to Compressed Zarr Files</h1>
+<h1 id="writing-to-compressed-zarr-files">Writing to Compressed Zarr Files<a class="headerlink" href="#writing-to-compressed-zarr-files" title="Permanent link">&para;</a></h1>
 <p>This tutorial will provide an example of writing compressed data to a Zarr file.</p>
 <p><code>Acquire</code> supports streaming compressed data to the <code>ZarrBlosc1*</code> storage devices. Compression is done via <a href="https://www.blosc.org/pages/blosc-in-depth/">Blosc</a>.
 Supported codecs are <em>lz4</em> and <em>zstd</em>, available with <strong>ZarrBlosc1Lz4ByteShuffle</strong> and <strong>ZarrBlosc1ZstdByteShuffle</strong> devices, respectively. For a comparison of these codecs, please refer to the <a href="https://www.blosc.org/">Blosc docs</a>. You can learn more about the Zarr capabilities in <code>Acquire</code> <a href="https://github.com/acquire-project/acquire-driver-zarr">here</a>.</p>
-<h2 id="configure-runtime">Configure <code>Runtime</code></h2>
+<h2 id="configure-runtime">Configure <code>Runtime</code><a class="headerlink" href="#configure-runtime" title="Permanent link">&para;</a></h2>
 <p>To start, we'll create a <code>Runtime</code> object and configure the streaming process, selecting <code>ZarrBlosc1ZstdByteShuffle</code> as the storage device to enable compressing the data.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -1038,7 +1038,7 @@ Supported codecs are <em>lz4</em> and <em>zstd</em>, available with <strong>Zarr
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="c1"># Update the configuration with the chosen parameters </span>
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> 
 </span></code></pre></div>
-<h2 id="inspect-acquired-data">Inspect Acquired Data</h2>
+<h2 id="inspect-acquired-data">Inspect Acquired Data<a class="headerlink" href="#inspect-acquired-data" title="Permanent link">&para;</a></h2>
 <p>Now that the configuration is set to utilize the <code>ZarrBlosc1ZstdByteShuffle</code> storage device, we can acquire data, which will be compressed before it is stored to <code>out.zarr</code>. Since we did not specify the size of chunks, the data will be saved as a single chunk that is the size of the image data. You may specify chunk sizes using the <code>TileShape</code> class. For example, using <code>acquire.StorageProperties.chunking.tile.width</code> to set the width of the chunks.</p>
 <p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># acquire data</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
@@ -1254,7 +1254,7 @@ As expected, the data was compressed using the <code>zstd</code> codec.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>

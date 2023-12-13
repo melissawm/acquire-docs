@@ -1089,10 +1089,10 @@
   
 
 
-<h1 id="getting-started-with-acquire">Getting Started with Acquire</h1>
+<h1 id="getting-started-with-acquire">Getting Started with Acquire<a class="headerlink" href="#getting-started-with-acquire" title="Permanent link">&para;</a></h1>
 <p>Acquire (<code>acquire-imaging</code> <a href="https://pypi.org/project/acquire-imaging/">on PyPI</a>) is a Python package providing a multi-camera video streaming library focused on performant microscopy, with support for up to two simultaneous, independent, video streams.</p>
 <p>This tutorial covers Acquire installation and shows an example of using Acquire with its provided simulated cameras to demonstrate the acquisition process. </p>
-<h2 id="installation">Installation</h2>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python -m pip install acquire-imaging
 </span></code></pre></div>
@@ -1110,7 +1110,7 @@ For example, to install <code>Acquire</code> in a conda environment named <code>
 <p>Once you have Acquire installed, simply call <code>import acquire</code> in your script, notebook, or module to start utilizing the package.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
 </span></code></pre></div>
-<h2 id="supported-cameras-and-file-formats">Supported Cameras and File Formats</h2>
+<h2 id="supported-cameras-and-file-formats">Supported Cameras and File Formats<a class="headerlink" href="#supported-cameras-and-file-formats" title="Permanent link">&para;</a></h2>
 <p>Acquire supports the following cameras (currently only on Windows):</p>
 <ul>
 <li><a href="https://www.hamamatsu.com/eu/en/product/cameras/cmos-cameras/C15440-20UP.html">Hamamatsu Orca Fusion BT (C15440-20UP)</a></li>
@@ -1130,12 +1130,12 @@ To see all the devices that Acquire supports, you can run the following script:<
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">devices</span><span class="p">():</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="tutorial-prerequisites">Tutorial Prerequisites</h2>
+<h2 id="tutorial-prerequisites">Tutorial Prerequisites<a class="headerlink" href="#tutorial-prerequisites" title="Permanent link">&para;</a></h2>
 <p>We will be writing to and reading from the <a href="https://zarr.readthedocs.io/en/stable/">Zarr format</a>, using the <a href="https://www.dask.org/">Dask library</a> to load and inspect the data, and visualizing the data using <a href="https://napari.org/stable/">napari</a>.</p>
 <p>You can install these prerequisites with:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python -m pip install dask &quot;napari[all]&quot; zarr
 </span></code></pre></div>
-<h2 id="setup-for-acquisition">Setup for Acquisition</h2>
+<h2 id="setup-for-acquisition">Setup for Acquisition<a class="headerlink" href="#setup-for-acquisition" title="Permanent link">&para;</a></h2>
 <p>We will use one of Acquire's simulated cameras to generate data and use Zarr for our output file format, which is called "storage device" in <code>Acquire</code>.</p>
 <p>To begin, instantiate <code>Runtime</code> and <code>DeviceManager</code> and list the currently supported devices.</p>
 <p><div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
@@ -1226,7 +1226,7 @@ We also need to register our configuration with the runtime using the <code>set_
 </span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
-<h2 id="acquire-data">Acquire Data</h2>
+<h2 id="acquire-data">Acquire Data<a class="headerlink" href="#acquire-data" title="Permanent link">&para;</a></h2>
 <p>To start aquiring data:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span></code></pre></div>
@@ -1237,7 +1237,7 @@ We also need to register our configuration with the runtime using the <code>set_
 This method will wait until you've reached the number of frames to collect specified in <code>config.video[0].max_frame_count</code> or <code>config.video[1].max_frame_count</code>, whichever is larger.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </span></code></pre></div>
-<h2 id="visualizing-the-data-with-napari">Visualizing the Data with napari</h2>
+<h2 id="visualizing-the-data-with-napari">Visualizing the Data with napari<a class="headerlink" href="#visualizing-the-data-with-napari" title="Permanent link">&para;</a></h2>
 <p>Let's take a look at what we've written.
 We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we'll use napari to view it.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
@@ -1252,7 +1252,7 @@ We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we
 </span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
 </span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="n">viewer2</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">view_image</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>For more examples of using Acquire, check out our <a href="../tutorials/">tutorials page</a>.</p>
 
 
@@ -1443,7 +1443,7 @@ We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>

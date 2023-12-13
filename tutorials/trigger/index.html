@@ -1055,15 +1055,15 @@
   
 
 
-<h1 id="finite-triggered-acquisition">Finite Triggered Acquisition</h1>
+<h1 id="finite-triggered-acquisition">Finite Triggered Acquisition<a class="headerlink" href="#finite-triggered-acquisition" title="Permanent link">&para;</a></h1>
 <p>Acquire (<code>acquire-imaging</code> <a href="https://pypi.org/project/acquire-imaging/">on PyPI</a>) is a Python package providing a multi-camera video streaming library focused on performant microscopy, with support for up to two simultaneous, independent, video streams.</p>
 <p>This tutorial shows an example of setting up triggered acquisition of a finite number of frames with one of Acquire's supported devices and saving the data to a Zarr file.</p>
-<h2 id="initialize-acquisition">Initialize Acquisition</h2>
+<h2 id="initialize-acquisition">Initialize Acquisition<a class="headerlink" href="#initialize-acquisition" title="Permanent link">&para;</a></h2>
 <p>To start, we'll import <code>Acquire</code> and create an acquisition <code>Runtime</code> object, which initializes the driver adaptors needed for the supported cameras.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
 </span></code></pre></div>
-<h2 id="configure-camera">Configure Camera</h2>
+<h2 id="configure-camera">Configure Camera<a class="headerlink" href="#configure-camera" title="Permanent link">&para;</a></h2>
 <p>All camera settings can be captured by an instance of the <code>Properties</code> class, which will be associated with a given camera acquisition. The settings can be stored in a dictionary (e.g: <code>Properties.dict()</code>). These settings can be saved to a JSON file to be subsequently loaded, (e.g. <code>Properties(**json.load(open('acquire.json')))</code> ), using the <a href="https://docs.python.org/3/library/json.html#">json library</a>. Check out <a href="../props_json/">this tutorial</a> for a more detailed example, but in brief, you would use something like:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -1100,12 +1100,12 @@
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">enable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s2">&quot;Rising&quot;</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="select-storage">Select Storage</h2>
+<h2 id="select-storage">Select Storage<a class="headerlink" href="#select-storage" title="Permanent link">&para;</a></h2>
 <p><code>Storage</code> objects have identifiers which specify the file type (e.g. Zarr or tiff) and settings described by an instance of the <code>StorageProperties</code> class. We can set the file type to Zarr and set the file name to "out" with:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span><span class="s1">&#39;zarr&#39;</span><span class="p">)</span> 
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;out.zarr&quot;</span>
 </span></code></pre></div>
-<h2 id="save-configuration">Save configuration</h2>
+<h2 id="save-configuration">Save configuration<a class="headerlink" href="#save-configuration" title="Permanent link">&para;</a></h2>
 <p>None of these settings will be updated in the <code>Properties</code> object until you call the <code>set_configuration</code> method. This method updates what the current configuration settings are on the device.</p>
 <p>We'll set the configuration with:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
@@ -1115,7 +1115,7 @@
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">pprint</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
 </span></code></pre></div>
 Check out <a href="https://acquire-project.github.io/acquire-docs/tutorials/props_json/">this tutorial</a> for a more detailed example of saving <code>Properties</code>.</p>
-<h2 id="acquire-data">Acquire data</h2>
+<h2 id="acquire-data">Acquire data<a class="headerlink" href="#acquire-data" title="Permanent link">&para;</a></h2>
 <p>To begin acquisition:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span></code></pre></div>
@@ -1309,7 +1309,7 @@ Check out <a href="https://acquire-project.github.io/acquire-docs/tutorials/prop
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>

@@ -1467,9 +1467,9 @@
   
 
 
-<h1 id="api-reference">API Reference</h1>
+<h1 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h1>
 <p>Information on the classes in <code>acquire-imaging</code> along with the attributes and methods associated with them.</p>
-<h2 id="class-availabledata">Class <code>AvailableData</code></h2>
+<h2 id="class-availabledata">Class <code>AvailableData</code><a class="headerlink" href="#class-availabledata" title="Permanent link">&para;</a></h2>
 <p>The <code>AvailableData</code> class represents the collection of frames that have been captured since the last call to runtime.get_available_data(). <code>AvailableData</code> objects should be set to have a short lifetime, since these objects reserve space on the video queue and will eventually block camera acquisition to ensure no data is overwritten before it can be processed.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span> <span class="nc">AvailableData</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span> <span class="nf">frames</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">VideoFrame</span><span class="p">]:</span>
@@ -1492,7 +1492,7 @@
 <p>The <code>__iter__</code> method enables <code>AvailableData</code> objects to be iterated. </p>
 </li>
 </ul>
-<h2 id="class-camera">Class <code>Camera</code></h2>
+<h2 id="class-camera">Class <code>Camera</code><a class="headerlink" href="#class-camera" title="Permanent link">&para;</a></h2>
 <p>The <code>Camera</code> class is used to describe cameras or other video sources.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span> <span class="nc">Camera</span><span class="p">:</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">identifier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
@@ -1515,7 +1515,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>Camera</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-cameraproperties">Class <code>CameraProperties</code></h2>
+<h2 id="class-cameraproperties">Class <code>CameraProperties</code><a class="headerlink" href="#class-cameraproperties" title="Permanent link">&para;</a></h2>
 <p>The <code>CameraProperties</code> class is used to set the desired camera properties for acquisition.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span> <span class="nc">CameraProperties</span><span class="p">:</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">exposure_time_us</span><span class="p">:</span> <span class="nb">float</span>
@@ -1566,7 +1566,7 @@
 <p>The <code>dict</code> method create a dictionary of a <code>CameraProperties</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-chunkingproperties">Class <code>ChunkingProperties</code></h2>
+<h2 id="class-chunkingproperties">Class <code>ChunkingProperties</code><a class="headerlink" href="#class-chunkingproperties" title="Permanent link">&para;</a></h2>
 <p>The <code>ChunkingProperties</code> class represents properties related to data chunking for storage in a Zarr container.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span> <span class="nc">ChunkingProperties</span><span class="p">:</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">max_bytes_per_chunk</span><span class="p">:</span> <span class="nb">int</span>
@@ -1586,7 +1586,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>ChunkingProperties</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-deviceidentifier">Class <code>DeviceIdentifier</code></h2>
+<h2 id="class-deviceidentifier">Class <code>DeviceIdentifier</code><a class="headerlink" href="#class-deviceidentifier" title="Permanent link">&para;</a></h2>
 <p>The <code>DeviceIdentifier</code> class represents an identifier for a supported device, including its unique id and type, such as a camera or storage.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span> <span class="nc">DeviceIdentifier</span><span class="p">:</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">id</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
@@ -1636,7 +1636,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>DeviceIdentifier</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-devicekind">Class <code>DeviceKind</code></h2>
+<h2 id="class-devicekind">Class <code>DeviceKind</code><a class="headerlink" href="#class-devicekind" title="Permanent link">&para;</a></h2>
 <p>The <code>DeviceKind</code> class represents the types of devices in a given system.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span> <span class="nc">DeviceKind</span><span class="p">:</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">Camera</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span>
@@ -1686,7 +1686,7 @@
 <p><code>Storage</code>: Enum-type class variable of <code>DeviceKind</code> that specifies a device is for storage.</p>
 </li>
 </ul>
-<h2 id="class-devicemanager">Class <code>DeviceManager</code></h2>
+<h2 id="class-devicemanager">Class <code>DeviceManager</code><a class="headerlink" href="#class-devicemanager" title="Permanent link">&para;</a></h2>
 <p>The <code>DeviceManager</code> class manages selection of available devices in the system. Regular expressions are accepted for the name argument.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span> <span class="nc">DeviceManager</span><span class="p">:</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="k">def</span> <span class="nf">devices</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
@@ -1726,7 +1726,7 @@
 <p>Call <code>select_one_of</code> to choose one device from a list of acceptable devices of a given kind.</p>
 </li>
 </ul>
-<h2 id="class-devicestate">Class <code>DeviceState</code></h2>
+<h2 id="class-devicestate">Class <code>DeviceState</code><a class="headerlink" href="#class-devicestate" title="Permanent link">&para;</a></h2>
 <p>The <code>DeviceState</code> class represents the acquisition status of a device.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span> <span class="nc">DeviceState</span><span class="p">:</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">Closed</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">DeviceState</span><span class="p">]</span> <span class="o">=</span> <span class="n">DeviceState</span><span class="o">.</span><span class="n">Closed</span>
@@ -1769,7 +1769,7 @@
 <p><code>Running</code>: Enum-type class variable of <code>DeviceState</code> that species when a device is streaming data.</p>
 </li>
 </ul>
-<h2 id="class-direction">Class <code>Direction</code></h2>
+<h2 id="class-direction">Class <code>Direction</code><a class="headerlink" href="#class-direction" title="Permanent link">&para;</a></h2>
 <p>The <code>Direction</code> class represents the direction that data is read for streaming.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span> <span class="nc">Direction</span><span class="p">:</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="n">Backward</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Direction</span><span class="p">]</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="n">Backward</span>
@@ -1804,7 +1804,7 @@
 <p><code>Forward</code>: Enum-type class variable of <code>Direction</code> that species when data is streamed forward.</p>
 </li>
 </ul>
-<h2 id="class-inputtriggers">Class <code>InputTriggers</code></h2>
+<h2 id="class-inputtriggers">Class <code>InputTriggers</code><a class="headerlink" href="#class-inputtriggers" title="Permanent link">&para;</a></h2>
 <p>The <code>InputTriggers</code> class represents input triggers for a camera device.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span> <span class="nc">InputTriggers</span><span class="p">:</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">acquisition_start</span><span class="p">:</span> <span class="n">Trigger</span>
@@ -1828,7 +1828,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>InputTriggers</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-outputtriggers">Class <code>OutputTriggers</code></h2>
+<h2 id="class-outputtriggers">Class <code>OutputTriggers</code><a class="headerlink" href="#class-outputtriggers" title="Permanent link">&para;</a></h2>
 <p>The <code>OutputTriggers</code> class represents output triggers for a camera device.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">class</span> <span class="nc">OutputTriggers</span><span class="p">:</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">exposure</span><span class="p">:</span> <span class="n">Trigger</span>
@@ -1852,7 +1852,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>OutputTriggers</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-pid">Class <code>PID</code></h2>
+<h2 id="class-pid">Class <code>PID</code><a class="headerlink" href="#class-pid" title="Permanent link">&para;</a></h2>
 <p>The <code>PID</code> class represents proportional-integral-derivative (PID) values.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span> <span class="nc">PID</span><span class="p">:</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">derivative</span><span class="p">:</span> <span class="nb">float</span>
@@ -1879,7 +1879,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>PID</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-properties">Class <code>Properties</code></h2>
+<h2 id="class-properties">Class <code>Properties</code><a class="headerlink" href="#class-properties" title="Permanent link">&para;</a></h2>
 <p>The <code>Properties</code> class represents properties related to video streams.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span> <span class="nc">Properties</span><span class="p">:</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="n">video</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">VideoStream</span><span class="p">,</span> <span class="n">VideoStream</span><span class="p">]</span>
@@ -1898,7 +1898,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>Properties</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-runtime">Class <code>Runtime</code></h2>
+<h2 id="class-runtime">Class <code>Runtime</code><a class="headerlink" href="#class-runtime" title="Permanent link">&para;</a></h2>
 <p>The <code>Runtime</code> class coordinates the devices with the storage disc including selecting the devices, setting their properties, and starting and stopping acqusition.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">class</span> <span class="nc">Runtime</span><span class="p">:</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1968,7 +1968,7 @@
 <p>Call <code>abort()</code> to immediately end data acqusition. All objects are deleted to free up disk space upon shutdown of <code>Runtime</code>.</p>
 </li>
 </ul>
-<h2 id="class-sampleratehz">Class <code>SampleRateHz</code></h2>
+<h2 id="class-sampleratehz">Class <code>SampleRateHz</code><a class="headerlink" href="#class-sampleratehz" title="Permanent link">&para;</a></h2>
 <p>The <code>SampleRateHz</code> class represents the sampling rate in hertz.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">class</span> <span class="nc">SampleRateHz</span><span class="p">:</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">numerator</span><span class="p">:</span> <span class="nb">int</span>
@@ -1991,7 +1991,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>SampleRateHz</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-sampletype">Class <code>SampleType</code></h2>
+<h2 id="class-sampletype">Class <code>SampleType</code><a class="headerlink" href="#class-sampletype" title="Permanent link">&para;</a></h2>
 <p>The <code>SampleType</code> class defines the type of the values in the streamed data.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">class</span> <span class="nc">SampleType</span><span class="p">:</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="n">F32</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SampleType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SampleType</span><span class="o">.</span><span class="n">F32</span>
@@ -2050,7 +2050,7 @@
 <p><code>U14</code>: Enum-type class variable of <code>SampleType</code> that specifies values of 14-bit unsigned integer type.</p>
 </li>
 </ul>
-<h2 id="class-signaliokind">Class <code>SignalIOKind</code></h2>
+<h2 id="class-signaliokind">Class <code>SignalIOKind</code><a class="headerlink" href="#class-signaliokind" title="Permanent link">&para;</a></h2>
 <p>The <code>SignalIOKind</code> class defines the signal type, input or output, for a trigger.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">class</span> <span class="nc">SignalIOKind</span><span class="p">:</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="n">Input</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SignalIOKind</span><span class="p">]</span> <span class="o">=</span> <span class="n">SignalIOKind</span><span class="o">.</span><span class="n">Input</span>
@@ -2085,7 +2085,7 @@
 <p><code>Output</code>: Enum-type class variable of <code>SignalIOKind</code> that specifies signal sent out of the device.</p>
 </li>
 </ul>
-<h2 id="class-signaltype">Class <code>SignalType</code></h2>
+<h2 id="class-signaltype">Class <code>SignalType</code><a class="headerlink" href="#class-signaltype" title="Permanent link">&para;</a></h2>
 <p>The <code>SignalType</code> class specifies whether a signal is analog or digital.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">class</span> <span class="nc">SignalType</span><span class="p">:</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="n">Analog</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">SignalType</span><span class="p">]</span> <span class="o">=</span> <span class="n">SignalType</span><span class="o">.</span><span class="n">Analog</span>
@@ -2120,7 +2120,7 @@
 <p><code>Input</code>: Enum-type class variable of <code>SignalType</code> that specifies signal coming in to the device.</p>
 </li>
 </ul>
-<h2 id="class-storage">Class <code>Storage</code></h2>
+<h2 id="class-storage">Class <code>Storage</code><a class="headerlink" href="#class-storage" title="Permanent link">&para;</a></h2>
 <p>The <code>Storage</code> class represents storage devices and their settings.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">class</span> <span class="nc">Storage</span><span class="p">:</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="n">identifier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
@@ -2140,7 +2140,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>Storage</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-storageproperties">Class <code>StorageProperties</code></h2>
+<h2 id="class-storageproperties">Class <code>StorageProperties</code><a class="headerlink" href="#class-storageproperties" title="Permanent link">&para;</a></h2>
 <p>The <code>StorageProperties</code> class represents properties for data storage.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">class</span> <span class="nc">StorageProperties</span><span class="p">:</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="n">external_metadata_json</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
@@ -2176,7 +2176,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>StorageProperties</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-tileshape">Class <code>TileShape</code></h2>
+<h2 id="class-tileshape">Class <code>TileShape</code><a class="headerlink" href="#class-tileshape" title="Permanent link">&para;</a></h2>
 <p>The <code>TileShape</code> class represents the shape of data chunks for storage in Zarr containers.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">class</span> <span class="nc">TileShape</span><span class="p">:</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="n">width</span><span class="p">:</span> <span class="nb">int</span>
@@ -2200,7 +2200,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>TileShape</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-trigger">Class <code>Trigger</code></h2>
+<h2 id="class-trigger">Class <code>Trigger</code><a class="headerlink" href="#class-trigger" title="Permanent link">&para;</a></h2>
 <p>The <code>Trigger</code> class represents a trigger signal.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">class</span> <span class="nc">Trigger</span><span class="p">:</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    <span class="n">edge</span><span class="p">:</span> <span class="n">TriggerEdge</span>
@@ -2231,7 +2231,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>Trigger</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-triggeredge">Class <code>TriggerEdge</code></h2>
+<h2 id="class-triggeredge">Class <code>TriggerEdge</code><a class="headerlink" href="#class-triggeredge" title="Permanent link">&para;</a></h2>
 <p>The <code>TriggerEdge</code> class represents what edge of the trigger function initiates the trigger.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">class</span> <span class="nc">TriggerEdge</span><span class="p">:</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    <span class="n">Falling</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">TriggerEdge</span><span class="p">]</span> <span class="o">=</span> <span class="n">TriggerEdge</span><span class="o">.</span><span class="n">Falling</span>
@@ -2270,7 +2270,7 @@
 <p><code>Rising</code>: Enum-type class variable of <code>TriggerEdge</code> that defines the rising edge of the trigger.</p>
 </li>
 </ul>
-<h2 id="class-videoframe">Class <code>VideoFrame</code></h2>
+<h2 id="class-videoframe">Class <code>VideoFrame</code><a class="headerlink" href="#class-videoframe" title="Permanent link">&para;</a></h2>
 <p>The <code>VideoFrame</code> class represents data from acquisition of a frame.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">class</span> <span class="nc">VideoFrame</span><span class="p">:</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
@@ -2287,7 +2287,7 @@
 <p>Call <code>metadata()</code> to create a <code>VideoFrameMetadata</code> object containing the metadata of <code>VideoFrame</code>. </p>
 </li>
 </ul>
-<h2 id="class-videoframemetadata">Class <code>VideoFrameMetadata</code></h2>
+<h2 id="class-videoframemetadata">Class <code>VideoFrameMetadata</code><a class="headerlink" href="#class-videoframemetadata" title="Permanent link">&para;</a></h2>
 <p>The <code>VideoFrameMetadata</code> class represents metadata related to a video frame.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">class</span> <span class="nc">VideoFrameMetadata</span><span class="p">:</span>
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span>
@@ -2307,7 +2307,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>VideoFrameTimestamps</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-videoframetimestamps">Class <code>VideoFrameTimestamps</code></h2>
+<h2 id="class-videoframetimestamps">Class <code>VideoFrameTimestamps</code><a class="headerlink" href="#class-videoframetimestamps" title="Permanent link">&para;</a></h2>
 <p>The <code>VideoFrameTimestamps</code> class represents timestamps related to a video frame.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">class</span> <span class="nc">VideoFrameTimestamps</span><span class="p">:</span>
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    <span class="n">hardware</span><span class="p">:</span> <span class="nb">int</span>
@@ -2327,7 +2327,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>VideoFrameTimestamps</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-videostream">Class <code>VideoStream</code></h2>
+<h2 id="class-videostream">Class <code>VideoStream</code><a class="headerlink" href="#class-videostream" title="Permanent link">&para;</a></h2>
 <p>The <code>VideoStream</code> class represents a video stream.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">class</span> <span class="nc">VideoStream</span><span class="p">:</span>
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    <span class="n">camera</span><span class="p">:</span> <span class="n">Camera</span>
@@ -2355,7 +2355,7 @@
 <p>The <code>dict</code> method creates a dictionary of a <code>VideoStream</code> object's attributes.</p>
 </li>
 </ul>
-<h2 id="class-voltagerange">Class <code>VoltageRange</code></h2>
+<h2 id="class-voltagerange">Class <code>VoltageRange</code><a class="headerlink" href="#class-voltagerange" title="Permanent link">&para;</a></h2>
 <p>The <code>VoltageRange</code> class represents a range of voltage values.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">class</span> <span class="nc">VoltageRange</span><span class="p">:</span>
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="n">mn</span><span class="p">:</span> <span class="nb">float</span>
@@ -2572,7 +2572,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>

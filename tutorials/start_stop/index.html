@@ -1001,9 +1001,9 @@
   
 
 
-<h1 id="multiple-acquisitions">Multiple Acquisitions</h1>
+<h1 id="multiple-acquisitions">Multiple Acquisitions<a class="headerlink" href="#multiple-acquisitions" title="Permanent link">&para;</a></h1>
 <p>This tutorial will provide an example of starting, stopping, and restarting acquisition, or streaming from a video source. </p>
-<h2 id="configure-streaming">Configure Streaming</h2>
+<h2 id="configure-streaming">Configure Streaming<a class="headerlink" href="#configure-streaming" title="Permanent link">&para;</a></h2>
 <p>To start, we'll create a <code>Runtime</code> object and configure the streaming process. To do this, we'll utilize the setup method. More information on that method is detailed in <a href="https://acquire-project.github.io/acquire-docs/tutorials/setup">this tutorial</a>.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -1023,7 +1023,7 @@
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Update the configuration with the chosen parameters </span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> 
 </span></code></pre></div>
-<h2 id="start-stop-and-restart-acquisition">Start, Stop, and Restart Acquisition</h2>
+<h2 id="start-stop-and-restart-acquisition">Start, Stop, and Restart Acquisition<a class="headerlink" href="#start-stop-and-restart-acquisition" title="Permanent link">&para;</a></h2>
 <p>During Acquisition, the <code>AvailableData</code> object is the streaming interface. Upon shutdown, <code>Runtime</code> deletes all of the objects created during acquisition to free up resources, and you must stop acquisition by calling <code>runtime.stop()</code> to shutdown after the max frames is collected or <code>runtime.abort()</code> to shutdown immediately) between acquisitions. Otherwise, an exception will be raised.</p>
 <p>To understand how acquisition works, we'll start, stop, and repeat acquisition and print the <code>DeviceState</code>, which can be <code>Armed</code>, <code>AwaitingConfiguration</code>, <code>Closed</code>, or <code>Running</code>, as well as print the <code>AvailableData</code> object throughout the process.</p>
 <p>If acquisition has ended, all of the objects are deleted, including <code>AvailableData</code> objects, so those will be <code>None</code> when not acquiring data. In addition, if enough time hasn't elapsed since acquisition started, <code>AvailableData</code> will also be <code>None</code>. We'll utilize the <code>time</code> python package to introduce time delays to account for these facts. </p>
@@ -1271,7 +1271,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>

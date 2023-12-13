@@ -1001,9 +1001,9 @@
   
 
 
-<h1 id="accessing-data-during-acquisition">Accessing Data during Acquisition</h1>
+<h1 id="accessing-data-during-acquisition">Accessing Data during Acquisition<a class="headerlink" href="#accessing-data-during-acquisition" title="Permanent link">&para;</a></h1>
 <p>This tutorial will provide an example of accessing data from a video source during acquisition. </p>
-<h2 id="configure-runtime">Configure <code>Runtime</code></h2>
+<h2 id="configure-runtime">Configure <code>Runtime</code><a class="headerlink" href="#configure-runtime" title="Permanent link">&para;</a></h2>
 <p>To start, we'll create a <code>Runtime</code> object and configure the streaming process.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -1033,7 +1033,7 @@
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="c1"># Update the configuration with the chosen parameters </span>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> 
 </span></code></pre></div>
-<h2 id="working-with-availabledata-objects">Working with <code>AvailableData</code> objects</h2>
+<h2 id="working-with-availabledata-objects">Working with <code>AvailableData</code> objects<a class="headerlink" href="#working-with-availabledata-objects" title="Permanent link">&para;</a></h2>
 <p>During Acquisition, the <code>AvailableData</code> object is the streaming interface, and this class has a <code>frames</code> method which iterates over the <code>VideoFrame</code> objects in <code>AvailableData</code>. Once we start acquisition, we'll utilize this iterator method to list the frames. To increase the likelihood of <code>AvailableData</code> containing data, we'll utilize the time python package to introduce a delay before we create our <code>AvailableData</code> object</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># package for introducing time delays</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">time</span>
@@ -1278,7 +1278,7 @@ Finally, delete the <code>available_data</code> to unlock the region in the circ
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>

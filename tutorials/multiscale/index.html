@@ -1001,10 +1001,10 @@
   
 
 
-<h1 id="multiscale-data-acqusition">Multiscale Data Acqusition</h1>
+<h1 id="multiscale-data-acqusition">Multiscale Data Acqusition<a class="headerlink" href="#multiscale-data-acqusition" title="Permanent link">&para;</a></h1>
 <p>This tutorial will provide an example of writing multiscale data to a Zarr file.</p>
 <p>Zarr has additional capabilities relative to Acquire's basic storage devices, namely <em>chunking</em>, <em>compression</em>, and <em>multiscale storage</em>. To enable <em>chunking</em> and <em>multiscale storage</em>, set those attributes in instances of the <code>ChunkingProperties</code> and <code>StorageProperties</code> classes, respectively. You can learn more about the Zarr capabilities in <code>Acquire</code> <a href="https://github.com/acquire-project/acquire-driver-zarr">here</a>.</p>
-<h2 id="configure-runtime">Configure <code>Runtime</code></h2>
+<h2 id="configure-runtime">Configure <code>Runtime</code><a class="headerlink" href="#configure-runtime" title="Permanent link">&para;</a></h2>
 <p>To start, we'll create a <code>Runtime</code> object and begin to configure the streaming process, selecting <code>Zarr</code> as the storage device so that writing multiscale data is possible.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -1058,7 +1058,7 @@
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1"># Update the configuration with the chosen parameters </span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> 
 </span></code></pre></div>
-<h2 id="collect-and-inspect-the-data">Collect and Inspect the Data</h2>
+<h2 id="collect-and-inspect-the-data">Collect and Inspect the Data<a class="headerlink" href="#collect-and-inspect-the-data" title="Permanent link">&para;</a></h2>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># collect data</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
@@ -1270,7 +1270,7 @@ The <code>"2"</code> directory contains a further rescaled array of frames of si
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
