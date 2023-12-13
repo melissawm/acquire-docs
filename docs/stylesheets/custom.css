@@ -166,6 +166,12 @@ li.md-source__fact {
     padding-left: 13rem;
     padding-bottom: 1rem;
 }
+@media (max-width: 800px) {
+    .mdx-hero__content {
+        padding-left: 0.8rem ;
+    }
+
+}
 
 .mdx-hero__content h1 {
     line-height: 1;
