@@ -1,3 +1,16 @@
+---
+jupyter:
+  jupytext:
+    cell_metadata_filter: -all
+    formats: md,py
+    main_language: python
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: '1.3'
+      jupytext_version: 1.16.0
+---
+
 # Storage Device Selection
 
 This tutorial describes the storage device options in `Acquire`.
@@ -7,7 +20,7 @@ This tutorial describes the storage device options in `Acquire`.
 To start, we'll create a `Runtime` object and print the storage device options.
 
 ```python
-import acquire 
+import acquire
 
 # Instantiate a Runtime object
 runtime = acquire.Runtime()
@@ -32,22 +45,22 @@ The output of that script will be:
 <DeviceIdentifier Storage "ZarrBlosc1Lz4ByteShuffle">
 ```
 
-`Acquire` supports streaming data to [bigtiff](http://bigtiff.org/) and [Zarr V2](https://zarr.readthedocs.io/en/stable/spec/v2.html). 
+`Acquire` supports streaming data to [bigtiff](http://bigtiff.org/) and [Zarr V2](https://zarr.readthedocs.io/en/stable/spec/v2.html).
 
 Zarr has additional capabilities relative to the basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. You can learn more about the Zarr capabilities in `Acquire` [here](https://github.com/acquire-project/acquire-driver-zarr).
 
 - **raw** - Streams to a raw binary file.
-  
+
 - **tiff** - Streams to a [bigtiff](http://bigtiff.org/) file. Metadata is stored in the `ImageDescription` tag for each frame as a `JSON` string.
-  
+
 - **trash** - Writes nothing. Discards incoming data. Useful for live streaming applications.
-  
+
 - **tiff-json** - Stores the video stream in a [bigtiff](http://bigtiff.org/), and stores metadata in a `JSON` file. Both are located in a folder identified by the `filename` property.
 
 - **Zarr** - Streams data to a [Zarr V2](https://zarr.readthedocs.io/en/stable/spec/v2.html) file with associated metadata.
-  
+
 - **ZarrBlosc1ZstdByteShuffle** - Streams compressed data (_zstd_ codec) to a [Zarr V2](https://zarr.readthedocs.io/en/stable/spec/v2.html) file with associated metadata.
-  
+
 - **ZarrBlosc1Lz4ByteShuffle** - Streams compressed data (_lz4_ codec) to a [Zarr V2](https://zarr.readthedocs.io/en/stable/spec/v2.html) file with associated metadata.
 
 ## Configure the Storage Device
@@ -62,7 +75,9 @@ config = runtime.get_configuration()
 config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "tiff")
 
 # Set the data filename to out.tif in your current directory (provide the whole filetree to save to a different directory)
-config.video[0].storage.settings.filename = "out.tif" 
+config.video[0].storage.settings.filename = "out.tif"
 ```
 
 Before proceeding, complete the `Camera` setup and call `set_configuration` to save those new configuration settings.
+
+[Download this tutorial as a Python script](storage.py){ .md-button .md-button-center }

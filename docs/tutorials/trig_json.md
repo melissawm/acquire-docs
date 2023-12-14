@@ -1,3 +1,16 @@
+---
+jupyter:
+  jupytext:
+    cell_metadata_filter: -all
+    formats: md,py
+    main_language: python
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: '1.3'
+      jupytext_version: 1.16.0
+---
+
 # Triggers from a JSON file
 
 This tutorial will provide an example of saving and subsequently loading a `Trigger` object from a JSON file.
@@ -55,3 +68,4 @@ You can load the trigger attributes in the JSON file to a `Trigger` object as sh
 trig = acquire.Trigger(**json.load(open('sample_trig.json')))
 ```
 
+[Download this tutorial as a Python script](trig_json.py){ .md-button .md-button-center }

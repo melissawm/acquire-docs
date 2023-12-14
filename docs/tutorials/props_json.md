@@ -1,3 +1,16 @@
+---
+jupyter:
+  jupytext:
+    cell_metadata_filter: -all
+    formats: md,py
+    main_language: python
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: '1.3'
+      jupytext_version: 1.16.0
+---
+
 # Properties from a JSON file
 
 This tutorial will provide an example of saving and subsequently loading a `Properties` object from a JSON file.
@@ -13,12 +26,13 @@ runtime = acquire.Runtime()
 
 ## Configure Camera
 
-All camera settings are captured by an instance of the `Properties` class, which will be associated with a given camera acquisition. 
+All camera settings are captured by an instance of the `Properties` class, which will be associated with a given camera acquisition.
 
 ```python
 # Instantiate a Properties object for the Runtime
 config = runtime.get_configuration()
 ```
+
 You can update any of the settings in this instance of `Properties`. To save any updated settings, use the `set_configuration` method.  For this tutorial, we'll simply specify a camera, and then save these new settings. Note that more settings must be provided before this `Properties` object could be used for an acquistion. Check out [this tutorial](configure.md) for more information on configuring an acquisition.
 
 ```python
@@ -70,3 +84,4 @@ config = acquire.Properties(**json.load(open('sample_props.json')))
 config = runtime.set_configuration(config)
 ```
 
+[Download this tutorial as a Python script](props_json.py){ .md-button .md-button-center }

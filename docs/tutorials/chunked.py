@@ -1,26 +1,25 @@
----
-jupyter:
-  jupytext:
-    cell_metadata_filter: -all
-    formats: md,py
-    main_language: python
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.16.0
----
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     formats: md,py
+#     text_representation:
+#       extension: .py
+#       format_name: light
+#       format_version: '1.5'
+#       jupytext_version: 1.16.0
+# ---
 
-# Chunking Data for Zarr Storage
+# # Chunking Data for Zarr Storage
+#
+# This tutorial will provide an example of writing chunked data to a Zarr storage device.
+#
+# Zarr has additional capabilities relative to the basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. To enable _chunking_, set the attributes in an instance of the `ChunkingProperties` class. You can learn more about the Zarr capabilities in `Acquire` [here](https://github.com/acquire-project/acquire-driver-zarr).
+#
+# ## Configure `Runtime`
+# To start, we'll create a `Runtime` object and configure the streaming process, selecting `Zarr` as the storage device to enable chunking the data.
 
-This tutorial will provide an example of writing chunked data to a Zarr storage device.
-
-Zarr has additional capabilities relative to the basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. To enable _chunking_, set the attributes in an instance of the `ChunkingProperties` class. You can learn more about the Zarr capabilities in `Acquire` [here](https://github.com/acquire-project/acquire-driver-zarr).
-
-## Configure `Runtime`
-To start, we'll create a `Runtime` object and configure the streaming process, selecting `Zarr` as the storage device to enable chunking the data.
-
-```python
+# +
 import acquire
 
 # Initialize a Runtime object
@@ -52,10 +51,10 @@ config.video[0].max_frame_count = 10 # collect 10 frames
 
 # Set the output file to out.zarr
 config.video[0].storage.settings.filename = "out.zarr"
-```
-Below we'll configure the chunking specific settings and update all settings with the `set_configuration` method.
+# -
+# Below we'll configure the chunking specific settings and update all settings with the `set_configuration` method.
 
-```python
+# +
 # Chunk size may need to be optimized for each acquisition.
 # See Zarr documentation for further guidance:
 # https://zarr.readthedocs.io/en/stable/tutorial.html#chunk-optimizations
@@ -68,19 +67,17 @@ config.video[0].storage.settings.chunking.tile.height = 1080 // 2
 
 # Update the configuration with the chosen parameters
 config = runtime.set_configuration(config)
-```
+# -
 
-## Collect and Inspect the Data
+# ## Collect and Inspect the Data
 
-```python
 # collect data
 runtime.start()
 runtime.stop()
-```
 
-You can inspect the Zarr file directory to check that the data saved as expected. Alternatively, you can inspect the data programmatically with:
+# You can inspect the Zarr file directory to check that the data saved as expected. Alternatively, you can inspect the data programmatically with:
 
-```python
+# +
 # Utilize the zarr library to open the data
 import zarr
 
@@ -92,12 +89,12 @@ assert len(group) == 1
 
 # inspect the characteristics of the data
 group["0"]
-```
+# -
 
-The output will be:
-```
-<zarr.core.Array '/0' (10, 1, 1080, 1920) uint8>
-```
-As expected, we have only 1 top level directory, corresponding to the single array in the group. We would expect more than 1 array only if we were writing [multiscale data](multiscale.md). The overall array shape is (10, 1, 1080, 1920), corresponding to 10 frames, 1 channel, and a height and width of 1080 and 1920, respectively, per frame.
-
-[Download this tutorial as a Python script](chunked.py){ .md-button .md-button-center }
+# The output will be:
+# ```
+# <zarr.core.Array '/0' (10, 1, 1080, 1920) uint8>
+# ```
+# As expected, we have only 1 top level directory, corresponding to the single array in the group. We would expect more than 1 array only if we were writing [multiscale data](multiscale.md). The overall array shape is (10, 1, 1080, 1920), corresponding to 10 frames, 1 channel, and a height and width of 1080 and 1920, respectively, per frame.
+#
+# [Download this tutorial as a Python script](chunked.py){ .md-button .md-button-center }
