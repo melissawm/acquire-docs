@@ -1,5 +1,6 @@
 site_name: Acquire Docs
-repo_url: https://github.com/acquire-project
+repo_url: https://github.com/acquire-project/
+site_url: https://melissawm.github.io/acquire-docs/
 
 theme:
   name: material
@@ -39,6 +40,7 @@ nav:
   - For contributors:
     - for_contributors/index.md
     - for_contributors/docs_contribution_quickstart.md
+    - for_contributors/update_version.md
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -63,3 +65,9 @@ markdown_extensions:
 plugins:
   - include-markdown
   - search
+
+extra:
+  version:
+    provider: mike
+    default: stable
+    version_selector: true
