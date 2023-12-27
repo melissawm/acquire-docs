@@ -1,16 +1,3 @@
----
-jupyter:
-  jupytext:
-    cell_metadata_filter: -all
-    formats: md,py
-    main_language: python
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.16.0
----
-
 # Triggers from a JSON file
 
 This tutorial will provide an example of saving and subsequently loading a `Trigger` object from a JSON file.

@@ -1,16 +1,3 @@
----
-jupyter:
-  jupytext:
-    cell_metadata_filter: -all
-    formats: md,py
-    main_language: python
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.16.0
----
-
 # Configure an Acquisition
 
 This tutorial will provide an in-depth explanation of setting configuration properites and demonstrate the relationships between various `Acquire` classes, such as `CameraProperties` and `StorageProperties`, used in the configuration process. In this example, we'll only configure one video source.

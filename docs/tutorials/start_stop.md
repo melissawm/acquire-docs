@@ -1,16 +1,3 @@
----
-jupyter:
-  jupytext:
-    cell_metadata_filter: -all
-    formats: md,py
-    main_language: python
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.16.0
----
-
 # Multiple Acquisitions
 
 This tutorial will provide an example of starting, stopping, and restarting acquisition, or streaming from a video source.

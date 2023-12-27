@@ -1,16 +1,3 @@
----
-jupyter:
-  jupytext:
-    cell_metadata_filter: -all
-    formats: md,py
-    main_language: python
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.16.0
----
-
 # Utilizing the Setup Method
 
 This tutorial will provide an example of utilizing the [setup method](https://github.com/acquire-project/acquire-python/blob/ce0764e86bf1d10eb3a447eb670c28808ab3da3b/python/acquire/__init__.py#L41) to configure `Runtime` and specify some basic properties.

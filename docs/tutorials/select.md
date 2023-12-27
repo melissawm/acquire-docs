@@ -1,16 +1,3 @@
----
-jupyter:
-  jupytext:
-    cell_metadata_filter: -all
-    formats: md,py
-    main_language: python
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.16.0
----
-
 # Device Selection
 
 This tutorial illustrates the difference between the `select` and `select_one_of` methods in the `DeviceManager` class. `select` chooses the first discovered device of a specific kind, camera or storage device. You can also, optionally, select a specific device by passing the device name as a string to `select`. Whereas, `select_one_of` requires that you specify both the kind of device to select and a list of possible device names. `select_one_of` will iterate through the list and select the first device in the list of names that is discovered on your machine.
