@@ -10,8 +10,8 @@ mike deploy --push --update-aliases <version-tag> stable
 
 where `<version-tag>` is the tag of the new release. This will create a new
 alias for the `<version-tag>` release as `stable`, update the version switcher
-dropdown accordingly, and deploy the new version of the documentation to
-GitHub pages.
+dropdown accordingly, and deploy the new version of the documentation to the
+`gh-pages` branch of the repository.
 
 The default version of the documentation pages is `stable`, but this can be
 changed by editing the `mkdocs.yml` file.
