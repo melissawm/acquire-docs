@@ -20,7 +20,7 @@ setTimeout(function() {
 //   script.src = 'https://melissawm.github.io/_/api/v2/footer_html/?'+
 //       'callback=' + callbackName + '&project=argo-cd&page=&theme=mkdocs&format=jsonp&docroot=docs&source_suffix=.md&version=' + (window['READTHEDOCS_DATA'] || { version: 'latest' }).version;
 //   document.getElementsByTagName('head')[0].appendChild(script);
-// }, 0);
+  }, 0);
 
 // VERSION WARNINGS
 // window.addEventListener("DOMContentLoaded", function() {
