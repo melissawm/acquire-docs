@@ -1,25 +1,3 @@
-<!--
-  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -31,20 +9,22 @@
       
       
       
+        <link rel="prev" href="../">
       
-        <link rel="next" href="get_started/">
+      
+        <link rel="next" href="../configure/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
-        <title>Acquire Docs - Acquire Docs</title>
+        <title>Finite Triggered Acquisition - Acquire Docs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
       
       
 
@@ -63,9 +43,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/custom.css">
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -86,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#guides" class="md-skip">
+        <a href="#finite-triggered-acquisition" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +76,7 @@
     </div>
     
     
-<!--
+      <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -137,7 +117,7 @@
         <!-- Header title -->
         <div class="md-header__title" data-md-component="header-title">
             <div class="md-header__ellipsis">
-                <a href=".">Acquire Docs</a>
+                <a href="../..">Acquire Docs</a>
             </div>
         </div>
 
@@ -227,11 +207,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -248,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="get_started/" class="md-tabs__link">
+      <a href="../../get_started/" class="md-tabs__link">
         
   
     
@@ -265,7 +243,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="api_reference/" class="md-tabs__link">
+      <a href="../../api_reference/" class="md-tabs__link">
         
   
     
@@ -280,11 +258,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="tutorials/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -304,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="for_contributors/" class="md-tabs__link">
+        <a href="../../for_contributors/" class="md-tabs__link">
           
   
     
@@ -323,60 +303,16 @@
     
     
 </header>
-
+    
     <div class="md-container" data-md-component="container">
       
       
-
         
       
-
-<!-- Additional styles for landing page -->
-<style>
-    /* Application header should be static for the landing page */
-    .md-header {
-        position: initial;
-    }
-
-    /* Hide table of contents */
-    @media screen and (min-width: 60em) {
-        .md-sidebar--secondary {
-            display: none;
-        }
-    }
-
-    /* Hide navigation */
-    @media screen and (min-width: 76.25em) {
-        .md-sidebar--primary {
-            display: none;
-        }
-    }
-</style>
-
-<!-- Hero for landing page -->
-<section class="mdx-container">
-    <div class="md-grid md-typeset">
-        <div class="mdx-hero">
-            <!-- Hero content -->
-            <div class="mdx-hero__content">
-                <h1>Acquire</h1>
-                <p>A python package providing a multi-camera video streaming library focusing on
-                performant microscopy.</p>
-                <a href="get_started/" title="Get Started"
-                    class="md-button md-button--primary">
-                    Get Started
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -389,7 +325,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Acquire Docs" class="md-nav__button md-logo" aria-label="Acquire Docs" data-md-component="logo">
+    <a href="../.." title="Acquire Docs" class="md-nav__button md-logo" aria-label="Acquire Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -416,28 +352,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -446,78 +364,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#about-acquire" class="md-nav__link">
-    <span class="md-ellipsis">
-      About Acquire
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supported-cameras-and-file-formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supported Cameras and File Formats
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#citing-acquire" class="md-nav__link">
-    <span class="md-ellipsis">
-      Citing Acquire
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acquire-license" class="md-nav__link">
-    <span class="md-ellipsis">
-      Acquire License
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -529,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="get_started/" class="md-nav__link">
+      <a href="../../get_started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -549,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api_reference/" class="md-nav__link">
+      <a href="../../api_reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -566,6 +412,8 @@
       
   
   
+    
+  
   
   
     
@@ -610,17 +458,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="tutorials/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -637,7 +485,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -650,10 +498,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="tutorials/trigger/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Finite Triggered Acquisition
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -662,6 +530,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-acquisition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialize Acquisition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Camera
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select Storage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acquire-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acquire data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -674,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/configure/" class="md-nav__link">
+      <a href="../configure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -695,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/framedata/" class="md-nav__link">
+      <a href="../framedata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -716,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/start_stop/" class="md-nav__link">
+      <a href="../start_stop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -737,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/livestream/" class="md-nav__link">
+      <a href="../livestream/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -758,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/select/" class="md-nav__link">
+      <a href="../select/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -779,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/setup/" class="md-nav__link">
+      <a href="../setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -800,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/props_json/" class="md-nav__link">
+      <a href="../props_json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/trig_json/" class="md-nav__link">
+      <a href="../trig_json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -842,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/multiscale/" class="md-nav__link">
+      <a href="../multiscale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -863,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/chunked/" class="md-nav__link">
+      <a href="../chunked/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -884,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/drivers/" class="md-nav__link">
+      <a href="../drivers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -905,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/storage/" class="md-nav__link">
+      <a href="../storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -926,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/compressed/" class="md-nav__link">
+      <a href="../compressed/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -979,7 +912,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="for_contributors/" class="md-nav__link ">
+            <a href="../../for_contributors/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1012,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="for_contributors/docs_contribution_quickstart/" class="md-nav__link">
+      <a href="../../for_contributors/docs_contribution_quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1041,9 +974,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1051,6 +982,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1060,54 +993,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#guides" class="md-nav__link">
+  <a href="#initialize-acquisition" class="md-nav__link">
     <span class="md-ellipsis">
-      Guides
+      Initialize Acquisition
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#about-acquire" class="md-nav__link">
+  <a href="#configure-camera" class="md-nav__link">
     <span class="md-ellipsis">
-      About Acquire
+      Configure Camera
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#select-storage" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      Select Storage
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-cameras-and-file-formats" class="md-nav__link">
+  <a href="#save-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported Cameras and File Formats
+      Save configuration
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#citing-acquire" class="md-nav__link">
+  <a href="#acquire-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Citing Acquire
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acquire-license" class="md-nav__link">
-    <span class="md-ellipsis">
-      Acquire License
+      Acquire data
     </span>
   </a>
   
@@ -1125,91 +1049,78 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-    
                   
 
   
   
 
 
-  <h1>Home</h1>
-
-<h2 id="guides">Guides<a class="headerlink" href="#guides" title="Permanent link">&para;</a></h2>
-<div class="cards">
-    <div class="card">
-        <h4>Get Started</h4>
-        <p>Install Acquire and use simulated cameras</p>
-        <a href="get_started" class="button">Get Started</a>
-    </div>
-    <div class="card">
-        <h4>API Reference</h4>
-        <p>Information on classes and methods</p>
-        <a href="api_reference" class="button">API Reference</a>
-    </div>
-    <div class="card">
-        <h4>Tutorials</h4>
-        <p>Guides on using Acquire for specific tasks</p>
-        <a href="tutorials" class="button">Tutorials</a>
-    </div>
-    <div class="card">
-        <h4>For contributors</h4>
-        <p>Learn how to contribute code or documentation to Acquire</p>
-        <a href="for_contributors" class="button">For contributors</a>
-    </div>
-</div>
-
-<h2 id="about-acquire">About Acquire<a class="headerlink" href="#about-acquire" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/acquire-project/acquire-python">Acquire</a> (<code>acquire-imaging</code> on <a href="https://pypi.org/project/acquire-imaging/">PyPI</a>) provides high-speed, multi-camera, video streaming and image acquisition with a <a href="api_reference/">programming interface</a> for streaming video data directly to <a href="https://napari.org/stable/">napari</a>, Python and cloud-friendly file formats.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python -m pip install acquire-imaging
+<h1 id="finite-triggered-acquisition">Finite Triggered Acquisition<a class="headerlink" href="#finite-triggered-acquisition" title="Permanent link">&para;</a></h1>
+<p>Acquire (<code>acquire-imaging</code> <a href="https://pypi.org/project/acquire-imaging/">on PyPI</a>) is a Python package providing a multi-camera video streaming library focused on performant microscopy, with support for up to two simultaneous, independent, video streams.</p>
+<p>This tutorial shows an example of setting up triggered acquisition of a finite number of frames with one of Acquire's supported devices and saving the data to a Zarr file.</p>
+<h2 id="initialize-acquisition">Initialize Acquisition<a class="headerlink" href="#initialize-acquisition" title="Permanent link">&para;</a></h2>
+<p>To start, we'll import <code>Acquire</code> and create an acquisition <code>Runtime</code> object, which initializes the driver adaptors needed for the supported cameras.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
 </span></code></pre></div>
-<h2 id="supported-cameras-and-file-formats">Supported Cameras and File Formats<a class="headerlink" href="#supported-cameras-and-file-formats" title="Permanent link">&para;</a></h2>
-<p>Acquire supports the following cameras (currently only on Windows):</p>
-<ul>
-<li><a href="https://www.hamamatsu.com/eu/en/product/cameras/cmos-cameras/C15440-20UP.html">Hamamatsu Orca Fusion BT (C15440-20UP)</a></li>
-<li><a href="https://www.visionsystech.com/products/cameras/vieworks-vc-151mx-sony-imx411-sensor-ultra-high-resolution-cmos-camera-151-mp">Vieworks VC-151MX-M6H00</a></li>
-<li><a href="https://www.flir.com/products/blackfly-usb3/?model=BFLY-U3-23S6M-C&amp;vertical=machine+vision&amp;segment=iis">FLIR Blackfly USB3 (BFLY-U3-23S6M-C)</a></li>
-<li><a href="https://www.flir.com/products/oryx-10gige/?model=ORX-10GS-51S5M-C&amp;vertical=machine+vision&amp;segment=iis">FLIR Oryx 10GigE (ORX-10GS-51S5M-C)</a></li>
-</ul>
-<p>For testing and demonstration purposes, Acquire also provides a few simulated video sources. For more information on supported cameras and video sources, check out <a href="tutorials/drivers/">this tutorial</a>.</p>
-<p>Acquire supports the following output file formats:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/TIFF">Tiff</a></li>
-<li><a href="https://ngff.openmicroscopy.org/latest/">OME-Zarr</a> for <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr v2</a></li>
-<li><a href="https://zarr.readthedocs.io/en/stable/spec/v3.html">Zarr v3</a></li>
-</ul>
-<p>Acquire also supports raw and trash storage devices. For more information on supported file formats and storage devices, check out <a href="tutorials/storage/">this tutorial</a>.</p>
-<h2 id="citing-acquire">Citing Acquire<a class="headerlink" href="#citing-acquire" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cff-version: 1.2.0
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>title: Acquire: a multi-camera video streaming software focusing on microscopy
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>message: &gt;-
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  If you use this software, please cite it using the
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  metadata from this file.
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>type: software
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>authors:
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  - given-names: Nathan
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    family-names: Clack
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    email: nclack@chanzuckerberg.com
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    affiliation: Chan-Zuckerberg Initiative Foundation
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    orcid: &#39;https://orcid.org/0000-0001-6236-9282&#39;
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  - given-names: Alan
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    family-names: Liddell
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    email: aliddell@chanzuckerberg.com
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    affiliation: Chan-Zuckerberg Initiative Foundation
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  - given-names: Andrew
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    family-names: Sweet
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    email: andrewdsweet@gmail.com
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    affiliation: Chan-Zuckerberg Initiative Foundation
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>repository-code: &#39;https://github.com/acquire-project/acquire-python&#39;
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>repository-artifact: &#39;https://pypi.org/project/acquire-imaging/&#39;
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>abstract: &gt;-
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>  acquire-imaging is a library focusing on multi-camera video
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>  streaming for microscopy.
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>license: Apache-2.0
+<h2 id="configure-camera">Configure Camera<a class="headerlink" href="#configure-camera" title="Permanent link">&para;</a></h2>
+<p>All camera settings can be captured by an instance of the <code>Properties</code> class, which will be associated with a given camera acquisition. The settings can be stored in a dictionary (e.g: <code>Properties.dict()</code>). These settings can be saved to a JSON file to be subsequently loaded, (e.g. <code>Properties(**json.load(open('acquire.json')))</code>), using the <a href="https://docs.python.org/3/library/json.html#">json library</a>. Check out <a href="../props_json/">this tutorial</a> for a more detailed example, but in brief, you would use something like:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span> <span class="nn">json</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/acquire.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="n">f</span><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="acquire-license">Acquire License<a class="headerlink" href="#acquire-license" title="Permanent link">&para;</a></h2>
-<p><code>Acquire</code> is provided under an <a href="https://github.com/acquire-project/acquire-python/blob/main/LICENSE">Apache 2.0 license</a>. You can learn more about the Apache license in the <a href="https://www.apache.org/licenses/LICENSE-2.0">documentation here</a>.</p>
+<p>The current configuration settings can be checked and assigned to an instance of the <code>Properties</code> class with:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Since <code>Acquire</code> supports 2 video streams, each camera, or source, must be configured separately. In this example, we will only use 1 source for the acquisition, so we will only need to configure <code>config.video[0]</code>. To set the first video stream to <a href="https://www.hamamatsu.com/eu/en/product/cameras/cmos-cameras/C15440-20UP.html">Hamamatsu Orca Fusion BT (C15440-20UP)</a>, you can use the following with a regular expression to grab the Hamamatsu camera:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s1">&#39;Hamamatsu C15440.*&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Next we'll choose the settings for the Hamamatsu camera. The <code>CameraProperties</code> class describes the available settings, which include exposure time (in microseconds), binning, pixel data type (e.g. u16), and how many frames to acquire.</p>
+<p>Every property can be set using the following syntax, but in this example, we will only change a few of the available settings. <a href="../configure/">Check out this tutorial</a> for an explanation of camera properties.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">binning</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># no pixels will be combined</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1700</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span> <span class="c1"># shape of the image to be acquired in pixels</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="mi">302</span><span class="p">,</span> <span class="mi">896</span><span class="p">)</span> <span class="c1"># centers the image region of interest on the camera sensor</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">pixel_type</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">SampleType</span><span class="o">.</span><span class="n">U16</span> <span class="c1"># sets the pixel data type to a 16-bit unsigned integer</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># finite acquisition of 10 frames. Use 0 for infinite acquisition.</span>
+</span></code></pre></div>
+<p>Triggers can also be set in the <code>CameraProperties</code> object. The parameters can be stored in a dictionary (e.g: <code>Trigger.dict()</code>). You can construct a <code>Trigger</code> from a JSON file (e.g.  <code>acquire.Trigger(**json.loads(open('trigger.json')))</code> ), using the <a href="https://docs.python.org/3/library/json.html#">json library</a>. Check out <a href="../trig_json/">this tutorial</a> for a more detailed example, but in brief, you would use something like:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">trig</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Trigger</span><span class="p">()</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">import</span> <span class="nn">json</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/trigger.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">trig</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="n">f</span><span class="p">)</span>
+</span></code></pre></div>
+<p>In this example, we'll only utilize output triggers. By default, the camera's internal triggering is used, but you may explicitly disable external input triggers using:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">input_triggers</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">InputTriggers</span><span class="p">()</span> <span class="c1"># default: disabled</span>
+</span></code></pre></div>
+<p>Output triggers can be set to begin exposure, start a new frame, or wait before acquiring. We can enable an exposure trigger to start on the rising edge with:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">output_triggers</span><span class="o">.</span><span class="n">exposure</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Trigger</span><span class="p">(</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">enable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s2">&quot;Rising&quot;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="select-storage">Select Storage<a class="headerlink" href="#select-storage" title="Permanent link">&para;</a></h2>
+<p><code>Storage</code> objects have identifiers which specify the file type (e.g. Zarr or tiff) and settings described by an instance of the <code>StorageProperties</code> class. We can set the file type to Zarr and set the file name to "out" with:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span><span class="s1">&#39;zarr&#39;</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;out.zarr&quot;</span>
+</span></code></pre></div>
+<h2 id="save-configuration">Save configuration<a class="headerlink" href="#save-configuration" title="Permanent link">&para;</a></h2>
+<p>None of these settings will be updated in the <code>Properties</code> object until you call the <code>set_configuration</code> method. This method updates what the current configuration settings are on the device.</p>
+<p>We'll set the configuration with:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</span></code></pre></div>
+<p>You can optionally print out these settings using the <a href="https://rich.readthedocs.io/en/stable/introduction.html">Rich</a> python library to save for your records with:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span> <span class="nn">rich.pretty</span> <span class="kn">import</span> <span class="n">pprint</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">pprint</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
+</span></code></pre></div>
+<p>Check out <a href="https://acquire-project.github.io/acquire-docs/tutorials/props_json/">this tutorial</a> for a more detailed example of saving <code>Properties</code>.</p>
+<h2 id="acquire-data">Acquire data<a class="headerlink" href="#acquire-data" title="Permanent link">&para;</a></h2>
+<p>To begin acquisition:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span></code></pre></div>
+<p>You can stop acquisition with <code>runtime.stop()</code> to stop after the max number of frames is collected or <code>runtime.abort()</code> to immediately stop acquisition. You must call one of these methods at the end of an acquisition, as <code>Runtime</code> deletes all of the objects created during acquisition to free up resources upon shutdown. Otherwise, an exception will be raised when trying to restart acquisition.</p>
+<p><a class="md-button md-button-center" href="../trigger.py">Download this tutorial as a Python script</a></p>
 
 
 
@@ -1217,35 +1128,12 @@
 
 
 
-  
-  
 
 
-
-
-  
 
 
 
                 
-    <style>
-        .md-typeset h1 {
-            display: none;
-        }
-        .mdx-hero__content h1 {
-            display:contents;
-        }
-        .md-content {
-            max-width: 49rem;
-            padding-left: 12rem;
-        }
-        @media (max-width: 800px) {
-            .md-content {
-                padding-left: 0.8rem;
-            }
-        }
-    </style>
-
               </article>
             </div>
           
@@ -1255,7 +1143,7 @@
         
       </main>
       
-<!--
+        <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -1284,24 +1172,39 @@
     
     
     
-    
-    
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
 
         <!-- Link to previous page -->
+        
+        
+        <a href="../" class="md-footer__link md-footer__link--prev"
+            aria-label="Previous: Tutorials">
+            <div class="md-footer__button md-icon">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+                <span class="md-footer__direction">
+                    Previous
+                </span>
+                <div class="md-ellipsis">
+                    Tutorials
+                </div>
+            </div>
+        </a>
         
 
         <!-- Link to next page -->
         
         
-        <a href="get_started/" class="md-footer__link md-footer__link--next"
-            aria-label="Next: Get Started">
+        <a href="../configure/" class="md-footer__link md-footer__link--next"
+            aria-label="Next: Configure an Acquisition">
             <div class="md-footer__title">
                 <span class="md-footer__direction">
                     Next
                 </span>
                 <div class="md-ellipsis">
-                    Get Started
+                    Configure an Acquisition
                 </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1400,17 +1303,17 @@
         </div>
     </div>
 </footer>
-
+      
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>
