@@ -65,7 +65,7 @@ window.addEventListener("DOMContentLoaded", function() {
       window.location.href = ABS_BASE_URL + "../" + this.value + "/";
     });
 
-    var container = document.getElementById("version-selector");
+    //var container = document.getElementById("version-selector");
     document.getElementById("version-selector").innerHTML = "<b> Testing! </b>";
 
     // var title = document.querySelector("md-header__ellipsis");
@@ -74,6 +74,6 @@ window.addEventListener("DOMContentLoaded", function() {
     //   container.style.height = height;
     // }
 
-    title.parentNode.insertBefore(container, title.nextSibling);
+    //title.parentNode.insertBefore(container, title.nextSibling);
   });
 });
