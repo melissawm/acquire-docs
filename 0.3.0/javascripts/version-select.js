@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", function() {
   }
 
   // `base_url` comes from the base.html template for this theme.
-  var ABS_BASE_URL = expandPath(base_url);
+  var ABS_BASE_URL = expandPath("/");
   var CURRENT_VERSION = ABS_BASE_URL.match(/\/([^\/]+)\/$/)[1];
 
   function makeSelect(options) {
@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
     //var container = document.getElementById("version-selector");
     document.getElementById("version-selector").innerHTML = "<b> Testing! </b>";
-
+    console.log("Testing!")
     // var title = document.querySelector("md-header__ellipsis");
     // if (title.parentNode.classList.contains("md-header__title")) {
     //   var height = window.getComputedStyle(title).getPropertyValue("height");
