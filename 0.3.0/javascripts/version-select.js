@@ -1,37 +1,37 @@
 window.addEventListener("DOMContentLoaded", function() {
-  function expandPath(path) {
-    // Get the base directory components.
-    var expanded = window.location.pathname.split("/");
-    expanded.pop();
-    var isSubdir = false;
+    function expandPath(path) {
+      // Get the base directory components.
+      var expanded = window.location.pathname.split("/");
+      expanded.pop();
+      var isSubdir = false;
 
-    path.split("/").forEach(function(bit, i) {
-      if (bit === "" && i === 0) {
-        isSubdir = false;
-        expanded = [""];
-      } else if (bit === "." || bit === "") {
-        isSubdir = true;
-      } else if (bit === "..") {
-        if (expanded.length === 1) {
-          // We must be trying to .. past the root!
-          throw new Error("invalid path");
-        } else {
+      path.split("/").forEach(function(bit, i) {
+        if (bit === "" && i === 0) {
+          isSubdir = false;
+          expanded = [""];
+        } else if (bit === "." || bit === "") {
           isSubdir = true;
-          expanded.pop();
+        } else if (bit === "..") {
+          if (expanded.length === 1) {
+            // We must be trying to .. past the root!
+            throw new Error("invalid path");
+          } else {
+            isSubdir = true;
+            expanded.pop();
+          }
+        } else {
+          isSubdir = false;
+          expanded.push(bit);
         }
-      } else {
-        isSubdir = false;
-        expanded.push(bit);
-      }
-    });
+      });
 
-    if (isSubdir)
-      expanded.push("");
-    return expanded.join("/");
-  }
+      if (isSubdir)
+        expanded.push("");
+      return expanded.join("/");
+    }
 
   // `base_url` comes from the base.html template for this theme.
-  var ABS_BASE_URL = expandPath("/");
+  var ABS_BASE_URL = expandPath(".");
   var CURRENT_VERSION = ABS_BASE_URL.match(/\/([^\/]+)\/$/)[1];
 
   function makeSelect(options) {
