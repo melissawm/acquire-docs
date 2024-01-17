@@ -68,11 +68,11 @@ window.addEventListener("DOMContentLoaded", function() {
     var container = document.getElementById("version-selector");
     document.getElementById("version-selector").innerHTML = "<b> Testing! </b>";
 
-    var title = document.querySelector("md-header__ellipsis");
-    if (title.parentNode.classList.contains("md-header__title")) {
-      var height = window.getComputedStyle(title).getPropertyValue("height");
-      container.style.height = height;
-    }
+    // var title = document.querySelector("md-header__ellipsis");
+    // if (title.parentNode.classList.contains("md-header__title")) {
+    //   var height = window.getComputedStyle(title).getPropertyValue("height");
+    //   container.style.height = height;
+    // }
 
     title.parentNode.insertBefore(container, title.nextSibling);
   });
