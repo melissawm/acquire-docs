@@ -69,7 +69,7 @@ window.addEventListener("DOMContentLoaded", function() {
     document.getElementById("version-selector").innerHTML = "<b> Testing! </b>";
 
     var title = document.querySelector("md-header__ellipsis");
-    if (title.parentNode.classList.contains("navbar-header")) {
+    if (title.parentNode.classList.contains("md-header__title")) {
       var height = window.getComputedStyle(title).getPropertyValue("height");
       container.style.height = height;
     }
