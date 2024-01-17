@@ -65,11 +65,10 @@ window.addEventListener("DOMContentLoaded", function() {
       window.location.href = ABS_BASE_URL + "../" + this.value + "/";
     });
 
-    var container = document.createElement("div");
-    container.id = "version-selector";
-    container.appendChild(select);
+    var container = document.getElementById("version-selector");
+    document.getElementById("version-selector").innerHTML = "<b> Testing! </b>";
 
-    var title = document.querySelector(".navbar-brand");
+    var title = document.querySelector("md-header__ellipsis");
     if (title.parentNode.classList.contains("navbar-header")) {
       var height = window.getComputedStyle(title).getPropertyValue("height");
       container.style.height = height;
