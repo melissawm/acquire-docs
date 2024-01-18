@@ -20,6 +20,7 @@ html {
 
 [dir="ltr"] .md-header__title {
     margin-left: 0.6rem;
+    display: flex;
 }
 
 .md-search__form {

@@ -30,9 +30,12 @@ window.addEventListener("DOMContentLoaded", function() {
       return expanded.join("/");
     }
 
-  // `base_url` comes from the base.html template for this theme.
+  // ABS_BASE_URL is the URL minus the domain name
+  // e.g. /acquire-docs/dev/get_started/
   var ABS_BASE_URL = expandPath(".");
-  var CURRENT_VERSION = ABS_BASE_URL.match(/\/([^\/]+)\/$/)[1];
+  var CURRENT_VERSION = ABS_BASE_URL.split("/")[2];
+  var ROOT_NODE = document.baseURI;
+  var root = ROOT_NODE.substring(0, ROOT_NODE.indexOf(CURRENT_VERSION));
 
   function makeSelect(options) {
     var select = document.createElement("select");
@@ -47,7 +50,7 @@ window.addEventListener("DOMContentLoaded", function() {
     return select;
   }
 
-  fetch(ABS_BASE_URL + "../versions.json").then((response) => {
+  fetch(root+"versions.json").then((response) => {
     return response.json();
   }).then((versions) => {
     var realVersion = versions.find(function(i) {
@@ -62,18 +65,17 @@ window.addEventListener("DOMContentLoaded", function() {
               selected: i.version === realVersion};
     }));
     select.addEventListener("change", function(event) {
-      window.location.href = ABS_BASE_URL + "../" + this.value + "/";
+      window.location.href = root + this.value + "/";
     });
 
-    //var container = document.getElementById("version-selector");
-    document.getElementById("version-selector").innerHTML = "<b> Testing! </b>";
-    console.log("Testing!")
-    // var title = document.querySelector("md-header__ellipsis");
-    // if (title.parentNode.classList.contains("md-header__title")) {
-    //   var height = window.getComputedStyle(title).getPropertyValue("height");
-    //   container.style.height = height;
-    // }
+    var container = document.getElementById("version-selector");
+    container.appendChild(select)
+    var title = document.getElementById("site-title");
+    if (title.parentNode.classList.contains("md-header__title")) {
+      var height = window.getComputedStyle(title).getPropertyValue("height");
+      container.style.height = height;
+    }
 
-    //title.parentNode.insertBefore(container, title.nextSibling);
+    title.parentNode.insertBefore(container, title.nextElementSibling);
   });
 });
