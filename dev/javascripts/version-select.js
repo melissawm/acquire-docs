@@ -65,14 +65,14 @@ window.addEventListener("DOMContentLoaded", function() {
       window.location.href = ABS_BASE_URL + "../" + this.value + "/";
     });
 
-    //var container = document.getElementById("version-selector");
-    document.getElementById("version-selector").appendChild(select)
-    var title = document.querySelector("md-header__ellipsis");
+    var container = document.getElementById("version-selector");
+    container.appendChild(select)
+    var title = document.getElementById("site-title");
     if (title.parentNode.classList.contains("md-header__title")) {
       var height = window.getComputedStyle(title).getPropertyValue("height");
       container.style.height = height;
     }
 
-    title.parentNode.insertBefore(container, title.nextSibling);
+    title.parentNode.insertBefore(container, title.nextElementSibling);
   });
 });
