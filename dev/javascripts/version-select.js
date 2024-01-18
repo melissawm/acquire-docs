@@ -1,42 +1,14 @@
 window.addEventListener("DOMContentLoaded", function() {
-    function expandPath(path) {
-      // Get the base directory components.
-      var expanded = window.location.pathname.split("/");
-      expanded.pop();
-      var isSubdir = false;
 
-      path.split("/").forEach(function(bit, i) {
-        if (bit === "" && i === 0) {
-          isSubdir = false;
-          expanded = [""];
-        } else if (bit === "." || bit === "") {
-          isSubdir = true;
-        } else if (bit === "..") {
-          if (expanded.length === 1) {
-            // We must be trying to .. past the root!
-            throw new Error("invalid path");
-          } else {
-            isSubdir = true;
-            expanded.pop();
-          }
-        } else {
-          isSubdir = false;
-          expanded.push(bit);
-        }
-      });
+  // ABS_BASE_URL is the full URL
+  // e.g. https://acquire-project.github.io/acquire-docs/dev/get_started/
+  var ABS_BASE_URL = document.baseURI;
+  // This should probably not be hardcoded
+  var CURRENT_VERSION = ABS_BASE_URL.split("/")[4];
+  var DOC_PATH = ABS_BASE_URL.split("/").slice(5).join("/")
+  var root = ABS_BASE_URL.substring(0, ABS_BASE_URL.indexOf(CURRENT_VERSION));
 
-      if (isSubdir)
-        expanded.push("");
-      return expanded.join("/");
-    }
-
-  // ABS_BASE_URL is the URL minus the domain name
-  // e.g. /acquire-docs/dev/get_started/
-  var ABS_BASE_URL = expandPath(".");
-  var CURRENT_VERSION = ABS_BASE_URL.split("/")[2];
-  var ROOT_NODE = document.baseURI;
-  var root = ROOT_NODE.substring(0, ROOT_NODE.indexOf(CURRENT_VERSION));
-
+  // Create dropdown menu
   function makeSelect(options) {
     var select = document.createElement("select");
     select.classList.add("form-control");
@@ -64,8 +36,9 @@ window.addEventListener("DOMContentLoaded", function() {
       return {text: i.title, value: i.version,
               selected: i.version === realVersion};
     }));
+    // Redirect to current page at selected version)
     select.addEventListener("change", function(event) {
-      window.location.href = root + this.value + "/";
+      window.location.href = root + this.value + "/" + DOC_PATH;
     });
 
     var container = document.getElementById("version-selector");
