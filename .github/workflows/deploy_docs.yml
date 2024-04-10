@@ -30,7 +30,7 @@ jobs:
       - name: Generate downloadable scripts
         run: |
           dirname "{BASH_SOURCE[0]}"
-          ./convert.sh
+          bash .github/workflows/convert.sh
 
       - name: Build website
         run: |
