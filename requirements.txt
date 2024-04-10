@@ -1,4 +1,7 @@
 mkdocs-material
 mkdocs-include-markdown-plugin
+mkdocstrings[python]
 jupytext
 pre-commit
+mike
+acquire-imaging
