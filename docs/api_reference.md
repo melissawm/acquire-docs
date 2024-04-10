@@ -4,6 +4,8 @@ Information on the classes in `acquire-imaging` along with the attributes and me
 
 ## Class `AvailableData`
 
+::: acquire.AvailableData
+
 The `AvailableData` class represents the collection of frames that have been captured since the last call to runtime.get_available_data(). `AvailableData` objects should be set to have a short lifetime, since these objects reserve space on the video queue and will eventually block camera acquisition to ensure no data is overwritten before it can be processed.
 
 ```python

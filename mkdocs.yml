@@ -69,3 +69,4 @@ plugins:
   - include-markdown
   - search
   - mike
+  - mkdocstrings
