@@ -29,6 +29,7 @@ jobs:
 
       - name: Generate downloadable scripts
         run: |
+          dirname "{BASH_SOURCE[0]}"
           ./convert.sh
 
       - name: Build website
