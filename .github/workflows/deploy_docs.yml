@@ -29,7 +29,7 @@ jobs:
 
       - name: Generate downloadable scripts
         run: |
-          cd docs/tutorials; jupytext --to py *[!index].md; cd -
+          ./convert.sh
 
       - name: Build website
         run: |
