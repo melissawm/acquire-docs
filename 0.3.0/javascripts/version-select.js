@@ -3,10 +3,7 @@ window.addEventListener("DOMContentLoaded", function() {
   // ABS_BASE_URL is the full URL
   // e.g. https://acquire-project.github.io/acquire-docs/dev/get_started/
   var ABS_BASE_URL = document.baseURI;
-  // This should probably not be hardcoded
-  //var CURRENT_VERSION = ABS_BASE_URL.split("/")[4];
-  var CURRENT_VERSION = ABS_BASE_URL.match("\d+\.\d+\.\d+(\-?rc\d+)?|dev|stable")[0];
-  console.log(CURRENT_VERSION)
+  var CURRENT_VERSION = ABS_BASE_URL.match(/\d+\.\d+\.\d+(\-?rc\d+)?|dev|stable/g);
   var DOC_PATH = ABS_BASE_URL.split("/").slice(5).join("/")
   var root = ABS_BASE_URL.substring(0, ABS_BASE_URL.indexOf(CURRENT_VERSION));
 
