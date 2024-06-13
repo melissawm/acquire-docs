@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", function() {
     return select;
   }
 
+  console.log(root+"versions.json")
   fetch(root+"versions.json").then((response) => {
     return response.json();
   }).then((versions) => {
