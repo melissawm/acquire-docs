@@ -3,8 +3,7 @@ window.addEventListener("DOMContentLoaded", function() {
   // ABS_BASE_URL is the full URL
   // e.g. https://acquire-project.github.io/acquire-docs/dev/get_started/
   var ABS_BASE_URL = document.baseURI;
-  var CURRENT_VERSION = ABS_BASE_URL.match(/\d+\.\d+\.\d+(\-?rc\d+)?|dev|stable/g);
-  var DOC_PATH = ABS_BASE_URL.split("/").slice(5).join("/")
+  var CURRENT_VERSION = ABS_BASE_URL.match(/\d+\.\d+\.\d+(\-?rc\d+)?|dev|stable/g)[0];
   var root = ABS_BASE_URL.substring(0, ABS_BASE_URL.indexOf(CURRENT_VERSION));
 
   // Create dropdown menu
@@ -23,21 +22,20 @@ window.addEventListener("DOMContentLoaded", function() {
 
   fetch(root+"versions.json").then((response) => {
     return response.json();
-  }).then((versions) => {
+    }).then((versions) => {
     var realVersion = versions.find(function(i) {
       return i.version === CURRENT_VERSION ||
              i.aliases.includes(CURRENT_VERSION);
     }).version;
-
     var select = makeSelect(versions.filter(function(i) {
       return i.version === realVersion || !i.properties || !i.properties.hidden;
     }).map(function(i) {
       return {text: i.title, value: i.version,
               selected: i.version === realVersion};
     }));
-    // Redirect to current page at selected version)
+    // Redirect to current page at selected version
     select.addEventListener("change", function(event) {
-      window.location.href = root + this.value + "/" + DOC_PATH;
+      window.location.href = ABS_BASE_URL.replace(CURRENT_VERSION, this.value);
     });
 
     var container = document.getElementById("version-selector");
