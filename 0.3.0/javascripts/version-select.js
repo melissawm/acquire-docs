@@ -5,8 +5,13 @@ window.addEventListener("DOMContentLoaded", function() {
   var ABS_BASE_URL = document.baseURI;
   var CURRENT_VERSION = ABS_BASE_URL.match(/\d+\.\d+\.\d+(\-?rc\d+)?|dev|stable/g);
   console.log(CURRENT_VERSION)
-  var DOC_PATH = ABS_BASE_URL.split("/").slice(5).join("/")
-  var root = ABS_BASE_URL.substring(0, ABS_BASE_URL.indexOf(CURRENT_VERSION));
+  if (CURRENT_VERSION === null) {
+    console.log("No version found in URL. Redirecting to stable...")
+    return;
+  } else {
+    var DOC_PATH = ABS_BASE_URL.split("/").slice(5).join("/")
+    var root = ABS_BASE_URL.substring(0, ABS_BASE_URL.indexOf(CURRENT_VERSION));
+  }
 
   // Create dropdown menu
   function makeSelect(options) {
