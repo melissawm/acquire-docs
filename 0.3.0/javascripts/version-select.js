@@ -4,14 +4,9 @@ window.addEventListener("DOMContentLoaded", function() {
   // e.g. https://acquire-project.github.io/acquire-docs/dev/get_started/
   var ABS_BASE_URL = document.baseURI;
   var CURRENT_VERSION = ABS_BASE_URL.match(/\d+\.\d+\.\d+(\-?rc\d+)?|dev|stable/g);
-  console.log(CURRENT_VERSION)
-  if (CURRENT_VERSION === null) {
-    console.log("No version found in URL. Redirecting to stable...")
-    return;
-  } else {
-    var DOC_PATH = ABS_BASE_URL.split("/").slice(5).join("/")
-    var root = ABS_BASE_URL.substring(0, ABS_BASE_URL.indexOf(CURRENT_VERSION));
-  }
+  console.log("Current version: ", CURRENT_VERSION);
+  var DOC_PATH = ABS_BASE_URL.split("/").slice(5).join("/");
+  var root = ABS_BASE_URL.substring(0, ABS_BASE_URL.indexOf(CURRENT_VERSION));
 
   // Create dropdown menu
   function makeSelect(options) {
@@ -27,17 +22,14 @@ window.addEventListener("DOMContentLoaded", function() {
     return select;
   }
 
-  console.log(root+"versions.json")
   fetch(root+"versions.json").then((response) => {
     return response.json();
-  }).then((versions) => {
+    }).then((versions) => {
     console.log(versions);
     var realVersion = versions.find(function(i) {
       return i.version === CURRENT_VERSION ||
              i.aliases.includes(CURRENT_VERSION);
-    }).catch(e => {
-      console.log(e);});//.version;
-    });
+    }).version;
     console.log(versions);
     var select = makeSelect(versions.filter(function(i) {
       return i.version === realVersion || !i.properties || !i.properties.hidden;
@@ -59,4 +51,5 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
     title.parentNode.insertBefore(container, title.nextElementSibling);
+  });
 });
