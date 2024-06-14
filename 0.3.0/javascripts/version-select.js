@@ -28,33 +28,34 @@ window.addEventListener("DOMContentLoaded", function() {
   }
 
   console.log(root+"versions.json")
-  fetch(root+"versions.json").then((response) => {
-    return response.json();
-  }).then((versions) => {
-    var realVersion = versions.find(function(i) {
-      return i.version === CURRENT_VERSION ||
-             i.aliases.includes(CURRENT_VERSION);
-    }).version;
+  // fetch(root+"versions.json").then((response) => {
+  //   console.log("OK");
+  //   return response.json();
+  // }).then((versions) => {
+  //   var realVersion = versions.find(function(i) {
+  //     return i.version === CURRENT_VERSION ||
+  //            i.aliases.includes(CURRENT_VERSION);
+  //   }).version;
 
-    var select = makeSelect(versions.filter(function(i) {
-      return i.version === realVersion || !i.properties || !i.properties.hidden;
-    }).map(function(i) {
-      return {text: i.title, value: i.version,
-              selected: i.version === realVersion};
-    }));
-    // Redirect to current page at selected version)
-    select.addEventListener("change", function(event) {
-      window.location.href = root + this.value + "/" + DOC_PATH;
-    });
+  //   var select = makeSelect(versions.filter(function(i) {
+  //     return i.version === realVersion || !i.properties || !i.properties.hidden;
+  //   }).map(function(i) {
+  //     return {text: i.title, value: i.version,
+  //             selected: i.version === realVersion};
+  //   }));
+  //   // Redirect to current page at selected version)
+  //   select.addEventListener("change", function(event) {
+  //     window.location.href = root + this.value + "/" + DOC_PATH;
+  //   });
 
-    var container = document.getElementById("version-selector");
-    container.appendChild(select)
-    var title = document.getElementById("site-title");
-    if (title.parentNode.classList.contains("md-header__title")) {
-      var height = window.getComputedStyle(title).getPropertyValue("height");
-      container.style.height = height;
-    }
+  //   var container = document.getElementById("version-selector");
+  //   container.appendChild(select)
+  //   var title = document.getElementById("site-title");
+  //   if (title.parentNode.classList.contains("md-header__title")) {
+  //     var height = window.getComputedStyle(title).getPropertyValue("height");
+  //     container.style.height = height;
+  //   }
 
-    title.parentNode.insertBefore(container, title.nextElementSibling);
-  });
+  //   title.parentNode.insertBefore(container, title.nextElementSibling);
+  // });
 });
