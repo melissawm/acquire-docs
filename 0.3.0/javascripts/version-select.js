@@ -35,7 +35,9 @@ window.addEventListener("DOMContentLoaded", function() {
       return {text: i.title, value: i.version,
               selected: i.version === realVersion};
     }));
-    // Redirect to current page at selected version)
+    // Redirect to current page at selected version
+    console.log("DOC_PATH=", DOC_PATH);
+    console.log("root=", root);
     select.addEventListener("change", function(event) {
       window.location.href = root + this.value + "/" + DOC_PATH;
     });
