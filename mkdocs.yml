@@ -69,5 +69,3 @@ markdown_extensions:
 plugins:
   - include-markdown
   - search
-  - mike:
-      deploy_prefix: ''
