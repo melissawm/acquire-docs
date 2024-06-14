@@ -4,7 +4,6 @@ window.addEventListener("DOMContentLoaded", function() {
   // e.g. https://acquire-project.github.io/acquire-docs/dev/get_started/
   var ABS_BASE_URL = document.baseURI;
   var CURRENT_VERSION = ABS_BASE_URL.match(/\d+\.\d+\.\d+(\-?rc\d+)?|dev|stable/g)[0];
-  console.log("Current version: ", CURRENT_VERSION);
   var DOC_PATH = ABS_BASE_URL.split("/").slice(5).join("/");
   var root = ABS_BASE_URL.substring(0, ABS_BASE_URL.indexOf(CURRENT_VERSION));
 
@@ -25,7 +24,6 @@ window.addEventListener("DOMContentLoaded", function() {
   fetch(root+"versions.json").then((response) => {
     return response.json();
     }).then((versions) => {
-    console.log(versions);
     var realVersion = versions.find(function(i) {
       return i.version === CURRENT_VERSION ||
              i.aliases.includes(CURRENT_VERSION);
