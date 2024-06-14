@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", function() {
   fetch(root+"versions.json").then((response) => {
     console.log("OK");
     return response.json();
-  }
+  });
   //).then((versions) => {
   //   var realVersion = versions.find(function(i) {
   //     return i.version === CURRENT_VERSION ||
