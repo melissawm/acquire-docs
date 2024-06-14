@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", function() {
     }));
     // Redirect to current page at selected version
     select.addEventListener("change", function(event) {
-      window.location.href = ABS_BASE_URL.replace(CURRENT_VERSION, this.value); //root + this.value + "/" + DOC_PATH;
+      window.location.href = ABS_BASE_URL.replace(CURRENT_VERSION, this.value);
     });
 
     var container = document.getElementById("version-selector");

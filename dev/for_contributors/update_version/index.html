@@ -954,16 +954,20 @@
 
 <h1 id="how-to-update-the-documentation-version">How to update the documentation version<a class="headerlink" href="#how-to-update-the-documentation-version" title="Permanent link">&para;</a></h1>
 <p>After every new release of Acquire Python, the documentation version needs
-to be updated. This can be done by issuing the following command on the root of
-the Acquire docs repository:</p>
+to be manually updated. This can be done by issuing the following command on the
+root of the Acquire docs repository:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mike<span class="w"> </span>deploy<span class="w"> </span>--push<span class="w"> </span>--update-aliases<span class="w"> </span>&lt;version-tag&gt;<span class="w"> </span>stable
 </span></code></pre></div>
-<p>where <code>&lt;version-tag&gt;</code> is the tag of the new release. This will create a new
-alias for the <code>&lt;version-tag&gt;</code> release as <code>stable</code>, update the version switcher
-dropdown accordingly (autogenerating the <code>versions.json</code> file), and deploy the
-new version of the documentation to the <code>gh-pages</code> branch of the repository.</p>
+<p>where <code>&lt;version-tag&gt;</code> is the tag of the new release. This will</p>
+<ul>
+<li>create/update the alias <code>stable</code> for the <code>&lt;version-tag&gt;</code> release of the docs;</li>
+<li>update the version switcher dropdown accordingly (autogenerating the
+  <code>versions.json</code> file, which is only present in the deployed pages), and</li>
+<li>deploy the new version of the documentation to the <code>gh-pages</code> branch of the
+  repository (if the <code>--push</code> option is used, as above.)</li>
+</ul>
 <p>The default version of the documentation pages is <code>stable</code>, but this can be
-changed by editing the <code>mkdocs.yml</code> file.</p>
+changed to another version by using the <code>mike set-default &lt;identifier&gt;</code> command.</p>
 
 
 
