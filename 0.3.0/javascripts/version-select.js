@@ -27,7 +27,6 @@ window.addEventListener("DOMContentLoaded", function() {
       return i.version === CURRENT_VERSION ||
              i.aliases.includes(CURRENT_VERSION);
     }).version;
-    console.log(versions);
     var select = makeSelect(versions.filter(function(i) {
       return i.version === realVersion || !i.properties || !i.properties.hidden;
     }).map(function(i) {
