@@ -31,12 +31,13 @@ window.addEventListener("DOMContentLoaded", function() {
   fetch(root+"versions.json").then((response) => {
     return response.json();
   }).then((versions) => {
-    var realVersion = versions.find(function(i) {
-      return i.version === CURRENT_VERSION ||
-             i.aliases.includes(CURRENT_VERSION);
-    }).catch(e => {
-      console.log(e);
-    }).version;
+    console.log(versions);
+    // var realVersion = versions.find(function(i) {
+    //   return i.version === CURRENT_VERSION ||
+    //          i.aliases.includes(CURRENT_VERSION);
+    // }).catch(e => {
+    //   console.log(e);
+    });//.version;
     console.log(versions);
     var select = makeSelect(versions.filter(function(i) {
       return i.version === realVersion || !i.properties || !i.properties.hidden;
