@@ -35,8 +35,6 @@ window.addEventListener("DOMContentLoaded", function() {
               selected: i.version === realVersion};
     }));
     // Redirect to current page at selected version
-    console.log("DOC_PATH=", DOC_PATH);
-    console.log("root=", root);
     select.addEventListener("change", function(event) {
       window.location.href = ABS_BASE_URL.replace(CURRENT_VERSION, this.value); //root + this.value + "/" + DOC_PATH;
     });
