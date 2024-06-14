@@ -29,13 +29,15 @@ window.addEventListener("DOMContentLoaded", function() {
 
   console.log(root+"versions.json")
   fetch(root+"versions.json").then((response) => {
+    console.log("OK");
     return response.json();
-  }).then((versions) => {
-      var realVersion = versions.find(function(i) {
-        return i.version === CURRENT_VERSION ||
-              i.aliases.includes(CURRENT_VERSION);
+  }
+  ).then((versions) => {
+    var realVersion = versions.find(function(i) {
+      return i.version === CURRENT_VERSION ||
+             i.aliases.includes(CURRENT_VERSION);
     }).version;
-  console.log(version)
+
   //   var select = makeSelect(versions.filter(function(i) {
   //     return i.version === realVersion || !i.properties || !i.properties.hidden;
   //   }).map(function(i) {
