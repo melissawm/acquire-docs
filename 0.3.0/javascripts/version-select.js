@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
   console.log(root+"versions.json")
   fetch(root+"versions.json").then((response) => {
-    console.log("OK")
+    console.log(response)
     return response.json();
   }).then((versions) => {
     var realVersion = versions.find(function(i) {
