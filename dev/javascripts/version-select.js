@@ -4,7 +4,6 @@ window.addEventListener("DOMContentLoaded", function() {
   // e.g. https://acquire-project.github.io/acquire-docs/dev/get_started/
   var ABS_BASE_URL = document.baseURI;
   var CURRENT_VERSION = ABS_BASE_URL.match(/\d+\.\d+\.\d+(\-?rc\d+)?|dev|stable/g)[0];
-  var DOC_PATH = ABS_BASE_URL.substring(ABS_BASE_URL.indexOf(CURRENT_VERSION), -1);
   var root = ABS_BASE_URL.substring(0, ABS_BASE_URL.indexOf(CURRENT_VERSION));
 
   // Create dropdown menu
@@ -39,7 +38,7 @@ window.addEventListener("DOMContentLoaded", function() {
     console.log("DOC_PATH=", DOC_PATH);
     console.log("root=", root);
     select.addEventListener("change", function(event) {
-      window.location.href = root + this.value + "/" + DOC_PATH;
+      window.location.href = ABS_BASE_URL.replace(CURRENT_VERSION, this.value); //root + this.value + "/" + DOC_PATH;
     });
 
     var container = document.getElementById("version-selector");
