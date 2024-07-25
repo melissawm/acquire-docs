@@ -93,6 +93,7 @@ a.md-button-center {
 
 [dir="ltr"] .md-header__title {
     margin-left: 0.6rem;
+    display: flex;
 }
 
 .md-tabs {
@@ -342,5 +343,34 @@ li.md-source__fact {
             background-color: #191c24;
             color: var(--md-footer-fg-color);
         }
+    }
+}
+
+#version-selector {
+    padding: 0 10px;
+}
+
+#version-selector>select {
+    width: auto;
+    height: auto;
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-accent-bg-color);
+    margin: 2px;
+    border: none;
+    font-weight: 700;
+    font-size: 0.625rem;
+}
+
+#version-selector>select:hover {
+    text-decoration: underline;
+}
+
+.container>#version-selector {
+    flex-grow: 1;
+}
+
+@media (min-width: 992px) {
+    .container>#version-selector {
+        flex-grow: 0;
     }
 }
