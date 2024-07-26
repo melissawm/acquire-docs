@@ -41,6 +41,11 @@ jobs:
           path: acquire-python  # place in a named directory
           repository: acquire-project/acquire-python
 
+      - name: Install acquire-python  # For collecting the API reference
+        run: |
+          cd acquire-python
+          python -m pip install -e acquire-python/.
+
       - name: Build website
         run: |
           cd acquire-docs
