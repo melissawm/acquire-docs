@@ -374,3 +374,17 @@ li.md-source__fact {
         flex-grow: 0;
     }
 }
+
+/******************
+ API Documentation 
+ ******************/
+
+/* Class */
+div.doc.doc-object.doc-class> h2 {
+    font-size: 1.625rem;
+}
+/* Method */
+div.doc.doc-object.doc-function> h3 {
+    margin-top: 32px;
+    font-size: 1.5rem;
+}
