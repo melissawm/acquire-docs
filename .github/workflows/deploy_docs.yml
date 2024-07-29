@@ -33,7 +33,8 @@ jobs:
 
       - name: Generate downloadable scripts
         run: |
-          bash acquire-docs/.github/workflows/convert.sh
+          cd acquire-docs
+          bash .github/workflows/convert.sh
 
       - name: Clone acquire-python repo
         uses: actions/checkout@v4
