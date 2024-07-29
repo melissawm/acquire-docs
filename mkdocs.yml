@@ -122,7 +122,7 @@ plugins:
             docstring_style: google
             # docstring_options: {}
             docstring_section_style: table
-            merge_init_into_class: true
+            merge_init_into_class: false
             show_if_no_docstring: false
             # Signature/annotation options
             annotations_path: "brief"
