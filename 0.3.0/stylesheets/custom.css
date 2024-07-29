@@ -381,10 +381,10 @@ li.md-source__fact {
 
 /* Class */
 div.doc.doc-object.doc-class> h2 {
-    font-size: 1.625rem;
+    font-size: 1.5rem;
 }
 /* Method */
 div.doc.doc-object.doc-function> h3 {
     margin-top: 32px;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
