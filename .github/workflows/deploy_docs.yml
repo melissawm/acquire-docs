@@ -44,7 +44,8 @@ jobs:
       - name: Install acquire-python  # For collecting the API reference
         run: |
           cd acquire-python
-          python -m pip install -e acquire-python/.
+          git submodule update --init --recursive
+          python -m pip install -e .
 
       - name: Build website
         run: |
