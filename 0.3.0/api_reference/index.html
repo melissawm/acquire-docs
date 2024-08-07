@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/0.3.0/api_reference/">
+        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/api_reference/">
       
       
         <link rel="prev" href="../get_started/">
@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
@@ -3330,7 +3330,17 @@ supported.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Optional[DeviceIdentifier]: The selected device identifier, or None if none of the specified devices are available.</p>
+                <p>Optional[DeviceIdentifier]: The selected device identifier, or None</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-external" title="typing.Optional" href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<a class="autorefs autorefs-internal" title="acquire.acquire.DeviceIdentifier" href="#acquire.DeviceIdentifier">DeviceIdentifier</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>if none of the specified devices are available.</p>
               </div>
             </td>
           </tr>
@@ -5165,7 +5175,7 @@ device.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="acquire.StorageCapabilities.shard_is_supported">shard_is_supported</span></code></td>
+            <td><code><span title="acquire.StorageCapabilities.sharding_is_supported">sharding_is_supported</span></code></td>
             <td>
                   <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
             </td>
@@ -5350,25 +5360,48 @@ sharding is not supported by the storage device.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
+            <td><code><span title="acquire.StorageProperties.uri">uri</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-external" title="typing.Optional" href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The URI where the image data will be stored.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
             <td><code><span title="acquire.StorageProperties.external_metadata_json">external_metadata_json</span></code></td>
             <td>
                   <code><a class="autorefs autorefs-external" title="typing.Optional" href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>An optional attribute of the metadata JSON filename as a string.</p>
+                <p>Optional JSON-formatted metadata for the acquisition.</p>
               </div>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="acquire.StorageProperties.filename">filename</span></code></td>
+            <td><code><span title="acquire.StorageProperties.s3_access_key_id">s3_access_key_id</span></code></td>
             <td>
                   <code><a class="autorefs autorefs-external" title="typing.Optional" href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>An optional attribute representing the filename for storing the
-image data.</p>
+                <p>The access key ID for the S3 bucket. This value is only applicable
+for Zarr storage devices and S3 URIs.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire.StorageProperties.s3_secret_access_key">s3_secret_access_key</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-external" title="typing.Optional" href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The secret access key for the S3 bucket. This value is only applicable
+for Zarr storage devices and S3 URIs.</p>
               </div>
             </td>
           </tr>
@@ -5379,8 +5412,7 @@ image data.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>An integer representing the ID of the first frame for a given
-acquisition.</p>
+                <p>The ID of the first frame.</p>
               </div>
             </td>
           </tr>
