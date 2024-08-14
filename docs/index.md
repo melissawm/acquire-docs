@@ -58,7 +58,7 @@ Acquire supports the following output file formats:
 - [OME-Zarr](https://ngff.openmicroscopy.org/latest/) for [Zarr v2](https://zarr.readthedocs.io/en/stable/spec/v2.html)
 - [Zarr v3](https://zarr.readthedocs.io/en/stable/spec/v3.html)
 
-Acquire also supports raw and trash storage devices. For more information on supported file formats and storage devices, check out [this tutorial](./tutorials/storage.md).
+Acquire also supports raw and trash storage devices. For more information on supported file formats and storage devices, check out the [Storage Device Selection tutorial](./tutorials/storage.md).
 
 ## Citing Acquire
 
@@ -67,4 +67,4 @@ Acquire also supports raw and trash storage devices. For more information on sup
 ~~~
 
 ## Acquire License
-`Acquire` is provided under an [Apache 2.0 license](https://github.com/acquire-project/acquire-python/blob/main/LICENSE). You can learn more about the Apache license in the [documentation here](https://www.apache.org/licenses/LICENSE-2.0).
+`Acquire` is provided under an [Apache 2.0 license](https://github.com/acquire-project/acquire-python/blob/main/LICENSE). [Learn more about the Apache license](https://www.apache.org/licenses/LICENSE-2.0).
