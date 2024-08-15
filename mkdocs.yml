@@ -104,16 +104,16 @@ plugins:
             enable_inventory: true
             show_root_toc_entry: false
             show_root_full_path: true
-            show_root_members_full_path: true
+            show_root_members_full_path: false  # remove acquire. prefix from objects
             show_object_full_path: false
             show_category_heading: false
             show_symbol_type_heading: true
             show_symbol_type_toc: false
             # Members options
             inherited_members: false
-            members: true
+            # members: true
             members_order: "alphabetical"
-            filters: ["!^_", "!dict"]  # Remove private members
+            filters: ["!^_", "!dict", "!setup_", "!gui"]  # Remove private members
             group_by_category: true
             show_submodules: false
             summary: true
