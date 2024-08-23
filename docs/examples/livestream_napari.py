@@ -1,5 +1,5 @@
 """
-This script will livestream data to the [napari viewer](https://napari.org/stable/). You may also utilize the `Acquire` napari plugin, which is provided in the `acquire-imaging` package on PyPI upon install. You can access the plugin in the napari plugins menu once `Acquire` is installed. You can review the [plugin code here](https://github.com/acquire-project/acquire-python/blob/main/python/acquire/__init__.py).
+This script will livestream data to the [napari viewer](https://napari.org/stable/). You may also utilize the `Acquire` napari plugin, which is provided in the `acquire-imaging` package on PyPI upon install. You can access the plugin in the napari plugins menu once `Acquire` is installed. You can review the [plugin code in `acquire-imaging`](https://github.com/acquire-project/acquire-python/blob/main/python/acquire/__init__.py).
 """
 
 import acquire

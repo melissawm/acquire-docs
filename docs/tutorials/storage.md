@@ -34,7 +34,7 @@ The output of that script will be:
 
 `Acquire` supports streaming data to [bigtiff](http://bigtiff.org/) and [Zarr V2](https://zarr.readthedocs.io/en/stable/spec/v2.html).
 
-Zarr has additional capabilities relative to the basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. You can learn more about the Zarr capabilities in `Acquire` [here](https://github.com/acquire-project/acquire-driver-zarr).
+Zarr has additional capabilities relative to the basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. You can learn more about the Zarr capabilities in `Acquire` in [the Acquire Zarr documentation](https://github.com/acquire-project/acquire-driver-zarr/blob/main/README.md).
 
 - **raw** - Streams to a raw binary file.
 

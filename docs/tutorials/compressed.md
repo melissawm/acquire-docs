@@ -3,7 +3,7 @@
 This tutorial will provide an example of writing compressed data to a Zarr file.
 
 `Acquire` supports streaming compressed data to the `ZarrBlosc1*` storage devices. Compression is done via [Blosc](https://www.blosc.org/pages/blosc-in-depth/).
-Supported codecs are _lz4_ and _zstd_, available with **ZarrBlosc1Lz4ByteShuffle** and **ZarrBlosc1ZstdByteShuffle** devices, respectively. For a comparison of these codecs, please refer to the [Blosc docs](https://www.blosc.org/). You can learn more about the Zarr capabilities in `Acquire` [here](https://github.com/acquire-project/acquire-driver-zarr).
+Supported codecs are _lz4_ and _zstd_, available with **ZarrBlosc1Lz4ByteShuffle** and **ZarrBlosc1ZstdByteShuffle** devices, respectively. For a comparison of these codecs, please refer to the [Blosc docs](https://www.blosc.org/). You can learn more about the Zarr capabilities in `Acquire` in [the Acquire Zarr documentation](https://github.com/acquire-project/acquire-driver-zarr/blob/main/README.md).
 
 ## Configure `Runtime`
 
@@ -62,7 +62,7 @@ import zarr
 compressed = zarr.open(config.video[0].storage.settings.filename)
 ```
 
-We'll print some of the data properties to illustrate how the data was compressed. Since we have not enabled [multiscale](https://acquire-project.github.io/acquire-docs/tutorials/multiscale/) output, `out.zarr` will only have one top level array`"0"`.
+We'll print some of the data properties to illustrate how the data was compressed. Since we have not enabled [multiscale](multiscale.md) output, `out.zarr` will only have one top level array`"0"`.
 
 
 ```python
