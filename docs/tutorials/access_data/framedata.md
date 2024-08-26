@@ -51,8 +51,8 @@ runtime.start()
 time.sleep(0.5)
 
 # grab the packet of data available on disk for video stream 0.
-# This is an AvailableData object.
-available_data = runtime.get_available_data(0)
+# This is an AvailableData object. Note that the get_available_data returns AvailableDataContext, so we use the __enter__ method to return an AvailableData object.
+available_data = runtime.get_available_data(0).__enter__()
 ```
 
 There may not be data available, in which case our variable `available_data` would be `None`. To avoid errors associated with this circumstance, we'll only grab data if `available_data` is not `None`.
