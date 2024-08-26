@@ -3,7 +3,7 @@
 This tutorial will provide an example of writing chunked data to a Zarr storage device.
 
 Zarr has additional capabilities relative to the basic storage devices, namely _chunking_, _sharding_ (in the case of Zarr V3)_, _compression_, and _multiscale storage_.
-To enable _chunking_, set the attributes in an instance of the `ChunkingProperties` class.
+To enable _chunking_, in the `StorageDimension` class, set the `chunk_size_px` attribute, which is size of a chunk along this dimension in pixels, to a number greater than 1 for each acquisition dimension.
 You can learn more about the Zarr capabilities in Acquire in [the Acquire Zarr documentation](https://github.com/acquire-project/acquire-driver-zarr).
 
 ## Configure the acquisition
