@@ -50,14 +50,14 @@ dimension_x = acquire.StorageDimension(
     name="x",
     kind="Space",
     array_size_px=1920,
-    chunk_size_px=960
+    chunk_size_px=640
 )
 
 dimension_y = acquire.StorageDimension(
     name="y",
     kind="Space",
     array_size_px=1080,
-    chunk_size_px=540
+    chunk_size_px=360
 )
 
 dimension_z = acquire.StorageDimension(
@@ -123,12 +123,16 @@ group = zarr.open("out.zarr")
 With multiscale mode enabled, an image pyramid will be formed by rescaling the data by a factor of 2 progressively until the rescaled image is smaller than the specified zarr chunk size in both dimensions. In this example, the original image dimensions are (1920, 1080), and we chunked the data using tiles 1/3 of the size of the image, namely (640, 360). To illustrate this point, we'll inspect the sizes of the various levels in the multiscale data and compare it to our specified chunk size.
 
 ```python
-print(group["0"], group["1"], group["2"])
+print(group["0"])
 ```
 
 The output will be:
 
 ```
+<zarr.core.Array '/0' (300, 3, 10, 1080, 1920) uint8>
+```
+
+TO BE UPDATED:
 (<zarr.core.Array '/0' (10, 1, 1080, 1920) uint8>,
  <zarr.core.Array '/1' (5, 1, 540, 960) uint8>,
  <zarr.core.Array '/2' (2, 1, 270, 480) uint8>)
