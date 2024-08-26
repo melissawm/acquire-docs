@@ -64,7 +64,7 @@ def do_acquisition():
     def next_frame(): #-> Optional[npt.NDArray[Any]]:
         """Get the next frame from the current stream."""
         if nframes[stream_id] < config.video[stream_id].max_frame_count:
-            if packet := runtime.get_available_data(stream_id):
+            if packet := runtime.get_available_data(stream_id).__enter__():
                 n = packet.get_frame_count()
                 nframes[stream_id] += n
                 f = next(packet.frames())
