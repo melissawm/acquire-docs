@@ -160,7 +160,7 @@ print(group["0"])
 
 The output will be:
 ```
-<zarr.core.Array '/0' (1, 3, 10, 1080, 1920) uint8>
+<zarr.core.Array '/0' (300, 3, 10, 1080, 1920) uint8>
 ```
 As expected, we have only 1 top level directory, corresponding to the single array in the group.
 We would expect more than 1 array only if we were writing [multiscale data](multiscale.md).
