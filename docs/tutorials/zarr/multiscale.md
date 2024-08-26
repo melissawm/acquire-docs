@@ -1,8 +1,8 @@
-# Multiscale Data Acqusition
+# Configuring Zarr multiscale storage
 
 This tutorial will provide an example of writing multiscale data to a Zarr file.
 
-Zarr has additional capabilities relative to Acquire's basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. To enable _chunking_ and _multiscale storage_, set those attributes in instances of the `ChunkingProperties` and `StorageProperties` classes, respectively. You can learn more about the Zarr capabilities in `Acquire` in [the Acquire Zarr documentation](https://github.com/acquire-project/acquire-driver-zarr/blob/main/README.md).
+Zarr has additional capabilities relative to the basic storage devices, namely _chunking_, _sharding_ (in the case of Zarr V3)_, _compression_, and _multiscale storage_. To enable _multiscale storage_, set the `enable_multiscale` attribute of the `StorageProperties` class to true. You can learn more about the Zarr capabilities in `Acquire` in [the Acquire Zarr documentation](https://github.com/acquire-project/acquire-driver-zarr).
 
 ## Configure `Runtime`
 To start, we'll create a `Runtime` object and begin to configure the streaming process, selecting `Zarr` as the storage device so that writing multiscale data is possible.
@@ -26,13 +26,10 @@ config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simula
 config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Zarr")
 
 # Set the time for collecting data for a each frame
-config.video[0].camera.settings.exposure_time_us = 5e4  # 50 ms
+config.video[0].camera.settings.exposure_time_us = 7e4  # 70 ms
 
 # Set the size of image region of interest on the camera (x, y)
 config.video[0].camera.settings.shape = (1920, 1080)
-
-# Set the max frame count
-config.video[0].max_frame_count = 5 # collect 5 frames
 
 # Set the image data type as a Uint8
 config.video[0].camera.settings.pixel_type = acquire.SampleType.U8
@@ -44,19 +41,61 @@ config.video[0].storage.settings.pixel_scale_um = (1, 1) # 1 micron by 1 micron
 config.video[0].storage.settings.filename = "out.zarr"
 ```
 
-To complete configuration, we'll configure the multiscale specific settings and update all settings with the `set_configuration` method.
+To complete configuration, we'll configure the chunking and multiscale specific settings and update all settings with the `set_configuration` method. For a more detailed explanation of configuring Zarr storage with chunking, check out [this tutorial](./chunked.md).
+
+To start, we'll configure the `acquisition_dimensions` attribute of the `StorageProperties` class. `acquisition_dimensions` is a list of `StorageDimension` objects, one for each acquisition dimension.  
 
 ```python
-# Chunk size may need to be optimized for each acquisition.
-# See Zarr documentation for further guidance:
-# https://zarr.readthedocs.io/en/stable/tutorial.html#chunk-optimizations
-config.video[0].storage.settings.chunking.max_bytes_per_chunk = 16 * 2**20 # 16 MB
+dimension_x = acquire.StorageDimension(
+    name="x",
+    kind="Space",
+    array_size_px=1920,
+    chunk_size_px=960
+)
 
-# x, y dimensions of each chunk
-# 1/3 of the width and height of the image, generating 9 chunks
-config.video[0].storage.settings.chunking.tile.width = (config.video[0].camera.settings.shape[0] // 3)
-config.video[0].storage.settings.chunking.tile.height = (config.video[0].camera.settings.shape[1] // 3)
+dimension_y = acquire.StorageDimension(
+    name="y",
+    kind="Space",
+    array_size_px=1080,
+    chunk_size_px=540
+)
 
+dimension_z = acquire.StorageDimension(
+    name="z",
+    kind="Space",
+    array_size_px=10,
+    chunk_size_px=5
+)
+
+dimension_c = acquire.StorageDimension(
+    name="c",
+    kind="Channel",
+    array_size_px=3,
+    chunk_size_px=1
+)
+
+dimension_t = acquire.StorageDimension(
+    name="t",
+    kind="Time",
+    array_size_px=0,
+    chunk_size_px=10
+)
+
+config.video[0].storage.settings.acquisition_dimensions = [
+    dimension_x,
+    dimension_y,
+    dimension_z,
+    dimension_c,
+    dimension_t
+]
+
+# Set the max frame count based on the storage dimensions
+config.video[0].max_frame_count = dimension_z.array_size_px * dimension_c.array_size_px * dimension_t.chunk_size_px # 300
+```
+
+Finally, turn on multiscale and update all the settings.
+
+```python
 # turn on multiscale mode
 config.video[0].storage.settings.enable_multiscale = True
 
@@ -84,7 +123,7 @@ group = zarr.open("out.zarr")
 With multiscale mode enabled, an image pyramid will be formed by rescaling the data by a factor of 2 progressively until the rescaled image is smaller than the specified zarr chunk size in both dimensions. In this example, the original image dimensions are (1920, 1080), and we chunked the data using tiles 1/3 of the size of the image, namely (640, 360). To illustrate this point, we'll inspect the sizes of the various levels in the multiscale data and compare it to our specified chunk size.
 
 ```python
-group["0"], group["1"], group["2"]
+print(group["0"], group["1"], group["2"])
 ```
 
 The output will be:
