@@ -133,6 +133,7 @@ The output will be:
 ```
 
 TO BE UPDATED:
+```
 (<zarr.core.Array '/0' (10, 1, 1080, 1920) uint8>,
  <zarr.core.Array '/1' (5, 1, 540, 960) uint8>,
  <zarr.core.Array '/2' (2, 1, 270, 480) uint8>)
