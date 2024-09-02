@@ -44,7 +44,7 @@ with open("sample_trig.json", "w") as outfile:
 The resulting sample_trig.json file is below:
 
 ~~~json
-{% include "../examples/sample_trig.json" %}
+{% include "../../examples/sample_trig.json" %}
 ~~~
 
 ## Load Properties from a JSON file

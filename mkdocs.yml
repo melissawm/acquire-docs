@@ -38,20 +38,28 @@ nav:
   - API Reference: api_reference.md
   - Tutorials:
     - tutorials/index.md
-    - tutorials/trigger.md
-    - tutorials/configure.md
-    - tutorials/framedata.md
-    - tutorials/start_stop.md
-    - tutorials/livestream.md
-    - tutorials/select.md
-    - tutorials/setup.md
-    - tutorials/props_json.md
-    - tutorials/trig_json.md
-    - tutorials/multiscale.md
-    - tutorials/chunked.md
-    - tutorials/drivers.md
-    - tutorials/storage.md
-    - tutorials/compressed.md
+    - Setup acquisition:
+      - tutorials/setup_acquisition/index.md
+      - tutorials/setup_acquisition/trigger.md
+      - tutorials/setup_acquisition/configure.md
+      - tutorials/setup_acquisition/start_stop.md
+      - tutorials/setup_acquisition/select.md
+      - tutorials/setup_acquisition/setup.md
+      - tutorials/setup_acquisition/drivers.md
+      - tutorials/setup_acquisition/storage.md
+    - Using JSON:
+      - tutorials/using_json/index.md
+      - tutorials/using_json/trig_json.md
+      - tutorials/using_json/props_json.md
+    - Data:
+      - tutorials/access_data/index.md
+      - tutorials/access_data/framedata.md
+      - tutorials/access_data/livestream.md
+    - Zarr:
+      - tutorials/zarr/index.md
+      - tutorials/zarr/multiscale.md
+      - tutorials/zarr/chunked.md
+      - tutorials/zarr/compressed.md
   - For contributors:
     - for_contributors/index.md
     - for_contributors/docs_contribution_quickstart.md
