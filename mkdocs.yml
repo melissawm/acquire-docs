@@ -111,7 +111,6 @@ plugins:
             show_symbol_type_toc: false
             # Members options
             inherited_members: false
-            # members: true
             members_order: "alphabetical"
             filters: ["!^_", "!dict", "!setup_", "!gui"]  # Remove private members
             group_by_category: true
@@ -120,7 +119,6 @@ plugins:
             show_labels: false
             # Docstring options
             docstring_style: google
-            # docstring_options: {}
             docstring_section_style: table
             merge_init_into_class: false
             show_if_no_docstring: false
