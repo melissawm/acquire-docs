@@ -2,7 +2,7 @@
 #
 # This tutorial will provide an example of writing multiscale data to a Zarr file.
 #
-# Zarr has additional capabilities relative to Acquire's basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. To enable _chunking_ and _multiscale storage_, set those attributes in instances of the `ChunkingProperties` and `StorageProperties` classes, respectively. You can learn more about the Zarr capabilities in `Acquire` [here](https://github.com/acquire-project/acquire-driver-zarr).
+# Zarr has additional capabilities relative to Acquire's basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. To enable _chunking_ and _multiscale storage_, set those attributes in instances of the `ChunkingProperties` and `StorageProperties` classes, respectively. You can learn more about the Zarr capabilities in `Acquire` in [the Acquire Zarr documentation](https://github.com/acquire-project/acquire-driver-zarr/blob/main/README.md).
 #
 # ## Configure `Runtime`
 # To start, we'll create a `Runtime` object and begin to configure the streaming process, selecting `Zarr` as the storage device so that writing multiscale data is possible.

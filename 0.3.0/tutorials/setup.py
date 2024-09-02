@@ -1,6 +1,6 @@
 # # Utilizing the Setup Method
 #
-# This tutorial will provide an example of utilizing the [setup method](https://github.com/acquire-project/acquire-python/blob/ce0764e86bf1d10eb3a447eb670c28808ab3da3b/python/acquire/__init__.py#L41) to configure `Runtime` and specify some basic properties.
+# This tutorial will provide an example of utilizing the [setup method][acquire.setup] to configure `Runtime` and specify some basic properties.
 #
 # ## Setup Function Definition
 

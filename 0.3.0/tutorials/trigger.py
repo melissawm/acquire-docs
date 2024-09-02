@@ -13,7 +13,7 @@ runtime = acquire.Runtime()
 
 # ## Configure Camera
 #
-# All camera settings can be captured by an instance of the `Properties` class, which will be associated with a given camera acquisition. The settings can be stored in a dictionary (e.g: `Properties.dict()`). These settings can be saved to a JSON file to be subsequently loaded, (e.g. `Properties(**json.load(open('acquire.json')))`), using the [json library](https://docs.python.org/3/library/json.html#). Check out [this tutorial](props_json.md) for a more detailed example, but in brief, you would use something like:
+# All camera settings can be captured by an instance of the `Properties` class, which will be associated with a given camera acquisition. The settings can be stored in a dictionary (e.g: `Properties.dict()`). These settings can be saved to a JSON file to be subsequently loaded, (e.g. `Properties(**json.load(open('acquire.json')))`), using the [json library](https://docs.python.org/3/library/json.html#). Check out [Properties from a JSON file](props_json.md) for a more detailed example, but in brief, you would use something like:
 
 # +
 config = runtime.get_configuration()
@@ -33,7 +33,7 @@ config.video[0].camera.identifier = runtime.device_manager().select(acquire.Devi
 
 # Next we'll choose the settings for the Hamamatsu camera. The `CameraProperties` class describes the available settings, which include exposure time (in microseconds), binning, pixel data type (e.g. u16), and how many frames to acquire.
 #
-# Every property can be set using the following syntax, but in this example, we will only change a few of the available settings. [Check out this tutorial](configure.md) for an explanation of camera properties.
+# Every property can be set using the following syntax, but in this example, we will only change a few of the available settings. Check out [Configure an Acquisition](configure.md) for an explanation of camera properties.
 
 config.video[0].camera.settings.binning = 1 # no pixels will be combined
 config.video[0].camera.settings.shape = (1700, 512) # shape of the image to be acquired in pixels
@@ -41,7 +41,7 @@ config.video[0].camera.settings.offset = (302, 896) # centers the image region o
 config.video[0].camera.settings.pixel_type = acquire.SampleType.U16 # sets the pixel data type to a 16-bit unsigned integer
 config.video[0].max_frame_count = 10 # finite acquisition of 10 frames. Use 0 for infinite acquisition.
 
-# Triggers can also be set in the `CameraProperties` object. The parameters can be stored in a dictionary (e.g: `Trigger.dict()`). You can construct a `Trigger` from a JSON file (e.g.  `acquire.Trigger(**json.loads(open('trigger.json')))` ), using the [json library](https://docs.python.org/3/library/json.html#). Check out [this tutorial](trig_json.md) for a more detailed example, but in brief, you would use something like:
+# Triggers can also be set in the `CameraProperties` object. The parameters can be stored in a dictionary (e.g: `Trigger.dict()`). You can construct a `Trigger` from a JSON file (e.g.  `acquire.Trigger(**json.loads(open('trigger.json')))` ), using the [json library](https://docs.python.org/3/library/json.html#). Check out [Triggers from a JSON file](trig_json.md) for a more detailed example, but in brief, you would use something like:
 
 # +
 trig = acquire.Trigger()
@@ -80,7 +80,7 @@ config = runtime.set_configuration(config)
 from rich.pretty import pprint
 pprint(config.dict())
 
-# Check out [this tutorial](https://acquire-project.github.io/acquire-docs/tutorials/props_json/) for a more detailed example of saving `Properties`.
+# Check out [Properties from a JSON file](props_json.md) for a more detailed example of saving `Properties`.
 #
 # ## Acquire data
 #

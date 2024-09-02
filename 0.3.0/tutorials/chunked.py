@@ -2,7 +2,7 @@
 #
 # This tutorial will provide an example of writing chunked data to a Zarr storage device.
 #
-# Zarr has additional capabilities relative to the basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. To enable _chunking_, set the attributes in an instance of the `ChunkingProperties` class. You can learn more about the Zarr capabilities in `Acquire` [here](https://github.com/acquire-project/acquire-driver-zarr).
+# Zarr has additional capabilities relative to the basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. To enable _chunking_, set the attributes in an instance of the `ChunkingProperties` class. You can learn more about the Zarr capabilities in `Acquire` in [the Acquire Zarr documentation](https://github.com/acquire-project/acquire-driver-zarr/blob/main/README.md).
 #
 # ## Configure `Runtime`
 # To start, we'll create a `Runtime` object and configure the streaming process, selecting `Zarr` as the storage device to enable chunking the data.

@@ -4,7 +4,7 @@
 #
 # ## Configure Streaming
 #
-# To start, we'll create a `Runtime` object and configure the streaming process. To do this, we'll utilize the setup method. More information on that method is detailed in [this tutorial](https://acquire-project.github.io/acquire-docs/tutorials/setup).
+# To start, we'll create a `Runtime` object and configure the streaming process. To do this, we'll utilize the setup method. More information on that method is detailed in [Utilizing the Setup Method](setup.md).
 
 # +
 import acquire

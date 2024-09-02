@@ -16,7 +16,7 @@ runtime = acquire.Runtime()
 # Instantiate a Properties object for the Runtime
 config = runtime.get_configuration()
 
-# You can update any of the settings in this instance of `Properties`. To save any updated settings, use the `set_configuration` method.  For this tutorial, we'll simply specify a camera, and then save these new settings. Note that more settings must be provided before this `Properties` object could be used for an acquistion. Check out [this tutorial](configure.md) for more information on configuring an acquisition.
+# You can update any of the settings in this instance of `Properties`. To save any updated settings, use the `set_configuration` method.  For this tutorial, we'll simply specify a camera, and then save these new settings. Note that more settings must be provided before this `Properties` object could be used for an acquistion. Check out [Configure an Acquisition](configure.md) for more information on configuring an acquisition.
 
 # +
 # set the radial sine simulated camera as the first video stream
