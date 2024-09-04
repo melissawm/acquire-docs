@@ -20,7 +20,7 @@ All camera settings are captured by an instance of the `Properties` class, which
 config = runtime.get_configuration()
 ```
 
-You can update any of the settings in this instance of `Properties`. To save any updated settings, use the `set_configuration` method.  For this tutorial, we'll simply specify a camera, and then save these new settings. Note that more settings must be provided before this `Properties` object could be used for an acquistion. Check out [Configure an Acquisition](configure.md) for more information on configuring an acquisition.
+You can update any of the settings in this instance of `Properties`. To save any updated settings, use the `set_configuration` method.  For this tutorial, we'll simply specify a camera, and then save these new settings. Note that more settings must be provided before this `Properties` object could be used for an acquistion. Check out [Configure an Acquisition](../setup_acquisition/configure.md) for more information on configuring an acquisition.
 
 ```python
 # set the radial sine simulated camera as the first video stream
@@ -51,7 +51,7 @@ with open("sample_props.json", "w") as outfile:
 The resulting sample_props.json file is below:
 
 ~~~json
-{% include "../examples/sample_props.json" %}
+{% include "../../examples/sample_props.json" %}
 ~~~
 
 ## Load Properties from a JSON file
