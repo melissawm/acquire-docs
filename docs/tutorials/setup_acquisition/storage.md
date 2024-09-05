@@ -35,7 +35,7 @@ The output of that script will be:
 <DeviceIdentifier Storage "ZarrV3Blosc1Lz4ByteShuffle">
 ```
 
-`Acquire` supports streaming data to [bigtiff](http://bigtiff.org/), [Zarr V2](https://zarr-specs.readthedocs.io/en/latest/v2/v2.0.html), and [Zarr V3](https://zarr-specs.readthedocs.io/en/latest/specs.html).
+`Acquire` supports streaming data to [bigtiff](http://bigtiff.org/), [Zarr V2](https://zarr-specs.readthedocs.io/en/latest/v2/v2.0.html), [Zarr V3](https://zarr-specs.readthedocs.io/en/latest/specs.html), and [OME-Zarr](https://ngff.openmicroscopy.org/latest/) for Zarr V2 and V3.
 
 Zarr has additional capabilities relative to the basic storage devices, namely _chunking_, _compression_, and _multiscale storage_. You can learn more about the Zarr capabilities in `Acquire` in [the Acquire Zarr documentation](https://github.com/acquire-project/acquire-driver-zarr/blob/main/README.md).
 
