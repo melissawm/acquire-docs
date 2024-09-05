@@ -36,7 +36,7 @@ Output of the above code is below:
 <DeviceIdentifier Storage "ZarrV3Blosc1Lz4ByteShuffle">
 ```
 
-All identified devices will be listed, and in the case of this tutorial, no camera drivers were installed on the machine, so only simulated cameras were found. Note that discovered storage devices will also print.
+All identified devices will be listed, and in the case of this tutorial, none of the vendor provided camera drivers were installed on the machine, so only simulated cameras were found. Note that discovered storage devices will also print.
 
 The order of those printed devices matters. Below are two examples of how the `select` method works. In the first, without a specific device name provided, `select` will choose the first device of the specified kind in the list of discovered devices. In the second example, a specific device name is provided, so `select` will grab that device if it was discovered by `Runtime`.
 
