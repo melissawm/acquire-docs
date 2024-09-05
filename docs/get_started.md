@@ -135,7 +135,7 @@ config.video[1].camera.settings.shape = (1280, 720)
 
 Now we'll configure each output, or sink device.
 For both simulated cameras, we'll be writing to [TIFF](http://bigtiff.org/), a well-known format for storing image data.
-For now, we'll simply specify the output file name. For more information about setting up chunking, check out the tutorial [Chunking Data for Zarr Storage](./tutorials/chunked.md)
+For now, we'll simply specify the output file name. 
 
 ```python
 config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Tiff")
