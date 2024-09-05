@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/for_contributors/">
+        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/tutorials/zarr/compressed/">
       
       
-        <link rel="prev" href="../tutorials/zarr/compressed/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="docs_contribution_quickstart/">
+        <link rel="next" href="../../../for_contributors/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>For contributors - Acquire Docs</title>
+        <title>Writing to Compressed Zarr Files - Acquire Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,11 +48,11 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../stylesheets/custom.css">
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#for-contributors" class="md-skip">
+        <a href="#writing-to-compressed-zarr-files" class="md-skip">
           Skip to content
         </a>
       
@@ -131,7 +131,7 @@
         <!-- Header title -->
         <div class="md-header__title" data-md-component="header-title">
             <div class="md-header__ellipsis" id="site-title">
-                <a href="..">Acquire Docs</a>
+                <a href="../../..">Acquire Docs</a>
             </div>
             <div class="md-header__version" id="version-selector">
                 <!-- Version switcher -->
@@ -252,7 +252,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -269,7 +269,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../get_started/" class="md-tabs__link">
+      <a href="../../../get_started/" class="md-tabs__link">
         
   
     
@@ -286,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../api_reference/" class="md-tabs__link">
+      <a href="../../../api_reference/" class="md-tabs__link">
         
   
     
@@ -301,11 +301,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../tutorials/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -321,13 +323,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../for_contributors/" class="md-tabs__link">
           
   
     
@@ -368,7 +368,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Acquire Docs" class="md-nav__button md-logo" aria-label="Acquire Docs" data-md-component="logo">
+    <a href="../../.." title="Acquire Docs" class="md-nav__button md-logo" aria-label="Acquire Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -398,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -418,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get_started/" class="md-nav__link">
+      <a href="../../../get_started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -438,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api_reference/" class="md-nav__link">
+      <a href="../../../api_reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -455,6 +455,8 @@
       
   
   
+    
+  
   
   
     
@@ -475,19 +477,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tutorials/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -498,13 +503,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -555,7 +560,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tutorials/setup_acquisition/" class="md-nav__link ">
+            <a href="../../setup_acquisition/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -588,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/trigger/" class="md-nav__link">
+      <a href="../../setup_acquisition/trigger/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -609,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/configure/" class="md-nav__link">
+      <a href="../../setup_acquisition/configure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -630,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/start_stop/" class="md-nav__link">
+      <a href="../../setup_acquisition/start_stop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -651,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/select/" class="md-nav__link">
+      <a href="../../setup_acquisition/select/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/setup/" class="md-nav__link">
+      <a href="../../setup_acquisition/setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -693,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/drivers/" class="md-nav__link">
+      <a href="../../setup_acquisition/drivers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -714,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/storage/" class="md-nav__link">
+      <a href="../../setup_acquisition/storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -768,7 +773,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tutorials/using_json/" class="md-nav__link ">
+            <a href="../../using_json/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -801,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/using_json/trig_json/" class="md-nav__link">
+      <a href="../../using_json/trig_json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -822,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/using_json/props_json/" class="md-nav__link">
+      <a href="../../using_json/props_json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -876,7 +881,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tutorials/access_data/" class="md-nav__link ">
+            <a href="../../access_data/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -909,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/access_data/framedata/" class="md-nav__link">
+      <a href="../../access_data/framedata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -930,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/access_data/livestream/" class="md-nav__link">
+      <a href="../../access_data/livestream/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -956,6 +961,8 @@
                 
   
   
+    
+  
   
   
     
@@ -973,16 +980,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tutorials/zarr/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -999,7 +1006,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             Zarr
@@ -1012,10 +1019,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tutorials/zarr/compressed/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Writing to Compressed Zarr Files
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1024,6 +1051,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Runtime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspect-acquired-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspect Acquired Data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1047,8 +1112,6 @@
       
       
   
-  
-    
   
   
   
@@ -1066,22 +1129,19 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../../for_contributors/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1092,13 +1152,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             For contributors
@@ -1114,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="docs_contribution_quickstart/" class="md-nav__link">
+      <a href="../../../for_contributors/docs_contribution_quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1135,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="update_version/" class="md-nav__link">
+      <a href="../../../for_contributors/update_version/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1176,6 +1236,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Runtime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspect-acquired-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspect Acquired Data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1192,13 +1278,72 @@
   
 
 
-<h1 id="for-contributors">For contributors<a class="headerlink" href="#for-contributors" title="Permanent link">&para;</a></h1>
-<p>Thank you for your interest in contributing to <code>Acquire</code>! We welcome contributions to the code base and to documentation.</p>
-<ul>
-<li><a href="https://github.com/acquire-project"><code>Acquire</code> project</a></li>
-<li><a href="https://github.com/acquire-project/acquire-python"><code>acquire-imaging</code></a></li>
-<li><a href="https://github.com/acquire-project/acquire-docs"><code>Acquire</code> documentation</a></li>
-</ul>
+<h1 id="writing-to-compressed-zarr-files">Writing to Compressed Zarr Files<a class="headerlink" href="#writing-to-compressed-zarr-files" title="Permanent link">&para;</a></h1>
+<p>This tutorial will provide an example of writing compressed data to a Zarr file.</p>
+<p><code>Acquire</code> supports streaming compressed data to the <code>ZarrBlosc1*</code> storage devices. Compression is done via <a href="https://www.blosc.org/pages/blosc-in-depth/">Blosc</a>.
+Supported codecs are <em>lz4</em> and <em>zstd</em>, available with <strong>ZarrBlosc1Lz4ByteShuffle</strong> and <strong>ZarrBlosc1ZstdByteShuffle</strong> devices, respectively. For a comparison of these codecs, please refer to the <a href="https://www.blosc.org/">Blosc docs</a>. You can learn more about the Zarr capabilities in <code>Acquire</code> in <a href="https://github.com/acquire-project/acquire-driver-zarr/blob/main/README.md">the Acquire Zarr documentation</a>.</p>
+<h2 id="configure-runtime">Configure <code>Runtime</code><a class="headerlink" href="#configure-runtime" title="Permanent link">&para;</a></h2>
+<p>To start, we'll create a <code>Runtime</code> object and configure the streaming process, selecting <code>ZarrBlosc1ZstdByteShuffle</code> as the storage device to enable compressing the data.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">acquire</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Initialize a Runtime object</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Initialize the device manager</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">dm</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Grab the current configuration</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Select the radial sine simulated camera as the video source</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;simulated: radial sin&quot;</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># Set the storage to ZarrBlosc1ZstdByteShuffle to avoid saving the data</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;ZarrBlosc1ZstdByteShuffle&quot;</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1"># Set the time for collecting data for a each frame</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">exposure_time_us</span> <span class="o">=</span> <span class="mf">7e4</span>  <span class="c1"># 70 ms</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1"># Set the size in pixels of the image region of interest on the camera</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="c1"># Set the max frame count</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># collect 100 frames</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="c1"># Set the output location to out.zarr</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;out.zarr&quot;</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="c1"># Update the configuration with the chosen parameters</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="inspect-acquired-data">Inspect Acquired Data<a class="headerlink" href="#inspect-acquired-data" title="Permanent link">&para;</a></h2>
+<p>Now that the configuration is set to utilize the <code>ZarrBlosc1ZstdByteShuffle</code> storage device, we can acquire data, which will be compressed before it is stored to <code>out.zarr</code>. Since we did not specify the size of chunks, the data will be saved as a single chunk that is the size of the image data. You may specify chunk sizes using the <code>TileShape</code> class. For example, using <code>acquire.StorageProperties.chunking.tile.width</code> to set the width of the chunks.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># acquire data</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span></code></pre></div>
+<p>We'll use the <a href="https://zarr.readthedocs.io/en/stable/">zarr-python package</a> to read the data in <code>out.zarr</code> directory.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># We&#39;ll utilize the zarr-python package to read the data</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">zarr</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># load from Zarr</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">compressed</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+</span></code></pre></div>
+<p>We'll print some of the data properties to illustrate how the data was compressed. Since we have not enabled <a href="multiscale.md">multiscale</a> output, <code>out.zarr</code> will only have one top level array<code>"0"</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># All of the data is stored in the &quot;0&quot; directory since the data was stored as a single chunk.</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">data</span> <span class="o">=</span> <span class="n">compressed</span><span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">]</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">compressor</span><span class="o">.</span><span class="n">cname</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">compressor</span><span class="o">.</span><span class="n">clevel</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">compressor</span><span class="o">.</span><span class="n">shuffle</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>zstd
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>1
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>1
+</span></code></pre></div>
+<p>As expected, the data was compressed using the <code>zstd</code> codec.</p>
+<p><a class="md-button md-button-center" href="../compressed.py">Download this tutorial as a Python script</a></p>
 
 
 
@@ -1255,8 +1400,8 @@
         <!-- Link to previous page -->
         
         
-        <a href="../tutorials/zarr/compressed/" class="md-footer__link md-footer__link--prev"
-            aria-label="Previous: Writing to Compressed Zarr Files">
+        <a href="../" class="md-footer__link md-footer__link--prev"
+            aria-label="Previous: Zarr">
             <div class="md-footer__button md-icon">
                 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1266,7 +1411,7 @@
                     Previous
                 </span>
                 <div class="md-ellipsis">
-                    Writing to Compressed Zarr Files
+                    Zarr
                 </div>
             </div>
         </a>
@@ -1275,14 +1420,14 @@
         <!-- Link to next page -->
         
         
-        <a href="docs_contribution_quickstart/" class="md-footer__link md-footer__link--next"
-            aria-label="Next: Acquire Docs Contribution Quickstart">
+        <a href="../../../for_contributors/" class="md-footer__link md-footer__link--next"
+            aria-label="Next: For contributors">
             <div class="md-footer__title">
                 <span class="md-footer__direction">
                     Next
                 </span>
                 <div class="md-ellipsis">
-                    Acquire Docs Contribution Quickstart
+                    For contributors
                 </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1388,12 +1533,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="../javascripts/version-select.js"></script>
+        <script src="../../../javascripts/version-select.js"></script>
       
     
   </body>
