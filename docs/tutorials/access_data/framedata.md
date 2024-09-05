@@ -40,7 +40,7 @@ config = runtime.set_configuration(config)
 
 During Acquisition, the `AvailableData` object is the streaming interface. We can create an `AvailableData` object by calling `get_available_data` in a `with` statement, and work with the `AvailableData` object while it exists inside of the `with` loop. The data is invalidated after exiting the `with` block, so make a copy of the `AvailableData` object to work with the data outside of the `with` block. In this example, we'll simply use the `AvailableData` object inside of the `with` block.
 
-There may not be data available, in which case our `AvailableData` object would return 0. To increase the likelihood of `AvailableData` containing data, we'll utilize the `time` python package to introduce a delay before we create our `AvailableData` object.
+There may not be data available. To increase the likelihood of `AvailableData` containing data, we'll utilize the `time` python package to introduce a delay before we create our `AvailableData` object.
 
 If there is data, we'll use the `AvailableData` `frames` method, which iterates over the `VideoFrame` objects in `AvailableData`, and the python `list` method to create a variable `video_frames`, a list of the `VideoFrame` objects one for each stream. 
 
