@@ -28,14 +28,15 @@ config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simula
 config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "ZarrBlosc1ZstdByteShuffle")
 
 # Set the time for collecting data for a each frame
-config.video[0].camera.settings.exposure_time_us = 5e4  # 50 ms
+config.video[0].camera.settings.exposure_time_us = 7e4  # 70 ms
 
+# Set the size in pixels of the image region of interest on the camera
 config.video[0].camera.settings.shape = (1024, 768)
 
 # Set the max frame count
 config.video[0].max_frame_count = 100 # collect 100 frames
 
-# Set the output file to out.zarr
+# Set the output location to out.zarr
 config.video[0].storage.settings.filename = "out.zarr"
 
 # Update the configuration with the chosen parameters
@@ -52,10 +53,10 @@ runtime.start()
 runtime.stop()
 ```
 
-We'll use the [Zarr Python package](https://zarr.readthedocs.io/en/stable/) to read the data in `out.zarr` file.
+We'll use the [zarr-python package](https://zarr.readthedocs.io/en/stable/) to read the data in `out.zarr` directory.
 
 ```python
-# We'll utilize the Zarr python package to read the data
+# We'll utilize the zarr-python package to read the data
 import zarr
 
 # load from Zarr
