@@ -62,7 +62,7 @@ with runtime.get_available_data(0) as available_data:
 
     # NoneType if there is no available data.
     # We can only grab frames if data is available.
-    if available_data is not None:
+    if available_data.get_frame_count() > 0:
     
         # frames is an iterator over available_data
         # we'll use this iterator to make a list of the frames
