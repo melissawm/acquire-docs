@@ -1351,7 +1351,7 @@
 2. The next print happens after waiting 0.5 seconds, so acquisition is still runnning and now there is acquired data available.
 3. The subsequent print is following calling <code>runtime.stop()</code> which waits until the specified max number of frames is collected and then terminates acquisition. Thus, the device is no longer running and there is no available data, since all objects were deleted by calling the <code>stop</code> method. The device is in an <code>Armed</code> state ready for the next acquisition.
 4. The final print occurs after waiting 5 seconds following the start of acquisition. This waiting period is longer than the 1 second acqusition time (0.1 seconds/frame and 10 frames), so the device is no longer collecting data. However, <code>runtime.stop()</code> hasn't been called, so the <code>AvailableData</code> object has not yet been deleted.</p>
-<p><a class="md-button md-button-center" href="start_stop.py">Download this tutorial as a Python script</a></p>
+<p><a class="md-button md-button-center" href="../start_stop.py">Download this tutorial as a Python script</a></p>
 
 
 
