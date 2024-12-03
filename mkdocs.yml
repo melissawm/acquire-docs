@@ -62,6 +62,10 @@ nav:
     - for_contributors/index.md
     - for_contributors/docs_contribution_quickstart.md
     - for_contributors/update_version.md
+  - Stream to Zarr:
+    - stream_to_zarr/index.md
+    - stream_to_zarr/zarr_api.md
+    - stream_to_zarr/c_api.md
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -85,15 +89,18 @@ markdown_extensions:
 
 
 plugins:
-  - include-markdown
+  - include-markdown:
+      heading_offset: 1
+      rewrite_relative_urls: true
   - search
+  - awesome-pages
   - mkdocstrings:
       custom_templates: docs/_templates
       handlers:
         python:
           # Global-only options
           load_external_modules: true
-          paths: [../acquire-python/python/acquire]
+          paths: [../acquire-python/python/acquire, ../acquire-zarr/python/acquire_zarr]
           import:
             - https://docs.python.org/3/objects.inv
           options:  # See https://mkdocstrings.github.io/python/usage/#globallocal-options
@@ -122,3 +129,12 @@ plugins:
             annotations_path: "brief"  # The verbosity for annotations path, default
             show_signature_annotations: true  # Show the type annotations in methods and functions signatures
             signature_crossrefs: true  # Whether to render cross-references for type annotations in signatures
+  - mkdoxy:
+      projects:
+        acquire_zarr_c_api: # name of project must be alphanumeric + numbers (without spaces)
+          src-dirs: ../acquire-zarr/include # path to source code (support multiple paths separated by space) => INPUT
+          full-doc: True # if you want to generate full documentation
+          doxy-cfg-file: docs/stream_to_zarr/Doxyfile
+      save-api: docs/stream_to_zarr
+
+use_directory_urls: true

@@ -53,6 +53,10 @@ jobs:
           cd acquire-docs
           mkdocs build
 
+      - name: Replace relative links in Doxygen include
+        run: |
+          sed -i 's@acquire_zarr_c_api/acquire_zarr_c_api#@#@g' site/stream_to_zarr/c_api/index.html
+
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v3
         with:
