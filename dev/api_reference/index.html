@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/dev/api_reference/">
+        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/api_reference/">
       
       
         <link rel="prev" href="../get_started/">
@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -381,7 +381,7 @@
       <a href="https://github.com/acquire-project/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -2492,6 +2492,44 @@ acquisition to ensure no data is overwritten before it can be processed.</p>
 
 
 
+
+
+
+
+
+<p><span class="doc-section-title">Methods:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.AvailableData.frames" href="#acquire.AvailableData.frames">frames</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns an iterator over the video frames in the available data.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.AvailableData.get_frame_count" href="#acquire.AvailableData.get_frame_count">get_frame_count</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns the total number of video frames in the available data.</p>
+                </div>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -2612,6 +2650,15 @@ data for the given VideoStream ID.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -2685,6 +2732,15 @@ settings for the camera.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2859,6 +2915,15 @@ frame) are supported.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -3024,6 +3089,15 @@ as any wait times for sending the trigger signal.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -3084,6 +3158,15 @@ supported VideoStream objects.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3172,6 +3255,36 @@ kind of the device.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
+<p><span class="doc-section-title">Methods:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.DeviceIdentifier.none" href="#acquire.DeviceIdentifier.none">none</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns a "None" type DeviceIdentifier.</p>
+                </div>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+
+
 
 
 
@@ -3305,6 +3418,15 @@ for storage.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -3340,6 +3462,52 @@ for storage.</p>
         <p>The <code>DeviceManager</code> class manages selection of available devices in the
 system.</p>
 <p>Regular expressions are accepted for the name argument.</p>
+
+
+
+
+
+
+
+
+
+<p><span class="doc-section-title">Methods:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.DeviceManager.devices" href="#acquire.DeviceManager.devices">devices</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns a list of all available device identifiers.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.DeviceManager.select" href="#acquire.DeviceManager.select">select</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Selects a specified device.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.DeviceManager.select_one_of" href="#acquire.DeviceManager.select_one_of">select_one_of</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Selects the first device in the list of devices that is of one of</p>
+                </div>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+
+
 
 
 
@@ -3399,7 +3567,9 @@ or to select a specific device by name.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>kind</code></td>
+            <td>
+                <code>kind</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="acquire.acquire.DeviceKind" href="#acquire.DeviceKind">DeviceKind</a></code>
             </td>
@@ -3413,7 +3583,9 @@ or to select a specific device by name.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-external" title="typing.Optional" href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
             </td>
@@ -3493,7 +3665,9 @@ the specified kinds.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>kind</code></td>
+            <td>
+                <code>kind</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="acquire.acquire.DeviceKind" href="#acquire.DeviceKind">DeviceKind</a></code>
             </td>
@@ -3507,7 +3681,9 @@ the specified kinds.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>names</code></td>
+            <td>
+                <code>names</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
             </td>
@@ -3650,6 +3826,15 @@ device is streaming data.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -3721,6 +3906,15 @@ last one is the camera software trigger.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3829,6 +4023,15 @@ dimension is not a space, channel, or time.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -3900,6 +4103,15 @@ is streamed forward.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3991,6 +4203,15 @@ starting a frame.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -4021,6 +4242,15 @@ starting a frame.</p>
 
 
     <div class="doc doc-contents ">
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4114,6 +4344,15 @@ waiting before continuing acquisition.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -4198,6 +4437,15 @@ waiting before continuing acquisition.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -4259,6 +4507,15 @@ and sink for the stream.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4358,6 +4615,15 @@ the property (fixed precision, floating-point, enum, or string).</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4462,6 +4728,15 @@ values.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -4498,6 +4773,108 @@ values.</p>
 <p>The <code>Runtime</code> class coordinates the devices with the storage disc
 including selecting the devices, setting their properties, and starting and
 stopping acquisition.</p>
+
+
+
+
+
+
+
+
+
+<p><span class="doc-section-title">Methods:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.Runtime.abort" href="#acquire.Runtime.abort">abort</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Aborts the runtime, terminating it immediately.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.Runtime.device_manager" href="#acquire.Runtime.device_manager">device_manager</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns the DeviceManager instance associated with this Runtime.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.Runtime.execute_trigger" href="#acquire.Runtime.execute_trigger">execute_trigger</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Executes a trigger for the given stream ID.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.Runtime.get_available_data" href="#acquire.Runtime.get_available_data">get_available_data</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns the AvailableDataContext instance for the given stream ID.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.Runtime.get_capabilities" href="#acquire.Runtime.get_capabilities">get_capabilities</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns the current capabilites of the runtime as an instance of</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.Runtime.get_configuration" href="#acquire.Runtime.get_configuration">get_configuration</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns the current configuration properties of the runtime.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.Runtime.get_state" href="#acquire.Runtime.get_state">get_state</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns the current state of the device.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.Runtime.set_configuration" href="#acquire.Runtime.set_configuration">set_configuration</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Applies the provided configuration properties to the runtime.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.Runtime.start" href="#acquire.Runtime.start">start</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Starts the runtime, allowing it to collect data.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.Runtime.stop" href="#acquire.Runtime.stop">stop</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Stops the runtime, ending data collection after the max number of</p>
+                </div>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+
+
 
 
 
@@ -4598,7 +4975,9 @@ return the context manager, <code>AvailableDataContext</code>, associated with t
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>stream_id</code></td>
+            <td>
+                <code>stream_id</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
             </td>
@@ -4727,7 +5106,9 @@ properties of this <code>Runtime</code> instance.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>properties</code></td>
+            <td>
+                <code>properties</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="acquire.acquire.Properties" href="#acquire.Properties">Properties</a></code>
             </td>
@@ -4868,6 +5249,15 @@ objects are deleted to free up disk space upon shutdown of <code>Runtime</code>.
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5020,6 +5410,15 @@ data.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -5095,6 +5494,15 @@ region of interest on the camera chip.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5175,6 +5583,15 @@ sent out of the device.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -5246,6 +5663,15 @@ digital.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5322,6 +5748,15 @@ settings for the data storage.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5409,6 +5844,15 @@ device.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5520,6 +5964,15 @@ sharding is not supported by the storage device.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5669,6 +6122,15 @@ value is only applicable for Zarr storage devices.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -5766,6 +6228,15 @@ input or output.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -5852,6 +6323,15 @@ frame.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5980,6 +6460,15 @@ level of the trigger.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -6070,6 +6559,15 @@ so the input attribute would have a value of 5.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -6103,6 +6601,44 @@ so the input attribute would have a value of 5.</p>
 
 
         <p>The <code>VideoFrame</code> class represents data from acquisition of a frame.</p>
+
+
+
+
+
+
+
+
+
+<p><span class="doc-section-title">Methods:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.VideoFrame.data" href="#acquire.VideoFrame.data">data</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns the data of the video frame as an NDArray.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><a class="autorefs autorefs-internal" title="acquire.VideoFrame.metadata" href="#acquire.VideoFrame.metadata">metadata</a></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Returns the metadata associated with the video frame.</p>
+                </div>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+
+
 
 
 
@@ -6220,6 +6756,15 @@ clock.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -6290,6 +6835,15 @@ video frame.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6393,6 +6947,15 @@ feature. Setting this to 1 will also prevent averaging.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -6491,6 +7054,15 @@ capabilities for the storage device in this video stream.</p>
 
 
 
+
+
+
+
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -6560,6 +7132,15 @@ capabilities for the storage device in this video stream.</p>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6878,10 +7459,10 @@ capabilities for the storage device in this video stream.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../javascripts/version-select.js"></script>
       

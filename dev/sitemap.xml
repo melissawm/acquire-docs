@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/api_reference/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/api_reference/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/get_started/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/get_started/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/for_contributors/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/for_contributors/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/for_contributors/docs_contribution_quickstart/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/for_contributors/docs_contribution_quickstart/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/for_contributors/update_version/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/for_contributors/update_version/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/access_data/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/access_data/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/access_data/framedata/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/access_data/framedata/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/access_data/livestream/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/access_data/livestream/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/setup_acquisition/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/setup_acquisition/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/setup_acquisition/configure/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/setup_acquisition/configure/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/setup_acquisition/drivers/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/setup_acquisition/drivers/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/setup_acquisition/select/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/setup_acquisition/select/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/setup_acquisition/setup/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/setup_acquisition/setup/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/setup_acquisition/start_stop/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/setup_acquisition/start_stop/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/setup_acquisition/storage/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/setup_acquisition/storage/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/setup_acquisition/trigger/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/setup_acquisition/trigger/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/using_json/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/using_json/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/using_json/props_json/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/using_json/props_json/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/using_json/trig_json/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/using_json/trig_json/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/zarr/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/zarr/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
     <url>
-         <loc>https://acquire-project.github.io/acquire-docs/dev/tutorials/zarr/compressed/</loc>
-         <lastmod>2024-09-06</lastmod>
+         <loc>https://acquire-project.github.io/acquire-docs/tutorials/zarr/compressed/</loc>
+         <lastmod>2024-12-04</lastmod>
     </url>
 </urlset>
