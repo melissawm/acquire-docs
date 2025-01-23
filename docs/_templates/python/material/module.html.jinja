@@ -92,9 +92,9 @@ Context:
           
           This block renders the docstring for the module.
           -#}
-          {% with docstring_sections = module.docstring.parsed %}
+          {# {% with docstring_sections = module.docstring.parsed %}
             {% include "docstring"|get_template with context %}
-          {% endwith %}
+          {% endwith %} #}
         {% endblock docstring %}
 
         {% block children scoped %}

@@ -116,9 +116,9 @@ plugins:
             # Members options
             members: true  # An explicit list of members to render (true for all)
             inherited_members: false  # Do not render any inherited members (for classes)
+            summary: true
             members_order: "alphabetical"  # Order members alphabetically, default
             filters: ["!^_", "!dict", "!setup_", "!gui"]  # Remove private and unwanted members
-            summary: true  # Whether to render summaries of objects. Insiders only for now
             show_labels: false  # Whether to show labels of the members
             # Docstring options
             docstring_style: google
