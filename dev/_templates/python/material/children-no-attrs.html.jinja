@@ -36,7 +36,6 @@ Context:
         {% else %}
           {% set extra_level = 0 %}
         {% endif %}
-
         {# {% with attributes = obj.attributes|filter_objects(
             filters=config.filters,
             members_list=members_list,
@@ -70,7 +69,7 @@ Context:
             {% with heading_level = heading_level + extra_level %}
               {% for class in classes|order_members(config.members_order, members_list) %}
                 {% if members_list is not none or (not class.is_imported or class.is_public) %}
-                  {% include class|get_template with context %}
+                  {% include "class-no-attrs"|get_template with context %}
                 {% endif %}
               {% endfor %}
             {% endwith %}
