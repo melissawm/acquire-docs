@@ -1,3 +1,3 @@
 site/
 venv/
-docs/stream_to_zarr/acquire_zarr_c_api
+docs/api_reference/stream_to_zarr/acquire_zarr_c_api

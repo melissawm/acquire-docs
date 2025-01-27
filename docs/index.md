@@ -14,11 +14,6 @@ hide:
         <a href="get_started" class="button">Get Started</a>
     </div>
     <div class="card">
-        <h4>API Reference</h4>
-        <p>Information on classes and methods</p>
-        <a href="api_reference" class="button">API Reference</a>
-    </div>
-    <div class="card">
         <h4>Tutorials</h4>
         <p>Guides on using Acquire for specific tasks</p>
         <a href="tutorials" class="button">Tutorials</a>
@@ -28,19 +23,30 @@ hide:
         <p>Learn how to contribute code or documentation to Acquire</p>
         <a href="for_contributors" class="button">For contributors</a>
     </div>
+        <div class="card">
+        <h4>Acquire-Python API Reference</h4>
+        <p>Information on classes and methods</p>
+        <a href="api_reference/api_reference" class="button">Acquire-Python API Reference</a>
+    </div>
+    <div class="card">
+        <h4>Acquire-Zarr Python API Reference</h4>
+        <p>Information on classes and methods</p>
+        <a href="stream_to_zarr/zarr_api" class="button">Acquire-Zarr Python API Reference</a>
+    </div>
+    <div class="card">
+        <h4>Acquire-Zarr C API Reference</h4>
+        <p>Information on classes and methods</p>
+        <a href="stream_to_zarr/c_api" class="button">Acquire-Zarr C API Reference</a>
+    </div>
 </div>
 
-##  About Acquire
+## About Acquire
 
-[Acquire](https://github.com/acquire-project/acquire-python) (`acquire-imaging` on [PyPI](https://pypi.org/project/acquire-imaging/)) provides high-speed, multi-camera, video streaming and image acquisition with a [programming interface](api_reference.md) for streaming video data directly to [napari](https://napari.org/stable/), Python and cloud-friendly file formats.
+[Acquire](https://github.com/acquire-project/acquire-python) (`acquire-imaging` on [PyPI](https://pypi.org/project/acquire-imaging/)) provides high-speed, multi-camera, video streaming and image acquisition with a [programming interface](api_reference/api_reference.md) for streaming video data directly to [napari](https://napari.org/stable/), Python and cloud-friendly file formats.
 
-## Installation
+### Stream to Zarr
 
-To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:
-
-```
-python -m pip install acquire-imaging
-```
+The [Acquire Zarr Streaming library](https://github.com/acquire-project/acquire-zarr) supports chunked, compressed, multiscale streaming to [Zarr](https://zarr.readthedocs.io/en/stable/spec/v2.html), with [OME-NGFF metadata](https://ngff.openmicroscopy.org/latest/).
 
 ## Supported Cameras and File Formats
 Acquire supports the following cameras (currently only on Windows):
@@ -59,6 +65,20 @@ Acquire supports the following output file formats:
 - [Zarr v3](https://zarr.readthedocs.io/en/stable/spec/v3.html)
 
 Acquire also supports raw and trash storage devices. For more information on supported file formats and storage devices, check out the [Storage Device Selection tutorial](./tutorials/setup_acquisition/storage.md).
+
+## Installation
+
+To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:
+
+```
+python -m pip install acquire-imaging
+```
+
+To install the acquire-zarr library, run the following command:
+
+```
+python -m pip install acquire-zarr
+```
 
 ## Citing Acquire
 

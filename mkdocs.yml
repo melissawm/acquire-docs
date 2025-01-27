@@ -35,7 +35,14 @@ extra_javascript:
 nav:
   - Home: index.md
   - Get Started: get_started.md
-  - API Reference: api_reference.md
+  - API Reference:
+    - api_reference/index.md
+    - Acquire Python API Reference: 
+      - api_reference/api_reference.md
+    - Stream to Zarr:
+      - api_reference/stream_to_zarr/index.md
+      - api_reference/stream_to_zarr/zarr_api.md
+      - api_reference/stream_to_zarr/c_api.md
   - Tutorials:
     - tutorials/index.md
     - Setup acquisition:
@@ -62,10 +69,6 @@ nav:
     - for_contributors/index.md
     - for_contributors/docs_contribution_quickstart.md
     - for_contributors/update_version.md
-  - Stream to Zarr:
-    - stream_to_zarr/index.md
-    - stream_to_zarr/zarr_api.md
-    - stream_to_zarr/c_api.md
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -86,7 +89,6 @@ markdown_extensions:
       permalink: true
   - attr_list
   - pymdownx.magiclink
-
 
 plugins:
   - include-markdown:
@@ -134,7 +136,7 @@ plugins:
         acquire_zarr_c_api: # name of project must be alphanumeric + numbers (without spaces)
           src-dirs: ../acquire-zarr/include # path to source code (support multiple paths separated by space) => INPUT
           full-doc: True # if you want to generate full documentation
-          doxy-cfg-file: docs/stream_to_zarr/Doxyfile
-      save-api: docs/stream_to_zarr
+          doxy-cfg-file: docs/api_reference/stream_to_zarr/Doxyfile
+      save-api: docs/api_reference/stream_to_zarr
 
 use_directory_urls: true
