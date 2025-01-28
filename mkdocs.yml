@@ -37,12 +37,11 @@ nav:
   - Get Started: get_started.md
   - API Reference:
     - api_reference/index.md
-    - Acquire Python API Reference: 
-      - api_reference/api_reference.md
     - Stream to Zarr:
-      - api_reference/stream_to_zarr/index.md
       - api_reference/stream_to_zarr/zarr_api.md
       - api_reference/stream_to_zarr/c_api.md
+    - Acquire Python API Reference:
+      - api_reference/api_reference.md
   - Tutorials:
     - tutorials/index.md
     - Setup acquisition:
