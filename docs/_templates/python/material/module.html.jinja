@@ -87,16 +87,6 @@ Context:
         It contains other blocks that users can override.
         Overriding the contents block allows to rearrange the order of the blocks.
         -#}
-        {% block docstring scoped %}
-          {#- Docstring block.
-          
-          This block renders the docstring for the module.
-          -#}
-          {# {% with docstring_sections = module.docstring.parsed %}
-            {% include "docstring"|get_template with context %}
-          {% endwith %} #}
-        {% endblock docstring %}
-
         {% block children scoped %}
           {#- Children block.
           
