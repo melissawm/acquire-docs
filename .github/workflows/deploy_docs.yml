@@ -81,7 +81,7 @@ jobs:
 
       - name: Replace relative links in Doxygen include
         run: |
-          sed -i 's@acquire_zarr_c_api/acquire_zarr_c_api#@#@g' acquire-docs/site/stream_to_zarr/c_api/index.html
+          sed -i 's@acquire_zarr_c_api/acquire_zarr_c_api#@#@g' acquire-docs/site/api_reference/c_api/index.html
 
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v3
