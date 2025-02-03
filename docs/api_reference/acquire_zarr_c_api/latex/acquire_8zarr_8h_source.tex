@@ -1,0 +1,55 @@
+\doxysection{acquire.\+zarr.\+h}
+\hypertarget{acquire_8zarr_8h_source}{}\label{acquire_8zarr_8h_source}\index{/Users/mwebermendonca/acquire-\/zarr/include/acquire.zarr.h@{/Users/mwebermendonca/acquire-\/zarr/include/acquire.zarr.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}zarr.types.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }ZarrStreamSettings\_s}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_zarr_stream_settings_a4e324e448a455f2101d0095f1a31a59a}{store\_path}};\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_zarr_stream_settings_a962048d5e554f874e67042fc087f71cd}{custom\_metadata}};\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_zarr_s3_settings}{ZarrS3Settings}}*\ \mbox{\hyperlink{struct_zarr_stream_settings_ae51f0e626a586e4566f537514f5a69d5}{s3\_settings}};\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_zarr_compression_settings}{ZarrCompressionSettings}}*\ \mbox{\hyperlink{struct_zarr_stream_settings_aff444bddee54703f21da778fb5a23961}{compression\_settings}};\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_zarr_dimension_properties}{ZarrDimensionProperties}}*\ \mbox{\hyperlink{struct_zarr_stream_settings_a758d79c6a643e18ce367f8730816a361}{dimensions}};\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_zarr_stream_settings_ac580b9fe1cc14df115cb15aa48afebc8}{dimension\_count}};\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_zarr_stream_settings_a8db6ecec1db821fd1e50340d0efac730}{multiscale}};\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ ZarrDataType\ \mbox{\hyperlink{struct_zarr_stream_settings_a5c6f0736461e9fec32154b113d22e1af}{data\_type}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ ZarrVersion\ \mbox{\hyperlink{struct_zarr_stream_settings_ada644bd2cf3dcd6e19d6cadfceac94e0}{version}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_zarr_stream_settings_aa4a974104042f5cc78b5ad01543fcbf2}{max\_threads}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \}\ \mbox{\hyperlink{struct_zarr_stream_settings}{ZarrStreamSettings}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }ZarrStream\_s\ ZarrStream;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Zarr\_get\_api\_version();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ ZarrStatusCode\ Zarr\_set\_log\_level(ZarrLogLevel\ level);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ ZarrLogLevel\ Zarr\_get\_log\_level();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Zarr\_get\_status\_message(ZarrStatusCode\ code);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \ \ ZarrStatusCode\ ZarrStreamSettings\_create\_dimension\_array(\mbox{\hyperlink{struct_zarr_stream_settings}{ZarrStreamSettings}}*\ settings,\ \textcolor{keywordtype}{size\_t}\ dimension\_count);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ ZarrStreamSettings\_destroy\_dimension\_array(\mbox{\hyperlink{struct_zarr_stream_settings}{ZarrStreamSettings}}*\ settings);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ ZarrStream*\ ZarrStream\_create(\mbox{\hyperlink{struct_zarr_stream_settings}{ZarrStreamSettings}}*\ settings);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ ZarrStream\_destroy(ZarrStream*\ stream);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00108\ \ \ \ \ ZarrStatusCode\ ZarrStream\_append(ZarrStream*\ stream,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ bytes\_in,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}*\ bytes\_out);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,70 +1,61 @@
 ---
-title: Acquire Docs
-template: home.html
+title: Acquire Zarr Streaming
+template: home_zarr.html
 hide:
     - toc
 ---
 
+Cloud-native file streaming solutions (e.g. file writers) are essential for building efficient image data acquisition
+workflows, especially when acquiring more data than fits into memory or a single external hard drive.
+[Zarr](https://zarr-specs.readthedocs.io/en/latest/specs.html) is a cloud-native data format that supports imaging data
+and has strong early adoption within the imaging community. The [Acquire project](#about-the-acquire-project) developed
+this standalone Zarr streaming library with bindings in both python and C. This library easily integrates into custom
+acquisition workflows since it does not rely on runtime or hardware support.
+
+## Installation
+
+To install the `acquire-zarr` library on Windows, macOS, or Ubuntu, run the following command:
+
+```bash
+python -m pip install acquire-zarr
+```
 ## Guides
 
 <div class="cards">
     <div class="card">
-        <h4>Get Started</h4>
-        <p>Install Acquire and use simulated cameras</p>
-        <a href="get_started" class="button">Get Started</a>
-    </div>
-    <div class="card">
-        <h4>API Reference</h4>
+        <h4>Python API Reference</h4>
         <p>Information on classes and methods</p>
-        <a href="api_reference" class="button">API Reference</a>
+        <a href="api_reference/zarr_api" class="button">Python API Reference</a>
     </div>
     <div class="card">
-        <h4>Tutorials</h4>
-        <p>Guides on using Acquire for specific tasks</p>
-        <a href="tutorials" class="button">Tutorials</a>
+        <h4>C Interface Reference</h4>
+        <p>Information on functions and structures</p>
+        <a href="api_reference/c_api" class="button">C Interface Reference</a>
     </div>
     <div class="card">
-        <h4>For contributors</h4>
-        <p>Learn how to contribute code or documentation to Acquire</p>
-        <a href="for_contributors" class="button">For contributors</a>
+        <h4>Python Examples</h4>
+        <p>Examples that demonstrate how to use the Python library</p>
+        <a href="https://github.com/acquire-project/acquire-zarr/tree/main/examples/python" class="button">Python Examples</a>
+    </div>
+    <div class="card">
+        <h4>C Examples</h4>
+        <p>Examples that demonstrate how to use the C interface</p>
+        <a href="https://github.com/acquire-project/acquire-zarr/tree/main/examples/python" class="button">C Examples</a>
     </div>
 </div>
 
-##  About Acquire
+## Citing `acquire-zarr`
 
-[Acquire](https://github.com/acquire-project/acquire-python) (`acquire-imaging` on [PyPI](https://pypi.org/project/acquire-imaging/)) provides high-speed, multi-camera, video streaming and image acquisition with a [programming interface](api_reference.md) for streaming video data directly to [napari](https://napari.org/stable/), Python and cloud-friendly file formats.
+TBA
 
-## Installation
+## Acquire Zarr License
 
-To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:
+`acquire-zarr `is provided under an [Apache 2.0 license](https://github.com/acquire-project/acquire-zarr/blob/main/LICENSE).
+[Learn more about the Apache license](https://www.apache.org/licenses/LICENSE-2.0).
 
-```
-python -m pip install acquire-imaging
-```
+## About the Acquire Project
 
-## Supported Cameras and File Formats
-Acquire supports the following cameras (currently only on Windows):
-
-- [Hamamatsu Orca Fusion BT (C15440-20UP)](https://www.hamamatsu.com/eu/en/product/cameras/cmos-cameras/C15440-20UP.html)
-- [Vieworks VC-151MX-M6H00](https://www.visionsystech.com/products/cameras/vieworks-vc-151mx-sony-imx411-sensor-ultra-high-resolution-cmos-camera-151-mp)
-- [FLIR Blackfly USB3 (BFLY-U3-23S6M-C)](https://www.flir.com/products/blackfly-usb3/?model=BFLY-U3-23S6M-C&vertical=machine+vision&segment=iis)
-- [FLIR Oryx 10GigE (ORX-10GS-51S5M-C)](https://www.flir.com/products/oryx-10gige/?model=ORX-10GS-51S5M-C&vertical=machine+vision&segment=iis)
-
-For testing and demonstration purposes, Acquire also provides a few simulated video sources. For more information on supported cameras and video sources, check out [this tutorial](./tutorials/setup_acquisition/drivers.md).
-
-Acquire supports the following output file formats:
-
-- [Tiff](https://en.wikipedia.org/wiki/TIFF)
-- [OME-Zarr](https://ngff.openmicroscopy.org/latest/) for [Zarr v2](https://zarr.readthedocs.io/en/stable/spec/v2.html)
-- [Zarr v3](https://zarr.readthedocs.io/en/stable/spec/v3.html)
-
-Acquire also supports raw and trash storage devices. For more information on supported file formats and storage devices, check out the [Storage Device Selection tutorial](./tutorials/setup_acquisition/storage.md).
-
-## Citing Acquire
-
-~~~
-{% include "./CITATION.cff" %}
-~~~
-
-## Acquire License
-`Acquire` is provided under an [Apache 2.0 license](https://github.com/acquire-project/acquire-python/blob/main/LICENSE). [Learn more about the Apache license](https://www.apache.org/licenses/LICENSE-2.0).
+The [Acquire Project](https://github.com/acquire-project) is a part of Chan Zuckerberg Initiative and is focused on
+providing libraries to improve multicamera video streaming for microscopy. Check out the
+[documentation on `acquire-imaging`,](acquire-imaging/index.md) a Python package providing a multi-camera video streaming library
+focusing on performant microscopy.

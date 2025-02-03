@@ -1,0 +1,119 @@
+\doxysection{zarr.\+types.\+h}
+\hypertarget{zarr_8types_8h_source}{}\label{zarr_8types_8h_source}\index{/Users/mwebermendonca/acquire-\/zarr/include/zarr.types.h@{/Users/mwebermendonca/acquire-\/zarr/include/zarr.types.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ H\_ACQUIRE\_ZARR\_TYPES\_V0}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ H\_ACQUIRE\_ZARR\_TYPES\_V0}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ ZarrStatusCode\_Success\ =\ 0,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ ZarrStatusCode\_InvalidArgument,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ ZarrStatusCode\_Overflow,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ ZarrStatusCode\_InvalidIndex,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ ZarrStatusCode\_NotYetImplemented,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ ZarrStatusCode\_InternalError,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ ZarrStatusCode\_OutOfMemory,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ ZarrStatusCode\_IOError,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ ZarrStatusCode\_CompressionError,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ ZarrStatusCode\_InvalidSettings,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ ZarrStatusCodeCount,}
+\DoxyCodeLine{00026\ \ \ \ \ \}\ ZarrStatusCode;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ ZarrVersion\_2\ =\ 2,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ ZarrVersion\_3,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ ZarrVersionCount}
+\DoxyCodeLine{00033\ \ \ \ \ \}\ ZarrVersion;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ ZarrLogLevel\_Debug\ =\ 0,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ ZarrLogLevel\_Info,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ ZarrLogLevel\_Warning,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ ZarrLogLevel\_Error,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ ZarrLogLevel\_None,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ ZarrLogLevelCount}
+\DoxyCodeLine{00043\ \ \ \ \ \}\ ZarrLogLevel;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ ZarrDataType\_uint8\ =\ 0,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ ZarrDataType\_uint16,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ ZarrDataType\_uint32,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ ZarrDataType\_uint64,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ ZarrDataType\_int8,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ ZarrDataType\_int16,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ ZarrDataType\_int32,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ ZarrDataType\_int64,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ ZarrDataType\_float32,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ ZarrDataType\_float64,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ ZarrDataTypeCount}
+\DoxyCodeLine{00058\ \ \ \ \ \}\ ZarrDataType;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ ZarrCompressor\_None\ =\ 0,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ ZarrCompressor\_Blosc1,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ ZarrCompressorCount}
+\DoxyCodeLine{00065\ \ \ \ \ \}\ ZarrCompressor;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ ZarrCompressionCodec\_None\ =\ 0,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ ZarrCompressionCodec\_BloscLZ4,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ ZarrCompressionCodec\_BloscZstd,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ ZarrCompressionCodecCount}
+\DoxyCodeLine{00073\ \ \ \ \ \}\ ZarrCompressionCodec;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ ZarrDimensionType\_Space\ =\ 0,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ ZarrDimensionType\_Channel,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ ZarrDimensionType\_Time,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ ZarrDimensionType\_Other,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ ZarrDimensionTypeCount}
+\DoxyCodeLine{00082\ \ \ \ \ \}\ ZarrDimensionType;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ endpoint;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ bucket\_name;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ access\_key\_id;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ secret\_access\_key;}
+\DoxyCodeLine{00093\ \ \ \ \ \}\ \mbox{\hyperlink{struct_zarr_s3_settings}{ZarrS3Settings}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ ZarrCompressor\ \mbox{\hyperlink{struct_zarr_compression_settings_ae15ecdae1f88836eb4333a4f5b41019e}{compressor}};\ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ ZarrCompressionCodec\ \mbox{\hyperlink{struct_zarr_compression_settings_a1982ea0bf30f7e890738367a203af15d}{codec}};\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_zarr_compression_settings_a889112581f4bf1be313467e7964fdab5}{level}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_zarr_compression_settings_a0edc976983c62ceea11f43a9195f2e4c}{shuffle}};\ }
+\DoxyCodeLine{00107\ \ \ \ \ \}\ \mbox{\hyperlink{struct_zarr_compression_settings}{ZarrCompressionSettings}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_zarr_dimension_properties_afd94303e63eda420f646fe2c256b8d07}{name}};\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ ZarrDimensionType\ \mbox{\hyperlink{struct_zarr_dimension_properties_aabb68f78e50454e92ed877cecfe10333}{type}};\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_zarr_dimension_properties_a6e3ff98864c9339f8c3e4ae8d9ce8a67}{array\_size\_px}};\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_zarr_dimension_properties_a1f81ea7441451b6591b443e0f93966ec}{chunk\_size\_px}};\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_zarr_dimension_properties_ab804a67dae0d7299598e2a60db34a57d}{shard\_size\_chunks}};\ }
+\DoxyCodeLine{00122\ \ \ \ \ \}\ \mbox{\hyperlink{struct_zarr_dimension_properties}{ZarrDimensionProperties}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ H\_ACQUIRE\_ZARR\_TYPES\_V0}}
+
+\end{DoxyCode}

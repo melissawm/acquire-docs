@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="struct_zarr_s3_settings" kind="struct" language="C++" prot="public">
+    <compoundname>ZarrS3Settings</compoundname>
+    <includes refid="zarr_8types_8h" local="no">zarr.types.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_zarr_s3_settings_1a06fca92d76309220a2b932c83ebf0468" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* ZarrS3Settings::endpoint</definition>
+        <argsstring></argsstring>
+        <name>endpoint</name>
+        <qualifiedname>ZarrS3Settings::endpoint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mwebermendonca/acquire-zarr/include/zarr.types.h" line="89" column="20" bodyfile="/Users/mwebermendonca/acquire-zarr/include/zarr.types.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_zarr_s3_settings_1a43cfff2d57146dd44aa32121f26b4930" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* ZarrS3Settings::bucket_name</definition>
+        <argsstring></argsstring>
+        <name>bucket_name</name>
+        <qualifiedname>ZarrS3Settings::bucket_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mwebermendonca/acquire-zarr/include/zarr.types.h" line="90" column="20" bodyfile="/Users/mwebermendonca/acquire-zarr/include/zarr.types.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_zarr_s3_settings_1abeb2d548837a683818361c980bf11468" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* ZarrS3Settings::access_key_id</definition>
+        <argsstring></argsstring>
+        <name>access_key_id</name>
+        <qualifiedname>ZarrS3Settings::access_key_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mwebermendonca/acquire-zarr/include/zarr.types.h" line="91" column="20" bodyfile="/Users/mwebermendonca/acquire-zarr/include/zarr.types.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_zarr_s3_settings_1ac8abc21a390e866d9421b4a31de012b2" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* ZarrS3Settings::secret_access_key</definition>
+        <argsstring></argsstring>
+        <name>secret_access_key</name>
+        <qualifiedname>ZarrS3Settings::secret_access_key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mwebermendonca/acquire-zarr/include/zarr.types.h" line="92" column="20" bodyfile="/Users/mwebermendonca/acquire-zarr/include/zarr.types.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>S3 settings for streaming to Zarr. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mwebermendonca/acquire-zarr/include/zarr.types.h" line="87" column="5" bodyfile="/Users/mwebermendonca/acquire-zarr/include/zarr.types.h" bodystart="88" bodyend="93"/>
+    <listofallmembers>
+      <member refid="struct_zarr_s3_settings_1abeb2d548837a683818361c980bf11468" prot="public" virt="non-virtual"><scope>ZarrS3Settings</scope><name>access_key_id</name></member>
+      <member refid="struct_zarr_s3_settings_1a43cfff2d57146dd44aa32121f26b4930" prot="public" virt="non-virtual"><scope>ZarrS3Settings</scope><name>bucket_name</name></member>
+      <member refid="struct_zarr_s3_settings_1a06fca92d76309220a2b932c83ebf0468" prot="public" virt="non-virtual"><scope>ZarrS3Settings</scope><name>endpoint</name></member>
+      <member refid="struct_zarr_s3_settings_1ac8abc21a390e866d9421b4a31de012b2" prot="public" virt="non-virtual"><scope>ZarrS3Settings</scope><name>secret_access_key</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

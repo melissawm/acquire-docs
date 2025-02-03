@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.13.2" xml:lang="en-US">
+  <compound refid="struct_zarr_compression_settings" kind="struct"><name>ZarrCompressionSettings</name>
+    <member refid="struct_zarr_compression_settings_1ae15ecdae1f88836eb4333a4f5b41019e" kind="variable"><name>compressor</name></member>
+    <member refid="struct_zarr_compression_settings_1a1982ea0bf30f7e890738367a203af15d" kind="variable"><name>codec</name></member>
+    <member refid="struct_zarr_compression_settings_1a889112581f4bf1be313467e7964fdab5" kind="variable"><name>level</name></member>
+    <member refid="struct_zarr_compression_settings_1a0edc976983c62ceea11f43a9195f2e4c" kind="variable"><name>shuffle</name></member>
+  </compound>
+  <compound refid="struct_zarr_dimension_properties" kind="struct"><name>ZarrDimensionProperties</name>
+    <member refid="struct_zarr_dimension_properties_1afd94303e63eda420f646fe2c256b8d07" kind="variable"><name>name</name></member>
+    <member refid="struct_zarr_dimension_properties_1aabb68f78e50454e92ed877cecfe10333" kind="variable"><name>type</name></member>
+    <member refid="struct_zarr_dimension_properties_1a6e3ff98864c9339f8c3e4ae8d9ce8a67" kind="variable"><name>array_size_px</name></member>
+    <member refid="struct_zarr_dimension_properties_1a1f81ea7441451b6591b443e0f93966ec" kind="variable"><name>chunk_size_px</name></member>
+    <member refid="struct_zarr_dimension_properties_1ab804a67dae0d7299598e2a60db34a57d" kind="variable"><name>shard_size_chunks</name></member>
+  </compound>
+  <compound refid="struct_zarr_s3_settings" kind="struct"><name>ZarrS3Settings</name>
+    <member refid="struct_zarr_s3_settings_1a06fca92d76309220a2b932c83ebf0468" kind="variable"><name>endpoint</name></member>
+    <member refid="struct_zarr_s3_settings_1a43cfff2d57146dd44aa32121f26b4930" kind="variable"><name>bucket_name</name></member>
+    <member refid="struct_zarr_s3_settings_1abeb2d548837a683818361c980bf11468" kind="variable"><name>access_key_id</name></member>
+    <member refid="struct_zarr_s3_settings_1ac8abc21a390e866d9421b4a31de012b2" kind="variable"><name>secret_access_key</name></member>
+  </compound>
+  <compound refid="struct_zarr_stream_settings" kind="struct"><name>ZarrStreamSettings</name>
+    <member refid="struct_zarr_stream_settings_1a4e324e448a455f2101d0095f1a31a59a" kind="variable"><name>store_path</name></member>
+    <member refid="struct_zarr_stream_settings_1a962048d5e554f874e67042fc087f71cd" kind="variable"><name>custom_metadata</name></member>
+    <member refid="struct_zarr_stream_settings_1ae51f0e626a586e4566f537514f5a69d5" kind="variable"><name>s3_settings</name></member>
+    <member refid="struct_zarr_stream_settings_1aff444bddee54703f21da778fb5a23961" kind="variable"><name>compression_settings</name></member>
+    <member refid="struct_zarr_stream_settings_1a758d79c6a643e18ce367f8730816a361" kind="variable"><name>dimensions</name></member>
+    <member refid="struct_zarr_stream_settings_1ac580b9fe1cc14df115cb15aa48afebc8" kind="variable"><name>dimension_count</name></member>
+    <member refid="struct_zarr_stream_settings_1a8db6ecec1db821fd1e50340d0efac730" kind="variable"><name>multiscale</name></member>
+    <member refid="struct_zarr_stream_settings_1a5c6f0736461e9fec32154b113d22e1af" kind="variable"><name>data_type</name></member>
+    <member refid="struct_zarr_stream_settings_1ada644bd2cf3dcd6e19d6cadfceac94e0" kind="variable"><name>version</name></member>
+    <member refid="struct_zarr_stream_settings_1aa4a974104042f5cc78b5ad01543fcbf2" kind="variable"><name>max_threads</name></member>
+  </compound>
+  <compound refid="acquire_8zarr_8h" kind="file"><name>acquire.zarr.h</name>
+    <member refid="acquire_8zarr_8h_1afa4fdb6226bd1eb0a565f275bec5cde1" kind="typedef"><name>ZarrStream</name></member>
+    <member refid="acquire_8zarr_8h_1abc5be8c7786118cc4ac3be6c083e0c47" kind="function"><name>Zarr_get_api_version</name></member>
+    <member refid="acquire_8zarr_8h_1ac0a234f5f669d198eba7a2b6a4b16781" kind="function"><name>Zarr_set_log_level</name></member>
+    <member refid="acquire_8zarr_8h_1afc7914d0585829c89f7c9a15d5f13098" kind="function"><name>Zarr_get_log_level</name></member>
+    <member refid="acquire_8zarr_8h_1ad5a5e0fe9c333acef4d30100a77c6e66" kind="function"><name>Zarr_get_status_message</name></member>
+    <member refid="acquire_8zarr_8h_1a0638381542b36bbd78be9779d8274ce3" kind="function"><name>ZarrStreamSettings_create_dimension_array</name></member>
+    <member refid="acquire_8zarr_8h_1a71653feb9e5c5fb31787a078013d5327" kind="function"><name>ZarrStreamSettings_destroy_dimension_array</name></member>
+    <member refid="acquire_8zarr_8h_1ab57d072062f9a8de3e261392ae0c6013" kind="function"><name>ZarrStream_create</name></member>
+    <member refid="acquire_8zarr_8h_1ab8e0216303891a3ad15b2f90d109bd37" kind="function"><name>ZarrStream_destroy</name></member>
+    <member refid="acquire_8zarr_8h_1addfed6ba57f30b1647b0309cdd977410" kind="function"><name>ZarrStream_append</name></member>
+  </compound>
+  <compound refid="zarr_8types_8h" kind="file"><name>zarr.types.h</name>
+  </compound>
+  <compound refid="dir_333e6df7611621adb9e912e152b800c4" kind="dir"><name>/Users/mwebermendonca/acquire-zarr</name>
+  </compound>
+  <compound refid="dir_ccebfe39b92f73ccebee9a2fb203dc1b" kind="dir"><name>/Users/mwebermendonca/acquire-zarr/include</name>
+  </compound>
+</doxygenindex>
