@@ -96,16 +96,16 @@ plugins:
   - awesome-pages
   - mkdocstrings:
       custom_templates: docs/_templates
+      enable_inventory: true  # Create an objects.inv file
       handlers:
         python:
           # Global-only options
           load_external_modules: true
           paths: [../acquire-python/python/acquire, ../acquire-zarr/python/acquire_zarr]
-          import:
+          inventories:
             - https://docs.python.org/3/objects.inv
           options:  # See https://mkdocstrings.github.io/python/usage/#globallocal-options
             # General options
-            enable_inventory: true  # Create an objects.inv file
             show_source: false  # Do now show source code for objects
             # Heading options
             show_root_heading: false  # Do now show module name as heading, default
