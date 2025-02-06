@@ -5,3 +5,5 @@ griffe
 jupytext
 pre-commit
 mike
+mkdoxy
+mkdocs-awesome-pages-plugin
