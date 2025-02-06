@@ -48,6 +48,29 @@ jobs:
           git submodule update --init --recursive
           python -m pip install -e .
 
+      - name: Clone acquire-zarr repo
+        uses: actions/checkout@v4
+        with:
+          path: acquire-zarr  # place in a named directory
+          repository: acquire-project/acquire-zarr
+
+      - name: Install acquire-zarr  # For collecting the API reference
+        run: |
+          cd acquire-zarr
+          git clone https://github.com/microsoft/vcpkg.git
+          cd vcpkg && ./bootstrap-vcpkg.sh
+          cat >> ~/.bashrc <<EOF
+          export VCPKG_ROOT=${PWD}
+          export PATH=\$VCPKG_ROOT:\$PATH
+          EOF
+          cd ..
+          cmake --preset=default -B build -DBUILD_PYTHON=ON .
+          cmake --build build
+          python -m pip install .
+
+      - name: Install Doxygen
+        run: sudo apt-get install -y doxygen
+
       - name: Build website
         run: |
           cd acquire-docs
