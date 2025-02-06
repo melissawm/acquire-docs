@@ -41,11 +41,11 @@ jobs:
         with:
           path: acquire-python  # place in a named directory
           repository: acquire-project/acquire-python
+          submodules: true
 
       - name: Install acquire-python  # For collecting the API reference
         run: |
           cd acquire-python
-          git submodule update --init --recursive
           python -m pip install -e .
 
       - name: Clone acquire-zarr repo
@@ -54,22 +54,21 @@ jobs:
           path: acquire-zarr  # place in a named directory
           repository: acquire-project/acquire-zarr
 
-      - name: Install Doxygen & cmake
-        run: sudo apt-get install -y doxygen cmake
+      - name: Install Doxygen
+        run: sudo apt-get install -y doxygen
+
+      - name: Install vcpkg
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git
+          cd vcpkg && ./bootstrap-vcpkg.sh
+          echo "VCPKG_ROOT=${{github.workspace}}/vcpkg" >> $GITHUB_ENV
+          echo "${{github.workspace}}/vcpkg" >> $GITHUB_PATH
+          ./vcpkg integrate install
+        shell: bash
 
       - name: Install acquire-zarr  # For collecting the API reference
         run: |
           cd acquire-zarr
-          git clone https://github.com/microsoft/vcpkg.git
-          cd vcpkg && ./bootstrap-vcpkg.sh
-          echo "Set VCPKG_ROOT and PATH"
-          cat >> ~/.bashrc <<EOF
-          export VCPKG_ROOT=${PWD}
-          export PATH=\$VCPKG_ROOT:\$PATH
-          EOF
-          cd ..
-          source ~/.bashrc
-          echo "Install Acquire Zarr"
           cmake --preset=default -B build -DBUILD_PYTHON=ON .
           cmake --build build
           python -m pip install .
