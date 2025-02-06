@@ -62,11 +62,14 @@ jobs:
           cd acquire-zarr
           git clone https://github.com/microsoft/vcpkg.git
           cd vcpkg && ./bootstrap-vcpkg.sh
+          echo "Set VCPKG_ROOT and PATH"
           cat >> ~/.bashrc <<EOF
           export VCPKG_ROOT=${PWD}
           export PATH=\$VCPKG_ROOT:\$PATH
           EOF
           cd ..
+          source ~/.bashrc
+          echo "Install Acquire Zarr"
           cmake --preset=default -B build -DBUILD_PYTHON=ON .
           cmake --build build
           python -m pip install .
