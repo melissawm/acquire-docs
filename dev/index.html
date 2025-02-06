@@ -42,7 +42,7 @@
     
     
       
-        <title>Acquire Docs - Acquire Docs</title>
+        <title>Acquire Zarr Streaming - Acquire Zarr Streaming Library</title>
       
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#guides" class="md-skip">
+        <a href="#installation" class="md-skip">
           Skip to content
         </a>
       
@@ -151,7 +151,7 @@
         <!-- Header title -->
         <div class="md-header__title" data-md-component="header-title">
             <div class="md-header__ellipsis" id="site-title">
-                <a href=".">Acquire Docs</a>
+                <a href=".">Acquire Zarr Streaming Library</a>
             </div>
             <div class="md-header__version" id="version-selector">
                 <!-- Version switcher -->
@@ -234,7 +234,7 @@
 
         <!-- Social links in header -->
         <div class="md-header__links">
-            <a class="md-source" href="https://github.com/acquire-project/acquire-python" data-md-component="source" title="Go to repository">
+            <a class="md-source" href="https://github.com/acquire-project/acquire-zarr" data-md-component="source" title="Go to repository">
                 <span class="twemoji" style="padding-left: 14px;">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_266_1125)">
@@ -307,16 +307,19 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="api_reference/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="examples/" class="md-tabs__link">
+          
   
     
   
-  API Reference
+  Examples
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -327,12 +330,32 @@
     
     
       <li class="md-tabs__item">
-        <a href="tutorials/" class="md-tabs__link">
+        <a href="api_reference/" class="md-tabs__link">
           
   
     
   
-  Tutorials
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="acquire-imaging/" class="md-tabs__link">
+          
+  
+    
+  
+  Acquire Imaging
 
         </a>
       </li>
@@ -353,26 +376,6 @@
     
   
   For contributors
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="stream_to_zarr/" class="md-tabs__link">
-          
-  
-    
-  
-  Stream to Zarr
 
         </a>
       </li>
@@ -417,10 +420,12 @@
         <div class="mdx-hero">
             <!-- Hero content -->
             <div class="mdx-hero__content">
-                <h1>Acquire</h1>
-                <p>A python package providing a multi-camera video streaming library focusing on
-                performant microscopy.</p>
-                <a href="get_started/" title="Get Started"
+                <h1>Acquire Zarr Streaming</h1>
+                <p>The <code>acquire-zarr</code> library provides bindings in Python and C for streaming chunked, compressed,
+                   multiscale data with <a href="https://ngff.openmicroscopy.org/latest/">OME-NGFF</a> metadata to
+                   <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr v2</a> and
+                   <a href="https://zarr-specs.readthedocs.io/en/latest/v3/core/v3.0.html">Zarr v3</a>.</p>
+                <a href="get_started" title="Get Started"
                     class="md-button md-button--primary">
                     Get Started
                 </a>
@@ -447,13 +452,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Acquire Docs" class="md-nav__button md-logo" aria-label="Acquire Docs" data-md-component="logo">
+    <a href="." title="Acquire Zarr Streaming Library" class="md-nav__button md-logo" aria-label="Acquire Zarr Streaming Library" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Acquire Docs
+    Acquire Zarr Streaming Library
   </label>
   
     <div class="md-nav__source">
@@ -521,24 +526,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#about-acquire" class="md-nav__link">
-    <span class="md-ellipsis">
-      About Acquire
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       Installation
@@ -548,27 +535,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-cameras-and-file-formats" class="md-nav__link">
+  <a href="#guides" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported Cameras and File Formats
+      Guides
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#citing-acquire" class="md-nav__link">
+  <a href="#citing-acquire-zarr" class="md-nav__link">
     <span class="md-ellipsis">
-      Citing Acquire
+      Citing acquire-zarr
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#acquire-license" class="md-nav__link">
+  <a href="#acquire-zarr-license" class="md-nav__link">
     <span class="md-ellipsis">
-      Acquire License
+      Acquire Zarr License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-acquire-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      About the Acquire Project
     </span>
   </a>
   
@@ -609,8 +605,311 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="examples/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="api_reference/" class="md-nav__link">
+      <a href="examples/python_examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/c_examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="api_reference/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api_reference/zarr_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zarr Streaming Python API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api_reference/c_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zarr Streaming C API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="acquire-imaging/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Acquire Imaging
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Acquire Imaging
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="acquire-imaging/get_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="acquire-imaging/api_reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -623,9 +922,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -655,12 +955,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="tutorials/" class="md-nav__link ">
+            <a href="acquire-imaging/tutorials/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -672,14 +972,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
           </label>
@@ -724,12 +1024,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="tutorials/setup_acquisition/" class="md-nav__link ">
+            <a href="acquire-imaging/tutorials/setup_acquisition/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -741,14 +1041,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4_2" id="__nav_5_4_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2">
             <span class="md-nav__icon md-icon"></span>
             Setup acquisition
           </label>
@@ -763,7 +1063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/setup_acquisition/trigger/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/setup_acquisition/trigger/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -785,7 +1085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/setup_acquisition/configure/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/setup_acquisition/configure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -807,7 +1107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/setup_acquisition/start_stop/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/setup_acquisition/start_stop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -829,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/setup_acquisition/select/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/setup_acquisition/select/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -851,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/setup_acquisition/setup/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/setup_acquisition/setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -873,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/setup_acquisition/drivers/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/setup_acquisition/drivers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -895,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/setup_acquisition/storage/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/setup_acquisition/storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -945,12 +1245,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="tutorials/using_json/" class="md-nav__link ">
+            <a href="acquire-imaging/tutorials/using_json/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -962,14 +1262,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4_3" id="__nav_5_4_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_3">
             <span class="md-nav__icon md-icon"></span>
             Using JSON
           </label>
@@ -984,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/using_json/trig_json/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/using_json/trig_json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1006,7 +1306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/using_json/props_json/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/using_json/props_json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1056,12 +1356,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="tutorials/access_data/" class="md-nav__link ">
+            <a href="acquire-imaging/tutorials/access_data/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1073,14 +1373,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4_4" id="__nav_5_4_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_4">
             <span class="md-nav__icon md-icon"></span>
             Data
           </label>
@@ -1095,7 +1395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/access_data/framedata/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/access_data/framedata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1117,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/access_data/livestream/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/access_data/livestream/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1165,12 +1465,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="tutorials/zarr/" class="md-nav__link ">
+            <a href="acquire-imaging/tutorials/zarr/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1182,14 +1482,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4_5" id="__nav_5_4_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             Zarr
           </label>
@@ -1204,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/zarr/compressed/" class="md-nav__link">
+      <a href="acquire-imaging/tutorials/zarr/compressed/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,6 +1514,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1261,7 +1569,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           
@@ -1278,14 +1586,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             For contributors
           </label>
@@ -1344,116 +1652,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="stream_to_zarr/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Stream to Zarr
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Stream to Zarr
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="stream_to_zarr/zarr_api/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Zarr Streaming Python API Reference
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="stream_to_zarr/c_api/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Zarr Streaming C API Reference
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -1481,24 +1679,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#about-acquire" class="md-nav__link">
-    <span class="md-ellipsis">
-      About Acquire
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       Installation
@@ -1508,27 +1688,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-cameras-and-file-formats" class="md-nav__link">
+  <a href="#guides" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported Cameras and File Formats
+      Guides
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#citing-acquire" class="md-nav__link">
+  <a href="#citing-acquire-zarr" class="md-nav__link">
     <span class="md-ellipsis">
-      Citing Acquire
+      Citing acquire-zarr
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#acquire-license" class="md-nav__link">
+  <a href="#acquire-zarr-license" class="md-nav__link">
     <span class="md-ellipsis">
-      Acquire License
+      Acquire Zarr License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-acquire-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      About the Acquire Project
     </span>
   </a>
   
@@ -1558,82 +1747,50 @@
 
   <h1>Home</h1>
 
+<p>Cloud-native file streaming solutions (e.g. file writers) are essential for building efficient image data acquisition
+workflows, especially when acquiring more data than fits into memory or a single external hard drive.
+<a href="https://zarr-specs.readthedocs.io/en/latest/specs.html">Zarr</a> is a cloud-native data format that supports imaging data
+and has strong early adoption within the imaging community. The <a href="#about-the-acquire-project">Acquire project</a> developed
+this standalone Zarr streaming library with bindings in both python and C. This library easily integrates into custom
+acquisition workflows since it does not rely on runtime or hardware support.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>To install the <code>acquire-zarr</code> library on Windows, macOS, or Ubuntu, run the following command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>acquire-zarr
+</span></code></pre></div>
 <h2 id="guides">Guides<a class="headerlink" href="#guides" title="Permanent link">&para;</a></h2>
 <div class="cards">
     <div class="card">
-        <h4>Get Started</h4>
-        <p>Install Acquire and use simulated cameras</p>
-        <a href="get_started" class="button">Get Started</a>
-    </div>
-    <div class="card">
-        <h4>API Reference</h4>
+        <h4>Python API Reference</h4>
         <p>Information on classes and methods</p>
-        <a href="api_reference" class="button">API Reference</a>
+        <a href="api_reference/zarr_api" class="button">Python API Reference</a>
     </div>
     <div class="card">
-        <h4>Tutorials</h4>
-        <p>Guides on using Acquire for specific tasks</p>
-        <a href="tutorials" class="button">Tutorials</a>
+        <h4>C Interface Reference</h4>
+        <p>Information on functions and structures</p>
+        <a href="api_reference/c_api" class="button">C Interface Reference</a>
     </div>
     <div class="card">
-        <h4>For contributors</h4>
-        <p>Learn how to contribute code or documentation to Acquire</p>
-        <a href="for_contributors" class="button">For contributors</a>
+        <h4>Python Examples</h4>
+        <p>Examples that demonstrate how to use the Python library</p>
+        <a href="https://github.com/acquire-project/acquire-zarr/tree/main/examples/python" class="button">Python Examples</a>
+    </div>
+    <div class="card">
+        <h4>C Examples</h4>
+        <p>Examples that demonstrate how to use the C interface</p>
+        <a href="https://github.com/acquire-project/acquire-zarr/tree/main/examples/python" class="button">C Examples</a>
     </div>
 </div>
 
-<h2 id="about-acquire">About Acquire<a class="headerlink" href="#about-acquire" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/acquire-project/acquire-python">Acquire</a> (<code>acquire-imaging</code> on <a href="https://pypi.org/project/acquire-imaging/">PyPI</a>) provides high-speed, multi-camera, video streaming and image acquisition with a <a href="api_reference/">programming interface</a> for streaming video data directly to <a href="https://napari.org/stable/">napari</a>, Python and cloud-friendly file formats.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python -m pip install acquire-imaging
-</span></code></pre></div>
-<h2 id="supported-cameras-and-file-formats">Supported Cameras and File Formats<a class="headerlink" href="#supported-cameras-and-file-formats" title="Permanent link">&para;</a></h2>
-<p>Acquire supports the following cameras (currently only on Windows):</p>
-<ul>
-<li><a href="https://www.hamamatsu.com/eu/en/product/cameras/cmos-cameras/C15440-20UP.html">Hamamatsu Orca Fusion BT (C15440-20UP)</a></li>
-<li><a href="https://www.visionsystech.com/products/cameras/vieworks-vc-151mx-sony-imx411-sensor-ultra-high-resolution-cmos-camera-151-mp">Vieworks VC-151MX-M6H00</a></li>
-<li><a href="https://www.flir.com/products/blackfly-usb3/?model=BFLY-U3-23S6M-C&amp;vertical=machine+vision&amp;segment=iis">FLIR Blackfly USB3 (BFLY-U3-23S6M-C)</a></li>
-<li><a href="https://www.flir.com/products/oryx-10gige/?model=ORX-10GS-51S5M-C&amp;vertical=machine+vision&amp;segment=iis">FLIR Oryx 10GigE (ORX-10GS-51S5M-C)</a></li>
-</ul>
-<p>For testing and demonstration purposes, Acquire also provides a few simulated video sources. For more information on supported cameras and video sources, check out <a href="tutorials/setup_acquisition/drivers/">this tutorial</a>.</p>
-<p>Acquire supports the following output file formats:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/TIFF">Tiff</a></li>
-<li><a href="https://ngff.openmicroscopy.org/latest/">OME-Zarr</a> for <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr v2</a></li>
-<li><a href="https://zarr.readthedocs.io/en/stable/spec/v3.html">Zarr v3</a></li>
-</ul>
-<p>Acquire also supports raw and trash storage devices. For more information on supported file formats and storage devices, check out the <a href="tutorials/setup_acquisition/storage/">Storage Device Selection tutorial</a>.</p>
-<h2 id="citing-acquire">Citing Acquire<a class="headerlink" href="#citing-acquire" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cff-version: 1.2.0
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>title: Acquire: a multi-camera video streaming software focusing on microscopy
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>message: &gt;-
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  If you use this software, please cite it using the
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  metadata from this file.
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>type: software
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>authors:
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  - given-names: Nathan
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    family-names: Clack
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    email: nclack@chanzuckerberg.com
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    affiliation: Chan-Zuckerberg Initiative Foundation
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    orcid: &#39;https://orcid.org/0000-0001-6236-9282&#39;
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  - given-names: Alan
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    family-names: Liddell
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    email: aliddell@chanzuckerberg.com
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    affiliation: Chan-Zuckerberg Initiative Foundation
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  - given-names: Andrew
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    family-names: Sweet
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    email: andrewdsweet@gmail.com
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    affiliation: Chan-Zuckerberg Initiative Foundation
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>repository-code: &#39;https://github.com/acquire-project/acquire-python&#39;
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>repository-artifact: &#39;https://pypi.org/project/acquire-imaging/&#39;
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>abstract: &gt;-
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>  acquire-imaging is a library focusing on multi-camera video
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>  streaming for microscopy.
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>license: Apache-2.0
-</span></code></pre></div>
-<h2 id="acquire-license">Acquire License<a class="headerlink" href="#acquire-license" title="Permanent link">&para;</a></h2>
-<p><code>Acquire</code> is provided under an <a href="https://github.com/acquire-project/acquire-python/blob/main/LICENSE">Apache 2.0 license</a>. <a href="https://www.apache.org/licenses/LICENSE-2.0">Learn more about the Apache license</a>.</p>
+<h2 id="citing-acquire-zarr">Citing <code>acquire-zarr</code><a class="headerlink" href="#citing-acquire-zarr" title="Permanent link">&para;</a></h2>
+<p>TBA</p>
+<h2 id="acquire-zarr-license">Acquire Zarr License<a class="headerlink" href="#acquire-zarr-license" title="Permanent link">&para;</a></h2>
+<p><code>acquire-zarr</code>is provided under an <a href="https://github.com/acquire-project/acquire-zarr/blob/main/LICENSE">Apache 2.0 license</a>.
+<a href="https://www.apache.org/licenses/LICENSE-2.0">Learn more about the Apache license</a>.</p>
+<h2 id="about-the-acquire-project">About the Acquire Project<a class="headerlink" href="#about-the-acquire-project" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://github.com/acquire-project">Acquire Project</a> is a part of Chan Zuckerberg Initiative and is focused on
+providing libraries to improve multicamera video streaming for microscopy. Check out the
+<a href="acquire-imaging/">documentation on <code>acquire-imaging</code>,</a> a Python package providing a multi-camera video streaming library
+focusing on performant microscopy.</p>
 
 
 
@@ -1743,7 +1900,7 @@
         <div class="md-footer-meta__inner md-grid">
             <div class="md-footer-meta__inner-social">
                 <div class="md-footer-meta__inner-social links">
-                    <a class="md-source" href="https://github.com/acquire-project/acquire-python" data-md-component="source" title="Go to repository">
+                    <a class="md-source" href="https://github.com/acquire-project/acquire-zarr" data-md-component="source" title="Go to repository">
                         <span class="twemoji" style="padding-right: 8px; padding-top: 8px; color: #ffffffb3;">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_266_1125)">
@@ -1766,7 +1923,7 @@
                         </span>
                         Zulip chat
                     </a>
-                    <a class="md-source" href="https://pypi.org/project/acquire/" data-md-component="source" title="Go to PyPI">
+                    <a class="md-source" href="https://pypi.org/project/acquire-zarr/" data-md-component="source" title="Go to PyPI">
                         <span class="twemoji" style="padding-right: 8px; padding-top: 8px; color: #ffffffb3;">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_266_1129)">

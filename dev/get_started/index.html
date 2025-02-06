@@ -14,7 +14,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../api_reference/">
+        <link rel="next" href="../examples/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Get Started - Acquire Docs</title>
+        <title>Get Started - Acquire Zarr Streaming Library</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#getting-started-with-acquire" class="md-skip">
+        <a href="#acquire-zarr-streaming-library" class="md-skip">
           Skip to content
         </a>
       
@@ -131,7 +131,7 @@
         <!-- Header title -->
         <div class="md-header__title" data-md-component="header-title">
             <div class="md-header__ellipsis" id="site-title">
-                <a href="..">Acquire Docs</a>
+                <a href="..">Acquire Zarr Streaming Library</a>
             </div>
             <div class="md-header__version" id="version-selector">
                 <!-- Version switcher -->
@@ -214,7 +214,7 @@
 
         <!-- Social links in header -->
         <div class="md-header__links">
-            <a class="md-source" href="https://github.com/acquire-project/acquire-python" data-md-component="source" title="Go to repository">
+            <a class="md-source" href="https://github.com/acquire-project/acquire-zarr" data-md-component="source" title="Go to repository">
                 <span class="twemoji" style="padding-left: 14px;">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_266_1125)">
@@ -287,16 +287,19 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../api_reference/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../examples/" class="md-tabs__link">
+          
   
     
   
-  API Reference
+  Examples
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -307,12 +310,32 @@
     
     
       <li class="md-tabs__item">
-        <a href="../tutorials/" class="md-tabs__link">
+        <a href="../api_reference/" class="md-tabs__link">
           
   
     
   
-  Tutorials
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../acquire-imaging/" class="md-tabs__link">
+          
+  
+    
+  
+  Acquire Imaging
 
         </a>
       </li>
@@ -333,26 +356,6 @@
     
   
   For contributors
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../stream_to_zarr/" class="md-tabs__link">
-          
-  
-    
-  
-  Stream to Zarr
 
         </a>
       </li>
@@ -388,13 +391,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Acquire Docs" class="md-nav__button md-logo" aria-label="Acquire Docs" data-md-component="logo">
+    <a href=".." title="Acquire Zarr Streaming Library" class="md-nav__button md-logo" aria-label="Acquire Zarr Streaming Library" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Acquire Docs
+    Acquire Zarr Streaming Library
   </label>
   
     <div class="md-nav__source">
@@ -445,8 +448,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -477,8 +478,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -487,65 +486,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#acquire-zarr-streaming-library" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      Acquire Zarr streaming library
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acquire Zarr streaming library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing dependencies
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#supported-cameras-and-file-formats" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#configuring" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported Cameras and File Formats
+      Configuring
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#tutorial-prerequisites" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#building_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Tutorial Prerequisites
+      Building
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-for-acquisition" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#installing-for-python" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup for Acquisition
+      Installing for Python
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#acquire-data" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Acquire Data
+      Usage
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#visualizing-the-data-with-napari" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualizing the data with napari
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -563,8 +574,311 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../examples/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../api_reference/" class="md-nav__link">
+      <a href="../examples/python_examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/c_examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../api_reference/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_reference/zarr_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zarr Streaming Python API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_reference/c_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zarr Streaming C API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../acquire-imaging/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Acquire Imaging
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Acquire Imaging
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acquire-imaging/get_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acquire-imaging/api_reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -577,9 +891,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -609,12 +924,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tutorials/" class="md-nav__link ">
+            <a href="../acquire-imaging/tutorials/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -626,14 +941,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
           </label>
@@ -678,12 +993,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tutorials/setup_acquisition/" class="md-nav__link ">
+            <a href="../acquire-imaging/tutorials/setup_acquisition/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -695,14 +1010,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4_2" id="__nav_5_4_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2">
             <span class="md-nav__icon md-icon"></span>
             Setup acquisition
           </label>
@@ -717,7 +1032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/trigger/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/setup_acquisition/trigger/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -739,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/configure/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/setup_acquisition/configure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -761,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/start_stop/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/setup_acquisition/start_stop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -783,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/select/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/setup_acquisition/select/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -805,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/setup/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/setup_acquisition/setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -827,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/drivers/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/setup_acquisition/drivers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -849,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/setup_acquisition/storage/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/setup_acquisition/storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -899,12 +1214,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tutorials/using_json/" class="md-nav__link ">
+            <a href="../acquire-imaging/tutorials/using_json/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -916,14 +1231,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4_3" id="__nav_5_4_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_3">
             <span class="md-nav__icon md-icon"></span>
             Using JSON
           </label>
@@ -938,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/using_json/trig_json/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/using_json/trig_json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -960,7 +1275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/using_json/props_json/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/using_json/props_json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1010,12 +1325,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tutorials/access_data/" class="md-nav__link ">
+            <a href="../acquire-imaging/tutorials/access_data/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1027,14 +1342,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4_4" id="__nav_5_4_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_4">
             <span class="md-nav__icon md-icon"></span>
             Data
           </label>
@@ -1049,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/access_data/framedata/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/access_data/framedata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1071,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/access_data/livestream/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/access_data/livestream/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1119,12 +1434,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tutorials/zarr/" class="md-nav__link ">
+            <a href="../acquire-imaging/tutorials/zarr/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1136,14 +1451,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_4_5" id="__nav_5_4_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             Zarr
           </label>
@@ -1158,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/zarr/compressed/" class="md-nav__link">
+      <a href="../acquire-imaging/tutorials/zarr/compressed/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1168,6 +1483,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1215,7 +1538,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           
@@ -1232,14 +1555,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             For contributors
           </label>
@@ -1298,116 +1621,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../stream_to_zarr/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Stream to Zarr
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Stream to Zarr
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../stream_to_zarr/zarr_api/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Zarr Streaming Python API Reference
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../stream_to_zarr/c_api/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Zarr Streaming C API Reference
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -1425,8 +1638,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1435,65 +1646,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#acquire-zarr-streaming-library" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      Acquire Zarr streaming library
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acquire Zarr streaming library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing dependencies
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#supported-cameras-and-file-formats" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#configuring" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported Cameras and File Formats
+      Configuring
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#tutorial-prerequisites" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#building_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Tutorial Prerequisites
+      Building
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-for-acquisition" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#installing-for-python" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup for Acquisition
+      Installing for Python
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#acquire-data" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Acquire Data
+      Usage
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#visualizing-the-data-with-napari" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualizing the data with napari
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1516,159 +1739,160 @@
   
 
 
-<h1 id="getting-started-with-acquire">Getting Started with Acquire<a class="headerlink" href="#getting-started-with-acquire" title="Permanent link">&para;</a></h1>
-<p>Acquire (<code>acquire-imaging</code> <a href="https://pypi.org/project/acquire-imaging/">on PyPI</a>) is a Python package providing a multi-camera video streaming library focused on performant microscopy, with support for up to two simultaneous, independent, video streams.</p>
-<p>This tutorial covers Acquire installation and shows an example of using Acquire with its provided simulated cameras to demonstrate the acquisition process.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python -m pip install acquire-imaging
+  <h1>Get Started</h1>
+
+<h2 id="acquire-zarr-streaming-library">Acquire Zarr streaming library<a class="headerlink" href="#acquire-zarr-streaming-library" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/acquire-project/acquire-zarr/actions/workflows/build.yml"><img alt="Build" src="https://github.com/acquire-project/acquire-zarr/actions/workflows/build.yml/badge.svg" /></a>
+<a href="https://github.com/acquire-project/acquire-zarr/actions/workflows/test_pr.yml"><img alt="Tests" src="https://github.com/acquire-project/acquire-zarr/actions/workflows/test.yml/badge.svg" /></a>
+<a href="https://acquire-imaging.zulipchat.com/"><img alt="Chat" src="https://img.shields.io/badge/zulip-join_chat-brightgreen.svg" /></a></p>
+<p>This library supports chunked, compressed, multiscale streaming to <a href="https://zarr.readthedocs.io/en/stable/spec/v2.html">Zarr</a>, with <a href="https://ngff.openmicroscopy.org/latest/">OME-NGFF metadata</a>.</p>
+<h3 id="building">Building<a class="headerlink" href="#building" title="Permanent link">&para;</a></h3>
+<h4 id="installing-dependencies">Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permanent link">&para;</a></h4>
+<p>This library has the following dependencies:
+- <a href="https://github.com/Blosc/c-blosc">c-blosc</a> v1.21.5
+- <a href="https://github.com/nlohmann/json">nlohmann-json</a> v3.11.3
+- <a href="https://github.com/minio/minio-cpp">minio-cpp</a> v0.3.0</p>
+<p>We use <a href="https://vcpkg.io/en/">vcpkg</a> to install them, as it integrates well with CMake.
+To install vcpkg, clone the repository and bootstrap it:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/microsoft/vcpkg.git
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>vcpkg<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./bootstrap-vcpkg.sh
 </span></code></pre></div>
-<p>We recommend installing <code>Acquire</code> in a fresh conda environment or virtualenv.
-For example, to install <code>Acquire</code> in a conda environment named <code>acquire</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda create -n acquire python=3.10 # follow the prompts and proceed with the defaults
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>conda activate acquire
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>python -m pip install acquire-imaging
+<p>and then add the vcpkg directory to your path. If you are using <code>bash</code>, you can do this by running the following snippet
+from the <code>vcpkg/</code> directory:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s">export VCPKG_ROOT=${PWD}</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s">export PATH=\$VCPKG_ROOT:\$PATH</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s">EOF</span>
 </span></code></pre></div>
-<p>or with virtualenv:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>.<span class="w"> </span>./venv/bin/activate<span class="w"> </span><span class="c1"># or on Windows: .\venv\Scripts\Activate.bat or .\venv\Scripts\Activate.ps1</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>acquire-imaging
+<p>If you're using Windows, learn how to set environment variables <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.4#set-environment-variables-in-the-system-control-panel">here</a>.
+You will need to set both the <code>VCPKG_ROOT</code> and <code>PATH</code> variables in the system control panel.</p>
+<h4 id="configuring">Configuring<a class="headerlink" href="#configuring" title="Permanent link">&para;</a></h4>
+<p>To build the library, you can use CMake:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cmake<span class="w"> </span>--preset<span class="o">=</span>default<span class="w"> </span>-B<span class="w"> </span>/path/to/build<span class="w"> </span>/path/to/source
 </span></code></pre></div>
-<p>Once you have Acquire installed, simply call <code>import acquire</code> in your script, notebook, or module to start utilizing the package.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">acquire</span>
+<p>On Windows, you'll need to specify the target triplet to ensure that all dependencies are built as static libraries:</p>
+<div class="language-pwsh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">cmake</span> <span class="p">-</span><span class="n">-preset</span><span class="p">=</span><span class="k">default</span> <span class="n">-B</span> <span class="p">/</span><span class="n">path</span><span class="p">/</span><span class="n">to</span><span class="p">/</span><span class="n">build</span> <span class="n">-DVCPKG_TARGET_TRIPLET</span><span class="p">=</span><span class="n">x64-windows-static</span> <span class="p">/</span><span class="n">path</span><span class="p">/</span><span class="n">to</span><span class="p">/</span><span class="n">source</span>
 </span></code></pre></div>
-<h2 id="supported-cameras-and-file-formats">Supported Cameras and File Formats<a class="headerlink" href="#supported-cameras-and-file-formats" title="Permanent link">&para;</a></h2>
-<p>Acquire supports the following cameras (currently only on Windows):</p>
-<ul>
-<li><a href="https://www.hamamatsu.com/eu/en/product/cameras/cmos-cameras/C15440-20UP.html">Hamamatsu Orca Fusion BT (C15440-20UP)</a></li>
-<li><a href="https://www.visionsystech.com/products/cameras/vieworks-vc-151mx-sony-imx411-sensor-ultra-high-resolution-cmos-camera-151-mp">Vieworks VC-151MX-M6H00</a></li>
-<li><a href="https://www.flir.com/products/blackfly-usb3/?model=BFLY-U3-23S6M-C&amp;vertical=machine+vision&amp;segment=iis">FLIR Blackfly USB3 (BFLY-U3-23S6M-C)</a></li>
-<li><a href="https://www.flir.com/products/oryx-10gige/?model=ORX-10GS-51S5M-C&amp;vertical=machine+vision&amp;segment=iis">FLIR Oryx 10GigE (ORX-10GS-51S5M-C)</a></li>
-</ul>
-<p>Acquire also supports the following output file formats:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/TIFF">Tiff</a></li>
-<li><a href="https://zarr.dev/">Zarr</a></li>
-</ul>
-<p>Acquire also provides a few simulated cameras, as well as raw byte storage and "trash," which discards all data written to it.</p>
-<h2 id="tutorial-prerequisites">Tutorial Prerequisites<a class="headerlink" href="#tutorial-prerequisites" title="Permanent link">&para;</a></h2>
-<p>We will be streaming to <a href="http://bigtiff.org/">TIFF</a>, using <a href="https://scikit-image.org/">scikit-image</a> to load and inspect the data, and visualizing the data using <a href="https://napari.org/stable/">napari</a>.</p>
-<p>You can install the prerequisites with:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python -m pip install &quot;napari[all]&quot; scikit-image
+<p>Aside from the usual CMake options, you can choose to disable tests by setting <code>BUILD_TESTING</code> to <code>OFF</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cmake<span class="w"> </span>--preset<span class="o">=</span>default<span class="w"> </span>-B<span class="w"> </span>/path/to/build<span class="w"> </span>-DBUILD_TESTING<span class="o">=</span>OFF<span class="w"> </span>/path/to/source
 </span></code></pre></div>
-<h2 id="setup-for-acquisition">Setup for Acquisition<a class="headerlink" href="#setup-for-acquisition" title="Permanent link">&para;</a></h2>
-<p>In Acquire parlance, the combination of a source (camera), filter, and sink (output) is called a <strong>video stream</strong>.
-We will generate data using simulated cameras (our source) and output to TIFF on the filesystem (our sink).
-(For this tutorial, we will not use a filter.)
-Acquire supports up to two such video streams.</p>
-<p>Sources are implemented as <strong>Camera</strong> devices, and sinks are implemented as <strong>Storage</strong> devices.
-We'll start by seeing all the devices that Acquire supports:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">acquire</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">dm</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">device_manager</span><span class="p">()</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">dm</span><span class="o">.</span><span class="n">devices</span><span class="p">():</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<p>To build the Python bindings, make sure <code>pybind11</code> is installed. Then, you can set <code>BUILD_PYTHON</code> to <code>ON</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cmake<span class="w"> </span>--preset<span class="o">=</span>default<span class="w"> </span>-B<span class="w"> </span>/path/to/build<span class="w"> </span>-DBUILD_PYTHON<span class="o">=</span>ON<span class="w"> </span>/path/to/source
 </span></code></pre></div>
-<p>The <strong>runtime</strong> is the main entry point in Acquire.
-Through the runtime, you configure your devices, start acquisition, check acquisition status, inspect data as it streams from your cameras, and terminate acquisition.</p>
-<p>Let's configure our devices now.
-To do this, we'll get a copy of the current runtime configuration.
-We can update the configuration with identifiers from the runtime's <strong>device manager</strong>, but these devices won't be created until we start the acquisition.</p>
-<p>Before configuring the streams, grab the current configuration of the <code>Runtime</code> object with:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">get_configuration</span><span class="p">()</span>
+<h4 id="building_1">Building<a class="headerlink" href="#building_1" title="Permanent link">&para;</a></h4>
+<p>After configuring, you can build the library:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cmake<span class="w"> </span>--build<span class="w"> </span>/path/to/build
 </span></code></pre></div>
-<p>Video streams are configured independently.
-Configure the first video stream by setting properties on <code>config.video[0]</code> and the second video stream with <code>config.video[1]</code>.
-We'll be using simulated cameras, one generating a radial sine pattern and one generating a random pattern.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;simulated: radial sin&quot;</span><span class="p">)</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># how many adjacent pixels in each direction to combine by averaging; here, 1 means not to combine</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">binning</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># how long (in microseconds) your camera should collect light from the sample; for simulated cameras,</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># this is just a waiting period before generating the next frame</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">exposure_time_us</span> <span class="o">=</span> <span class="mf">5e4</span>  <span class="c1"># 50 ms</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># the data type representing each pixel; here we choose unsigned 8-bit integer</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">pixel_type</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">SampleType</span><span class="o">.</span><span class="n">U8</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1"># the shape, in pixels, of the image; width first, then height</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span>
+<h4 id="installing-for-python">Installing for Python<a class="headerlink" href="#installing-for-python" title="Permanent link">&para;</a></h4>
+<p>To install the Python bindings, you can run:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>.
 </span></code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Camera</span><span class="p">,</span> <span class="s2">&quot;simulated: uniform random&quot;</span><span class="p">)</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># how many adjacent pixels in each direction to combine by averaging; here, 1 means not to combine</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">binning</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># how long (in microseconds) your camera should collect light from the sample; for simulated cameras,</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># this is just a waiting period before generating the next frame</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">exposure_time_us</span> <span class="o">=</span> <span class="mf">1e4</span>  <span class="c1"># 10 ms</span>
+<blockquote>
+<p>[!NOTE]
+It is highly recommended to use virtual environments for Python, e.g. using <code>venv</code> or <code>conda</code>. In this case, make sure
+<code>pybind11</code> is installed in this environment, and that the environment is activated before installing the bindings.</p>
+</blockquote>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<p>The library provides two main interfaces.
+First, <code>ZarrStream</code>, representing an output stream to a Zarr dataset.
+Second, <code>ZarrStreamSettings</code> to configure a Zarr stream.</p>
+<p>A typical use case for a 4-dimensional acquisition might look like this:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">ZarrStreamSettings</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ZarrStreamSettings</span><span class="p">){</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="p">.</span><span class="n">store_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_stream.zarr&quot;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="p">.</span><span class="n">data_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZarrDataType_uint16</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="p">.</span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZarrVersion_3</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">};</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">settings</span><span class="p">.</span><span class="n">store_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_stream.zarr&quot;</span><span class="p">;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="n">settings</span><span class="p">.</span><span class="n">data_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZarrDataType_uint16</span><span class="p">;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">settings</span><span class="p">.</span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZarrVersion_3</span><span class="p">;</span>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># the data type representing each pixel; here we choose unsigned 8-bit integer</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">pixel_type</span> <span class="o">=</span> <span class="n">acquire</span><span class="o">.</span><span class="n">SampleType</span><span class="o">.</span><span class="n">U8</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1"># the shape, in pixels, of the image; width first, then height</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="n">ZarrStreamSettings_create_dimension_array</span><span class="p">(</span><span class="o">&amp;</span><span class="n">settings</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="n">settings</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ZarrDimensionProperties</span><span class="p">){</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;t&quot;</span><span class="p">,</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZarrDimensionType_Time</span><span class="p">,</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="p">.</span><span class="n">array_size_px</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">      </span><span class="c1">// this is the append dimension</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="p">.</span><span class="n">chunk_size_px</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">    </span><span class="c1">// 100 time points per chunk</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="p">.</span><span class="n">shard_size_chunks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="c1">// 10 chunks per shard</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">};</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="n">settings</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ZarrDimensionProperties</span><span class="p">){</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">,</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">    </span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZarrDimensionType_Channel</span><span class="p">,</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">    </span><span class="p">.</span><span class="n">array_size_px</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">     </span><span class="c1">// 3 channels</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">    </span><span class="p">.</span><span class="n">chunk_size_px</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="c1">// 1 channel per chunk</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="p">.</span><span class="n">shard_size_chunks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// 1 chunk per shard</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="p">};</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="n">settings</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ZarrDimensionProperties</span><span class="p">){</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">    </span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">,</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">    </span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZarrDimensionType_Space</span><span class="p">,</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">    </span><span class="p">.</span><span class="n">array_size_px</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">  </span><span class="c1">// height</span>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w">    </span><span class="p">.</span><span class="n">chunk_size_px</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">270</span><span class="p">,</span><span class="w">   </span><span class="c1">// 4 x 4 tiles of size 270 x 480</span>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="w">    </span><span class="p">.</span><span class="n">shard_size_chunks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// 2 x 2 tiles per shard</span>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="p">};</span>
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="n">settings</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ZarrDimensionProperties</span><span class="p">){</span>
+</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a><span class="w">    </span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span>
+</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">    </span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZarrDimensionType_Space</span><span class="p">,</span>
+</span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a><span class="w">    </span><span class="p">.</span><span class="n">array_size_px</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w">  </span><span class="c1">// width</span>
+</span><span id="__span-8-39"><a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a><span class="w">    </span><span class="p">.</span><span class="n">chunk_size_px</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span><span class="w">   </span><span class="c1">// 4 x 4 tiles of size 270 x 480</span>
+</span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a><span class="w">    </span><span class="p">.</span><span class="n">shard_size_chunks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// 2 x 2 tiles per shard</span>
+</span><span id="__span-8-41"><a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a><span class="p">};</span>
+</span><span id="__span-8-42"><a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>
+</span><span id="__span-8-43"><a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a><span class="n">ZarrStream</span><span class="o">*</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZarrStream_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">settings</span><span class="p">);</span>
+</span><span id="__span-8-44"><a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>
+</span><span id="__span-8-45"><a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a><span class="kt">size_t</span><span class="w"> </span><span class="n">bytes_written</span><span class="p">;</span>
+</span><span id="__span-8-46"><a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a><span class="n">ZarrStream_append</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="n">my_frame_data</span><span class="p">,</span><span class="w"> </span><span class="n">my_frame_size</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bytes_written</span><span class="p">);</span>
+</span><span id="__span-8-47"><a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a><span class="n">assert</span><span class="p">(</span><span class="n">bytes_written</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">my_frame_size</span><span class="p">);</span>
 </span></code></pre></div>
-<p>Now we'll configure each output, or sink device.
-For both simulated cameras, we'll be writing to <a href="http://bigtiff.org/">TIFF</a>, a well-known format for storing image data.
-For now, we'll simply specify the output file name. </p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;Tiff&quot;</span><span class="p">)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># what file or directory to write the data to</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;output1.tif&quot;</span>
+<p>Look at <a href="../https:/raw.githubusercontent.com/acquire-project/acquire-zarr/refs/heads/main/include/acquire.zarr.h">acquire.zarr.h</a> for more details.</p>
+<p>This acquisition in Python would look like this:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">acquire_zarr</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">aqz</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">settings</span> <span class="o">=</span> <span class="n">aqz</span><span class="o">.</span><span class="n">StreamSettings</span><span class="p">(</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">store_path</span><span class="o">=</span><span class="s2">&quot;my_stream.zarr&quot;</span><span class="p">,</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">data_type</span><span class="o">=</span><span class="n">aqz</span><span class="o">.</span><span class="n">DataType</span><span class="o">.</span><span class="n">UINT16</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">version</span><span class="o">=</span><span class="n">aqz</span><span class="o">.</span><span class="n">ZarrVersion</span><span class="o">.</span><span class="n">V3</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">)</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">settings</span><span class="o">.</span><span class="n">dimensions</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="n">aqz</span><span class="o">.</span><span class="n">Dimension</span><span class="p">(</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">,</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>        <span class="nb">type</span><span class="o">=</span><span class="n">aqz</span><span class="o">.</span><span class="n">DimensionType</span><span class="o">.</span><span class="n">TIME</span><span class="p">,</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        <span class="n">array_size_px</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>        <span class="n">chunk_size_px</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>        <span class="n">shard_size_chunks</span><span class="o">=</span><span class="mi">10</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    <span class="p">),</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    <span class="n">aqz</span><span class="o">.</span><span class="n">Dimension</span><span class="p">(</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">,</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>        <span class="nb">type</span><span class="o">=</span><span class="n">aqz</span><span class="o">.</span><span class="n">DimensionType</span><span class="o">.</span><span class="n">CHANNEL</span><span class="p">,</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>        <span class="n">array_size_px</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>        <span class="n">chunk_size_px</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>        <span class="n">shard_size_chunks</span><span class="o">=</span><span class="mi">1</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    <span class="p">),</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    <span class="n">aqz</span><span class="o">.</span><span class="n">Dimension</span><span class="p">(</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>        <span class="nb">type</span><span class="o">=</span><span class="n">aqz</span><span class="o">.</span><span class="n">DimensionType</span><span class="o">.</span><span class="n">SPACE</span><span class="p">,</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>        <span class="n">array_size_px</span><span class="o">=</span><span class="mi">1080</span><span class="p">,</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>        <span class="n">chunk_size_px</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>        <span class="n">shard_size_chunks</span><span class="o">=</span><span class="mi">2</span>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>    <span class="p">),</span>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>    <span class="n">aqz</span><span class="o">.</span><span class="n">Dimension</span><span class="p">(</span>
+</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>        <span class="nb">type</span><span class="o">=</span><span class="n">aqz</span><span class="o">.</span><span class="n">DimensionType</span><span class="o">.</span><span class="n">SPACE</span><span class="p">,</span>
+</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>        <span class="n">array_size_px</span><span class="o">=</span><span class="mi">1920</span><span class="p">,</span>
+</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>        <span class="n">chunk_size_px</span><span class="o">=</span><span class="mi">480</span><span class="p">,</span>
+</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>        <span class="n">shard_size_chunks</span><span class="o">=</span><span class="mi">2</span>
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>    <span class="p">)</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="p">])</span>
+</span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
+</span><span id="__span-9-41"><a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="c1"># Generate some random data: one time point, all channels, full frame</span>
+</span><span id="__span-9-42"><a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a><span class="n">my_frame_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">16</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1080</span><span class="p">,</span> <span class="mi">1920</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
+</span><span id="__span-9-43"><a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>
+</span><span id="__span-9-44"><a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="n">stream</span> <span class="o">=</span> <span class="n">aqz</span><span class="o">.</span><span class="n">ZarrStream</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+</span><span id="__span-9-45"><a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a><span class="n">stream</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">my_frame_data</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">acquire</span><span class="o">.</span><span class="n">DeviceKind</span><span class="o">.</span><span class="n">Storage</span><span class="p">,</span> <span class="s2">&quot;Tiff&quot;</span><span class="p">)</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># what file or directory to write the data to</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;output2.tif&quot;</span>
-</span></code></pre></div>
-<p>Finally, let's specify how many frames to generate for each camera before stopping our simulated acquisition.
-We also need to register our configuration with the runtime using the <code>set_configuration</code> method.</p>
-<p>If you want to let the runtime acquire effectively forever, you can set <code>max_frame_count</code> to <code>2**64 - 1</code>.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># collect 100 frames</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max_frame_count</span> <span class="o">=</span> <span class="mi">150</span> <span class="c1"># collect 150 frames</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">config</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-</span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you run this tutorial multiple times, you can clear output from previous runs with:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">Path</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">uri</span><span class="p">)</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">missing_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">Path</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">uri</span><span class="p">)</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">missing_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></code></pre></div>
-</div>
-<h2 id="acquire-data">Acquire Data<a class="headerlink" href="#acquire-data" title="Permanent link">&para;</a></h2>
-<p>To start acquiring data:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">runtime</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span></code></pre></div>
-<p>Acquisition happens in a separate thread, so at any point we can check on the status by calling the  <code>get_state</code> method.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">runtime</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span>
-</span></code></pre></div>
-<p>Finally, once we're done acquiring, we call <code>runtime.stop()</code>.
-This method will wait until you've reached the number of frames to collect specified in <code>config.video[0].max_frame_count</code> or <code>config.video[1].max_frame_count</code>, whichever is larger.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">runtime</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</span></code></pre></div>
-<h2 id="visualizing-the-data-with-napari">Visualizing the data with napari<a class="headerlink" href="#visualizing-the-data-with-napari" title="Permanent link">&para;</a></h2>
-<p>Let's take a look at what we've written.
-We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we'll use napari to view it.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">skimage.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">imread</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">napari</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">data1</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="n">data2</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="n">viewer1</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">view_image</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="n">viewer2</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">view_image</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
-<p>For more examples of using Acquire, check out our <a href="../tutorials/">tutorials page</a>.</p>
-<p>References:</p>
 
 
 
@@ -1745,14 +1969,14 @@ We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we
         <!-- Link to next page -->
         
         
-        <a href="../api_reference/" class="md-footer__link md-footer__link--next"
-            aria-label="Next: API Reference">
+        <a href="../examples/" class="md-footer__link md-footer__link--next"
+            aria-label="Next: Examples">
             <div class="md-footer__title">
                 <span class="md-footer__direction">
                     Next
                 </span>
                 <div class="md-ellipsis">
-                    API Reference
+                    Examples
                 </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1770,7 +1994,7 @@ We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we
         <div class="md-footer-meta__inner md-grid">
             <div class="md-footer-meta__inner-social">
                 <div class="md-footer-meta__inner-social links">
-                    <a class="md-source" href="https://github.com/acquire-project/acquire-python" data-md-component="source" title="Go to repository">
+                    <a class="md-source" href="https://github.com/acquire-project/acquire-zarr" data-md-component="source" title="Go to repository">
                         <span class="twemoji" style="padding-right: 8px; padding-top: 8px; color: #ffffffb3;">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_266_1125)">
@@ -1793,7 +2017,7 @@ We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we
                         </span>
                         Zulip chat
                     </a>
-                    <a class="md-source" href="https://pypi.org/project/acquire/" data-md-component="source" title="Go to PyPI">
+                    <a class="md-source" href="https://pypi.org/project/acquire-zarr/" data-md-component="source" title="Go to PyPI">
                         <span class="twemoji" style="padding-right: 8px; padding-top: 8px; color: #ffffffb3;">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_266_1129)">
