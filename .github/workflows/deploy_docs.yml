@@ -54,6 +54,9 @@ jobs:
           path: acquire-zarr  # place in a named directory
           repository: acquire-project/acquire-zarr
 
+      - name: Install Doxygen & cmake
+        run: sudo apt-get install -y doxygen cmake
+
       - name: Install acquire-zarr  # For collecting the API reference
         run: |
           cd acquire-zarr
@@ -67,9 +70,6 @@ jobs:
           cmake --preset=default -B build -DBUILD_PYTHON=ON .
           cmake --build build
           python -m pip install .
-
-      - name: Install Doxygen
-        run: sudo apt-get install -y doxygen
 
       - name: Build website
         run: |
