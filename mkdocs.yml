@@ -1,4 +1,4 @@
-site_name: Acquire Zarr Streaming Library
+site_name: Acquire Zarr Streaming
 repo_url: https://github.com/acquire-project/
 site_url: https://acquire-project.github.io/acquire-docs/
 
@@ -43,32 +43,32 @@ nav:
     - api_reference/index.md
     - api_reference/zarr_api.md
     - api_reference/c_api.md
-  - Acquire Imaging:
-    - acquire-imaging/index.md
-    - Get Started: acquire-imaging/get_started.md
-    - API Reference: acquire-imaging/api_reference.md
-    - Tutorials:
-      - acquire-imaging/tutorials/index.md
-      - Setup acquisition:
-        - acquire-imaging/tutorials/setup_acquisition/index.md
-        - acquire-imaging/tutorials/setup_acquisition/trigger.md
-        - acquire-imaging/tutorials/setup_acquisition/configure.md
-        - acquire-imaging/tutorials/setup_acquisition/start_stop.md
-        - acquire-imaging/tutorials/setup_acquisition/select.md
-        - acquire-imaging/tutorials/setup_acquisition/setup.md
-        - acquire-imaging/tutorials/setup_acquisition/drivers.md
-        - acquire-imaging/tutorials/setup_acquisition/storage.md
-      - Using JSON:
-        - acquire-imaging/tutorials/using_json/index.md
-        - acquire-imaging/tutorials/using_json/trig_json.md
-        - acquire-imaging/tutorials/using_json/props_json.md
-      - Data:
-        - acquire-imaging/tutorials/access_data/index.md
-        - acquire-imaging/tutorials/access_data/framedata.md
-        - acquire-imaging/tutorials/access_data/livestream.md
-      - Zarr:
-        - acquire-imaging/tutorials/zarr/index.md
-        - acquire-imaging/tutorials/zarr/compressed.md
+  # - Acquire Imaging:
+  #   - acquire-imaging/index.md
+  #   - Get Started: acquire-imaging/get_started.md
+  #   - API Reference: acquire-imaging/api_reference.md
+  #   - Tutorials:
+  #     - acquire-imaging/tutorials/index.md
+  #     - Setup acquisition:
+  #       - acquire-imaging/tutorials/setup_acquisition/index.md
+  #       - acquire-imaging/tutorials/setup_acquisition/trigger.md
+  #       - acquire-imaging/tutorials/setup_acquisition/configure.md
+  #       - acquire-imaging/tutorials/setup_acquisition/start_stop.md
+  #       - acquire-imaging/tutorials/setup_acquisition/select.md
+  #       - acquire-imaging/tutorials/setup_acquisition/setup.md
+  #       - acquire-imaging/tutorials/setup_acquisition/drivers.md
+  #       - acquire-imaging/tutorials/setup_acquisition/storage.md
+  #     - Using JSON:
+  #       - acquire-imaging/tutorials/using_json/index.md
+  #       - acquire-imaging/tutorials/using_json/trig_json.md
+  #       - acquire-imaging/tutorials/using_json/props_json.md
+  #     - Data:
+  #       - acquire-imaging/tutorials/access_data/index.md
+  #       - acquire-imaging/tutorials/access_data/framedata.md
+  #       - acquire-imaging/tutorials/access_data/livestream.md
+  #     - Zarr:
+  #       - acquire-imaging/tutorials/zarr/index.md
+  #       - acquire-imaging/tutorials/zarr/compressed.md
   - For contributors:
     - for_contributors/index.md
     - for_contributors/docs_contribution_quickstart.md

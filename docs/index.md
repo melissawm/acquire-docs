@@ -5,6 +5,8 @@ hide:
     - toc
 ---
 
+## Background
+
 Cloud-native file streaming solutions (e.g. file writers) are essential for building efficient image data acquisition
 workflows, especially when acquiring more data than fits into memory or a single external hard drive.
 [Zarr](https://zarr-specs.readthedocs.io/en/latest/specs.html) is a cloud-native data format that supports imaging data
@@ -14,11 +16,18 @@ acquisition workflows since it does not rely on runtime or hardware support.
 
 ## Installation
 
-To install the `acquire-zarr` library on Windows, macOS, or Ubuntu, run the following command:
+### Install the Python library
+
+To install the `acquire-zarr` Python library on Windows, macOS, or Ubuntu, run the following command:
 
 ```bash
 python -m pip install acquire-zarr
 ```
+
+### Build the C interface
+
+To build the C interface, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md).
+
 ## Guides
 
 <div class="cards">
@@ -35,27 +44,39 @@ python -m pip install acquire-zarr
     <div class="card">
         <h4>Python Examples</h4>
         <p>Examples that demonstrate how to use the Python library</p>
-        <a href="https://github.com/acquire-project/acquire-zarr/tree/main/examples/python" class="button">Python Examples</a>
+        <a href="examples/python_examples" class="button">Python Examples</a>
     </div>
     <div class="card">
         <h4>C Examples</h4>
         <p>Examples that demonstrate how to use the C interface</p>
-        <a href="https://github.com/acquire-project/acquire-zarr/tree/main/examples/python" class="button">C Examples</a>
+        <a href="examples/c_examples" class="button">C Examples</a>
     </div>
 </div>
 
 ## Citing `acquire-zarr`
 
-TBA
+~~~
+authors:
+- affiliation: Chan Zuckerberg Initiative (United States)
+  family-names: Liddell
+  given-names: Alan
+- affiliation: Chan Zuckerberg Initiative (United States)
+  family-names: Eskesen
+  given-names: Justin
+- affiliation: Chan Zuckerberg Initiative (United States)
+  family-names: Clack
+  given-names: Nathan
+  orcid: 0000-0001-6236-9282
+cff-version: 1.2.0
+date-released: '2025-02-06'
+doi: 10.5280/zenodo.14828040
+license:
+- apache-2.0
+title: 'acquire-zarr: Streaming directly to Zarr on the file system or cloud'
+type: software
+~~~
 
 ## Acquire Zarr License
 
 `acquire-zarr `is provided under an [Apache 2.0 license](https://github.com/acquire-project/acquire-zarr/blob/main/LICENSE).
 [Learn more about the Apache license](https://www.apache.org/licenses/LICENSE-2.0).
-
-## About the Acquire Project
-
-The [Acquire Project](https://github.com/acquire-project) is a part of Chan Zuckerberg Initiative and is focused on
-providing libraries to improve multicamera video streaming for microscopy. Check out the
-[documentation on `acquire-imaging`,](acquire-imaging/index.md) a Python package providing a multi-camera video streaming library
-focusing on performant microscopy.
