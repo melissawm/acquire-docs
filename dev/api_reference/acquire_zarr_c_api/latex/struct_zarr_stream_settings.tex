@@ -1,0 +1,104 @@
+\doxysection{Zarr\+Stream\+Settings}
+\hypertarget{struct_zarr_stream_settings}{}\label{struct_zarr_stream_settings}\index{ZarrStreamSettings@{ZarrStreamSettings}}
+
+
+The settings for a Zarr stream.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_zarr_stream_settings_a4e324e448a455f2101d0095f1a31a59a}{store\+\_\+path}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_zarr_stream_settings_a962048d5e554f874e67042fc087f71cd}{custom\+\_\+metadata}}
+\item 
+\mbox{\hyperlink{struct_zarr_s3_settings}{Zarr\+S3\+Settings}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_zarr_stream_settings_ae51f0e626a586e4566f537514f5a69d5}{s3\+\_\+settings}}
+\item 
+\mbox{\hyperlink{struct_zarr_compression_settings}{Zarr\+Compression\+Settings}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_zarr_stream_settings_aff444bddee54703f21da778fb5a23961}{compression\+\_\+settings}}
+\item 
+\mbox{\hyperlink{struct_zarr_dimension_properties}{Zarr\+Dimension\+Properties}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_zarr_stream_settings_a758d79c6a643e18ce367f8730816a361}{dimensions}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_zarr_stream_settings_ac580b9fe1cc14df115cb15aa48afebc8}{dimension\+\_\+count}}
+\item 
+bool \mbox{\hyperlink{struct_zarr_stream_settings_a8db6ecec1db821fd1e50340d0efac730}{multiscale}}
+\item 
+Zarr\+Data\+Type \mbox{\hyperlink{struct_zarr_stream_settings_a5c6f0736461e9fec32154b113d22e1af}{data\+\_\+type}}
+\item 
+Zarr\+Version \mbox{\hyperlink{struct_zarr_stream_settings_ada644bd2cf3dcd6e19d6cadfceac94e0}{version}}
+\item 
+unsigned int \mbox{\hyperlink{struct_zarr_stream_settings_aa4a974104042f5cc78b5ad01543fcbf2}{max\+\_\+threads}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The settings for a Zarr stream. 
+
+This struct contains the settings for a Zarr stream, including the store path, custom metadata, S3 settings, chunk compression settings, dimension properties, whether to stream to multiple levels of detail, the pixel data type, and the Zarr format version. \begin{DoxyNote}{Note}
+The store path can be a filesystem path or an S3 key prefix. For example, supplying an endpoint "{}s3\+://my-\/endpoint.\+com"{} and a bucket "{}my-\/bucket"{} with a store\+\_\+path of "{}my-\/dataset.\+zarr"{} will result in the store being written to "{}s3\+://my-\/endpoint.\+com/my-\/bucket/my-\/dataset.\+zarr"{}. 
+
+The dimensions array may be allocated with Zarr\+Stream\+Settings\+\_\+create\+\_\+dimension\+\_\+array and freed with Zarr\+Stream\+Settings\+\_\+destroy\+\_\+dimension\+\_\+array. The order in which you set the dimension properties in the array should match the order of the dimensions from slowest to fastest changing, for example, \mbox{[}Z, Y, X\mbox{]} for a 3D dataset. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_zarr_stream_settings_aff444bddee54703f21da778fb5a23961}\index{ZarrStreamSettings@{ZarrStreamSettings}!compression\_settings@{compression\_settings}}
+\index{compression\_settings@{compression\_settings}!ZarrStreamSettings@{ZarrStreamSettings}}
+\doxysubsubsection{\texorpdfstring{compression\_settings}{compression\_settings}}
+{\footnotesize\ttfamily \label{struct_zarr_stream_settings_aff444bddee54703f21da778fb5a23961} 
+\mbox{\hyperlink{struct_zarr_compression_settings}{Zarr\+Compression\+Settings}}\texorpdfstring{$\ast$}{*} Zarr\+Stream\+Settings\+::compression\+\_\+settings}
+
+Optional chunk compression settings for the store. \Hypertarget{struct_zarr_stream_settings_a962048d5e554f874e67042fc087f71cd}\index{ZarrStreamSettings@{ZarrStreamSettings}!custom\_metadata@{custom\_metadata}}
+\index{custom\_metadata@{custom\_metadata}!ZarrStreamSettings@{ZarrStreamSettings}}
+\doxysubsubsection{\texorpdfstring{custom\_metadata}{custom\_metadata}}
+{\footnotesize\ttfamily \label{struct_zarr_stream_settings_a962048d5e554f874e67042fc087f71cd} 
+const char\texorpdfstring{$\ast$}{*} Zarr\+Stream\+Settings\+::custom\+\_\+metadata}
+
+JSON-\/formatted custom metadata to be stored with the dataset. \Hypertarget{struct_zarr_stream_settings_a5c6f0736461e9fec32154b113d22e1af}\index{ZarrStreamSettings@{ZarrStreamSettings}!data\_type@{data\_type}}
+\index{data\_type@{data\_type}!ZarrStreamSettings@{ZarrStreamSettings}}
+\doxysubsubsection{\texorpdfstring{data\_type}{data\_type}}
+{\footnotesize\ttfamily \label{struct_zarr_stream_settings_a5c6f0736461e9fec32154b113d22e1af} 
+Zarr\+Data\+Type Zarr\+Stream\+Settings\+::data\+\_\+type}
+
+The pixel data type of the dataset. \Hypertarget{struct_zarr_stream_settings_ac580b9fe1cc14df115cb15aa48afebc8}\index{ZarrStreamSettings@{ZarrStreamSettings}!dimension\_count@{dimension\_count}}
+\index{dimension\_count@{dimension\_count}!ZarrStreamSettings@{ZarrStreamSettings}}
+\doxysubsubsection{\texorpdfstring{dimension\_count}{dimension\_count}}
+{\footnotesize\ttfamily \label{struct_zarr_stream_settings_ac580b9fe1cc14df115cb15aa48afebc8} 
+size\+\_\+t Zarr\+Stream\+Settings\+::dimension\+\_\+count}
+
+The number of dimensions in the dataset. \Hypertarget{struct_zarr_stream_settings_a758d79c6a643e18ce367f8730816a361}\index{ZarrStreamSettings@{ZarrStreamSettings}!dimensions@{dimensions}}
+\index{dimensions@{dimensions}!ZarrStreamSettings@{ZarrStreamSettings}}
+\doxysubsubsection{\texorpdfstring{dimensions}{dimensions}}
+{\footnotesize\ttfamily \label{struct_zarr_stream_settings_a758d79c6a643e18ce367f8730816a361} 
+\mbox{\hyperlink{struct_zarr_dimension_properties}{Zarr\+Dimension\+Properties}}\texorpdfstring{$\ast$}{*} Zarr\+Stream\+Settings\+::dimensions}
+
+The properties of each dimension in the dataset. \Hypertarget{struct_zarr_stream_settings_aa4a974104042f5cc78b5ad01543fcbf2}\index{ZarrStreamSettings@{ZarrStreamSettings}!max\_threads@{max\_threads}}
+\index{max\_threads@{max\_threads}!ZarrStreamSettings@{ZarrStreamSettings}}
+\doxysubsubsection{\texorpdfstring{max\_threads}{max\_threads}}
+{\footnotesize\ttfamily \label{struct_zarr_stream_settings_aa4a974104042f5cc78b5ad01543fcbf2} 
+unsigned int Zarr\+Stream\+Settings\+::max\+\_\+threads}
+
+The maximum number of threads to use in the stream. Set to 0 to use the supported number of concurrent threads. \Hypertarget{struct_zarr_stream_settings_a8db6ecec1db821fd1e50340d0efac730}\index{ZarrStreamSettings@{ZarrStreamSettings}!multiscale@{multiscale}}
+\index{multiscale@{multiscale}!ZarrStreamSettings@{ZarrStreamSettings}}
+\doxysubsubsection{\texorpdfstring{multiscale}{multiscale}}
+{\footnotesize\ttfamily \label{struct_zarr_stream_settings_a8db6ecec1db821fd1e50340d0efac730} 
+bool Zarr\+Stream\+Settings\+::multiscale}
+
+Whether to stream to multiple levels of detail. \Hypertarget{struct_zarr_stream_settings_ae51f0e626a586e4566f537514f5a69d5}\index{ZarrStreamSettings@{ZarrStreamSettings}!s3\_settings@{s3\_settings}}
+\index{s3\_settings@{s3\_settings}!ZarrStreamSettings@{ZarrStreamSettings}}
+\doxysubsubsection{\texorpdfstring{s3\_settings}{s3\_settings}}
+{\footnotesize\ttfamily \label{struct_zarr_stream_settings_ae51f0e626a586e4566f537514f5a69d5} 
+\mbox{\hyperlink{struct_zarr_s3_settings}{Zarr\+S3\+Settings}}\texorpdfstring{$\ast$}{*} Zarr\+Stream\+Settings\+::s3\+\_\+settings}
+
+Optional S3 settings for the store. \Hypertarget{struct_zarr_stream_settings_a4e324e448a455f2101d0095f1a31a59a}\index{ZarrStreamSettings@{ZarrStreamSettings}!store\_path@{store\_path}}
+\index{store\_path@{store\_path}!ZarrStreamSettings@{ZarrStreamSettings}}
+\doxysubsubsection{\texorpdfstring{store\_path}{store\_path}}
+{\footnotesize\ttfamily \label{struct_zarr_stream_settings_a4e324e448a455f2101d0095f1a31a59a} 
+const char\texorpdfstring{$\ast$}{*} Zarr\+Stream\+Settings\+::store\+\_\+path}
+
+Path to the store. Filesystem path or S3 key prefix. \Hypertarget{struct_zarr_stream_settings_ada644bd2cf3dcd6e19d6cadfceac94e0}\index{ZarrStreamSettings@{ZarrStreamSettings}!version@{version}}
+\index{version@{version}!ZarrStreamSettings@{ZarrStreamSettings}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily \label{struct_zarr_stream_settings_ada644bd2cf3dcd6e19d6cadfceac94e0} 
+Zarr\+Version Zarr\+Stream\+Settings\+::version}
+
+The version of the Zarr format to use. 2 or 3. 

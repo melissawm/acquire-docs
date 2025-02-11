@@ -534,9 +534,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#build-the-c-interface" class="md-nav__link">
+  <a href="#build-the-c-library-from-source" class="md-nav__link">
     <span class="md-ellipsis">
-      Build the C interface
+      Build the C Library from Source
     </span>
   </a>
   
@@ -988,9 +988,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#build-the-c-interface" class="md-nav__link">
+  <a href="#build-the-c-library-from-source" class="md-nav__link">
     <span class="md-ellipsis">
-      Build the C interface
+      Build the C Library from Source
     </span>
   </a>
   
@@ -1056,16 +1056,17 @@
 <p>Cloud-native file streaming solutions (e.g. file writers) are essential for building efficient image data acquisition
 workflows, especially when acquiring more data than fits into memory or a single external hard drive.
 <a href="https://zarr-specs.readthedocs.io/en/latest/specs.html">Zarr</a> is a cloud-native data format that supports imaging data
-and has strong early adoption within the imaging community. The <a href="#about-the-acquire-project">Acquire project</a> developed
+and has strong early adoption within the imaging community. The <a href="https://github.com/acquire-project">Acquire project</a> developed
 this standalone Zarr streaming library with bindings in both python and C. This library easily integrates into custom
 acquisition workflows since it does not rely on runtime or hardware support.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="install-the-python-library">Install the Python library<a class="headerlink" href="#install-the-python-library" title="Permanent link">&para;</a></h3>
 <p>To install the <code>acquire-zarr</code> Python library on Windows, macOS, or Ubuntu, run the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>acquire-zarr
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>acquire-zarr
 </span></code></pre></div>
-<h3 id="build-the-c-interface">Build the C interface<a class="headerlink" href="#build-the-c-interface" title="Permanent link">&para;</a></h3>
-<p>To build the C interface, follow <a href="https://github.com/acquire-project/acquire-zarr/blob/main/README.md">these instructions</a>.</p>
+For more details, check out the <a href="get_started/">Get Started page</a>.</p>
+<h3 id="build-the-c-library-from-source">Build the C Library from Source<a class="headerlink" href="#build-the-c-library-from-source" title="Permanent link">&para;</a></h3>
+<p>To build the C Library, follow <a href="https://github.com/acquire-project/acquire-zarr/blob/main/README.md">these instructions</a>.</p>
 <h2 id="guides">Guides<a class="headerlink" href="#guides" title="Permanent link">&para;</a></h2>
 <div class="cards">
     <div class="card">
@@ -1074,9 +1075,9 @@ acquisition workflows since it does not rely on runtime or hardware support.</p>
         <a href="api_reference/zarr_api" class="button">Python API Reference</a>
     </div>
     <div class="card">
-        <h4>C Interface Reference</h4>
+        <h4>C Library Reference</h4>
         <p>Information on functions and structures</p>
-        <a href="api_reference/c_api" class="button">C Interface Reference</a>
+        <a href="api_reference/c_api" class="button">C Library Reference</a>
     </div>
     <div class="card">
         <h4>Python Examples</h4>
@@ -1085,7 +1086,7 @@ acquisition workflows since it does not rely on runtime or hardware support.</p>
     </div>
     <div class="card">
         <h4>C Examples</h4>
-        <p>Examples that demonstrate how to use the C interface</p>
+        <p>Examples that demonstrate how to use the C Library</p>
         <a href="examples/c_examples" class="button">C Examples</a>
     </div>
 </div>
