@@ -1,6 +1,9 @@
 # Get Started
+The `acquire-zarr` library provides bindings in Python and C.
 
-## Installation the Python library
+## Get Started with the Python Bindings
+
+### Install the Python library
 
 To install the `acquire-zarr` Python library on Windows, macOS, or Ubuntu, run the following command:
 
@@ -8,12 +11,105 @@ To install the `acquire-zarr` Python library on Windows, macOS, or Ubuntu, run t
 python -m pip install acquire-zarr
 ```
 
-## Usage
+We recommend installing `acquire-zarr` in a fresh conda environment or virtualenv.
+For example, to install `acquire-zarr` in a conda environment named `acquire`:
+
+```
+conda create -n acquire python=3.10 # follow the prompts and proceed with the defaults
+conda activate acquire
+python -m pip install acquire-zarr
+```
+
+or with virtualenv:
+
+```shell
+$ python -m venv venv
+$ . ./venv/bin/activate # or on Windows: .\venv\Scripts\Activate.bat or .\venv\Scripts\Activate.ps1
+(venv) $ python -m pip install acquire-zarr
+```
+
+Once you have `acquire-zarr` installed, simply call `import acquire_zarr` in your script, notebook, or module to start utilizing the package.
+
+```python
+import acquire_zarr
+```
+
+#### Usage
 
 The library provides two main interfaces. First, `ZarrStream`, representing an output stream to a Zarr dataset.
 Second, `ZarrStreamSettings` to configure a Zarr stream.
 
-A typical use case for a 4-dimensional acquisition might look like this:
+A typical use case for a 4-dimensional acquisition in Python might look like this:
+
+```python
+import acquire_zarr as aqz
+import numpy as np
+
+settings = aqz.StreamSettings(
+    store_path="my_stream.zarr",
+    data_type=aqz.DataType.UINT16,
+    version=aqz.ZarrVersion.V3
+)
+
+settings.dimensions.extend([
+    aqz.Dimension(
+        name="t",
+        type=aqz.DimensionType.TIME,
+        array_size_px=0,
+        chunk_size_px=100,
+        shard_size_chunks=10
+    ),
+    aqz.Dimension(
+        name="c",
+        type=aqz.DimensionType.CHANNEL,
+        array_size_px=3,
+        chunk_size_px=1,
+        shard_size_chunks=1
+    ),
+    aqz.Dimension(
+        name="y",
+        type=aqz.DimensionType.SPACE,
+        array_size_px=1080,
+        chunk_size_px=270,
+        shard_size_chunks=2
+    ),
+    aqz.Dimension(
+        name="x",
+        type=aqz.DimensionType.SPACE,
+        array_size_px=1920,
+        chunk_size_px=480,
+        shard_size_chunks=2
+    )
+])
+
+# Generate some random data: one time point, all channels, full frame
+my_frame_data = np.random.randint(0, 2**16, (3, 1080, 1920), dtype=np.uint16)
+
+stream = aqz.ZarrStream(settings)
+stream.append(my_frame_data)
+```
+### Build Python Bindings from Source
+
+To build the Python bindings from source, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md#building).
+
+## Get Started with C Bindings
+
+### Install the C Library
+
+The `acquire-zarr` C library is distributed as a binary and headers, which you can download for your system from our [Releases page](https://github.com/acquire-project/acquire-zarr/releases). You will also need to install the following dependencies:
+
+    - [c-blosc](https://github.com/Blosc/c-blosc) >= 1.21.5
+    - [nlohmann-json](https://github.com/nlohmann/json) >= 3.11.3
+    - [minio-cpp](https://github.com/minio/minio-cpp)  >= 0.3.0
+    - [crc32c](https://github.com/google/crc32c) >= 1.1.2 [this is missing in the README, I will add it back in]
+
+We suggest using [vcpkg](https://github.com/microsoft/vcpkg) or another package manager to handle dependencies.
+
+[Here](https://github.com/acquire-project/acquire-zarr/blob/main/examples/CMakeLists.txt) is an example CMakeLists.txt file of C executables using acquire-zarr.
+
+#### Usage
+
+A typical use case for a 4-dimensional acquisition in C might look like this:
 
 ```c
 ZarrStreamSettings settings = (ZarrStreamSettings){
@@ -67,69 +163,6 @@ assert(bytes_written == my_frame_size);
 
 Look at [acquire.zarr.h](include/acquire.zarr.h) for more details.
 
-This acquisition in Python would look like this:
+### Building C Bindings from Source
 
-```python
-import acquire_zarr as aqz
-import numpy as np
-
-settings = aqz.StreamSettings(
-    store_path="my_stream.zarr",
-    data_type=aqz.DataType.UINT16,
-    version=aqz.ZarrVersion.V3
-)
-
-settings.dimensions.extend([
-    aqz.Dimension(
-        name="t",
-        type=aqz.DimensionType.TIME,
-        array_size_px=0,
-        chunk_size_px=100,
-        shard_size_chunks=10
-    ),
-    aqz.Dimension(
-        name="c",
-        type=aqz.DimensionType.CHANNEL,
-        array_size_px=3,
-        chunk_size_px=1,
-        shard_size_chunks=1
-    ),
-    aqz.Dimension(
-        name="y",
-        type=aqz.DimensionType.SPACE,
-        array_size_px=1080,
-        chunk_size_px=270,
-        shard_size_chunks=2
-    ),
-    aqz.Dimension(
-        name="x",
-        type=aqz.DimensionType.SPACE,
-        array_size_px=1920,
-        chunk_size_px=480,
-        shard_size_chunks=2
-    )
-])
-
-# Generate some random data: one time point, all channels, full frame
-my_frame_data = np.random.randint(0, 2**16, (3, 1080, 1920), dtype=np.uint16)
-
-stream = aqz.ZarrStream(settings)
-stream.append(my_frame_data)
-```
-
-## Building from source
-
-### Build Python bindings from source
-
-To build the Python bindings from source, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md).
-
-### Build the C interface
-
-To build the acquire-zarr C library, follow the steps below:
-
-1. Download the static library from the [Releases page](https://github.com/acquire-project/acquire-zarr/releases)
-2. Install required dependencies:
-    - `c-blosc` v1.21.5
-    - `nlohmann-json` v3.11.3
-    - `minio-cpp` v0.3.0
-3. Create a CMakeLists file in your project directory (see [this example](https://github.com/acquire-project/acquire-zarr/blob/main/examples/CMakeLists.txt))
+To build the C interface, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md#building).
