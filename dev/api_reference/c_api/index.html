@@ -1233,7 +1233,7 @@
 <p>Information on the <code>acquire_zarr</code> C implementation and how to use it. Check
 <a href="https://github.com/acquire-project/acquire-zarr">https://github.com/acquire-project/acquire-zarr</a> for more information.</p>
 <h2 id="acquirezarrh"><code>acquire.zarr.h</code><a class="headerlink" href="#acquirezarrh" title="Permanent link">&para;</a></h2>
-<p><a href="../acquire_zarr_c_api/acquire_zarr_c_api/acquire_8zarr_8h_source/">Go to the source code of this file</a></p>
+<p><a href="acquire_zarr_c_api/acquire_zarr_c_api/acquire_8zarr_8h_source.md">Go to the source code of this file</a></p>
 <ul>
 <li><code>#include "zarr.types.h"</code></li>
 </ul>
@@ -1248,7 +1248,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="../acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings/"><strong>ZarrStreamSettings</strong></a> <br><em>The settings for a Zarr stream.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings.md"><strong>ZarrStreamSettings</strong></a> <br><em>The settings for a Zarr stream.</em></td>
 </tr>
 </tbody>
 </table>
@@ -1278,11 +1278,11 @@
 <tbody>
 <tr>
 <td style="text-align: right;">ZarrStatusCode</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstreamsettings_create_dimension_array"><strong>ZarrStreamSettings_create_dimension_array</strong></a> (<a href="../acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings/"><strong>ZarrStreamSettings</strong></a> * settings, size_t dimension_count) <br><em>Allocate memory for the dimension array in the Zarr stream settings struct.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstreamsettings_create_dimension_array"><strong>ZarrStreamSettings_create_dimension_array</strong></a> (<a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings.md"><strong>ZarrStreamSettings</strong></a> * settings, size_t dimension_count) <br><em>Allocate memory for the dimension array in the Zarr stream settings struct.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstreamsettings_destroy_dimension_array"><strong>ZarrStreamSettings_destroy_dimension_array</strong></a> (<a href="../acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings/"><strong>ZarrStreamSettings</strong></a> * settings) <br><em>Free memory for the dimension array in the Zarr stream settings struct.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstreamsettings_destroy_dimension_array"><strong>ZarrStreamSettings_destroy_dimension_array</strong></a> (<a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings.md"><strong>ZarrStreamSettings</strong></a> * settings) <br><em>Free memory for the dimension array in the Zarr stream settings struct.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">ZarrStatusCode</td>
@@ -1290,7 +1290,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">ZarrStream *</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstream_create"><strong>ZarrStream_create</strong></a> (<a href="../acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings/"><strong>ZarrStreamSettings</strong></a> * settings) <br><em>Create a Zarr stream.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstream_create"><strong>ZarrStream_create</strong></a> (<a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings.md"><strong>ZarrStreamSettings</strong></a> * settings) <br><em>Create a Zarr stream.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
@@ -1443,7 +1443,7 @@
 <hr />
 <p>The documentation for this class was generated from the following file <code>/Users/mwebermendonca/projects/acquire-zarr/include/acquire.zarr.h</code></p>
 <h2 id="zarrtypesh"><code>zarr.types.h</code><a class="headerlink" href="#zarrtypesh" title="Permanent link">&para;</a></h2>
-<p><a href="../acquire_zarr_c_api/acquire_zarr_c_api/zarr_8types_8h_source/">Go to the source code of this file</a></p>
+<p><a href="acquire_zarr_c_api/acquire_zarr_c_api/zarr_8types_8h_source.md">Go to the source code of this file</a></p>
 <ul>
 <li><code>#include &lt;stdbool.h&gt;</code></li>
 <li><code>#include &lt;stddef.h&gt;</code></li>
@@ -1460,15 +1460,15 @@
 <tbody>
 <tr>
 <td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="../acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_compression_settings/"><strong>ZarrCompressionSettings</strong></a> <br><em>Compression settings for a Zarr array. @detail The compressor is not the same as the codec. A codec is a specific implementation of a compression algorithm, while a compressor is a library that implements one or more codecs.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_compression_settings.md"><strong>ZarrCompressionSettings</strong></a> <br><em>Compression settings for a Zarr array. @detail The compressor is not the same as the codec. A codec is a specific implementation of a compression algorithm, while a compressor is a library that implements one or more codecs.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="../acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_dimension_properties/"><strong>ZarrDimensionProperties</strong></a> <br><em>Properties of a dimension of the Zarr array.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_dimension_properties.md"><strong>ZarrDimensionProperties</strong></a> <br><em>Properties of a dimension of the Zarr array.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="../acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_s3_settings/"><strong>ZarrS3Settings</strong></a> <br><em>S3 settings for streaming to Zarr.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_s3_settings.md"><strong>ZarrS3Settings</strong></a> <br><em>S3 settings for streaming to Zarr.</em></td>
 </tr>
 </tbody>
 </table>
