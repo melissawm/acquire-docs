@@ -10,7 +10,7 @@ hide:
 Cloud-native file streaming solutions (e.g. file writers) are essential for building efficient image data acquisition
 workflows, especially when acquiring more data than fits into memory or a single external hard drive.
 [Zarr](https://zarr-specs.readthedocs.io/en/latest/specs.html) is a cloud-native data format that supports imaging data
-and has strong early adoption within the imaging community. The [Acquire project](#about-the-acquire-project) developed
+and has strong early adoption within the imaging community. The [Acquire project](https://github.com/acquire-project) developed
 this standalone Zarr streaming library with bindings in both python and C. This library easily integrates into custom
 acquisition workflows since it does not rely on runtime or hardware support.
 
@@ -23,10 +23,11 @@ To install the `acquire-zarr` Python library on Windows, macOS, or Ubuntu, run t
 ```bash
 python -m pip install acquire-zarr
 ```
+For more details, check out the [Get Started page](get_started.md).
 
-### Build the C interface
+### Build the C Library from Source
 
-To build the C interface, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md).
+To build the C Library, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md).
 
 ## Guides
 
@@ -37,9 +38,9 @@ To build the C interface, follow [these instructions](https://github.com/acquire
         <a href="api_reference/zarr_api" class="button">Python API Reference</a>
     </div>
     <div class="card">
-        <h4>C Interface Reference</h4>
+        <h4>C Library Reference</h4>
         <p>Information on functions and structures</p>
-        <a href="api_reference/c_api" class="button">C Interface Reference</a>
+        <a href="api_reference/c_api" class="button">C Library Reference</a>
     </div>
     <div class="card">
         <h4>Python Examples</h4>
@@ -48,7 +49,7 @@ To build the C interface, follow [these instructions](https://github.com/acquire
     </div>
     <div class="card">
         <h4>C Examples</h4>
-        <p>Examples that demonstrate how to use the C interface</p>
+        <p>Examples that demonstrate how to use the C Library</p>
         <a href="examples/c_examples" class="button">C Examples</a>
     </div>
 </div>
