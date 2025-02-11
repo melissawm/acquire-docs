@@ -5,6 +5,7 @@ code base and to documentation. We are especially interested in contributions of
 relevant to microscopy such as MATLAB and Julia.
 
 - [`Acquire` project](https://github.com/acquire-project)
+- [`Acquire` documentation](https://github.com/acquire-project/acquire-docs)
 - [`acquire-zarr`](https://github.com/acquire-project/acquire-zarr)
 - [`acquire-imaging`](https://github.com/acquire-project/acquire-python)
-- [`Acquire` documentation](https://github.com/acquire-project/acquire-docs)
+
