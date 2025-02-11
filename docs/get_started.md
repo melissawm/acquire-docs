@@ -5,7 +5,9 @@ The `acquire-zarr` library provides bindings in Python and C.
 
 ### Install the Python library
 
-To install the `acquire-zarr` Python library on Windows, macOS, or Ubuntu, run the following command:
+The `acquire-zarr` Python library is compatible with Python versions 3.9-3.13.
+
+To install the library on Windows, macOS, or Ubuntu, run the following command:
 
 ```bash
 python -m pip install acquire-zarr
@@ -15,7 +17,7 @@ We recommend installing `acquire-zarr` in a fresh conda environment or virtualen
 For example, to install `acquire-zarr` in a conda environment named `acquire`:
 
 ```
-conda create -n acquire python=3.10 # follow the prompts and proceed with the defaults
+conda create -n acquire python #compatible with python 3.9-3.13
 conda activate acquire
 python -m pip install acquire-zarr
 ```
@@ -90,7 +92,7 @@ stream.append(my_frame_data)
 ```
 ### Build Python Bindings from Source
 
-The library must be built from source to access the latest development version or to custom the installation for your system.
+The library must be built from source to contribute to the latest development version or to customize the installation for your system.
 To build the Python bindings from source, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md#building).
 
 ## Get Started with C Bindings
@@ -109,6 +111,9 @@ We suggest using [vcpkg](https://github.com/microsoft/vcpkg) or another package 
 [Here](https://github.com/acquire-project/acquire-zarr/blob/main/examples/CMakeLists.txt) is an example CMakeLists.txt file of C executables using acquire-zarr.
 
 #### Usage
+
+The library provides two main interfaces. First, `ZarrStream`, representing an output stream to a Zarr dataset.
+Second, `ZarrStreamSettings` to configure a Zarr stream.
 
 A typical use case for a 4-dimensional acquisition in C might look like this:
 
@@ -166,5 +171,5 @@ Look at [acquire.zarr.h](include/acquire.zarr.h) for more details.
 
 ### Building C Bindings from Source
 
-The library must be built from source to access the latest development version or to comply the library into an existing program.
+The library must be built from source to contribute to the latest development version or to incorporate the library into an existing program.
 To build the C library from source, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md#building).
