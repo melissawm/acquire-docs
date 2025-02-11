@@ -90,6 +90,7 @@ stream.append(my_frame_data)
 ```
 ### Build Python Bindings from Source
 
+The library must be built from source to access the latest development version or to custom the installation for your system.
 To build the Python bindings from source, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md#building).
 
 ## Get Started with C Bindings
@@ -165,4 +166,5 @@ Look at [acquire.zarr.h](include/acquire.zarr.h) for more details.
 
 ### Building C Bindings from Source
 
-To build the C interface, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md#building).
+The library must be built from source to access the latest development version or to comply the library into an existing program.
+To build the C library from source, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md#building).
