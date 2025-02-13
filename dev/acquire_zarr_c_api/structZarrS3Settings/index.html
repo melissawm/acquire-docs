@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/acquire_zarr_c_api/struct_zarr_compression_settings/">
+        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/acquire_zarr_c_api/structZarrS3Settings/">
       
       
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
-        <title>Struct ZarrCompressionSettings - Acquire Zarr Streaming</title>
+        <title>Struct ZarrS3Settings - Acquire Zarr Streaming</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#struct-zarrcompressionsettings" class="md-skip">
+        <a href="#struct-zarrs3settings" class="md-skip">
           Skip to content
         </a>
       
@@ -667,6 +667,8 @@
       
         
       
+        
+      
     
     
       
@@ -716,11 +718,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../for_contributors/codebase.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../for_contributors/docs_contribution_quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acquire Docs Contribution Quickstart
+    Contribute to docs
     
   </span>
   
@@ -742,7 +766,7 @@
         
   
   <span class="md-ellipsis">
-    How to update the documentation version
+    Update docs version
     
   </span>
   
@@ -806,36 +830,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variable-codec" class="md-nav__link">
+  <a href="#variable-access_key_id" class="md-nav__link">
     <span class="md-ellipsis">
-      variable codec
+      variable access_key_id
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-compressor" class="md-nav__link">
+  <a href="#variable-bucket_name" class="md-nav__link">
     <span class="md-ellipsis">
-      variable compressor
+      variable bucket_name
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-level" class="md-nav__link">
+  <a href="#variable-endpoint" class="md-nav__link">
     <span class="md-ellipsis">
-      variable level
+      variable endpoint
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-shuffle" class="md-nav__link">
+  <a href="#variable-region" class="md-nav__link">
     <span class="md-ellipsis">
-      variable shuffle
+      variable region
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-secret_access_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      variable secret_access_key
     </span>
   </a>
   
@@ -865,9 +898,9 @@
   
 
 
-<h1 id="struct-zarrcompressionsettings">Struct ZarrCompressionSettings<a class="headerlink" href="#struct-zarrcompressionsettings" title="Permanent link">&para;</a></h1>
-<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="./"><strong>ZarrCompressionSettings</strong></a></p>
-<p><em>Compression settings for a Zarr array. @detail The compressor is not the same as the codec. A codec is a specific implementation of a compression algorithm, while a compressor is a library that implements one or more codecs.</em> </p>
+<h1 id="struct-zarrs3settings">Struct ZarrS3Settings<a class="headerlink" href="#struct-zarrs3settings" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="./"><strong>ZarrS3Settings</strong></a></p>
+<p><em>S3 settings for streaming to Zarr.</em> </p>
 <ul>
 <li><code>#include &lt;zarr.types.h&gt;</code></li>
 </ul>
@@ -881,50 +914,55 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">ZarrCompressionCodec</td>
-<td style="text-align: left;"><a href="#variable-codec"><strong>codec</strong></a>  <br></td>
+<td style="text-align: right;">const char *</td>
+<td style="text-align: left;"><a href="#variable-access_key_id"><strong>access_key_id</strong></a>  <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">ZarrCompressor</td>
-<td style="text-align: left;"><a href="#variable-compressor"><strong>compressor</strong></a>  <br></td>
+<td style="text-align: right;">const char *</td>
+<td style="text-align: left;"><a href="#variable-bucket_name"><strong>bucket_name</strong></a>  <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">uint8_t</td>
-<td style="text-align: left;"><a href="#variable-level"><strong>level</strong></a>  <br></td>
+<td style="text-align: right;">const char *</td>
+<td style="text-align: left;"><a href="#variable-endpoint"><strong>endpoint</strong></a>  <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">uint8_t</td>
-<td style="text-align: left;"><a href="#variable-shuffle"><strong>shuffle</strong></a>  <br></td>
+<td style="text-align: right;">const char *</td>
+<td style="text-align: left;"><a href="#variable-region"><strong>region</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const char *</td>
+<td style="text-align: left;"><a href="#variable-secret_access_key"><strong>secret_access_key</strong></a>  <br></td>
 </tr>
 </tbody>
 </table>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="variable-codec">variable codec<a class="headerlink" href="#variable-codec" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ZarrCompressionCodec</span><span class="w"> </span><span class="n">ZarrCompressionSettings</span><span class="o">::</span><span class="n">codec</span><span class="p">;</span>
+<h3 id="variable-access_key_id">variable access_key_id<a class="headerlink" href="#variable-access_key_id" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="o">::</span><span class="n">access_key_id</span><span class="p">;</span>
 </span></code></pre></div>
-<p>Codec to use </p>
 <hr>
 
-<h3 id="variable-compressor">variable compressor<a class="headerlink" href="#variable-compressor" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ZarrCompressor</span><span class="w"> </span><span class="n">ZarrCompressionSettings</span><span class="o">::</span><span class="n">compressor</span><span class="p">;</span>
+<h3 id="variable-bucket_name">variable bucket_name<a class="headerlink" href="#variable-bucket_name" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="o">::</span><span class="n">bucket_name</span><span class="p">;</span>
 </span></code></pre></div>
-<p>Compressor to use </p>
 <hr>
 
-<h3 id="variable-level">variable level<a class="headerlink" href="#variable-level" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">ZarrCompressionSettings</span><span class="o">::</span><span class="n">level</span><span class="p">;</span>
+<h3 id="variable-endpoint">variable endpoint<a class="headerlink" href="#variable-endpoint" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="o">::</span><span class="n">endpoint</span><span class="p">;</span>
 </span></code></pre></div>
-<p>Compression level </p>
 <hr>
 
-<h3 id="variable-shuffle">variable shuffle<a class="headerlink" href="#variable-shuffle" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">ZarrCompressionSettings</span><span class="o">::</span><span class="n">shuffle</span><span class="p">;</span>
+<h3 id="variable-region">variable region<a class="headerlink" href="#variable-region" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="o">::</span><span class="n">region</span><span class="p">;</span>
 </span></code></pre></div>
-<p>Whether to shuffle the data before compressing </p>
+<hr>
+
+<h3 id="variable-secret_access_key">variable secret_access_key<a class="headerlink" href="#variable-secret_access_key" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="o">::</span><span class="n">secret_access_key</span><span class="p">;</span>
+</span></code></pre></div>
 <hr>
 
 <hr />
-<p>The documentation for this class was generated from the following file <code>/Users/mwebermendonca/projects/acquire-zarr/include/zarr.types.h</code></p>
+<p>The documentation for this class was generated from the following file <code>/home/runner/work/acquire-docs/acquire-docs/acquire-zarr/include/zarr.types.h</code></p>
 
 
 
@@ -1073,7 +1111,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../javascripts/version-select.js"></script>
       

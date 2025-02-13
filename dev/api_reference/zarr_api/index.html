@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -836,6 +836,8 @@
       
         
       
+        
+      
     
     
       
@@ -885,11 +887,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../for_contributors/codebase.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../for_contributors/docs_contribution_quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acquire Docs Contribution Quickstart
+    Contribute to docs
     
   </span>
   
@@ -911,7 +935,7 @@
         
   
   <span class="md-ellipsis">
-    How to update the documentation version
+    Update docs version
     
   </span>
   
@@ -1129,6 +1153,53 @@
         <p>Codec to use for compression, if any.</p>
 
 
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.CompressionCodec.NONE">NONE</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.CompressionCodec" href="#acquire_zarr.CompressionCodec">CompressionCodec</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>No compression</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.CompressionCodec.BLOSC_LZ4">BLOSC_LZ4</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.CompressionCodec" href="#acquire_zarr.CompressionCodec">CompressionCodec</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>LZ4 compression using Blosc</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.CompressionCodec.BLOSC_ZSTD">BLOSC_ZSTD</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.CompressionCodec" href="#acquire_zarr.CompressionCodec">CompressionCodec</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Zstd compression using Blosc</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
 
 
 
@@ -1300,19 +1371,129 @@
         <p>Data type used in the stream.</p>
 
 
-<details class="members" open>
-  <summary>Members</summary>
-  <p>UINT8: Unsigned 8-bit integer.
-UINT16: Unsigned 16-bit integer.
-UINT32: Unsigned 32-bit integer.
-UINT64: Unsigned 64-bit integer.
-INT8: Signed 8-bit integer.
-INT16: Signed 16-bit integer.
-INT32: Signed 32-bit integer.
-INT64: Signed 64-bit integer.
-FLOAT32: Single precision floating point.
-FLOAT64: Double precision floating point.</p>
-</details>
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DataType.UINT8">UINT8</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DataType" href="#acquire_zarr.DataType">DataType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unsigned 8-bit integer.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DataType.UINT16">UINT16</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DataType" href="#acquire_zarr.DataType">DataType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unsigned 16-bit integer.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DataType.UINT32">UINT32</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DataType" href="#acquire_zarr.DataType">DataType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unsigned 32-bit integer.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DataType.UINT64">UINT64</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DataType" href="#acquire_zarr.DataType">DataType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unsigned 64-bit integer.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DataType.INT8">INT8</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DataType" href="#acquire_zarr.DataType">DataType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Signed 8-bit integer.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DataType.INT16">INT16</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DataType" href="#acquire_zarr.DataType">DataType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Signed 16-bit integer.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DataType.INT32">INT32</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DataType" href="#acquire_zarr.DataType">DataType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Signed 32-bit integer.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DataType.INT64">INT64</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DataType" href="#acquire_zarr.DataType">DataType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Signed 64-bit integer.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DataType.FLOAT32">FLOAT32</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DataType" href="#acquire_zarr.DataType">DataType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Single precision floating point.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DataType.FLOAT64">FLOAT64</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DataType" href="#acquire_zarr.DataType">DataType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Double precision floating point.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
 
 
 
@@ -1356,7 +1537,7 @@ FLOAT64: Double precision floating point.</p>
     <div class="doc doc-contents ">
 
 
-        <p>Melissa. Properties of a dimension of the output array.</p>
+        <p>Properties of a dimension of the output array.</p>
 
 
 
@@ -1401,12 +1582,65 @@ FLOAT64: Double precision floating point.</p>
     <div class="doc doc-contents ">
 
 
-        <p>Type of dimension.
-Members:
-  SPACE: Spatial dimension.
-  CHANNEL: Channel dimension.
-  TIME: Time dimension.
-  OTHER: Other dimension.</p>
+        <p>Type of dimension.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DimensionType.SPACE">SPACE</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DimensionType" href="#acquire_zarr.DimensionType">DimensionType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Spatial dimension.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DimensionType.CHANNEL">CHANNEL</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DimensionType" href="#acquire_zarr.DimensionType">DimensionType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Channel dimension.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DimensionType.TIME">TIME</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DimensionType" href="#acquire_zarr.DimensionType">DimensionType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Time dimension.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.DimensionType.OTHER">OTHER</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.DimensionType" href="#acquire_zarr.DimensionType">DimensionType</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Other dimension.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
 
@@ -1451,13 +1685,76 @@ Members:
     <div class="doc doc-contents ">
 
 
-        <p>Severity level to filter logs by.
-Members:
-  DEBUG: Detailed information for debugging purposes.
-  INFO: Informational messages.
-  WARNING: Warnings.
-  ERROR: Errors.
-  NONE: Disable logging.</p>
+        <p>Severity level to filter logs by.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.LogLevel.DEBUG">DEBUG</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.LogLevel" href="#acquire_zarr.LogLevel">LogLevel</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Detailed information for debugging purposes.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.LogLevel.INFO">INFO</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.LogLevel" href="#acquire_zarr.LogLevel">LogLevel</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Informational messages.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.LogLevel.WARNING">WARNING</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.LogLevel" href="#acquire_zarr.LogLevel">LogLevel</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Warnings.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.LogLevel.ERROR">ERROR</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.LogLevel" href="#acquire_zarr.LogLevel">LogLevel</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Errors.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.LogLevel.NONE">NONE</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.LogLevel" href="#acquire_zarr.LogLevel">LogLevel</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Disable logging.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
 
@@ -1635,10 +1932,43 @@ Members:
     <div class="doc doc-contents ">
 
 
-        <p>Zarr format version.
-Members:
-  V2: Zarr format version 2
-  V3: Zarr format version 3</p>
+        <p>Zarr format version.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.ZarrVersion.V2">V2</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.ZarrVersion" href="#acquire_zarr.ZarrVersion">ZarrVersion</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Zarr format version 2</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="acquire_zarr.ZarrVersion.V3">V3</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="acquire_zarr.ZarrVersion" href="#acquire_zarr.ZarrVersion">ZarrVersion</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Zarr format version 3</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
 
@@ -1903,7 +2233,7 @@ Members:
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "navigation.tracking", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../javascripts/version-select.js"></script>
       
