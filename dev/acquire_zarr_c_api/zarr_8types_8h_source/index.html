@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/acquire_zarr_c_api/zarr_8types_8h_source/">
+        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/dev/acquire_zarr_c_api/zarr_8types_8h_source/">
       
       
       
@@ -718,11 +718,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../for_contributors/codebase/" class="md-nav__link">
+      <a href="../../for_contributors/codebase.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Contribute to codebase
+    None
     
   </span>
   
@@ -913,31 +913,30 @@
 </span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">bucket_name</span><span class="p">;</span>
 </span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">access_key_id</span><span class="p">;</span>
 </span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">secret_access_key</span><span class="p">;</span>
-</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">region</span><span class="p">;</span>
-</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="p">;</span>
-</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>
-</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
-</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="w">        </span><span class="n">ZarrCompressor</span><span class="w"> </span><span class="n">compressor</span><span class="p">;</span><span class="w">  </span>
-</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">        </span><span class="n">ZarrCompressionCodec</span><span class="w"> </span><span class="n">codec</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">level</span><span class="p">;</span><span class="w">              </span>
-</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">shuffle</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">ZarrCompressionSettings</span><span class="p">;</span>
-</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>
-</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a><span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
-</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">       </span>
-</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a><span class="w">        </span><span class="n">ZarrDimensionType</span><span class="w"> </span><span class="n">type</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a><span class="w">        </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">array_size_px</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a><span class="w">        </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">chunk_size_px</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a><span class="w">        </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">shard_size_chunks</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">ZarrDimensionProperties</span><span class="p">;</span>
-</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a>
-</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a><span class="cp">#ifdef __cplusplus</span>
-</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="p">}</span>
-</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a><span class="cp">#endif</span>
-</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a>
-</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a><span class="cp">#endif </span><span class="c1">// H_ACQUIRE_ZARR_TYPES_V0</span>
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="p">;</span>
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">        </span><span class="n">ZarrCompressor</span><span class="w"> </span><span class="n">compressor</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="w">        </span><span class="n">ZarrCompressionCodec</span><span class="w"> </span><span class="n">codec</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">level</span><span class="p">;</span><span class="w">              </span>
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">shuffle</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">ZarrCompressionSettings</span><span class="p">;</span>
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a><span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a><span class="w">        </span><span class="n">ZarrDimensionType</span><span class="w"> </span><span class="n">type</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a><span class="w">        </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">array_size_px</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a><span class="w">        </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">chunk_size_px</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a><span class="w">        </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">shard_size_chunks</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">ZarrDimensionProperties</span><span class="p">;</span>
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a>
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a><span class="cp">#ifdef __cplusplus</span>
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a><span class="p">}</span>
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="cp">#endif</span>
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a>
+</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a><span class="cp">#endif </span><span class="c1">// H_ACQUIRE_ZARR_TYPES_V0</span>
 </span></code></pre></div>
 
 
