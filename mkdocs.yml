@@ -71,6 +71,7 @@ nav:
   #       - acquire-imaging/tutorials/zarr/compressed.md
   - For contributors:
     - for_contributors/index.md
+    - for_contributors/codebase.md
     - for_contributors/docs_contribution_quickstart.md
     - for_contributors/update_version.md
 

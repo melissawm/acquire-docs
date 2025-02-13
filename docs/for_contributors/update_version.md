@@ -1,4 +1,4 @@
-# How to update the documentation version
+# Update docs version
 
 After every new release of Acquire Python, the documentation version needs
 to be manually updated. This can be done by issuing the following command on the
