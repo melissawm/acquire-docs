@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "Converting all .md tutorials to .py files..."
-TUTS_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )/../../docs/tutorials"
+TUTS_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )/../../docs/acquire-imaging/tutorials"
 pushd ${TUTS_DIR}
 for subdir in */; do
     pushd $subdir

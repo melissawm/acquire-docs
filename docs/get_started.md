@@ -1,24 +1,25 @@
-# Getting Started with Acquire
+# Get Started
+The `acquire-zarr` library provides both Python and C interfaces.
 
-Acquire (`acquire-imaging` [on PyPI](https://pypi.org/project/acquire-imaging/)) is a Python package providing a multi-camera video streaming library focused on performant microscopy, with support for up to two simultaneous, independent, video streams.
+## Get Started with Python
 
-This tutorial covers Acquire installation and shows an example of using Acquire with its provided simulated cameras to demonstrate the acquisition process.
+### Install the Python library
 
-## Installation
+The `acquire-zarr` Python library is compatible with Python versions 3.9-3.13.
 
-To install Acquire on Windows, macOS, or Ubuntu, simply run the following command:
+To install the library on Windows, macOS, or Ubuntu, run the following command:
 
+```bash
+python -m pip install acquire-zarr
 ```
-python -m pip install acquire-imaging
-```
 
-We recommend installing `Acquire` in a fresh conda environment or virtualenv.
-For example, to install `Acquire` in a conda environment named `acquire`:
+We recommend installing `acquire-zarr` in a fresh conda environment or virtualenv.
+For example, to install `acquire-zarr` in a conda environment named `acquire`:
 
-```
-conda create -n acquire python=3.10 # follow the prompts and proceed with the defaults
+```shell
+conda create -n acquire python #compatible with python 3.9-3.13
 conda activate acquire
-python -m pip install acquire-imaging
+python -m pip install acquire-zarr
 ```
 
 or with virtualenv:
@@ -26,198 +27,151 @@ or with virtualenv:
 ```shell
 $ python -m venv venv
 $ . ./venv/bin/activate # or on Windows: .\venv\Scripts\Activate.bat or .\venv\Scripts\Activate.ps1
-(venv) $ python -m pip install acquire-imaging
+(venv) $ python -m pip install acquire-zarr
 ```
 
-Once you have Acquire installed, simply call `import acquire` in your script, notebook, or module to start utilizing the package.
+Once you have `acquire-zarr` installed, simply call `import acquire_zarr` in your script, notebook, or module to start utilizing the package.
 
 ```python
-import acquire
+import acquire_zarr
 ```
 
-## Supported Cameras and File Formats
+#### Usage
 
-Acquire supports the following cameras (currently only on Windows):
+The library provides two main classes. First, `ZarrStream`, representing an output stream to a Zarr dataset.
+Second, `ZarrStreamSettings` to configure a Zarr stream.
 
-- [Hamamatsu Orca Fusion BT (C15440-20UP)](https://www.hamamatsu.com/eu/en/product/cameras/cmos-cameras/C15440-20UP.html)
-- [Vieworks VC-151MX-M6H00](https://www.visionsystech.com/products/cameras/vieworks-vc-151mx-sony-imx411-sensor-ultra-high-resolution-cmos-camera-151-mp)
-- [FLIR Blackfly USB3 (BFLY-U3-23S6M-C)](https://www.flir.com/products/blackfly-usb3/?model=BFLY-U3-23S6M-C&vertical=machine+vision&segment=iis)
-- [FLIR Oryx 10GigE (ORX-10GS-51S5M-C)](https://www.flir.com/products/oryx-10gige/?model=ORX-10GS-51S5M-C&vertical=machine+vision&segment=iis)
-
-Acquire also supports the following output file formats:
-
-- [Tiff](https://en.wikipedia.org/wiki/TIFF)
-- [Zarr](https://zarr.dev/)
-
-Acquire also provides a few simulated cameras, as well as raw byte storage and "trash," which discards all data written to it.
-
-## Tutorial Prerequisites
-
-We will be streaming to [TIFF](http://bigtiff.org/), using [scikit-image](https://scikit-image.org/) to load and inspect the data, and visualizing the data using [napari](https://napari.org/stable/).
-
-You can install the prerequisites with:
-
-```
-python -m pip install "napari[all]" scikit-image
-```
-
-## Setup for Acquisition
-
-In Acquire parlance, the combination of a source (camera), filter, and sink (output) is called a **video stream**.
-We will generate data using simulated cameras (our source) and output to TIFF on the filesystem (our sink).
-(For this tutorial, we will not use a filter.)
-Acquire supports up to two such video streams.
-
-Sources are implemented as **Camera** devices, and sinks are implemented as **Storage** devices.
-We'll start by seeing all the devices that Acquire supports:
+A typical use case for a 4-dimensional acquisition in Python might look like this:
 
 ```python
-import acquire
+import acquire_zarr as aqz
+import numpy as np
 
-runtime = acquire.Runtime()
-dm = runtime.device_manager()
+settings = aqz.StreamSettings(
+    store_path="my_stream.zarr",
+    data_type=aqz.DataType.UINT16,
+    version=aqz.ZarrVersion.V3
+)
 
-for device in dm.devices():
-    print(device)
+settings.dimensions.extend([
+    aqz.Dimension(
+        name="t",
+        type=aqz.DimensionType.TIME,
+        array_size_px=0,
+        chunk_size_px=100,
+        shard_size_chunks=10
+    ),
+    aqz.Dimension(
+        name="c",
+        type=aqz.DimensionType.CHANNEL,
+        array_size_px=3,
+        chunk_size_px=1,
+        shard_size_chunks=1
+    ),
+    aqz.Dimension(
+        name="y",
+        type=aqz.DimensionType.SPACE,
+        array_size_px=1080,
+        chunk_size_px=270,
+        shard_size_chunks=2
+    ),
+    aqz.Dimension(
+        name="x",
+        type=aqz.DimensionType.SPACE,
+        array_size_px=1920,
+        chunk_size_px=480,
+        shard_size_chunks=2
+    )
+])
+
+# Generate some random data: one time point, all channels, full frame
+my_frame_data = np.random.randint(0, 2**16, (3, 1080, 1920), dtype=np.uint16)
+
+stream = aqz.ZarrStream(settings)
+stream.append(my_frame_data)
+```
+### Build Python Bindings from Source
+
+The library must be built from source to contribute to the latest development version or to customize the installation for your system.
+To build the Python bindings from source, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md#building).
+
+## Get Started with C Bindings
+
+### Install the C Library
+
+The `acquire-zarr` C library is distributed as a binary and headers, which you can download for your system from our [Releases page](https://github.com/acquire-project/acquire-zarr/releases). You will also need to install the following dependencies:
+
+  - [c-blosc](https://github.com/Blosc/c-blosc) >= 1.21.5
+  - [nlohmann-json](https://github.com/nlohmann/json) >= 3.11.3
+  - [minio-cpp](https://github.com/minio/minio-cpp)  >= 0.3.0
+  - [crc32c](https://github.com/google/crc32c) >= 1.1.2
+
+We suggest using [vcpkg](https://github.com/microsoft/vcpkg) or another package manager to handle dependencies.
+
+[Here](https://github.com/acquire-project/acquire-zarr/blob/main/examples/CMakeLists.txt) is an example CMakeLists.txt file of C executables using acquire-zarr.
+
+#### Usage
+
+The library provides two main structs. First, `ZarrStream`, representing an output stream to a Zarr dataset.
+Second, `ZarrStreamSettings` to configure a Zarr stream.
+
+A typical use case for a 4-dimensional acquisition in C might look like this:
+
+```c
+#include "acquire.zarr.h"
+#include "assert.h"
+
+int main() {
+    ZarrStreamSettings settings = (ZarrStreamSettings){
+        .store_path = "my_stream.zarr",
+        .data_type = ZarrDataType_uint16,
+        .version = ZarrVersion_3,
+    };
+
+    ZarrStreamSettings_create_dimension_array(&settings, 4);
+    settings.dimensions[0] = (ZarrDimensionProperties){
+        .name = "t",
+        .type = ZarrDimensionType_Time,
+        .array_size_px = 0,      // this is the append dimension
+        .chunk_size_px = 100,    // 100 time points per chunk
+        .shard_size_chunks = 10, // 10 chunks per shard
+    };
+
+    settings.dimensions[1] = (ZarrDimensionProperties){
+        .name = "c",
+        .type = ZarrDimensionType_Channel,
+        .array_size_px = 3,     // 3 channels
+        .chunk_size_px = 1,     // 1 channel per chunk
+        .shard_size_chunks = 1, // 1 chunk per shard
+    };
+
+    settings.dimensions[2] = (ZarrDimensionProperties){
+        .name = "y",
+        .type = ZarrDimensionType_Space,
+        .array_size_px = 1080,  // height
+        .chunk_size_px = 270,   // 4 x 4 tiles of size 270 x 480
+        .shard_size_chunks = 2, // 2 x 2 tiles per shard
+    };
+
+    settings.dimensions[3] = (ZarrDimensionProperties){
+        .name = "x",
+        .type = ZarrDimensionType_Space,
+        .array_size_px = 1920,  // width
+        .chunk_size_px = 480,   // 4 x 4 tiles of size 270 x 480
+        .shard_size_chunks = 2, // 2 x 2 tiles per shard
+    };
+
+    ZarrStream* stream = ZarrStream_create(&settings);
+
+    size_t bytes_written;
+    ZarrStream_append(stream, my_frame_data, my_frame_size, &bytes_written);
+    assert(bytes_written == my_frame_size);
+}
 ```
 
-The **runtime** is the main entry point in Acquire.
-Through the runtime, you configure your devices, start acquisition, check acquisition status, inspect data as it streams from your cameras, and terminate acquisition.
+Look at [acquire.zarr.h](include/acquire.zarr.h) for more details.
 
-Let's configure our devices now.
-To do this, we'll get a copy of the current runtime configuration.
-We can update the configuration with identifiers from the runtime's **device manager**, but these devices won't be created until we start the acquisition.
+### Building the C Library from Source
 
-Before configuring the streams, grab the current configuration of the `Runtime` object with:
-
-```python
-config = runtime.get_configuration()
-```
-
-Video streams are configured independently.
-Configure the first video stream by setting properties on `config.video[0]` and the second video stream with `config.video[1]`.
-We'll be using simulated cameras, one generating a radial sine pattern and one generating a random pattern.
-
-```python
-config.video[0].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simulated: radial sin")
-
-# how many adjacent pixels in each direction to combine by averaging; here, 1 means not to combine
-config.video[0].camera.settings.binning = 1
-
-# how long (in microseconds) your camera should collect light from the sample; for simulated cameras,
-# this is just a waiting period before generating the next frame
-config.video[0].camera.settings.exposure_time_us = 5e4  # 50 ms
-
-# the data type representing each pixel; here we choose unsigned 8-bit integer
-config.video[0].camera.settings.pixel_type = acquire.SampleType.U8
-
-# the shape, in pixels, of the image; width first, then height
-config.video[0].camera.settings.shape = (1024, 768)
-```
-
-
-```python
-config.video[1].camera.identifier = dm.select(acquire.DeviceKind.Camera, "simulated: uniform random")
-
-# how many adjacent pixels in each direction to combine by averaging; here, 1 means not to combine
-config.video[1].camera.settings.binning = 1
-
-# how long (in microseconds) your camera should collect light from the sample; for simulated cameras,
-# this is just a waiting period before generating the next frame
-config.video[1].camera.settings.exposure_time_us = 1e4  # 10 ms
-
-# the data type representing each pixel; here we choose unsigned 8-bit integer
-config.video[1].camera.settings.pixel_type = acquire.SampleType.U8
-
-# the shape, in pixels, of the image; width first, then height
-config.video[1].camera.settings.shape = (1280, 720)
-```
-
-Now we'll configure each output, or sink device.
-For both simulated cameras, we'll be writing to [TIFF](http://bigtiff.org/), a well-known format for storing image data.
-For now, we'll simply specify the output file name. 
-
-```python
-config.video[0].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Tiff")
-
-# what file or directory to write the data to
-config.video[0].storage.settings.filename = "output1.tif"
-```
-
-
-```python
-config.video[1].storage.identifier = dm.select(acquire.DeviceKind.Storage, "Tiff")
-
-# what file or directory to write the data to
-config.video[1].storage.settings.filename = "output2.tif"
-```
-
-Finally, let's specify how many frames to generate for each camera before stopping our simulated acquisition.
-We also need to register our configuration with the runtime using the `set_configuration` method.
-
-If you want to let the runtime acquire effectively forever, you can set `max_frame_count` to `2**64 - 1`.
-
-```python
-config.video[0].max_frame_count = 100 # collect 100 frames
-config.video[1].max_frame_count = 150 # collect 150 frames
-
-config = runtime.set_configuration(config)
-```
-
-!!! note
-
-    If you run this tutorial multiple times, you can clear output from previous runs with:
-
-    ```python
-    from pathlib import Path
-
-    Path(config.video[0].storage.settings.uri).unlink(missing_ok=True)
-    Path(config.video[1].storage.settings.uri).unlink(missing_ok=True)
-    ```
-
-## Acquire Data
-
-To start acquiring data:
-
-```python
-runtime.start()
-```
-
-Acquisition happens in a separate thread, so at any point we can check on the status by calling the  `get_state` method.
-
-```python
-runtime.get_state()
-```
-
-Finally, once we're done acquiring, we call `runtime.stop()`.
-This method will wait until you've reached the number of frames to collect specified in `config.video[0].max_frame_count` or `config.video[1].max_frame_count`, whichever is larger.
-
-```python
-runtime.stop()
-```
-
-## Visualizing the data with napari
-
-Let's take a look at what we've written.
-We'll load each Zarr dataset as a Dask array and inspect its dimensions, then we'll use napari to view it.
-
-```python
-from skimage.io import imread
-import napari
-
-data1 = imread(config.video[0].storage.settings.filename)
-data2 = imread(config.video[1].storage.settings.filename)
-
-viewer1 = napari.view_image(data1)
-
-viewer2 = napari.view_image(data2)
-```
-
-## Conclusion
-
-For more examples of using Acquire, check out our [tutorials page](tutorials/index.md).
-
-References:
-[Tiff]: https://en.wikipedia.org/wiki/TIFF
-[scikit-image]: https://scikit-image.org/
-[napari]: https://napari.org/stable/
+The library must be built from source to contribute to the latest development version or to incorporate the library into an existing program.
+To build the C library from source, follow [these instructions](https://github.com/acquire-project/acquire-zarr/blob/main/README.md#building).
