@@ -8,7 +8,7 @@
     </div>
     <div class="card">
         <h4>C API Reference</h4>
-        <p>Information on classes and methods</p>
+        <p>Information on structures and methods</p>
         <a href="c_api" class="button">C API Reference</a>
     </div>
 </div>
