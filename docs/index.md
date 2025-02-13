@@ -11,7 +11,7 @@ Cloud-native file streaming solutions (e.g. file writers) are essential for buil
 workflows, especially when acquiring more data than fits into memory or a single external hard drive.
 [Zarr](https://zarr-specs.readthedocs.io/en/latest/specs.html) is a cloud-native data format that supports imaging data
 and has strong early adoption within the imaging community. The [Acquire project](https://github.com/acquire-project) developed
-this standalone Zarr streaming library with bindings in both python and C. This library easily integrates into custom
+this standalone Zarr streaming library with interfaces in both Python and C. This library easily integrates into custom
 acquisition workflows since it does not rely on runtime or hardware support.
 
 ## Installation
