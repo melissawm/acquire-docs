@@ -74,6 +74,12 @@ jobs:
           cmake --build build
           python -m pip install .
 
+      - name: Run Doxygen
+        run: |
+          cd acquire-docs
+          doxygen docs/api_reference/Doxyfile
+        shell: bash
+
       - name: Build website
         run: |
           cd acquire-docs
@@ -81,7 +87,11 @@ jobs:
 
       - name: Replace relative links in Doxygen include
         run: |
+          mv acquire-docs/site/acquire_zarr_c_api acquire-docs/site/api_reference/c_api
           sed -i 's@acquire_zarr_c_api/acquire_zarr_c_api#@#@g' acquire-docs/site/api_reference/c_api/index.html
+          sed -i 's@\.md@\.html@g' acquire-docs/site/api_reference/c_api/index.html
+          sed -i '/<ul>/{N;N;/<ul>\n<li><code>#include \"zarr.types.h\"/d;}' acquire-docs/site/api_reference/c_api/index.html
+          sed -i '/<ul>/{N;N;N;N;/<ul>\n<li><code>#include/d;}' acquire-docs/site/api_reference/c_api/index.html
 
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v3
