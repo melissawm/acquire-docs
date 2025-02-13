@@ -42,7 +42,10 @@ nav:
   - API Reference:
     - api_reference/index.md
     - api_reference/zarr_api.md
-    - api_reference/c_api.md
+    - Zarr Streaming C API Reference:
+      - api_reference/c_api/index.md
+      - acquire_zarr_c_api/acquire_8zarr_8h.md
+      - acquire_zarr_c_api/zarr_8types_8h.md
   # - Acquire Imaging:
   #   - acquire-imaging/index.md
   #   - Get Started: acquire-imaging/get_started.md
@@ -141,7 +144,7 @@ plugins:
       projects:
         acquire_zarr_c_api: # name of project must be alphanumeric + numbers (without spaces)
           src-dirs: ../acquire-zarr/include # path to source code (support multiple paths separated by space) => INPUT
-          full-doc: True # if you want to generate full documentation
+          full-doc: True # if you want to generate full documentation; i.e. root pages with all objects for a .h file
           doxy-cfg-file: docs/api_reference/Doxyfile
       save-api: docs/api_reference
 
