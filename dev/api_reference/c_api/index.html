@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/dev/api_reference/c_api/">
+        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/api_reference/c_api/">
       
       
         <link rel="prev" href="../zarr_api/">
@@ -44,7 +44,7 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <style>:root{-.html-text-font:"Roboto";-.html-code-font:"Roboto Mono"}</style>
       
     
     
@@ -52,7 +52,7 @@
     
       <link rel="stylesheet" href="../../stylesheets/custom.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>_.html_scope=new URL("../..",location),_.html_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),_.html_get=(e,_=localStorage,t=_.html_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),_.html_set=(e,_,t=localStorage,a=_.html_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,21 +71,21 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data.html-color-scheme="default" data.html-color-primary="indigo" data.html-color-accent="indigo">
   
     
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
+    <input class=.html-toggle" data.html-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class=.html-toggle" data.html-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class=.html-overlay" for="__drawer"></label>
+    <div data.html-component="skip">
       
         
-        <a href="#zarr-streaming-c-api-reference" class="md-skip">
+        <a href="#zarr-streaming-c-api-reference" class=.html-skip">
           Skip to content
         </a>
       
     </div>
-    <div data-md-component="announce">
+    <div data.html-component="announce">
       
     </div>
     
@@ -119,21 +119,21 @@
 
 
 <!-- Header -->
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-    <nav class="md-header__inner md-grid" aria-label="Header">
+<header class=.html-header.html-header--shadow.html-header--lifted" data.html-component="header">
+    <nav class=.html-header__inner.html-grid" aria-label="Header">
 
         <!-- Button to open drawer -->
-        <label class="md-header__button md-icon" for="__drawer">
+        <label class=.html-header__button.html-icon" for="__drawer">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
         </label>
 
         <!-- Header title -->
-        <div class="md-header__title" data-md-component="header-title">
-            <div class="md-header__ellipsis" id="site-title">
+        <div class=.html-header__title" data.html-component="header-title">
+            <div class=.html-header__ellipsis" id="site-title">
                 <a href="../..">Acquire Zarr Streaming</a>
             </div>
-            <div class="md-header__version" id="version-selector">
+            <div class=.html-header__version" id="version-selector">
                 <!-- Version switcher -->
             </div>
         </div>
@@ -141,14 +141,14 @@
         <!-- Color palette toggle -->
         
         
-        <form class="md-header__option" data-md-component="palette">
+        <form class=.html-header__option" data.html-component="palette">
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class=.html-option" data.html-color-media="" data.html-color-scheme="default" data.html-color-primary="indigo" data.html-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+      <label class=.html-header__button.html-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
       </label>
     
@@ -156,9 +156,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class=.html-option" data.html-color-media="" data.html-color-scheme="slate" data.html-color-primary="indigo" data.html-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+      <label class=.html-header__button.html-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
       </label>
     
@@ -172,39 +172,39 @@
 
         <!-- Button to open search modal -->
         
-        <label class="md-header__button md-icon" for="__search">
+        <label class=.html-header__button.html-icon" for="__search">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         </label>
 
         <!-- Search interface -->
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
+        <div class=.html-search" data.html-component="search" role="dialog">
+  <label class=.html-search__overlay" for="__search"></label>
+  <div class=.html-search__inner" role="search">
+    <form class=.html-search__form" name="search">
+      <input type="text" class=.html-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data.html-component="search-query" required>
+      <label class=.html-search__icon.html-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class=.html-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class=.html-search__icon.html-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+    <div class=.html-search__output">
+      <div class=.html-search__scrollwrap" tabindex="0" data.html-scrollfix>
+        <div class=.html-search-result" data.html-component="search-result">
+          <div class=.html-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
+          <ol class=.html-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -213,8 +213,8 @@
         
 
         <!-- Social links in header -->
-        <div class="md-header__links">
-            <a class="md-source" href="https://github.com/acquire-project/acquire-zarr" data-md-component="source" title="Go to repository">
+        <div class=.html-header__links">
+            <a class=.html-source" href="https://github.com/acquire-project/acquire-zarr" data.html-component="source" title="Go to repository">
                 <span class="twemoji" style="padding-left: 14px;">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_266_1125)">
@@ -228,7 +228,7 @@
 </svg>
                 </span>
             </a>
-            <a class="md-source" href="https://acquire-imaging.zulipchat.com" data-md-component="source" title="Go to Zulip chat">
+            <a class=.html-source" href="https://acquire-imaging.zulipchat.com" data.html-component="source" title="Go to Zulip chat">
                 <span class="twemoji" style="padding-left: 14px;">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19.7751 17.8334C19.7751 19.4377 18.5946 20.75 17.1519 20.75H4.84827C3.40562 20.75 2.2251 19.4377 2.2251 17.8334C2.2251 16.8514 2.66798 15.9781 3.34228 15.4492L9.889 9.62088C10.0108 9.51694 10.1687 9.68451 10.081 9.82439L7.67948 14.6177C7.61224 14.7517 7.69945 14.9169 7.83782 14.9169H17.1524C18.5951 14.9169 19.7751 16.2297 19.7751 17.8334ZM19.7751 4.16657C19.7751 5.14864 19.3322 6.02191 18.6579 6.55083L12.1112 12.3791C11.9894 12.4831 11.8315 12.3155 11.9192 12.1756L14.3207 7.38233C14.388 7.24828 14.3007 7.08315 14.1624 7.08315H4.84827C3.40562 7.08315 2.2251 5.77081 2.2251 4.16657C2.2251 2.56234 3.40562 1.25 4.84827 1.25H17.1524C18.5951 1.25 19.7751 2.56234 19.7751 4.16657Z" fill="white"/>
@@ -243,16 +243,16 @@
     
     
     
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
+<nav class=.html-tabs" aria-label="Tabs" data.html-component="tabs">
+  <div class=.html-grid">
+    <ul class=.html-tabs__list">
       
         
   
   
   
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+    <li class=.html-tabs__item">
+      <a href="../.." class=.html-tabs__link">
         
   
     
@@ -268,8 +268,8 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../get_started/" class="md-tabs__link">
+    <li class=.html-tabs__item">
+      <a href="../../get_started/" class=.html-tabs__link">
         
   
     
@@ -287,8 +287,8 @@
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../examples/" class="md-tabs__link">
+      <li class=.html-tabs__item">
+        <a href="../../examples/" class=.html-tabs__link">
           
   
     
@@ -309,8 +309,8 @@
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class=.html-tabs__item.html-tabs__item--active">
+        <a href="../" class=.html-tabs__link">
           
   
     
@@ -329,8 +329,8 @@
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../for_contributors/" class="md-tabs__link">
+      <li class=.html-tabs__item">
+        <a href="../../for_contributors/" class=.html-tabs__link">
           
   
     
@@ -350,28 +350,28 @@
     
 </header>
     
-    <div class="md-container" data-md-component="container">
+    <div class=.html-container" data.html-component="container">
       
       
         
       
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
+      <main class=.html-main" data.html-component="main">
+        <div class=.html-main__inner.html-grid">
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
+              <div class=.html-sidebar.html-sidebar--primary" data.html-component="sidebar" data.html-type="navigation" >
+                <div class=.html-sidebar__scrollwrap">
+                  <div class=.html-sidebar__inner">
                     
 
 
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Acquire Zarr Streaming" class="md-nav__button md-logo" aria-label="Acquire Zarr Streaming" data-md-component="logo">
+<nav class=.html-nav.html-nav--primary.html-nav--lifted" aria-label="Navigation" data.html-level="0">
+  <label class=.html-nav__title" for="__drawer">
+    <a href="../.." title="Acquire Zarr Streaming" class=.html-nav__button.html-logo" aria-label="Acquire Zarr Streaming" data.html-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -380,19 +380,19 @@
     Acquire Zarr Streaming
   </label>
   
-    <div class="md-nav__source">
-      <a href="https://github.com/acquire-project/" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
+    <div class=.html-nav__source">
+      <a href="https://github.com/acquire-project/" title="Go to repository" class=.html-source" data.html-component="source">
+  <div class=.html-source__icon.html-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
-  <div class="md-source__repository">
+  <div class=.html-source__repository">
     GitHub
   </div>
 </a>
     </div>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class=.html-nav__list" data.html-scrollfix>
     
       
       
@@ -400,11 +400,11 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+    <li class=.html-nav__item">
+      <a href="../.." class=.html-nav__link">
         
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     Home
     
   </span>
@@ -421,11 +421,11 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../get_started/" class="md-nav__link">
+    <li class=.html-nav__item">
+      <a href="../../get_started/" class=.html-nav__link">
         
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     Get Started
     
   </span>
@@ -459,19 +459,19 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class=.html-nav__item.html-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class=.html-nav__toggle.html-toggle " type="checkbox" id="__nav_3" >
         
           
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../../examples/" class="md-nav__link ">
+          <div class=.html-nav__link.html-nav__container">
+            <a href="../../examples/" class=.html-nav__link ">
               
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     Examples
     
   </span>
@@ -480,18 +480,18 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
+              <label class=.html-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class=.html-nav__icon.html-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
+        <nav class=.html-nav" data.html-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class=.html-nav__title" for="__nav_3">
+            <span class=.html-nav__icon.html-icon"></span>
             Examples
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class=.html-nav__list" data.html-scrollfix>
             
               
             
@@ -501,11 +501,11 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../examples/python_examples/" class="md-nav__link">
+    <li class=.html-nav__item">
+      <a href="../../examples/python_examples/" class=.html-nav__link">
         
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     Python Examples
     
   </span>
@@ -523,11 +523,11 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../examples/c_examples/" class="md-nav__link">
+    <li class=.html-nav__item">
+      <a href="../../examples/c_examples/" class=.html-nav__link">
         
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     C Examples
     
   </span>
@@ -574,19 +574,19 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class=.html-nav__item.html-nav__item--active.html-nav__item--section.html-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class=.html-nav__toggle.html-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+          <div class=.html-nav__link.html-nav__container">
+            <a href="../" class=.html-nav__link ">
               
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     API Reference
     
   </span>
@@ -595,18 +595,18 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
+              <label class=.html-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class=.html-nav__icon.html-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
+        <nav class=.html-nav" data.html-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class=.html-nav__title" for="__nav_4">
+            <span class=.html-nav__icon.html-icon"></span>
             API Reference
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class=.html-nav__list" data.html-scrollfix>
             
               
             
@@ -616,11 +616,11 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../zarr_api/" class="md-nav__link">
+    <li class=.html-nav__item">
+      <a href="../zarr_api/" class=.html-nav__link">
         
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     Zarr Streaming Python API Reference
     
   </span>
@@ -640,30 +640,30 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    <li class=.html-nav__item.html-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      <input class=.html-nav__toggle.html-toggle" type="checkbox" id="__toc">
       
       
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+        <label class=.html-nav__link.html-nav__link--active" for="__toc">
           
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     Zarr Streaming C API Reference
     
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
+          <span class=.html-nav__icon.html-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+      <a href="./" class=.html-nav__link.html-nav__link--active">
         
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     Zarr Streaming C API Reference
     
   </span>
@@ -673,69 +673,69 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class=.html-nav.html-nav--secondary" aria-label="Table of contents">
   
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+    <label class=.html-nav__title" for="__toc">
+      <span class=.html-nav__icon.html-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class=.html-nav__list" data.html-component="toc" data.html-scrollfix>
       
-        <li class="md-nav__item">
-  <a href="#acquirezarrh" class="md-nav__link">
-    <span class="md-ellipsis">
+        <li class=.html-nav__item">
+  <a href="#acquirezarrh" class=.html-nav__link">
+    <span class=.html-ellipsis">
       acquire.zarr.h
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="acquire.zarr.h">
-      <ul class="md-nav__list">
+    <nav class=.html-nav" aria-label="acquire.zarr.h">
+      <ul class=.html-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#classes" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Classes
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#public-types" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#public-types" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Public Types
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#public-functions" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#public-functions" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Public Functions
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#public-types-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#public-types-documentation" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Public Types Documentation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Public Types Documentation">
-      <ul class="md-nav__list">
+    <nav class=.html-nav" aria-label="Public Types Documentation">
+      <ul class=.html-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#typedef-zarrstream" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#typedef-zarrstream" class=.html-nav__link">
+    <span class=.html-ellipsis">
       typedef ZarrStream
     </span>
   </a>
@@ -747,91 +747,91 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#public-functions-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#public-functions-documentation" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Public Functions Documentation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Public Functions Documentation">
-      <ul class="md-nav__list">
+    <nav class=.html-nav" aria-label="Public Functions Documentation">
+      <ul class=.html-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#function-zarrstreamsettings_create_dimension_array" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarrstreamsettings_create_dimension_array" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function ZarrStreamSettings_create_dimension_array
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarrstreamsettings_destroy_dimension_array" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarrstreamsettings_destroy_dimension_array" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function ZarrStreamSettings_destroy_dimension_array
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarrstream_append" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarrstream_append" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function ZarrStream_append
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarrstream_create" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarrstream_create" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function ZarrStream_create
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarrstream_destroy" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarrstream_destroy" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function ZarrStream_destroy
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarr_get_api_version" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarr_get_api_version" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function Zarr_get_api_version
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarr_get_log_level" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarr_get_log_level" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function Zarr_get_log_level
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarr_get_status_message" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarr_get_status_message" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function Zarr_get_status_message
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarr_set_log_level" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarr_set_log_level" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function Zarr_set_log_level
     </span>
   </a>
@@ -848,19 +848,19 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#zarrtypesh" class="md-nav__link">
-    <span class="md-ellipsis">
+        <li class=.html-nav__item">
+  <a href="#zarrtypesh" class=.html-nav__link">
+    <span class=.html-ellipsis">
       zarr.types.h
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="zarr.types.h">
-      <ul class="md-nav__list">
+    <nav class=.html-nav" aria-label="zarr.types.h">
+      <ul class=.html-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#classes_1" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#classes_1" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Classes
     </span>
   </a>
@@ -913,19 +913,19 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class=.html-nav__item.html-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class=.html-nav__toggle.html-toggle " type="checkbox" id="__nav_5" >
         
           
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../../for_contributors/" class="md-nav__link ">
+          <div class=.html-nav__link.html-nav__container">
+            <a href="../../for_contributors/" class=.html-nav__link ">
               
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     For contributors
     
   </span>
@@ -934,18 +934,18 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
+              <label class=.html-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class=.html-nav__icon.html-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
+        <nav class=.html-nav" data.html-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class=.html-nav__title" for="__nav_5">
+            <span class=.html-nav__icon.html-icon"></span>
             For contributors
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class=.html-nav__list" data.html-scrollfix>
             
               
             
@@ -955,12 +955,12 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../for_contributors/codebase.md" class="md-nav__link">
+    <li class=.html-nav__item">
+      <a href="../../for_contributors/codebase/" class=.html-nav__link">
         
   
-  <span class="md-ellipsis">
-    None
+  <span class=.html-ellipsis">
+    Contribute to codebase
     
   </span>
   
@@ -977,11 +977,11 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../for_contributors/docs_contribution_quickstart/" class="md-nav__link">
+    <li class=.html-nav__item">
+      <a href="../../for_contributors/docs_contribution_quickstart/" class=.html-nav__link">
         
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     Contribute to docs
     
   </span>
@@ -999,11 +999,11 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../for_contributors/update_version/" class="md-nav__link">
+    <li class=.html-nav__item">
+      <a href="../../for_contributors/update_version/" class=.html-nav__link">
         
   
-  <span class="md-ellipsis">
+  <span class=.html-ellipsis">
     Update docs version
     
   </span>
@@ -1030,74 +1030,74 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
+              <div class=.html-sidebar.html-sidebar--secondary" data.html-component="sidebar" data.html-type="toc" >
+                <div class=.html-sidebar__scrollwrap">
+                  <div class=.html-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class=.html-nav.html-nav--secondary" aria-label="Table of contents">
   
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+    <label class=.html-nav__title" for="__toc">
+      <span class=.html-nav__icon.html-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class=.html-nav__list" data.html-component="toc" data.html-scrollfix>
       
-        <li class="md-nav__item">
-  <a href="#acquirezarrh" class="md-nav__link">
-    <span class="md-ellipsis">
+        <li class=.html-nav__item">
+  <a href="#acquirezarrh" class=.html-nav__link">
+    <span class=.html-ellipsis">
       acquire.zarr.h
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="acquire.zarr.h">
-      <ul class="md-nav__list">
+    <nav class=.html-nav" aria-label="acquire.zarr.h">
+      <ul class=.html-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#classes" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Classes
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#public-types" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#public-types" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Public Types
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#public-functions" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#public-functions" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Public Functions
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#public-types-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#public-types-documentation" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Public Types Documentation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Public Types Documentation">
-      <ul class="md-nav__list">
+    <nav class=.html-nav" aria-label="Public Types Documentation">
+      <ul class=.html-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#typedef-zarrstream" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#typedef-zarrstream" class=.html-nav__link">
+    <span class=.html-ellipsis">
       typedef ZarrStream
     </span>
   </a>
@@ -1109,91 +1109,91 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#public-functions-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#public-functions-documentation" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Public Functions Documentation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Public Functions Documentation">
-      <ul class="md-nav__list">
+    <nav class=.html-nav" aria-label="Public Functions Documentation">
+      <ul class=.html-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#function-zarrstreamsettings_create_dimension_array" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarrstreamsettings_create_dimension_array" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function ZarrStreamSettings_create_dimension_array
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarrstreamsettings_destroy_dimension_array" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarrstreamsettings_destroy_dimension_array" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function ZarrStreamSettings_destroy_dimension_array
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarrstream_append" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarrstream_append" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function ZarrStream_append
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarrstream_create" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarrstream_create" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function ZarrStream_create
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarrstream_destroy" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarrstream_destroy" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function ZarrStream_destroy
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarr_get_api_version" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarr_get_api_version" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function Zarr_get_api_version
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarr_get_log_level" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarr_get_log_level" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function Zarr_get_log_level
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarr_get_status_message" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarr_get_status_message" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function Zarr_get_status_message
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#function-zarr_set_log_level" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#function-zarr_set_log_level" class=.html-nav__link">
+    <span class=.html-ellipsis">
       function Zarr_set_log_level
     </span>
   </a>
@@ -1210,19 +1210,19 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#zarrtypesh" class="md-nav__link">
-    <span class="md-ellipsis">
+        <li class=.html-nav__item">
+  <a href="#zarrtypesh" class=.html-nav__link">
+    <span class=.html-ellipsis">
       zarr.types.h
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="zarr.types.h">
-      <ul class="md-nav__list">
+    <nav class=.html-nav" aria-label="zarr.types.h">
+      <ul class=.html-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#classes_1" class="md-nav__link">
-    <span class="md-ellipsis">
+          <li class=.html-nav__item">
+  <a href="#classes_1" class=.html-nav__link">
+    <span class=.html-ellipsis">
       Classes
     </span>
   </a>
@@ -1243,8 +1243,8 @@
             
           
           
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
+            <div class=.html-content" data.html-component="content">
+              <article class=.html-content__inner.html-typeset">
                 
                   
 
@@ -1257,10 +1257,7 @@
 <p>Information on the <code>acquire_zarr</code> C implementation and how to use it. Check
 <a href="https://github.com/acquire-project/acquire-zarr">https://github.com/acquire-project/acquire-zarr</a> for more information.</p>
 <h2 id="acquirezarrh"><code>acquire.zarr.h</code><a class="headerlink" href="#acquirezarrh" title="Permanent link">&para;</a></h2>
-<p><a href="acquire_zarr_c_api/acquire_zarr_c_api/acquire_8zarr_8h_source.md">Go to the source code of this file</a></p>
-<ul>
-<li><code>#include "zarr.types.h"</code></li>
-</ul>
+<p><a href="acquire_zarr_c_api/acquire_zarr_c_api/acquire_8zarr_8h_source.html">Go to the source code of this file</a></p>
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1272,7 +1269,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings.md"><strong>ZarrStreamSettings</strong></a> <br><em>The settings for a Zarr stream.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/structZarrStreamSettings.html"><strong>ZarrStreamSettings</strong></a> <br><em>The settings for a Zarr stream.</em></td>
 </tr>
 </tbody>
 </table>
@@ -1287,7 +1284,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;">typedef struct ZarrStream_s</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#typedef-zarrstream"><strong>ZarrStream</strong></a>  <br></td>
+<td style="text-align: left;"><a href="#typedef-zarrstream"><strong>ZarrStream</strong></a>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -1302,39 +1299,39 @@
 <tbody>
 <tr>
 <td style="text-align: right;">ZarrStatusCode</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstreamsettings_create_dimension_array"><strong>ZarrStreamSettings_create_dimension_array</strong></a> (<a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings.md"><strong>ZarrStreamSettings</strong></a> * settings, size_t dimension_count) <br><em>Allocate memory for the dimension array in the Zarr stream settings struct.</em></td>
+<td style="text-align: left;"><a href="#function-zarrstreamsettings_create_dimension_array"><strong>ZarrStreamSettings_create_dimension_array</strong></a> (<a href="acquire_zarr_c_api/acquire_zarr_c_api/structZarrStreamSettings.html"><strong>ZarrStreamSettings</strong></a> * settings, size_t dimension_count) <br><em>Allocate memory for the dimension array in the Zarr stream settings struct.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstreamsettings_destroy_dimension_array"><strong>ZarrStreamSettings_destroy_dimension_array</strong></a> (<a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings.md"><strong>ZarrStreamSettings</strong></a> * settings) <br><em>Free memory for the dimension array in the Zarr stream settings struct.</em></td>
+<td style="text-align: left;"><a href="#function-zarrstreamsettings_destroy_dimension_array"><strong>ZarrStreamSettings_destroy_dimension_array</strong></a> (<a href="acquire_zarr_c_api/acquire_zarr_c_api/structZarrStreamSettings.html"><strong>ZarrStreamSettings</strong></a> * settings) <br><em>Free memory for the dimension array in the Zarr stream settings struct.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">ZarrStatusCode</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstream_append"><strong>ZarrStream_append</strong></a> (ZarrStream * stream, const void * data, size_t bytes_in, size_t * bytes_out) <br><em>Append data to the Zarr stream.</em></td>
+<td style="text-align: left;"><a href="#function-zarrstream_append"><strong>ZarrStream_append</strong></a> (ZarrStream * stream, const void * data, size_t bytes_in, size_t * bytes_out) <br><em>Append data to the Zarr stream.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">ZarrStream *</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstream_create"><strong>ZarrStream_create</strong></a> (<a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_stream_settings.md"><strong>ZarrStreamSettings</strong></a> * settings) <br><em>Create a Zarr stream.</em></td>
+<td style="text-align: left;"><a href="#function-zarrstream_create"><strong>ZarrStream_create</strong></a> (<a href="acquire_zarr_c_api/acquire_zarr_c_api/structZarrStreamSettings.html"><strong>ZarrStreamSettings</strong></a> * settings) <br><em>Create a Zarr stream.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarrstream_destroy"><strong>ZarrStream_destroy</strong></a> (ZarrStream * stream) <br><em>Destroy a Zarr stream.</em></td>
+<td style="text-align: left;"><a href="#function-zarrstream_destroy"><strong>ZarrStream_destroy</strong></a> (ZarrStream * stream) <br><em>Destroy a Zarr stream.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">const char *</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarr_get_api_version"><strong>Zarr_get_api_version</strong></a> () <br><em>Get the version of the Zarr API.</em></td>
+<td style="text-align: left;"><a href="#function-zarr_get_api_version"><strong>Zarr_get_api_version</strong></a> () <br><em>Get the version of the Zarr API.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">ZarrLogLevel</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarr_get_log_level"><strong>Zarr_get_log_level</strong></a> () <br><em>Get the log level for the Zarr API.</em></td>
+<td style="text-align: left;"><a href="#function-zarr_get_log_level"><strong>Zarr_get_log_level</strong></a> () <br><em>Get the log level for the Zarr API.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">const char *</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarr_get_status_message"><strong>Zarr_get_status_message</strong></a> (ZarrStatusCode code) <br><em>Get the message for the given status code.</em></td>
+<td style="text-align: left;"><a href="#function-zarr_get_status_message"><strong>Zarr_get_status_message</strong></a> (ZarrStatusCode code) <br><em>Get the message for the given status code.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">ZarrStatusCode</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api#function-zarr_set_log_level"><strong>Zarr_set_log_level</strong></a> (ZarrLogLevel level) <br><em>Set the log level for the Zarr API.</em></td>
+<td style="text-align: left;"><a href="#function-zarr_set_log_level"><strong>Zarr_set_log_level</strong></a> (ZarrLogLevel level) <br><em>Set the log level for the Zarr API.</em></td>
 </tr>
 </tbody>
 </table>
@@ -1465,14 +1462,9 @@
 <hr>
 
 <hr />
-<p>The documentation for this class was generated from the following file <code>/Users/mwebermendonca/projects/acquire-zarr/include/acquire.zarr.h</code></p>
+<p>The documentation for this class was generated from the following file <code>/home/runner/work/acquire-docs/acquire-docs/acquire-zarr/include/acquire.zarr.h</code></p>
 <h2 id="zarrtypesh"><code>zarr.types.h</code><a class="headerlink" href="#zarrtypesh" title="Permanent link">&para;</a></h2>
-<p><a href="acquire_zarr_c_api/acquire_zarr_c_api/zarr_8types_8h_source.md">Go to the source code of this file</a></p>
-<ul>
-<li><code>#include &lt;stdbool.h&gt;</code></li>
-<li><code>#include &lt;stddef.h&gt;</code></li>
-<li><code>#include &lt;stdint.h&gt;</code></li>
-</ul>
+<p><a href="acquire_zarr_c_api/acquire_zarr_c_api/zarr_8types_8h_source.html">Go to the source code of this file</a></p>
 <h3 id="classes_1">Classes<a class="headerlink" href="#classes_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1484,20 +1476,20 @@
 <tbody>
 <tr>
 <td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_compression_settings.md"><strong>ZarrCompressionSettings</strong></a> <br><em>Compression settings for a Zarr array. @detail The compressor is not the same as the codec. A codec is a specific implementation of a compression algorithm, while a compressor is a library that implements one or more codecs.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/structZarrCompressionSettings.html"><strong>ZarrCompressionSettings</strong></a> <br><em>Compression settings for a Zarr array. @detail The compressor is not the same as the codec. A codec is a specific implementation of a compression algorithm, while a compressor is a library that implements one or more codecs.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_dimension_properties.md"><strong>ZarrDimensionProperties</strong></a> <br><em>Properties of a dimension of the Zarr array.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/structZarrDimensionProperties.html"><strong>ZarrDimensionProperties</strong></a> <br><em>Properties of a dimension of the Zarr array.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/struct_zarr_s3_settings.md"><strong>ZarrS3Settings</strong></a> <br><em>S3 settings for streaming to Zarr.</em></td>
+<td style="text-align: left;"><a href="acquire_zarr_c_api/acquire_zarr_c_api/structZarrS3Settings.html"><strong>ZarrS3Settings</strong></a> <br><em>S3 settings for streaming to Zarr.</em></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<p>The documentation for this class was generated from the following file <code>/Users/mwebermendonca/projects/acquire-zarr/include/zarr.types.h</code></p>
+<p>The documentation for this class was generated from the following file <code>/home/runner/work/acquire-docs/acquire-docs/acquire-zarr/include/zarr.types.h</code></p>
 
 
 
@@ -1543,28 +1535,28 @@
 -->
 
 <!-- Footer -->
-<footer class="md-footer">
+<footer class=.html-footer">
 
     <!-- Link to previous and/or next page -->
     
     
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+    <nav class=.html-footer__inner.html-grid" aria-label="Footer" >
 
         <!-- Link to previous page -->
         
         
-        <a href="../zarr_api/" class="md-footer__link md-footer__link--prev"
+        <a href="../zarr_api/" class=.html-footer__link.html-footer__link--prev"
             aria-label="Previous: Zarr Streaming Python API Reference">
-            <div class="md-footer__button md-icon">
+            <div class=.html-footer__button.html-icon">
                 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
-            <div class="md-footer__title">
-                <span class="md-footer__direction">
+            <div class=.html-footer__title">
+                <span class=.html-footer__direction">
                     Previous
                 </span>
-                <div class="md-ellipsis">
+                <div class=.html-ellipsis">
                     Zarr Streaming Python API Reference
                 </div>
             </div>
@@ -1574,17 +1566,17 @@
         <!-- Link to next page -->
         
         
-        <a href="../../for_contributors/" class="md-footer__link md-footer__link--next"
+        <a href="../../for_contributors/" class=.html-footer__link.html-footer__link--next"
             aria-label="Next: For contributors">
-            <div class="md-footer__title">
-                <span class="md-footer__direction">
+            <div class=.html-footer__title">
+                <span class=.html-footer__direction">
                     Next
                 </span>
-                <div class="md-ellipsis">
+                <div class=.html-ellipsis">
                     For contributors
                 </div>
             </div>
-            <div class="md-footer__button md-icon">
+            <div class=.html-footer__button.html-icon">
                 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
             </div>
@@ -1595,11 +1587,11 @@
     
 
     <!-- Further information -->
-    <div class="md-footer-meta md-typeset">
-        <div class="md-footer-meta__inner md-grid">
-            <div class="md-footer-meta__inner-social">
-                <div class="md-footer-meta__inner-social links">
-                    <a class="md-source" href="https://github.com/acquire-project/acquire-zarr" data-md-component="source" title="Go to repository">
+    <div class=.html-footer-meta.html-typeset">
+        <div class=.html-footer-meta__inner.html-grid">
+            <div class=.html-footer-meta__inner-social">
+                <div class=.html-footer-meta__inner-social links">
+                    <a class=.html-source" href="https://github.com/acquire-project/acquire-zarr" data.html-component="source" title="Go to repository">
                         <span class="twemoji" style="padding-right: 8px; padding-top: 8px; color: #ffffffb3;">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_266_1125)">
@@ -1614,7 +1606,7 @@
                         </span>
                         GitHub Repository
                     </a>
-                    <a class="md-source" href="https://acquire-imaging.zulipchat.com" data-md-component="source" title="Go to Zulip chat">
+                    <a class=.html-source" href="https://acquire-imaging.zulipchat.com" data.html-component="source" title="Go to Zulip chat">
                         <span class="twemoji" style="padding-right: 8px; padding-top: 8px; color: #ffffffb3;">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19.7751 17.8334C19.7751 19.4377 18.5946 20.75 17.1519 20.75H4.84827C3.40562 20.75 2.2251 19.4377 2.2251 17.8334C2.2251 16.8514 2.66798 15.9781 3.34228 15.4492L9.889 9.62088C10.0108 9.51694 10.1687 9.68451 10.081 9.82439L7.67948 14.6177C7.61224 14.7517 7.69945 14.9169 7.83782 14.9169H17.1524C18.5951 14.9169 19.7751 16.2297 19.7751 17.8334ZM19.7751 4.16657C19.7751 5.14864 19.3322 6.02191 18.6579 6.55083L12.1112 12.3791C11.9894 12.4831 11.8315 12.3155 11.9192 12.1756L14.3207 7.38233C14.388 7.24828 14.3007 7.08315 14.1624 7.08315H4.84827C3.40562 7.08315 2.2251 5.77081 2.2251 4.16657C2.2251 2.56234 3.40562 1.25 4.84827 1.25H17.1524C18.5951 1.25 19.7751 2.56234 19.7751 4.16657Z" fill="white"/>
@@ -1622,7 +1614,7 @@
                         </span>
                         Zulip chat
                     </a>
-                    <a class="md-source" href="https://pypi.org/project/acquire-zarr/" data-md-component="source" title="Go to PyPI">
+                    <a class=.html-source" href="https://pypi.org/project/acquire-zarr/" data.html-component="source" title="Go to PyPI">
                         <span class="twemoji" style="padding-right: 8px; padding-top: 8px; color: #ffffffb3;">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_266_1129)">
@@ -1638,12 +1630,12 @@
                         PyPi
                     </a>
                 </div>
-                <div class="md-footer-meta__inner-social czi">
-                    <div class="md-copyright">
+                <div class=.html-footer-meta__inner-social czi">
+                    <div class=.html-copyright">
                         Acquire is a service of the <a href="https://chanzuckerberg.com/">Chan Zuckerberg Initiative.</a>
                     </div>
                     <div class="vl"></div>
-                    <div class="md-copyright">
+                    <div class=.html-copyright">
                         <a href="https://chanzuckerberg.com/science/programs-resources/imaging/">
                             <div class="twemoji" style="padding-right: 8px; color: #ffffffb3;">
                                 <svg width="78" height="40" viewBox="0 0 78 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1666,8 +1658,8 @@
                 </div>
             </div>
 
-            <div class="md-footer-meta__inner-social">
-                <div class="md-copyright">
+            <div class=.html-footer-meta__inner-social">
+                <div class=.html-copyright">
   
   
     Made with
@@ -1682,8 +1674,8 @@
 </footer>
       
     </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
+    <div class=.html-dialog" data.html-component="dialog">
+      <div class=.html-dialog__inner.html-typeset"></div>
     </div>
     
     

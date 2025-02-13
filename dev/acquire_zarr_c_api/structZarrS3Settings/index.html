@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/acquire_zarr_c_api/dir_333e6df7611621adb9e912e152b800c4/">
+        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/acquire_zarr_c_api/structZarrS3Settings/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Dir /home/runner/work/acquire-docs/acquire-docs/acquire-zarr - Acquire Zarr Streaming</title>
+        <title>Struct ZarrS3Settings - Acquire Zarr Streaming</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dir-homerunnerworkacquire-docsacquire-docsacquire-zarr" class="md-skip">
+        <a href="#struct-zarrs3settings" class="md-skip">
           Skip to content
         </a>
       
@@ -811,11 +811,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#directories" class="md-nav__link">
+  <a href="#public-attributes" class="md-nav__link">
     <span class="md-ellipsis">
-      Directories
+      Public Attributes
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-attributes-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public Attributes Documentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Public Attributes Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-access_key_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      variable access_key_id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-bucket_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      variable bucket_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      variable endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      variable region
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-secret_access_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      variable secret_access_key
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -838,9 +898,13 @@
   
 
 
-<h1 id="dir-homerunnerworkacquire-docsacquire-docsacquire-zarr">Dir /home/runner/work/acquire-docs/acquire-docs/acquire-zarr<a class="headerlink" href="#dir-homerunnerworkacquire-docsacquire-docsacquire-zarr" title="Permanent link">&para;</a></h1>
-<p><a href="../files/"><strong>FileList</strong></a> <strong>&gt;</strong> <a href="./"><strong>acquire-zarr</strong></a></p>
-<h2 id="directories">Directories<a class="headerlink" href="#directories" title="Permanent link">&para;</a></h2>
+<h1 id="struct-zarrs3settings">Struct ZarrS3Settings<a class="headerlink" href="#struct-zarrs3settings" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="./"><strong>ZarrS3Settings</strong></a></p>
+<p><em>S3 settings for streaming to Zarr.</em> </p>
+<ul>
+<li><code>#include &lt;zarr.types.h&gt;</code></li>
+</ul>
+<h2 id="public-attributes">Public Attributes<a class="headerlink" href="#public-attributes" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -850,13 +914,55 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">dir</td>
-<td style="text-align: left;"><a href="../dir_ccebfe39b92f73ccebee9a2fb203dc1b/"><strong>include</strong></a> <br></td>
+<td style="text-align: right;">const char *</td>
+<td style="text-align: left;"><a href="#variable-access_key_id"><strong>access_key_id</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const char *</td>
+<td style="text-align: left;"><a href="#variable-bucket_name"><strong>bucket_name</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const char *</td>
+<td style="text-align: left;"><a href="#variable-endpoint"><strong>endpoint</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const char *</td>
+<td style="text-align: left;"><a href="#variable-region"><strong>region</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const char *</td>
+<td style="text-align: left;"><a href="#variable-secret_access_key"><strong>secret_access_key</strong></a>  <br></td>
 </tr>
 </tbody>
 </table>
+<h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="variable-access_key_id">variable access_key_id<a class="headerlink" href="#variable-access_key_id" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="o">::</span><span class="n">access_key_id</span><span class="p">;</span>
+</span></code></pre></div>
+<hr>
+
+<h3 id="variable-bucket_name">variable bucket_name<a class="headerlink" href="#variable-bucket_name" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="o">::</span><span class="n">bucket_name</span><span class="p">;</span>
+</span></code></pre></div>
+<hr>
+
+<h3 id="variable-endpoint">variable endpoint<a class="headerlink" href="#variable-endpoint" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="o">::</span><span class="n">endpoint</span><span class="p">;</span>
+</span></code></pre></div>
+<hr>
+
+<h3 id="variable-region">variable region<a class="headerlink" href="#variable-region" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="o">::</span><span class="n">region</span><span class="p">;</span>
+</span></code></pre></div>
+<hr>
+
+<h3 id="variable-secret_access_key">variable secret_access_key<a class="headerlink" href="#variable-secret_access_key" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrS3Settings</span><span class="o">::</span><span class="n">secret_access_key</span><span class="p">;</span>
+</span></code></pre></div>
+<hr>
+
 <hr />
-<p>The documentation for this class was generated from the following file <code>/home/runner/work/acquire-docs/acquire-docs/acquire-zarr/</code></p>
+<p>The documentation for this class was generated from the following file <code>/home/runner/work/acquire-docs/acquire-docs/acquire-zarr/include/zarr.types.h</code></p>
 
 
 

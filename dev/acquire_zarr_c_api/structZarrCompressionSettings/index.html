@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/dev/acquire_zarr_c_api/struct_zarr_stream_settings/">
+        <link rel="canonical" href="https://acquire-project.github.io/acquire-docs/acquire_zarr_c_api/structZarrCompressionSettings/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Struct ZarrStreamSettings - Acquire Zarr Streaming</title>
+        <title>Struct ZarrCompressionSettings - Acquire Zarr Streaming</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#struct-zarrstreamsettings" class="md-skip">
+        <a href="#struct-zarrcompressionsettings" class="md-skip">
           Skip to content
         </a>
       
@@ -718,11 +718,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../for_contributors/codebase.md" class="md-nav__link">
+      <a href="../../for_contributors/codebase/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    Contribute to codebase
     
   </span>
   
@@ -820,15 +820,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Detailed Description
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#public-attributes-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       Public Attributes Documentation
@@ -839,90 +830,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variable-compression_settings" class="md-nav__link">
+  <a href="#variable-codec" class="md-nav__link">
     <span class="md-ellipsis">
-      variable compression_settings
+      variable codec
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-custom_metadata" class="md-nav__link">
+  <a href="#variable-compressor" class="md-nav__link">
     <span class="md-ellipsis">
-      variable custom_metadata
+      variable compressor
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-data_type" class="md-nav__link">
+  <a href="#variable-level" class="md-nav__link">
     <span class="md-ellipsis">
-      variable data_type
+      variable level
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-dimension_count" class="md-nav__link">
+  <a href="#variable-shuffle" class="md-nav__link">
     <span class="md-ellipsis">
-      variable dimension_count
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-dimensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      variable dimensions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-max_threads" class="md-nav__link">
-    <span class="md-ellipsis">
-      variable max_threads
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-multiscale" class="md-nav__link">
-    <span class="md-ellipsis">
-      variable multiscale
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-s3_settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      variable s3_settings
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-store_path" class="md-nav__link">
-    <span class="md-ellipsis">
-      variable store_path
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      variable version
+      variable shuffle
     </span>
   </a>
   
@@ -952,11 +889,11 @@
   
 
 
-<h1 id="struct-zarrstreamsettings">Struct ZarrStreamSettings<a class="headerlink" href="#struct-zarrstreamsettings" title="Permanent link">&para;</a></h1>
-<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="./"><strong>ZarrStreamSettings</strong></a></p>
-<p><em>The settings for a Zarr stream.</em> <a href="#detailed-description">More...</a></p>
+<h1 id="struct-zarrcompressionsettings">Struct ZarrCompressionSettings<a class="headerlink" href="#struct-zarrcompressionsettings" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="./"><strong>ZarrCompressionSettings</strong></a></p>
+<p><em>Compression settings for a Zarr array. @detail The compressor is not the same as the codec. A codec is a specific implementation of a compression algorithm, while a compressor is a library that implements one or more codecs.</em> </p>
 <ul>
-<li><code>#include &lt;acquire.zarr.h&gt;</code></li>
+<li><code>#include &lt;zarr.types.h&gt;</code></li>
 </ul>
 <h2 id="public-attributes">Public Attributes<a class="headerlink" href="#public-attributes" title="Permanent link">&para;</a></h2>
 <table>
@@ -968,116 +905,50 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;"><a href="../struct_zarr_compression_settings/"><strong>ZarrCompressionSettings</strong></a> *</td>
-<td style="text-align: left;"><a href="#variable-compression_settings"><strong>compression_settings</strong></a>  <br></td>
+<td style="text-align: right;">ZarrCompressionCodec</td>
+<td style="text-align: left;"><a href="#variable-codec"><strong>codec</strong></a>  <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">const char *</td>
-<td style="text-align: left;"><a href="#variable-custom_metadata"><strong>custom_metadata</strong></a>  <br></td>
+<td style="text-align: right;">ZarrCompressor</td>
+<td style="text-align: left;"><a href="#variable-compressor"><strong>compressor</strong></a>  <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">ZarrDataType</td>
-<td style="text-align: left;"><a href="#variable-data_type"><strong>data_type</strong></a>  <br></td>
+<td style="text-align: right;">uint8_t</td>
+<td style="text-align: left;"><a href="#variable-level"><strong>level</strong></a>  <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">size_t</td>
-<td style="text-align: left;"><a href="#variable-dimension_count"><strong>dimension_count</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;"><a href="../struct_zarr_dimension_properties/"><strong>ZarrDimensionProperties</strong></a> *</td>
-<td style="text-align: left;"><a href="#variable-dimensions"><strong>dimensions</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">unsigned int</td>
-<td style="text-align: left;"><a href="#variable-max_threads"><strong>max_threads</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">bool</td>
-<td style="text-align: left;"><a href="#variable-multiscale"><strong>multiscale</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;"><a href="../struct_zarr_s3_settings/"><strong>ZarrS3Settings</strong></a> *</td>
-<td style="text-align: left;"><a href="#variable-s3_settings"><strong>s3_settings</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">const char *</td>
-<td style="text-align: left;"><a href="#variable-store_path"><strong>store_path</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">ZarrVersion</td>
-<td style="text-align: left;"><a href="#variable-version"><strong>version</strong></a>  <br></td>
+<td style="text-align: right;">uint8_t</td>
+<td style="text-align: left;"><a href="#variable-shuffle"><strong>shuffle</strong></a>  <br></td>
 </tr>
 </tbody>
 </table>
-<h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">&para;</a></h2>
-<p>This struct contains the settings for a Zarr stream, including the store path, custom metadata, S3 settings, chunk compression settings, dimension properties, whether to stream to multiple levels of detail, the pixel data type, and the Zarr format version. </p>
-<p><strong>Note:</strong></p>
-<p>The store path can be a filesystem path or an S3 key prefix. For example, supplying an endpoint "s3://my-endpoint.com" and a bucket "my-bucket" with a store_path of "my-dataset.zarr" will result in the store being written to "s3://my-endpoint.com/my-bucket/my-dataset.zarr". </p>
-<p><strong>Note:</strong></p>
-<p>The dimensions array may be allocated with ZarrStreamSettings_create_dimension_array and freed with ZarrStreamSettings_destroy_dimension_array. The order in which you set the dimension properties in the array should match the order of the dimensions from slowest to fastest changing, for example, [Z, Y, X] for a 3D dataset. </p>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="variable-compression_settings">variable compression_settings<a class="headerlink" href="#variable-compression_settings" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ZarrCompressionSettings</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrStreamSettings</span><span class="o">::</span><span class="n">compression_settings</span><span class="p">;</span>
+<h3 id="variable-codec">variable codec<a class="headerlink" href="#variable-codec" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ZarrCompressionCodec</span><span class="w"> </span><span class="n">ZarrCompressionSettings</span><span class="o">::</span><span class="n">codec</span><span class="p">;</span>
 </span></code></pre></div>
-<p>Optional chunk compression settings for the store. </p>
+<p>Codec to use </p>
 <hr>
 
-<h3 id="variable-custom_metadata">variable custom_metadata<a class="headerlink" href="#variable-custom_metadata" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrStreamSettings</span><span class="o">::</span><span class="n">custom_metadata</span><span class="p">;</span>
+<h3 id="variable-compressor">variable compressor<a class="headerlink" href="#variable-compressor" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ZarrCompressor</span><span class="w"> </span><span class="n">ZarrCompressionSettings</span><span class="o">::</span><span class="n">compressor</span><span class="p">;</span>
 </span></code></pre></div>
-<p>JSON-formatted custom metadata to be stored with the dataset. </p>
+<p>Compressor to use </p>
 <hr>
 
-<h3 id="variable-data_type">variable data_type<a class="headerlink" href="#variable-data_type" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">ZarrDataType</span><span class="w"> </span><span class="n">ZarrStreamSettings</span><span class="o">::</span><span class="n">data_type</span><span class="p">;</span>
+<h3 id="variable-level">variable level<a class="headerlink" href="#variable-level" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">ZarrCompressionSettings</span><span class="o">::</span><span class="n">level</span><span class="p">;</span>
 </span></code></pre></div>
-<p>The pixel data type of the dataset. </p>
+<p>Compression level </p>
 <hr>
 
-<h3 id="variable-dimension_count">variable dimension_count<a class="headerlink" href="#variable-dimension_count" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">size_t</span><span class="w"> </span><span class="n">ZarrStreamSettings</span><span class="o">::</span><span class="n">dimension_count</span><span class="p">;</span>
+<h3 id="variable-shuffle">variable shuffle<a class="headerlink" href="#variable-shuffle" title="Permanent link">&para;</a></h3>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">ZarrCompressionSettings</span><span class="o">::</span><span class="n">shuffle</span><span class="p">;</span>
 </span></code></pre></div>
-<p>The number of dimensions in the dataset. </p>
-<hr>
-
-<h3 id="variable-dimensions">variable dimensions<a class="headerlink" href="#variable-dimensions" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">ZarrDimensionProperties</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrStreamSettings</span><span class="o">::</span><span class="n">dimensions</span><span class="p">;</span>
-</span></code></pre></div>
-<p>The properties of each dimension in the dataset. </p>
-<hr>
-
-<h3 id="variable-max_threads">variable max_threads<a class="headerlink" href="#variable-max_threads" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ZarrStreamSettings</span><span class="o">::</span><span class="n">max_threads</span><span class="p">;</span>
-</span></code></pre></div>
-<p>The maximum number of threads to use in the stream. Set to 0 to use the supported number of concurrent threads. </p>
-<hr>
-
-<h3 id="variable-multiscale">variable multiscale<a class="headerlink" href="#variable-multiscale" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">ZarrStreamSettings</span><span class="o">::</span><span class="n">multiscale</span><span class="p">;</span>
-</span></code></pre></div>
-<p>Whether to stream to multiple levels of detail. </p>
-<hr>
-
-<h3 id="variable-s3_settings">variable s3_settings<a class="headerlink" href="#variable-s3_settings" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">ZarrS3Settings</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrStreamSettings</span><span class="o">::</span><span class="n">s3_settings</span><span class="p">;</span>
-</span></code></pre></div>
-<p>Optional S3 settings for the store. </p>
-<hr>
-
-<h3 id="variable-store_path">variable store_path<a class="headerlink" href="#variable-store_path" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ZarrStreamSettings</span><span class="o">::</span><span class="n">store_path</span><span class="p">;</span>
-</span></code></pre></div>
-<p>Path to the store. Filesystem path or S3 key prefix. </p>
-<hr>
-
-<h3 id="variable-version">variable version<a class="headerlink" href="#variable-version" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">ZarrVersion</span><span class="w"> </span><span class="n">ZarrStreamSettings</span><span class="o">::</span><span class="n">version</span><span class="p">;</span>
-</span></code></pre></div>
-<p>The version of the Zarr format to use. 2 or 3. </p>
+<p>Whether to shuffle the data before compressing </p>
 <hr>
 
 <hr />
-<p>The documentation for this class was generated from the following file <code>/Users/mwebermendonca/projects/acquire-zarr/include/acquire.zarr.h</code></p>
+<p>The documentation for this class was generated from the following file <code>/home/runner/work/acquire-docs/acquire-docs/acquire-zarr/include/zarr.types.h</code></p>
 
 
 
