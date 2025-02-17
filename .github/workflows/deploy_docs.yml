@@ -74,6 +74,12 @@ jobs:
           cmake --build build
           python -m pip install .
 
+      - name: Run Doxygen
+        run: |
+          cd acquire-docs
+          doxygen docs/api_reference/Doxyfile
+        shell: bash
+
       - name: Build website
         run: |
           cd acquire-docs

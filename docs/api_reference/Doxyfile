@@ -1,6 +1,6 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "acquire_zarr_c_api"
-OUTPUT_DIRECTORY       = acquire_zarr_c_api
+OUTPUT_DIRECTORY       = docs/api_reference/acquire_zarr_c_api
 CREATE_SUBDIRS         = NO
 BRIEF_MEMBER_DESC      = YES
 REPEAT_BRIEF           = YES
@@ -41,7 +41,7 @@ SHOW_NAMESPACES        = YES
 QUIET                  = NO
 WARNINGS               = YES
 WARN_AS_ERROR          = NO
-INPUT                  = "../../acquire-zarr/include"
+INPUT                  = "../acquire-zarr/include"
 FILE_PATTERNS          = *.h
 RECURSIVE              = NO
 EXCLUDE_SYMLINKS       = NO
